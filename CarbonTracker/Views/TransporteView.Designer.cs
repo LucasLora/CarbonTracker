@@ -1,4 +1,7 @@
-﻿namespace CarbonTracker.Views
+﻿using CarbonTracker.Models.Common;
+using System;
+
+namespace CarbonTracker.Views
 {
     partial class TransporteView
     {

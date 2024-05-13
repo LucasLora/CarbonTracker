@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker.Models
 {
@@ -25,7 +26,7 @@ namespace CarbonTracker.Models
         public string Senha { get; set; }
 
         [DisplayName("Tipo Usuários")]
-        public short TipoUsuarios { get; set; }
+        public TipoUsuario TipoUsuarios { get; set; }
 
         public DateTime DataCriacao { get; set; }
 
