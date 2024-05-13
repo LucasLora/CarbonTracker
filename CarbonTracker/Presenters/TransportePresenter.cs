@@ -142,8 +142,6 @@ namespace CarbonTracker.Presenters
         {
             view.TransporteId = "0";
             view.TransporteNome = "";
-            view.TransporteTipoVeiculo = TipoVeiculo.Bicicleta;
-            view.TransporteTipoCombustivel = TipoCombustivel.NaoAplica;
             view.TransporteKmPorLitroCombustivel = "0";
         }
 

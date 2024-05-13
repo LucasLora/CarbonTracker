@@ -77,7 +77,7 @@ namespace CarbonTracker.Presenters
             var Usuarios = (UsuariosModel)usuariosBindingSource.Current;
             view.UsuariosId = Usuarios.Id.ToString();
             view.UsuariosNome = Usuarios.Nome;
-            view.UsuariosTipoUsuario = Usuarios.TipoUsuarios.ToString();
+            view.UsuariosTipoUsuario = Usuarios.TipoUsuarios;
             view.UsuariosEmail = Usuarios.Email.ToString();
             view.UsuariosSenha = Usuarios.Senha.ToString();
             view.UsuariosDataCriacao = Usuarios.DataCriacao.ToString();
@@ -106,7 +106,7 @@ namespace CarbonTracker.Presenters
             var model = new UsuariosModel();
             model.Id = Convert.ToInt64(view.UsuariosId);
             model.Nome = view.UsuariosNome.ToString();
-            model.TipoUsuarios = Convert.ToInt16(view.UsuariosTipoUsuario);
+            model.TipoUsuarios = view.UsuariosTipoUsuario;
             model.Email = view.UsuariosEmail.ToString();
             model.Senha = view.UsuariosSenha.ToString();
             try
@@ -146,7 +146,6 @@ namespace CarbonTracker.Presenters
             view.UsuariosNome = "";
             view.UsuariosSenha = "";
             view.UsuariosEmail = "";
-            view.UsuariosTipoUsuario = "0";
             view.UsuariosDataCriacao = "";
         }
 

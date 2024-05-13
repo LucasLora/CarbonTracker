@@ -101,8 +101,8 @@ namespace CarbonTracker._Repositories
                             var transporteModel = new TransporteModel();
                             transporteModel.Id = (long)reader["id"];
                             transporteModel.Nome = reader["nome"].ToString();
-                            transporteModel.TipoVeiculo = (TipoVeiculo)reader["tipoveiculo"];
-                            transporteModel.TipoCombustivel = (TipoCombustivel)reader["tipocombustivel"];
+                            transporteModel.TipoVeiculo =  (TipoVeiculo)(short)reader["tipoveiculo"];
+                            transporteModel.TipoCombustivel = (TipoCombustivel)(short)reader["tipocombustivel"];
                             transporteModel.KmPorLitroCombustivel = (double)reader["KmPorLitroCombustivel"];
                             transporteList.Add(transporteModel);
                         }
@@ -140,8 +140,8 @@ namespace CarbonTracker._Repositories
                             var transporteModel = new TransporteModel();
                             transporteModel.Id = (long)reader["id"];
                             transporteModel.Nome = reader["nome"].ToString();
-                            transporteModel.TipoVeiculo = (TipoVeiculo)reader["tipoveiculo"];
-                            transporteModel.TipoCombustivel = (TipoCombustivel)reader["tipocombustivel"];
+                            transporteModel.TipoVeiculo = (TipoVeiculo)(short)reader["tipoveiculo"];
+                            transporteModel.TipoCombustivel = (TipoCombustivel)(short)reader["tipocombustivel"];
                             transporteModel.KmPorLitroCombustivel = (double)reader["KmPorLitroCombustivel"];
                             transporteList.Add(transporteModel);
                         }

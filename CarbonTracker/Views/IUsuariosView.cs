@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker.Views
 {
@@ -12,7 +13,7 @@ namespace CarbonTracker.Views
         string UsuariosNome { get; set; }
         string UsuariosEmail { get; set; }
         string UsuariosSenha { get; set; }
-        string UsuariosTipoUsuario { get; set; }
+        TipoUsuario UsuariosTipoUsuario { get; set; }
         string UsuariosDataCriacao { get; set; }
 
         string SearchValue { get; set; }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker._Repositories
 {
@@ -107,7 +108,7 @@ namespace CarbonTracker._Repositories
                             UsuariosModel.Nome = reader["nome"].ToString();
                             UsuariosModel.Senha = reader["senha"].ToString();
                             UsuariosModel.Email = reader["email"].ToString(); 
-                            UsuariosModel.TipoUsuarios = (short)reader["tipo"];
+                            UsuariosModel.TipoUsuarios = (TipoUsuario)(short)reader["tipo"];
                             UsuariosModel.DataCriacao = (DateTime)reader["datacriacao"];
                             usuarioList.Add(UsuariosModel);
                         }
@@ -149,7 +150,7 @@ namespace CarbonTracker._Repositories
                             UsuariosModel.Nome = reader["nome"].ToString();
                             UsuariosModel.Senha = reader["senha"].ToString();
                             UsuariosModel.Email = reader["email"].ToString();
-                            UsuariosModel.TipoUsuarios = (short)reader["tipo"];
+                            UsuariosModel.TipoUsuarios = (TipoUsuario)(short)reader["tipo"];
                             UsuariosModel.DataCriacao = (DateTime)reader["datacriacao"];
                             usuarioList.Add(UsuariosModel);
                         }

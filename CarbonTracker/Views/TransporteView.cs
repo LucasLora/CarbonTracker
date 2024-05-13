@@ -15,6 +15,8 @@ namespace CarbonTracker.Views
             InitializeComponent();
             VincularEventos();
             this.tbcTransportes.TabPages.Remove(tbpDetalhes);
+            cmbTipoVeiculo.DataSource = Enum.GetValues(typeof(TipoVeiculo)); 
+            cmbTipoCombustivel.DataSource = Enum.GetValues(typeof(TipoCombustivel));
         }
 
         #endregion
