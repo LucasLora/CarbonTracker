@@ -40,6 +40,7 @@
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurar = new System.Windows.Forms.Label();
             this.tbpDetalhes = new System.Windows.Forms.TabPage();
+            this.txtKwPorHoraEletricidade = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.lblKwPorHoraEletricidade = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.pnlTopEletrodomesticos = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblEletrodomesticos = new System.Windows.Forms.Label();
-            this.txtKwPorHoraEletricidade = new System.Windows.Forms.TextBox();
             this.tbpDetalhes.SuspendLayout();
             this.tbcEletrodomesticos.SuspendLayout();
             this.tbpListagem.SuspendLayout();
@@ -64,8 +64,8 @@
             this.lblLitroPorHoraAgua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLitroPorHoraAgua.Location = new System.Drawing.Point(3, 105);
             this.lblLitroPorHoraAgua.Name = "lblLitroPorHoraAgua";
-            this.lblLitroPorHoraAgua.Size = new System.Drawing.Size(98, 25);
-            this.lblLitroPorHoraAgua.TabIndex = 12;
+            this.lblLitroPorHoraAgua.Size = new System.Drawing.Size(77, 20);
+            this.lblLitroPorHoraAgua.TabIndex = 4;
             this.lblLitroPorHoraAgua.Text = "L/h Água:";
             // 
             // txtNome
@@ -73,7 +73,7 @@
             this.txtNome.Location = new System.Drawing.Point(7, 76);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(450, 20);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.TabIndex = 3;
             // 
             // lblNome
             // 
@@ -81,8 +81,8 @@
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.Location = new System.Drawing.Point(3, 53);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(70, 25);
-            this.lblNome.TabIndex = 5;
+            this.lblNome.Size = new System.Drawing.Size(55, 20);
+            this.lblNome.TabIndex = 2;
             this.lblNome.Text = "Nome:";
             // 
             // txtId
@@ -91,7 +91,7 @@
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(75, 20);
-            this.txtId.TabIndex = 4;
+            this.txtId.TabIndex = 1;
             this.txtId.Text = "0";
             // 
             // lblId
@@ -100,8 +100,8 @@
             this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblId.Location = new System.Drawing.Point(3, 3);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(34, 25);
-            this.lblId.TabIndex = 3;
+            this.lblId.Size = new System.Drawing.Size(27, 20);
+            this.lblId.TabIndex = 0;
             this.lblId.Text = "Id:";
             // 
             // btnExcluir
@@ -110,7 +110,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(686, 110);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(100, 23);
-            this.btnExcluir.TabIndex = 7;
+            this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
@@ -120,7 +120,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(686, 81);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 23);
-            this.btnAlterar.TabIndex = 6;
+            this.btnAlterar.TabIndex = 5;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
@@ -130,7 +130,7 @@
             this.btnProcurar.Location = new System.Drawing.Point(580, 24);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(100, 23);
-            this.btnProcurar.TabIndex = 5;
+            this.btnProcurar.TabIndex = 2;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
             // 
@@ -151,7 +151,7 @@
             this.txtProcurar.Location = new System.Drawing.Point(7, 26);
             this.txtProcurar.Name = "txtProcurar";
             this.txtProcurar.Size = new System.Drawing.Size(567, 20);
-            this.txtProcurar.TabIndex = 2;
+            this.txtProcurar.TabIndex = 1;
             // 
             // lblProcurar
             // 
@@ -159,8 +159,8 @@
             this.lblProcurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProcurar.Location = new System.Drawing.Point(3, 3);
             this.lblProcurar.Name = "lblProcurar";
-            this.lblProcurar.Size = new System.Drawing.Size(92, 25);
-            this.lblProcurar.TabIndex = 1;
+            this.lblProcurar.Size = new System.Drawing.Size(73, 20);
+            this.lblProcurar.TabIndex = 0;
             this.lblProcurar.Text = "Procurar:";
             // 
             // tbpDetalhes
@@ -183,13 +183,20 @@
             this.tbpDetalhes.Text = "Detalhes";
             this.tbpDetalhes.UseVisualStyleBackColor = true;
             // 
+            // txtKwPorHoraEletricidade
+            // 
+            this.txtKwPorHoraEletricidade.Location = new System.Drawing.Point(7, 185);
+            this.txtKwPorHoraEletricidade.Name = "txtKwPorHoraEletricidade";
+            this.txtKwPorHoraEletricidade.Size = new System.Drawing.Size(75, 20);
+            this.txtKwPorHoraEletricidade.TabIndex = 7;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Location = new System.Drawing.Point(689, 325);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
-            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -199,7 +206,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(6, 322);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 23);
-            this.btnSalvar.TabIndex = 16;
+            this.btnSalvar.TabIndex = 8;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -209,8 +216,8 @@
             this.lblKwPorHoraEletricidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKwPorHoraEletricidade.Location = new System.Drawing.Point(3, 157);
             this.lblKwPorHoraEletricidade.Name = "lblKwPorHoraEletricidade";
-            this.lblKwPorHoraEletricidade.Size = new System.Drawing.Size(171, 25);
-            this.lblKwPorHoraEletricidade.TabIndex = 14;
+            this.lblKwPorHoraEletricidade.Size = new System.Drawing.Size(136, 20);
+            this.lblKwPorHoraEletricidade.TabIndex = 6;
             this.lblKwPorHoraEletricidade.Text = "kW/h Eletricidade:";
             // 
             // txtLitroPorHoraAgua
@@ -218,7 +225,7 @@
             this.txtLitroPorHoraAgua.Location = new System.Drawing.Point(7, 128);
             this.txtLitroPorHoraAgua.Name = "txtLitroPorHoraAgua";
             this.txtLitroPorHoraAgua.Size = new System.Drawing.Size(75, 20);
-            this.txtLitroPorHoraAgua.TabIndex = 13;
+            this.txtLitroPorHoraAgua.TabIndex = 5;
             // 
             // tbcEletrodomesticos
             // 
@@ -229,7 +236,7 @@
             this.tbcEletrodomesticos.Name = "tbcEletrodomesticos";
             this.tbcEletrodomesticos.SelectedIndex = 0;
             this.tbcEletrodomesticos.Size = new System.Drawing.Size(800, 377);
-            this.tbcEletrodomesticos.TabIndex = 4;
+            this.tbcEletrodomesticos.TabIndex = 1;
             // 
             // tbpListagem
             // 
@@ -265,7 +272,7 @@
             this.dgvEletrodomesticos.RowHeadersWidth = 51;
             this.dgvEletrodomesticos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEletrodomesticos.Size = new System.Drawing.Size(673, 291);
-            this.dgvEletrodomesticos.TabIndex = 8;
+            this.dgvEletrodomesticos.TabIndex = 3;
             // 
             // pnlTopEletrodomesticos
             // 
@@ -276,7 +283,7 @@
             this.pnlTopEletrodomesticos.Location = new System.Drawing.Point(0, 0);
             this.pnlTopEletrodomesticos.Name = "pnlTopEletrodomesticos";
             this.pnlTopEletrodomesticos.Size = new System.Drawing.Size(800, 73);
-            this.pnlTopEletrodomesticos.TabIndex = 3;
+            this.pnlTopEletrodomesticos.TabIndex = 0;
             // 
             // btnClose
             // 
@@ -285,7 +292,7 @@
             this.btnClose.Location = new System.Drawing.Point(772, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 25);
-            this.btnClose.TabIndex = 9;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
@@ -295,16 +302,9 @@
             this.lblEletrodomesticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEletrodomesticos.Location = new System.Drawing.Point(12, 19);
             this.lblEletrodomesticos.Name = "lblEletrodomesticos";
-            this.lblEletrodomesticos.Size = new System.Drawing.Size(294, 39);
+            this.lblEletrodomesticos.Size = new System.Drawing.Size(239, 31);
             this.lblEletrodomesticos.TabIndex = 0;
             this.lblEletrodomesticos.Text = "Eletrodomésticos";
-            // 
-            // txtKwPorHoraEletricidade
-            // 
-            this.txtKwPorHoraEletricidade.Location = new System.Drawing.Point(7, 185);
-            this.txtKwPorHoraEletricidade.Name = "txtKwPorHoraEletricidade";
-            this.txtKwPorHoraEletricidade.Size = new System.Drawing.Size(75, 20);
-            this.txtKwPorHoraEletricidade.TabIndex = 18;
             // 
             // EletrodomesticoView
             // 

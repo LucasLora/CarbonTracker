@@ -16,11 +16,27 @@ namespace CarbonTracker.Models
         [StringLength(255, MinimumLength = 3, ErrorMessage = "Nome deve estar entre 3 e 255 caracteres")]
         public string Nome { get; set; }
 
-        [DisplayName("Tipo Veículo")]
         public TipoVeiculo TipoVeiculo { get; set; }
+        
+        [DisplayName("Tipo Veículo")]
+        public string TipoVeiculoDescription
+        {
+            get
+            {
+                return GetEnumDescription(TipoVeiculo);
+            }
+        }
 
-        [DisplayName("Tipo Combustível")]
         public TipoCombustivel TipoCombustivel { get; set; }
+        
+        [DisplayName("Tipo Combustível")]
+        public string TipoCombustivelDescription
+        {
+            get
+            {
+                return GetEnumDescription(TipoCombustivel);
+            }
+        }
 
         [DisplayName("Km/L Combustível")]
         public double KmPorLitroCombustivel { get; set; }

@@ -1,7 +1,11 @@
-﻿using System;
+﻿using CarbonTracker.Presenters.Common;
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Windows.Forms;
 using static CarbonTracker.Models.Common.Enums;
+using static CarbonTracker.Presenters.Common.ComboBoxHelper;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CarbonTracker.Views
 {
@@ -15,8 +19,6 @@ namespace CarbonTracker.Views
             InitializeComponent();
             VincularEventos();
             this.tbcTransportes.TabPages.Remove(tbpDetalhes);
-            cmbTipoVeiculo.DataSource = Enum.GetValues(typeof(TipoVeiculo)); 
-            cmbTipoCombustivel.DataSource = Enum.GetValues(typeof(TipoCombustivel));
         }
 
         #endregion
@@ -25,8 +27,16 @@ namespace CarbonTracker.Views
 
         public string TransporteId { get { return txtId.Text; } set { txtId.Text = value; } }
         public string TransporteNome { get { return txtNome.Text; } set { txtNome.Text = value; } }
-        public TipoVeiculo TransporteTipoVeiculo { get { return (TipoVeiculo)cmbTipoVeiculo.SelectedValue; } set { cmbTipoVeiculo.SelectedValue = value; } }
-        public TipoCombustivel TransporteTipoCombustivel { get { return (TipoCombustivel)cmbTipoCombustivel.SelectedValue; } set { cmbTipoCombustivel.SelectedValue = value; } }
+        public TipoVeiculo TransporteTipoVeiculo
+        {
+            get { return (TipoVeiculo)(short)(cmbTipoVeiculo?.SelectedValue ?? 0); }
+            set { cmbTipoVeiculo.SelectedValue = ((short)value).ToString(); }
+        }
+        public TipoCombustivel TransporteTipoCombustivel
+        {
+            get { return (TipoCombustivel)(short)(cmbTipoCombustivel?.SelectedValue ?? 0); }
+            set { cmbTipoVeiculo.SelectedValue = ((short)value).ToString(); }
+        }
         public string TransporteKmPorLitroCombustivel { get { return txtKmPorLitroCombustivel.Text; } set { txtKmPorLitroCombustivel.Text = value; } }
         public string SearchValue { get { return txtProcurar.Text; } set { txtProcurar.Text = value; } }
         public bool IsEdit { get; set; }
@@ -117,19 +127,22 @@ namespace CarbonTracker.Views
 
         public void SetTransporteListBindingSource(BindingSource eletrodomesticoList)
         {
+            dgvTransportes.AutoGenerateColumns = false;
             dgvTransportes.DataSource = eletrodomesticoList;
         }
 
-        public void SetComboBoxCombustivel(List<TipoCombustivel> combustivelList)
-        {
-            cmbTipoCombustivel.DataSource = combustivelList;
-            cmbTipoCombustivel.DisplayMember = "ToString";
-        }
-
-        public void SetComboBoxVeiculo(List<TipoVeiculo> veiculoList)
+        public void SetComboBoxVeiculoBindingSource(BindingSource veiculoList)
         {
             cmbTipoVeiculo.DataSource = veiculoList;
-            cmbTipoVeiculo.DisplayMember = "ToString";
+            cmbTipoVeiculo.DisplayMember = "Text";
+            cmbTipoVeiculo.ValueMember = "Value";
+        }
+
+        public void SetComboBoxCombustivelBindingSource(BindingSource combustivelList)
+        {
+            cmbTipoCombustivel.DataSource = combustivelList;
+            cmbTipoCombustivel.DisplayMember = "Text";
+            cmbTipoCombustivel.ValueMember = "Value";
         }
 
         #endregion

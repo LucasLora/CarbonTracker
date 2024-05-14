@@ -1,11 +1,34 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarbonTracker.Models.Common
 {
     public class Enums
     {
-  
-        public enum TipoCombustivel
+
+        public static string GetEnumDescription<TEnum>(TEnum value) where TEnum : Enum
+        {
+            Type enumType = typeof(TEnum);
+
+            if (!enumType.IsEnum)
+            {
+                throw new ArgumentException("TEnum deve ser um enumerador");
+            }
+
+            string name = Enum.GetName(enumType, value);
+
+            if (name == null)
+            {
+                return null;
+            }
+
+            var fieldInfo = enumType.GetField(name);
+            var attribute = (DescriptionAttribute)Attribute.GetCustomAttribute(fieldInfo, typeof(DescriptionAttribute));
+            return attribute != null ? attribute.Description : name;
+        }
+
+        public enum TipoCombustivel : short
         {
             [Description("Não Aplica")]
             NaoAplica = 0,
@@ -24,6 +47,9 @@ namespace CarbonTracker.Models.Common
 
             [Description("Flex")]
             Flex = 5,
+
+            [Description("Álcool")]
+            Alcool = 5,
 
             [Description("Elétrico")]
             Eletrico = 6,

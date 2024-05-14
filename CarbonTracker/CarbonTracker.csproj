@@ -104,6 +104,7 @@
     <Compile Include="Models\IUsuariosRepository.cs" />
     <Compile Include="Models\TransporteModel.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
+    <Compile Include="Presenters\Common\ComboBoxHelper.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\EletrodomesticoPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />

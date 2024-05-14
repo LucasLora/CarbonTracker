@@ -41,16 +41,21 @@ namespace CarbonTracker.Views
             this.btnProcurar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.dgvTransportes = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoVeiculoDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoCombustivelDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KmPorLitroCombustivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurar = new System.Windows.Forms.Label();
             this.tbpDetalhes = new System.Windows.Forms.TabPage();
+            this.cmbTipoCombustivel = new System.Windows.Forms.ComboBox();
+            this.cmbTipoVeiculo = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtKmPorLitroCombustivel = new System.Windows.Forms.TextBox();
             this.lblKmPorLitroCombustivel = new System.Windows.Forms.Label();
-            this.cmbTipoCombustivel = new System.Windows.Forms.ComboBox();
             this.lblTipoCombustivel = new System.Windows.Forms.Label();
-            this.cmbTipoVeiculo = new System.Windows.Forms.ComboBox();
             this.lblTipoVeiculo = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
@@ -83,7 +88,7 @@ namespace CarbonTracker.Views
             this.pnlTopTransportes.Location = new System.Drawing.Point(0, 0);
             this.pnlTopTransportes.Name = "pnlTopTransportes";
             this.pnlTopTransportes.Size = new System.Drawing.Size(800, 73);
-            this.pnlTopTransportes.TabIndex = 1;
+            this.pnlTopTransportes.TabIndex = 0;
             // 
             // btnClose
             // 
@@ -92,7 +97,7 @@ namespace CarbonTracker.Views
             this.btnClose.Location = new System.Drawing.Point(772, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 25);
-            this.btnClose.TabIndex = 10;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
@@ -107,7 +112,7 @@ namespace CarbonTracker.Views
             this.tbcTransportes.Name = "tbcTransportes";
             this.tbcTransportes.SelectedIndex = 0;
             this.tbcTransportes.Size = new System.Drawing.Size(800, 377);
-            this.tbcTransportes.TabIndex = 2;
+            this.tbcTransportes.TabIndex = 1;
             // 
             // tbpListagem
             // 
@@ -132,7 +137,7 @@ namespace CarbonTracker.Views
             this.btnExcluir.Location = new System.Drawing.Point(686, 110);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(100, 23);
-            this.btnExcluir.TabIndex = 7;
+            this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
@@ -142,7 +147,7 @@ namespace CarbonTracker.Views
             this.btnAlterar.Location = new System.Drawing.Point(686, 81);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 23);
-            this.btnAlterar.TabIndex = 6;
+            this.btnAlterar.TabIndex = 5;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
@@ -152,7 +157,7 @@ namespace CarbonTracker.Views
             this.btnProcurar.Location = new System.Drawing.Point(580, 24);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(100, 23);
-            this.btnProcurar.TabIndex = 5;
+            this.btnProcurar.TabIndex = 2;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
             // 
@@ -175,6 +180,12 @@ namespace CarbonTracker.Views
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTransportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransportes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nome,
+            this.TipoVeiculoDescription,
+            this.TipoCombustivelDescription,
+            this.KmPorLitroCombustivel});
             this.dgvTransportes.Location = new System.Drawing.Point(7, 52);
             this.dgvTransportes.MultiSelect = false;
             this.dgvTransportes.Name = "dgvTransportes";
@@ -185,6 +196,43 @@ namespace CarbonTracker.Views
             this.dgvTransportes.Size = new System.Drawing.Size(673, 291);
             this.dgvTransportes.TabIndex = 3;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Transporte";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 70;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 150;
+            // 
+            // TipoVeiculoDescription
+            // 
+            this.TipoVeiculoDescription.DataPropertyName = "TipoVeiculoDescription";
+            this.TipoVeiculoDescription.HeaderText = "Tipo Veículo";
+            this.TipoVeiculoDescription.Name = "TipoVeiculoDescription";
+            this.TipoVeiculoDescription.ReadOnly = true;
+            // 
+            // TipoCombustivelDescription
+            // 
+            this.TipoCombustivelDescription.DataPropertyName = "TipoCombustivelDescription";
+            this.TipoCombustivelDescription.HeaderText = "Tipo Combustível";
+            this.TipoCombustivelDescription.Name = "TipoCombustivelDescription";
+            this.TipoCombustivelDescription.ReadOnly = true;
+            // 
+            // KmPorLitroCombustivel
+            // 
+            this.KmPorLitroCombustivel.DataPropertyName = "KmPorLitroCombustivel";
+            this.KmPorLitroCombustivel.HeaderText = "Km/L Combustível";
+            this.KmPorLitroCombustivel.Name = "KmPorLitroCombustivel";
+            this.KmPorLitroCombustivel.ReadOnly = true;
+            // 
             // txtProcurar
             // 
             this.txtProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -192,7 +240,7 @@ namespace CarbonTracker.Views
             this.txtProcurar.Location = new System.Drawing.Point(7, 26);
             this.txtProcurar.Name = "txtProcurar";
             this.txtProcurar.Size = new System.Drawing.Size(567, 20);
-            this.txtProcurar.TabIndex = 2;
+            this.txtProcurar.TabIndex = 1;
             // 
             // lblProcurar
             // 
@@ -201,18 +249,18 @@ namespace CarbonTracker.Views
             this.lblProcurar.Location = new System.Drawing.Point(3, 3);
             this.lblProcurar.Name = "lblProcurar";
             this.lblProcurar.Size = new System.Drawing.Size(73, 20);
-            this.lblProcurar.TabIndex = 1;
+            this.lblProcurar.TabIndex = 0;
             this.lblProcurar.Text = "Procurar:";
             // 
             // tbpDetalhes
             // 
+            this.tbpDetalhes.Controls.Add(this.cmbTipoCombustivel);
+            this.tbpDetalhes.Controls.Add(this.cmbTipoVeiculo);
             this.tbpDetalhes.Controls.Add(this.btnCancelar);
             this.tbpDetalhes.Controls.Add(this.btnSalvar);
             this.tbpDetalhes.Controls.Add(this.txtKmPorLitroCombustivel);
             this.tbpDetalhes.Controls.Add(this.lblKmPorLitroCombustivel);
-            this.tbpDetalhes.Controls.Add(this.cmbTipoCombustivel);
             this.tbpDetalhes.Controls.Add(this.lblTipoCombustivel);
-            this.tbpDetalhes.Controls.Add(this.cmbTipoVeiculo);
             this.tbpDetalhes.Controls.Add(this.lblTipoVeiculo);
             this.tbpDetalhes.Controls.Add(this.txtNome);
             this.tbpDetalhes.Controls.Add(this.lblNome);
@@ -226,13 +274,31 @@ namespace CarbonTracker.Views
             this.tbpDetalhes.Text = "Detalhes";
             this.tbpDetalhes.UseVisualStyleBackColor = true;
             // 
+            // cmbTipoCombustivel
+            // 
+            this.cmbTipoCombustivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoCombustivel.FormattingEnabled = true;
+            this.cmbTipoCombustivel.Location = new System.Drawing.Point(7, 181);
+            this.cmbTipoCombustivel.Name = "cmbTipoCombustivel";
+            this.cmbTipoCombustivel.Size = new System.Drawing.Size(165, 21);
+            this.cmbTipoCombustivel.TabIndex = 7;
+            // 
+            // cmbTipoVeiculo
+            // 
+            this.cmbTipoVeiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoVeiculo.FormattingEnabled = true;
+            this.cmbTipoVeiculo.Location = new System.Drawing.Point(7, 126);
+            this.cmbTipoVeiculo.Name = "cmbTipoVeiculo";
+            this.cmbTipoVeiculo.Size = new System.Drawing.Size(165, 21);
+            this.cmbTipoVeiculo.TabIndex = 5;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Location = new System.Drawing.Point(689, 325);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
-            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -242,7 +308,7 @@ namespace CarbonTracker.Views
             this.btnSalvar.Location = new System.Drawing.Point(3, 325);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 23);
-            this.btnSalvar.TabIndex = 18;
+            this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -251,7 +317,7 @@ namespace CarbonTracker.Views
             this.txtKmPorLitroCombustivel.Location = new System.Drawing.Point(8, 233);
             this.txtKmPorLitroCombustivel.Name = "txtKmPorLitroCombustivel";
             this.txtKmPorLitroCombustivel.Size = new System.Drawing.Size(75, 20);
-            this.txtKmPorLitroCombustivel.TabIndex = 13;
+            this.txtKmPorLitroCombustivel.TabIndex = 9;
             // 
             // lblKmPorLitroCombustivel
             // 
@@ -260,17 +326,8 @@ namespace CarbonTracker.Views
             this.lblKmPorLitroCombustivel.Location = new System.Drawing.Point(4, 210);
             this.lblKmPorLitroCombustivel.Name = "lblKmPorLitroCombustivel";
             this.lblKmPorLitroCombustivel.Size = new System.Drawing.Size(49, 20);
-            this.lblKmPorLitroCombustivel.TabIndex = 12;
+            this.lblKmPorLitroCombustivel.TabIndex = 8;
             this.lblKmPorLitroCombustivel.Text = "Km/L:";
-            // 
-            // cmbTipoCombustivel
-            // 
-            this.cmbTipoCombustivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoCombustivel.FormattingEnabled = true;
-            this.cmbTipoCombustivel.Location = new System.Drawing.Point(8, 181);
-            this.cmbTipoCombustivel.Name = "cmbTipoCombustivel";
-            this.cmbTipoCombustivel.Size = new System.Drawing.Size(175, 21);
-            this.cmbTipoCombustivel.TabIndex = 11;
             // 
             // lblTipoCombustivel
             // 
@@ -279,17 +336,8 @@ namespace CarbonTracker.Views
             this.lblTipoCombustivel.Location = new System.Drawing.Point(3, 158);
             this.lblTipoCombustivel.Name = "lblTipoCombustivel";
             this.lblTipoCombustivel.Size = new System.Drawing.Size(133, 20);
-            this.lblTipoCombustivel.TabIndex = 10;
+            this.lblTipoCombustivel.TabIndex = 6;
             this.lblTipoCombustivel.Text = "Tipo Combustível:";
-            // 
-            // cmbTipoVeiculo
-            // 
-            this.cmbTipoVeiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoVeiculo.FormattingEnabled = true;
-            this.cmbTipoVeiculo.Location = new System.Drawing.Point(8, 126);
-            this.cmbTipoVeiculo.Name = "cmbTipoVeiculo";
-            this.cmbTipoVeiculo.Size = new System.Drawing.Size(175, 21);
-            this.cmbTipoVeiculo.TabIndex = 9;
             // 
             // lblTipoVeiculo
             // 
@@ -298,7 +346,7 @@ namespace CarbonTracker.Views
             this.lblTipoVeiculo.Location = new System.Drawing.Point(3, 103);
             this.lblTipoVeiculo.Name = "lblTipoVeiculo";
             this.lblTipoVeiculo.Size = new System.Drawing.Size(99, 20);
-            this.lblTipoVeiculo.TabIndex = 7;
+            this.lblTipoVeiculo.TabIndex = 4;
             this.lblTipoVeiculo.Text = "Tipo Veículo:";
             // 
             // txtNome
@@ -306,7 +354,7 @@ namespace CarbonTracker.Views
             this.txtNome.Location = new System.Drawing.Point(7, 76);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(450, 20);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.TabIndex = 3;
             // 
             // lblNome
             // 
@@ -315,7 +363,7 @@ namespace CarbonTracker.Views
             this.lblNome.Location = new System.Drawing.Point(3, 53);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(55, 20);
-            this.lblNome.TabIndex = 5;
+            this.lblNome.TabIndex = 2;
             this.lblNome.Text = "Nome:";
             // 
             // txtId
@@ -324,7 +372,7 @@ namespace CarbonTracker.Views
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(75, 20);
-            this.txtId.TabIndex = 4;
+            this.txtId.TabIndex = 1;
             this.txtId.Text = "0";
             // 
             // lblId
@@ -334,7 +382,7 @@ namespace CarbonTracker.Views
             this.lblId.Location = new System.Drawing.Point(3, 3);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(27, 20);
-            this.lblId.TabIndex = 3;
+            this.lblId.TabIndex = 0;
             this.lblId.Text = "Id:";
             // 
             // TransporteView
@@ -379,11 +427,16 @@ namespace CarbonTracker.Views
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtKmPorLitroCombustivel;
         private System.Windows.Forms.Label lblKmPorLitroCombustivel;
-        private System.Windows.Forms.ComboBox cmbTipoCombustivel;
         private System.Windows.Forms.Label lblTipoCombustivel;
-        private System.Windows.Forms.ComboBox cmbTipoVeiculo;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.ComboBox cmbTipoCombustivel;
+        private System.Windows.Forms.ComboBox cmbTipoVeiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoVeiculoDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoCombustivelDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KmPorLitroCombustivel;
     }
 }

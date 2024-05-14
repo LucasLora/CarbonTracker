@@ -1,11 +1,11 @@
 ﻿using CarbonTracker.Models;
+using CarbonTracker.Presenters.Common;
 using CarbonTracker.Views;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Windows.Forms;
 using static CarbonTracker.Models.Common.Enums;
+using static CarbonTracker.Presenters.Common.ComboBoxHelper;
 
 namespace CarbonTracker.Presenters
 {
@@ -18,6 +18,8 @@ namespace CarbonTracker.Presenters
         private ITransporteRepository repository;
         private BindingSource transporteBindingSource;
         private IEnumerable<TransporteModel> transporteList;
+        private BindingSource tipoVeiculoBindingSource;
+        private BindingSource tipoCombustivelBindingSource;
 
         #endregion
 
@@ -26,6 +28,9 @@ namespace CarbonTracker.Presenters
         public TransportePresenter(ITransporteView view, ITransporteRepository repository)
         {
             this.transporteBindingSource = new BindingSource();
+            this.tipoVeiculoBindingSource = new BindingSource();
+            this.tipoCombustivelBindingSource = new BindingSource();
+
             this.view = view;
             this.repository = repository;
 
@@ -39,10 +44,13 @@ namespace CarbonTracker.Presenters
 
             //Vincular os bindings sources com a view
             this.view.SetTransporteListBindingSource(transporteBindingSource);
-            this.view.SetComboBoxCombustivel(Enum.GetValues(typeof(TipoCombustivel)).Cast<TipoCombustivel>().ToList());
-            this.view.SetComboBoxVeiculo(Enum.GetValues(typeof(TipoVeiculo)).Cast<TipoVeiculo>().ToList());
+            this.view.SetComboBoxVeiculoBindingSource(tipoVeiculoBindingSource);
+            this.view.SetComboBoxCombustivelBindingSource(tipoCombustivelBindingSource);
 
+            //Carregar dados
             CarregaTodaListaTransporte();
+            CarregaVeiculos();
+            CarregaCombustiveis();
 
             //Mostrar view
             this.view.Show();
@@ -56,6 +64,16 @@ namespace CarbonTracker.Presenters
         {
             transporteList = repository.RetornarTodos();
             transporteBindingSource.DataSource = transporteList;
+        }
+
+        private void CarregaVeiculos()
+        {
+            tipoVeiculoBindingSource.DataSource = GetEnumInComboBoxItemList<TipoVeiculo>();
+        }
+        
+        private void CarregaCombustiveis()
+        {
+            tipoCombustivelBindingSource.DataSource = GetEnumInComboBoxItemList<TipoCombustivel>();
         }
 
         private void SearchTransporte(object sender, EventArgs e)
@@ -78,8 +96,8 @@ namespace CarbonTracker.Presenters
             var transporte = (TransporteModel)transporteBindingSource.Current;
             view.TransporteId = transporte.Id.ToString();
             view.TransporteNome = transporte.Nome;
-            view.TransporteTipoVeiculo = transporte.TipoVeiculo;
             view.TransporteTipoCombustivel = transporte.TipoCombustivel;
+            view.TransporteTipoVeiculo = transporte.TipoVeiculo;
             view.TransporteKmPorLitroCombustivel = transporte.KmPorLitroCombustivel.ToString();
             view.IsEdit = true;
         }
@@ -108,10 +126,10 @@ namespace CarbonTracker.Presenters
             model.Nome = view.TransporteNome.ToString();
             model.TipoVeiculo = view.TransporteTipoVeiculo;
             model.TipoCombustivel = view.TransporteTipoCombustivel;
-            model.KmPorLitroCombustivel = Convert.ToDouble(view.TransporteKmPorLitroCombustivel);
+            model.KmPorLitroCombustivel = double.TryParse(view.TransporteKmPorLitroCombustivel, out double kmPorLitroCombustivel) ? kmPorLitroCombustivel : 0;
             try
             {
-                new Common.ModelDataValidation().Validate(model);
+                new ModelDataValidation().Validate(model);
                 if (view.IsEdit) //Alterar
                 {
                     repository.Alterar(model);
@@ -142,6 +160,8 @@ namespace CarbonTracker.Presenters
         {
             view.TransporteId = "0";
             view.TransporteNome = "";
+            view.TransporteTipoCombustivel = TipoCombustivel.NaoAplica;
+            view.TransporteTipoVeiculo = TipoVeiculo.Moto;
             view.TransporteKmPorLitroCombustivel = "0";
         }
 

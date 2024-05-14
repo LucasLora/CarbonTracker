@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/CarbonTracker/App.config
+/CarbonTracker/App.config
+/CarbonTracker/App.config
+/CarbonTracker/App.config

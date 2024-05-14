@@ -1,9 +1,9 @@
-﻿using System;
+﻿using CarbonTracker.Models;
+using CarbonTracker.Presenters.Common;
+using CarbonTracker.Views;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using CarbonTracker.Models;
-using CarbonTracker.Views;
-
 namespace CarbonTracker.Presenters
 {
     public class EletrodomesticoPresenter
@@ -23,6 +23,7 @@ namespace CarbonTracker.Presenters
         public EletrodomesticoPresenter(IEletrodomesticoView view, IEletrodomesticoRepository repository)
         {
             this.eletrodomesticoBindingSource = new BindingSource();
+
             this.view = view;
             this.repository = repository;
 
@@ -37,6 +38,7 @@ namespace CarbonTracker.Presenters
             //Setar Eletrodomestico binding source
             this.view.SetEletrodomesticoListBindingSource(eletrodomesticoBindingSource);
 
+            //Carregar dados
             CarregaTodaListaEletrodomestico();
 
             //Mostrar view
@@ -100,11 +102,11 @@ namespace CarbonTracker.Presenters
             var model = new EletrodomesticoModel();
             model.Id = Convert.ToInt64(view.EletrodomesticoId);
             model.Nome = view.EletrodomesticoNome.ToString();
-            model.LitroPorHoraAgua = Convert.ToDouble(view.EletrodomesticoLitroPorHoraAgua);
-            model.KWPorHoraEletricidade = Convert.ToDouble(view.EletrodomesticoKWPorHoraEletricidade);
+            model.LitroPorHoraAgua = double.TryParse(view.EletrodomesticoLitroPorHoraAgua, out double litroPorHoraAgua) ? litroPorHoraAgua : 0;
+            model.KWPorHoraEletricidade = double.TryParse(view.EletrodomesticoKWPorHoraEletricidade, out double kwPorHoraEletricidade) ? kwPorHoraEletricidade : 0;
             try
             {
-                new Common.ModelDataValidation().Validate(model);
+                new ModelDataValidation().Validate(model);
                 if (view.IsEdit) //Alterar
                 {
                     repository.Alterar(model);
