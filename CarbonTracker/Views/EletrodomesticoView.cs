@@ -86,7 +86,7 @@ namespace CarbonTracker.Views
                                     MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     ExcluirEvent?.Invoke(this, EventArgs.Empty);
-                    MessageBox.Show(Message);
+                    MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
                 }
             };
 
@@ -99,7 +99,7 @@ namespace CarbonTracker.Views
                     tbcEletrodomesticos.TabPages.Remove(tbpDetalhes);
                     tbcEletrodomesticos.TabPages.Add(tbpListagem);
                 }
-                MessageBox.Show(Message);
+                MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
             };
 
             //Cancelar

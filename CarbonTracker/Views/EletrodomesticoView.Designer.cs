@@ -48,13 +48,13 @@
             this.tbcEletrodomesticos = new System.Windows.Forms.TabControl();
             this.tbpListagem = new System.Windows.Forms.TabPage();
             this.dgvEletrodomesticos = new System.Windows.Forms.DataGridView();
-            this.pnlTopEletrodomesticos = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.lblEletrodomesticos = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LitroPorHoraAgua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kwporhoraeletricidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlTopEletrodomesticos = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblEletrodomesticos = new System.Windows.Forms.Label();
             this.tbpDetalhes.SuspendLayout();
             this.tbcEletrodomesticos.SuspendLayout();
             this.tbpListagem.SuspendLayout();
@@ -273,7 +273,7 @@
             this.Nome,
             this.LitroPorHoraAgua,
             this.kwporhoraeletricidade});
-            this.dgvEletrodomesticos.Location = new System.Drawing.Point(8, 52);
+            this.dgvEletrodomesticos.Location = new System.Drawing.Point(7, 52);
             this.dgvEletrodomesticos.MultiSelect = false;
             this.dgvEletrodomesticos.Name = "dgvEletrodomesticos";
             this.dgvEletrodomesticos.ReadOnly = true;
@@ -282,38 +282,6 @@
             this.dgvEletrodomesticos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEletrodomesticos.Size = new System.Drawing.Size(673, 291);
             this.dgvEletrodomesticos.TabIndex = 3;
-            // 
-            // pnlTopEletrodomesticos
-            // 
-            this.pnlTopEletrodomesticos.BackColor = System.Drawing.Color.White;
-            this.pnlTopEletrodomesticos.Controls.Add(this.btnClose);
-            this.pnlTopEletrodomesticos.Controls.Add(this.lblEletrodomesticos);
-            this.pnlTopEletrodomesticos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTopEletrodomesticos.Location = new System.Drawing.Point(0, 0);
-            this.pnlTopEletrodomesticos.Name = "pnlTopEletrodomesticos";
-            this.pnlTopEletrodomesticos.Size = new System.Drawing.Size(800, 73);
-            this.pnlTopEletrodomesticos.TabIndex = 0;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(772, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 25);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // lblEletrodomesticos
-            // 
-            this.lblEletrodomesticos.AutoSize = true;
-            this.lblEletrodomesticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEletrodomesticos.Location = new System.Drawing.Point(12, 19);
-            this.lblEletrodomesticos.Name = "lblEletrodomesticos";
-            this.lblEletrodomesticos.Size = new System.Drawing.Size(239, 31);
-            this.lblEletrodomesticos.TabIndex = 0;
-            this.lblEletrodomesticos.Text = "Eletrodomésticos";
             // 
             // Id
             // 
@@ -346,6 +314,38 @@
             this.kwporhoraeletricidade.Name = "kwporhoraeletricidade";
             this.kwporhoraeletricidade.ReadOnly = true;
             this.kwporhoraeletricidade.Width = 120;
+            // 
+            // pnlTopEletrodomesticos
+            // 
+            this.pnlTopEletrodomesticos.BackColor = System.Drawing.Color.White;
+            this.pnlTopEletrodomesticos.Controls.Add(this.btnClose);
+            this.pnlTopEletrodomesticos.Controls.Add(this.lblEletrodomesticos);
+            this.pnlTopEletrodomesticos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTopEletrodomesticos.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopEletrodomesticos.Name = "pnlTopEletrodomesticos";
+            this.pnlTopEletrodomesticos.Size = new System.Drawing.Size(800, 73);
+            this.pnlTopEletrodomesticos.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(772, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(25, 25);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
+            // lblEletrodomesticos
+            // 
+            this.lblEletrodomesticos.AutoSize = true;
+            this.lblEletrodomesticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEletrodomesticos.Location = new System.Drawing.Point(12, 19);
+            this.lblEletrodomesticos.Name = "lblEletrodomesticos";
+            this.lblEletrodomesticos.Size = new System.Drawing.Size(239, 31);
+            this.lblEletrodomesticos.TabIndex = 0;
+            this.lblEletrodomesticos.Text = "Eletrodomésticos";
             // 
             // EletrodomesticoView
             // 

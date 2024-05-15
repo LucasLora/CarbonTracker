@@ -29,10 +29,10 @@ namespace CarbonTracker.Models.Common
             Flex = 5,
 
             [Description("Álcool")]
-            Alcool = 5,
+            Alcool = 6,
 
             [Description("Elétrico")]
-            Eletrico = 6,
+            Eletrico = 7,
         }
 
         public enum TipoVeiculo : short

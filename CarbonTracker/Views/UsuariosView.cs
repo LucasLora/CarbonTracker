@@ -27,7 +27,6 @@ namespace CarbonTracker.Views
             get { return (TipoUsuario)(short)(cmbTipoUsuario.SelectedValue ?? 0); }
             set { cmbTipoUsuario.SelectedValue = ((short)value).ToString(); } 
         }
-
         public string UsuariosEmail { get { return txtEmail.Text; } set { txtEmail.Text = value; } }
         public string UsuariosSenha { get { return txtSenha.Text; } set { txtSenha.Text = value; } }
         public string UsuariosDataCriacao { get { return txtDataCriacao.Text; } set { txtDataCriacao.Text = value; } }
@@ -94,7 +93,7 @@ namespace CarbonTracker.Views
                                     MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     ExcluirEvent?.Invoke(this, EventArgs.Empty);
-                    MessageBox.Show(Message);
+                    MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
                 }
             };
 
@@ -107,7 +106,7 @@ namespace CarbonTracker.Views
                     tbcUsuarios.TabPages.Remove(tbpDetalhes);
                     tbcUsuarios.TabPages.Add(tbpListagem);
                 }
-                MessageBox.Show(Message);
+                MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
             };
 
             //Cancelar
