@@ -16,10 +16,10 @@ namespace CarbonTracker.Presenters
 
         private ITransporteView view;
         private ITransporteRepository repository;
-        private BindingSource transporteBindingSource;
+        private BindingSource transporteBindingSource = new BindingSource();
         private IEnumerable<TransporteModel> transporteList;
-        private BindingSource tipoVeiculoBindingSource;
-        private BindingSource tipoCombustivelBindingSource;
+        private BindingSource tipoVeiculoBindingSource = new BindingSource();
+        private BindingSource tipoCombustivelBindingSource = new BindingSource();
 
         #endregion
 
@@ -27,32 +27,14 @@ namespace CarbonTracker.Presenters
 
         public TransportePresenter(ITransporteView view, ITransporteRepository repository)
         {
-            this.transporteBindingSource = new BindingSource();
-            this.tipoVeiculoBindingSource = new BindingSource();
-            this.tipoCombustivelBindingSource = new BindingSource();
-
             this.view = view;
             this.repository = repository;
 
-            //Vincular os eventos da view com os métodos
-            this.view.SearchEvent += SearchTransporte;
-            this.view.AdicionarEvent += AdicionarTransporte;
-            this.view.AlterarEvent += CarregaTransporteSelecionadoParaAlterar;
-            this.view.ExcluirEvent += ExcluirTransporteSelecionado;
-            this.view.SalvarEvent += SalvarTransporte;
-            this.view.CancelarEvent += CancelarAcao;
-
-            //Vincular os bindings sources com a view
-            this.view.SetTransporteListBindingSource(transporteBindingSource);
-            this.view.SetComboBoxVeiculoBindingSource(tipoVeiculoBindingSource);
-            this.view.SetComboBoxCombustivelBindingSource(tipoCombustivelBindingSource);
-
-            //Carregar dados
+            VincularEventos();
+            SetBindings();
             CarregaTodaListaTransporte();
-            CarregaVeiculos();
-            CarregaCombustiveis();
+            CarregaComboBindings();
 
-            //Mostrar view
             this.view.Show();
         }
 
@@ -60,21 +42,47 @@ namespace CarbonTracker.Presenters
 
         #region Métodos
 
+        private void VincularEventos()
+        {
+            this.view.SearchEvent += SearchTransporte;
+            this.view.AdicionarEvent += AdicionarTransporte;
+            this.view.AlterarEvent += CarregaTransporteSelecionadoParaAlterar;
+            this.view.ExcluirEvent += ExcluirTransporteSelecionado;
+            this.view.SalvarEvent += SalvarTransporte;
+            this.view.CancelarEvent += CancelarAcao;
+        }
+
+        private void SetBindings()
+        {
+            this.view.SetTransporteListBindingSource(transporteBindingSource);
+            this.view.SetComboBoxTipoVeiculoBindingSource(tipoVeiculoBindingSource);
+            this.view.SetComboBoxTipoCombustivelBindingSource(tipoCombustivelBindingSource);
+        }
+
         private void CarregaTodaListaTransporte()
         {
             transporteList = repository.RetornarTodos();
             transporteBindingSource.DataSource = transporteList;
         }
 
-        private void CarregaVeiculos()
+        private void CarregaComboBindings()
         {
-            tipoVeiculoBindingSource.DataSource = GetEnumInComboBoxItemList<TipoVeiculo>();
+            tipoVeiculoBindingSource.DataSource = GetComboBoxItemListFromEnum<TipoVeiculo>();
+            tipoCombustivelBindingSource.DataSource = GetComboBoxItemListFromEnum<TipoCombustivel>();
         }
-        
-        private void CarregaCombustiveis()
+
+        private void LimparCamposDaView()
         {
-            tipoCombustivelBindingSource.DataSource = GetEnumInComboBoxItemList<TipoCombustivel>();
+            view.TransporteId = "0";
+            view.TransporteNome = "";
+            view.TransporteTipoCombustivel = TipoCombustivel.NaoAplica;
+            view.TransporteTipoVeiculo = TipoVeiculo.Moto;
+            view.TransporteKmPorLitroCombustivel = "0";
         }
+
+        #endregion
+
+        #region Eventos
 
         private void SearchTransporte(object sender, EventArgs e)
         {
@@ -154,15 +162,6 @@ namespace CarbonTracker.Presenters
         private void CancelarAcao(object sender, EventArgs e)
         {
             LimparCamposDaView();
-        }
-
-        private void LimparCamposDaView()
-        {
-            view.TransporteId = "0";
-            view.TransporteNome = "";
-            view.TransporteTipoCombustivel = TipoCombustivel.NaoAplica;
-            view.TransporteTipoVeiculo = TipoVeiculo.Moto;
-            view.TransporteKmPorLitroCombustivel = "0";
         }
 
         #endregion

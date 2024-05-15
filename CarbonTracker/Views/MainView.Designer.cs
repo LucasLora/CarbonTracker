@@ -104,6 +104,7 @@
             this.ClientSize = new System.Drawing.Size(1000, 450);
             this.Controls.Add(this.pnlProgramas);
             this.IsMdiContainer = true;
+            this.MinimumSize = new System.Drawing.Size(1016, 489);
             this.Name = "MainView";
             this.Text = "Carbon Tracker";
             this.pnlProgramas.ResumeLayout(false);

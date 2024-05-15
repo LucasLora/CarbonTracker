@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Views
@@ -19,7 +11,7 @@ namespace CarbonTracker.Views
         public EletrodomesticoView()
         {
             InitializeComponent();
-            VincularEventos();
+            InicializaEventos();
             this.tbcEletrodomesticos.TabPages.Remove(tbpDetalhes);
         }
 
@@ -31,6 +23,7 @@ namespace CarbonTracker.Views
         public string EletrodomesticoNome { get { return txtNome.Text; } set { txtNome.Text = value; } }
         public string EletrodomesticoLitroPorHoraAgua { get { return txtLitroPorHoraAgua.Text; } set { txtLitroPorHoraAgua.Text = value; } }
         public string EletrodomesticoKWPorHoraEletricidade { get { return txtKwPorHoraEletricidade.Text; } set { txtKwPorHoraEletricidade.Text = value; } }
+
         public string SearchValue { get { return txtProcurar.Text; } set { txtProcurar.Text = value; } }
         public bool IsEdit { get; set; }
         public bool IsSuccessful { get; set; }
@@ -51,7 +44,7 @@ namespace CarbonTracker.Views
 
         #region Métodos
 
-        private void VincularEventos()
+        private void InicializaEventos()
         {
             //Fechar
             btnClose.Click += delegate { this.Close(); };
@@ -120,6 +113,7 @@ namespace CarbonTracker.Views
 
         public void SetEletrodomesticoListBindingSource(BindingSource transporteList)
         {
+            dgvEletrodomesticos.AutoGenerateColumns = false;
             dgvEletrodomesticos.DataSource = transporteList;
         }
 

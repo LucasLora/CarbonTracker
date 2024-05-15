@@ -17,26 +17,14 @@ namespace CarbonTracker.Models
         public string Nome { get; set; }
 
         public TipoVeiculo TipoVeiculo { get; set; }
-        
+
         [DisplayName("Tipo Veículo")]
-        public string TipoVeiculoDescription
-        {
-            get
-            {
-                return GetEnumDescription(TipoVeiculo);
-            }
-        }
+        public string TipoVeiculoDescription { get { return GetEnumDescription(TipoVeiculo); } }
 
         public TipoCombustivel TipoCombustivel { get; set; }
-        
+
         [DisplayName("Tipo Combustível")]
-        public string TipoCombustivelDescription
-        {
-            get
-            {
-                return GetEnumDescription(TipoCombustivel);
-            }
-        }
+        public string TipoCombustivelDescription { get { return GetEnumDescription(TipoCombustivel); } }
 
         [DisplayName("Km/L Combustível")]
         public double KmPorLitroCombustivel { get; set; }

@@ -1,11 +1,11 @@
 ﻿using CarbonTracker.Models;
+using CarbonTracker.Presenters.Common;
 using CarbonTracker.Views;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static CarbonTracker.Models.Common.Enums;
+using static CarbonTracker.Presenters.Common.ComboBoxHelper;
 
 namespace CarbonTracker.Presenters
 {
@@ -16,8 +16,9 @@ namespace CarbonTracker.Presenters
 
         private IUsuariosView view;
         private IUsuariosRepository repository;
-        private BindingSource usuariosBindingSource;
+        private BindingSource usuariosBindingSource = new BindingSource();
         private IEnumerable<UsuariosModel> usuariosList;
+        private BindingSource tipoUsuarioBindingSource = new BindingSource();
 
         #endregion
 
@@ -25,25 +26,14 @@ namespace CarbonTracker.Presenters
 
         public UsuariosPresenter(IUsuariosView view, IUsuariosRepository repository)
         {
-            this.usuariosBindingSource = new BindingSource();
             this.view = view;
             this.repository = repository;
 
-            //Vincular os EventHandler com os eventos da view
-            this.view.SearchEvent += SearchUsuarios;
-            this.view.AdicionarEvent += AdicionarUsuarios;
-            this.view.AlterarEvent += CarregaUsuariosSelecionadoParaAlterar;
-            this.view.ExcluirEvent += ExcluirUsuariosSelecionado;
-            this.view.SalvarEvent += SalvarUsuarios;
-            this.view.CancelarEvent += CancelarAcao;
-
-            //Setar Usuarios binding source
-            this.view.SetUsuariosListBindingSource(usuariosBindingSource);
-
-            //Carregar a lista de Usuarios
+            VincularEventos();
+            SetBindings();
             CarregaTodaListaUsuarios();
+            CarregaComboBindings();
 
-            //Mostrar view
             this.view.Show();
         }
 
@@ -51,11 +41,46 @@ namespace CarbonTracker.Presenters
 
         #region Métodos
 
+        private void VincularEventos()
+        {
+            this.view.SearchEvent += SearchUsuarios;
+            this.view.AdicionarEvent += AdicionarUsuarios;
+            this.view.AlterarEvent += CarregaUsuariosSelecionadoParaAlterar;
+            this.view.ExcluirEvent += ExcluirUsuariosSelecionado;
+            this.view.SalvarEvent += SalvarUsuarios;
+            this.view.CancelarEvent += CancelarAcao;
+        }
+
+        private void SetBindings()
+        {
+            this.view.SetUsuariosListBindingSource(usuariosBindingSource);
+            this.view.SetComboBoxTipoUsuarioBindingSource(tipoUsuarioBindingSource);
+        }
+
         private void CarregaTodaListaUsuarios()
         {
             usuariosList = repository.RetornarTodos();
             usuariosBindingSource.DataSource = usuariosList;
         }
+
+        private void CarregaComboBindings()
+        {
+            tipoUsuarioBindingSource.DataSource = GetComboBoxItemListFromEnum<TipoUsuario>();
+        }
+
+        private void LimparCamposDaView()
+        {
+            view.UsuariosId = "0";
+            view.UsuariosNome = "";
+            view.UsuariosEmail = "";
+            view.UsuariosSenha = "";
+            view.UsuariosTipoUsuario = TipoUsuario.Usuario;
+            view.UsuariosDataCriacao = "";
+        }
+
+        #endregion
+
+        #region Eventos
 
         private void SearchUsuarios(object sender, EventArgs e)
         {
@@ -77,7 +102,7 @@ namespace CarbonTracker.Presenters
             var Usuarios = (UsuariosModel)usuariosBindingSource.Current;
             view.UsuariosId = Usuarios.Id.ToString();
             view.UsuariosNome = Usuarios.Nome;
-            view.UsuariosTipoUsuario = Usuarios.TipoUsuarios;
+            view.UsuariosTipoUsuario = Usuarios.TipoUsuario;
             view.UsuariosEmail = Usuarios.Email.ToString();
             view.UsuariosSenha = Usuarios.Senha.ToString();
             view.UsuariosDataCriacao = Usuarios.DataCriacao.ToString();
@@ -106,21 +131,20 @@ namespace CarbonTracker.Presenters
             var model = new UsuariosModel();
             model.Id = Convert.ToInt64(view.UsuariosId);
             model.Nome = view.UsuariosNome.ToString();
-            model.TipoUsuarios = view.UsuariosTipoUsuario;
+            model.TipoUsuario = view.UsuariosTipoUsuario;
             model.Email = view.UsuariosEmail.ToString();
             model.Senha = view.UsuariosSenha.ToString();
+            model.DataCriacao = DateTime.Now;
             try
             {
-                new Common.ModelDataValidation().Validate(model);
+                new ModelDataValidation().Validate(model);
                 if (view.IsEdit) //Alteracao
                 {
-                    model.DataCriacao = Convert.ToDateTime(view.UsuariosDataCriacao);
                     repository.Alterar(model);
                     view.Message = "Usuário alterado com sucesso!";
                 }
                 else //Adicionar
                 {
-                    model.DataCriacao = DateTime.Now;
                     repository.Adicionar(model);
                     view.Message = "Usuário adicionado com sucesso!";
                 }
@@ -138,15 +162,6 @@ namespace CarbonTracker.Presenters
         private void CancelarAcao(object sender, EventArgs e)
         {
             LimparCamposDaView();
-        }
-
-        private void LimparCamposDaView()
-        {
-            view.UsuariosId = "0";
-            view.UsuariosNome = "";
-            view.UsuariosSenha = "";
-            view.UsuariosEmail = "";
-            view.UsuariosDataCriacao = "";
         }
 
         #endregion

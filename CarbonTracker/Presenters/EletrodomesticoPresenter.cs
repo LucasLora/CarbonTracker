@@ -4,6 +4,7 @@ using CarbonTracker.Views;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+
 namespace CarbonTracker.Presenters
 {
     public class EletrodomesticoPresenter
@@ -13,7 +14,7 @@ namespace CarbonTracker.Presenters
 
         private IEletrodomesticoView view;
         private IEletrodomesticoRepository repository;
-        private BindingSource eletrodomesticoBindingSource;
+        private BindingSource eletrodomesticoBindingSource = new BindingSource();
         private IEnumerable<EletrodomesticoModel> eletrodomesticoList;
 
         #endregion
@@ -22,26 +23,13 @@ namespace CarbonTracker.Presenters
 
         public EletrodomesticoPresenter(IEletrodomesticoView view, IEletrodomesticoRepository repository)
         {
-            this.eletrodomesticoBindingSource = new BindingSource();
-
             this.view = view;
             this.repository = repository;
 
-            //Vincular os eventos da view com os métodos
-            this.view.SearchEvent += SearchEletrodomestico;
-            this.view.AdicionarEvent += AdicionarEletrodomestico;
-            this.view.AlterarEvent += CarregaEletrodomesticoSelecionadoParaAlterar;
-            this.view.ExcluirEvent += ExcluirEletrodomesticoSelecionado;
-            this.view.SalvarEvent += SalvarEletrodomestico;
-            this.view.CancelarEvent += CancelarAcao;
-
-            //Setar Eletrodomestico binding source
-            this.view.SetEletrodomesticoListBindingSource(eletrodomesticoBindingSource);
-
-            //Carregar dados
+            VincularEventos();
+            SetBindings();
             CarregaTodaListaEletrodomestico();
 
-            //Mostrar view
             this.view.Show();
         }
 
@@ -49,11 +37,38 @@ namespace CarbonTracker.Presenters
 
         #region Métodos
 
+        private void VincularEventos()
+        {
+            this.view.SearchEvent += SearchEletrodomestico;
+            this.view.AdicionarEvent += AdicionarEletrodomestico;
+            this.view.AlterarEvent += CarregaEletrodomesticoSelecionadoParaAlterar;
+            this.view.ExcluirEvent += ExcluirEletrodomesticoSelecionado;
+            this.view.SalvarEvent += SalvarEletrodomestico;
+            this.view.CancelarEvent += CancelarAcao;
+        }
+
+        private void SetBindings()
+        {
+            this.view.SetEletrodomesticoListBindingSource(eletrodomesticoBindingSource);
+        }
+
         private void CarregaTodaListaEletrodomestico()
         {
             eletrodomesticoList = repository.RetornarTodos();
             eletrodomesticoBindingSource.DataSource = eletrodomesticoList;
         }
+
+        private void LimparCamposDaView()
+        {
+            view.EletrodomesticoId = "0";
+            view.EletrodomesticoNome = "";
+            view.EletrodomesticoLitroPorHoraAgua = "0";
+            view.EletrodomesticoKWPorHoraEletricidade = "0";
+        }
+
+        #endregion
+
+        #region Eventos
 
         private void SearchEletrodomestico(object sender, EventArgs e)
         {
@@ -131,14 +146,6 @@ namespace CarbonTracker.Presenters
         private void CancelarAcao(object sender, EventArgs e)
         {
             LimparCamposDaView();
-        }
-
-        private void LimparCamposDaView()
-        {
-            view.EletrodomesticoId = "0";
-            view.EletrodomesticoNome = "";
-            view.EletrodomesticoLitroPorHoraAgua = "0";
-            view.EletrodomesticoKWPorHoraEletricidade = "0";
         }
 
         #endregion

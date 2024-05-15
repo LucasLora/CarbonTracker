@@ -22,6 +22,15 @@ namespace CarbonTracker.Presenters
         {
             this.mainView = mainView;
             this.stringConexao = stringConexao;
+            VincularEventos(); 
+        }
+
+        #endregion
+
+        #region Métodos
+
+        private void VincularEventos()
+        {
             this.mainView.ShowEletrodomesticoView += ShowEletrodomesticoView;
             this.mainView.ShowTransporteView += ShowTransporteView;
             this.mainView.ShowUsuariosView += ShowUsuariosView;
@@ -29,7 +38,7 @@ namespace CarbonTracker.Presenters
 
         #endregion
 
-        #region Métodos
+        #region Eventos
 
         private void ShowEletrodomesticoView(object sender, EventArgs e)
         {

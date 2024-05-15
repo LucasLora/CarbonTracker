@@ -10,7 +10,7 @@ namespace CarbonTracker.Models
 
         #region Propriedades
 
-        [DisplayName("Usuario")]
+        [DisplayName("Usuário")]
         public long Id { get; set; }
 
         [Required(ErrorMessage = "Nome é obrigatório")]
@@ -22,12 +22,14 @@ namespace CarbonTracker.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Senha é obrigatório")]
-        [DisplayName("Senha")]
         public string Senha { get; set; }
 
-        [DisplayName("Tipo Usuários")]
-        public TipoUsuario TipoUsuarios { get; set; }
+        public TipoUsuario TipoUsuario { get; set; }    
+        
+        [DisplayName("Tipo Usuário")]
+        public string TipoUsuarioDescription { get { return GetEnumDescription(TipoUsuario); } }
 
+        [DisplayName("Data Criação")]
         public DateTime DataCriacao { get; set; }
 
         #endregion

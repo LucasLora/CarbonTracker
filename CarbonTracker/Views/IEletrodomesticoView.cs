@@ -12,6 +12,7 @@ namespace CarbonTracker.Views
         string EletrodomesticoNome { get; set; }
         string EletrodomesticoLitroPorHoraAgua { get; set; }
         string EletrodomesticoKWPorHoraEletricidade { get; set; }
+
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
         bool IsSuccessful { get; set; }

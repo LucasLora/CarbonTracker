@@ -12,7 +12,7 @@ namespace CarbonTracker.Views
         public UsuariosView()
         {
             InitializeComponent();
-            VincularEventos();
+            InicializaEventos();
             this.tbcUsuarios.TabPages.Remove(tbpDetalhes);
         }
 
@@ -22,10 +22,16 @@ namespace CarbonTracker.Views
 
         public string UsuariosId { get { return txtId.Text; } set { txtId.Text = value; } }
         public string UsuariosNome { get { return txtNome.Text; } set { txtNome.Text = value; } }
-        public TipoUsuario UsuariosTipoUsuario { get { return (TipoUsuario)cmbTipoUsuario.SelectedValue; } set { cmbTipoUsuario.SelectedValue = value; } }
+        public TipoUsuario UsuariosTipoUsuario 
+        {
+            get { return (TipoUsuario)(short)(cmbTipoUsuario.SelectedValue ?? 0); }
+            set { cmbTipoUsuario.SelectedValue = ((short)value).ToString(); } 
+        }
+
         public string UsuariosEmail { get { return txtEmail.Text; } set { txtEmail.Text = value; } }
         public string UsuariosSenha { get { return txtSenha.Text; } set { txtSenha.Text = value; } }
         public string UsuariosDataCriacao { get { return txtDataCriacao.Text; } set { txtDataCriacao.Text = value; } }
+
         public string SearchValue { get { return txtProcurar.Text; } set { txtProcurar.Text = value; } }
         public bool IsEdit { get; set; }
         public bool IsSuccessful { get; set; }
@@ -46,7 +52,7 @@ namespace CarbonTracker.Views
 
         #region Métodos
 
-        private void VincularEventos()
+        private void InicializaEventos()
         {
             //Fechar
             btnClose.Click += delegate { this.Close(); };
@@ -115,7 +121,15 @@ namespace CarbonTracker.Views
 
         public void SetUsuariosListBindingSource(BindingSource usuariosList)
         {
+            dgvUsuarios.AutoGenerateColumns = false;
             dgvUsuarios.DataSource = usuariosList;
+        }
+
+        public void SetComboBoxTipoUsuarioBindingSource(BindingSource tipoUsuarioList)
+        {
+            cmbTipoUsuario.DataSource = tipoUsuarioList;
+            cmbTipoUsuario.DisplayMember = "Text";
+            cmbTipoUsuario.ValueMember = "Value";
         }
 
         #endregion
@@ -123,6 +137,7 @@ namespace CarbonTracker.Views
         #region Singleton pattern (Open a single form instance)
 
         private static UsuariosView instance;
+
         public static UsuariosView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)

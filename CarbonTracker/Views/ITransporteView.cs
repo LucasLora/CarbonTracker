@@ -1,9 +1,6 @@
-﻿using CarbonTracker.Presenters.Common;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Windows.Forms;
 using static CarbonTracker.Models.Common.Enums;
-using static CarbonTracker.Presenters.Common.ComboBoxHelper;
 
 namespace CarbonTracker.Views
 {
@@ -17,6 +14,7 @@ namespace CarbonTracker.Views
         TipoVeiculo TransporteTipoVeiculo { get; set; }
         TipoCombustivel TransporteTipoCombustivel { get; set; }
         string TransporteKmPorLitroCombustivel { get; set; }
+
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
         bool IsSuccessful { get; set; }
@@ -38,8 +36,8 @@ namespace CarbonTracker.Views
         #region Métodos
 
         void SetTransporteListBindingSource(BindingSource transporteList);
-        void SetComboBoxVeiculoBindingSource(BindingSource veiculoList);
-        void SetComboBoxCombustivelBindingSource(BindingSource combustivelList);
+        void SetComboBoxTipoVeiculoBindingSource(BindingSource tipoVeiculoList);
+        void SetComboBoxTipoCombustivelBindingSource(BindingSource tipoCombustivelList);
         void Show();
 
         #endregion

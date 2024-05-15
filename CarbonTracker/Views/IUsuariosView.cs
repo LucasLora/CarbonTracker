@@ -37,6 +37,7 @@ namespace CarbonTracker.Views
         #region Métodos
 
         void SetUsuariosListBindingSource(BindingSource usuariosList);
+        void SetComboBoxTipoUsuarioBindingSource(BindingSource tipoUsuarioList);
         void Show();
 
         #endregion

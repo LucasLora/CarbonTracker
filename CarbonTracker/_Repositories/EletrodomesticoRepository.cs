@@ -70,7 +70,7 @@ namespace CarbonTracker._Repositories
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"DELETE FROM eletrodomestico
-	                                    WHERE id = @id;";
+	                                    WHERE id=@id;";
 
                     cmd.Parameters.AddWithValue("@id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idEletrodomestico;
 
@@ -123,7 +123,7 @@ namespace CarbonTracker._Repositories
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"SELECT * FROM eletrodomestico 
-                                        WHERE Id = @Id OR Nome LIKE '%' || @Name || '%'
+                                        WHERE Id=@Id OR Nome LIKE '%' || @Name || '%'
                                         ORDER BY id";
 
                     cmd.Parameters.AddWithValue("@Id", eletrodomesticoId);

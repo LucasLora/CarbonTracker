@@ -1,32 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
 namespace CarbonTracker.Models.Common
 {
     public class Enums
     {
 
-        public static string GetEnumDescription<TEnum>(TEnum value) where TEnum : Enum
-        {
-            Type enumType = typeof(TEnum);
-
-            if (!enumType.IsEnum)
-            {
-                throw new ArgumentException("TEnum deve ser um enumerador");
-            }
-
-            string name = Enum.GetName(enumType, value);
-
-            if (name == null)
-            {
-                return null;
-            }
-
-            var fieldInfo = enumType.GetField(name);
-            var attribute = (DescriptionAttribute)Attribute.GetCustomAttribute(fieldInfo, typeof(DescriptionAttribute));
-            return attribute != null ? attribute.Description : name;
-        }
+        #region Enumeradores
 
         public enum TipoCombustivel : short
         {
@@ -55,7 +35,7 @@ namespace CarbonTracker.Models.Common
             Eletrico = 6,
         }
 
-        public enum TipoVeiculo
+        public enum TipoVeiculo : short
         {
             [Description("Moto")]
             Moto = 0,
@@ -96,7 +76,8 @@ namespace CarbonTracker.Models.Common
             [Description("Lancha")]
             Lancha = 12
         }
-        public enum TipoUsuario
+
+        public enum TipoUsuario : short
         {
             [Description("Administrador")]
             Administrador = 0,
@@ -107,6 +88,29 @@ namespace CarbonTracker.Models.Common
             [Description("Usuário")]
             Usuario = 2
         }
+
+        #endregion
+
+        #region Métodos
+
+        public static string GetEnumDescription<TEnum>(TEnum value)
+        {
+            Type enumType = typeof(TEnum);
+
+            if (!enumType.IsEnum)
+                throw new ArgumentException("TEnum deve ser um enumerador!");
+            
+            string name = Enum.GetName(enumType, value);
+
+            if (name == null)
+                return null;         
+
+            var fieldInfo = enumType.GetField(name);
+            var attribute = (DescriptionAttribute)Attribute.GetCustomAttribute(fieldInfo, typeof(DescriptionAttribute));
+            return attribute != null ? attribute.Description : name;
+        }
+
+        #endregion
 
     }
 }

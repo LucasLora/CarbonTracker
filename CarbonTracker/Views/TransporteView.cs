@@ -1,11 +1,6 @@
-﻿using CarbonTracker.Presenters.Common;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System;
 using System.Windows.Forms;
 using static CarbonTracker.Models.Common.Enums;
-using static CarbonTracker.Presenters.Common.ComboBoxHelper;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CarbonTracker.Views
 {
@@ -17,7 +12,7 @@ namespace CarbonTracker.Views
         public TransporteView()
         {
             InitializeComponent();
-            VincularEventos();
+            InicializaEventos();
             this.tbcTransportes.TabPages.Remove(tbpDetalhes);
         }
 
@@ -38,6 +33,7 @@ namespace CarbonTracker.Views
             set { cmbTipoVeiculo.SelectedValue = ((short)value).ToString(); }
         }
         public string TransporteKmPorLitroCombustivel { get { return txtKmPorLitroCombustivel.Text; } set { txtKmPorLitroCombustivel.Text = value; } }
+
         public string SearchValue { get { return txtProcurar.Text; } set { txtProcurar.Text = value; } }
         public bool IsEdit { get; set; }
         public bool IsSuccessful { get; set; }
@@ -58,7 +54,7 @@ namespace CarbonTracker.Views
 
         #region Métodos
 
-        private void VincularEventos()
+        private void InicializaEventos()
         {
             //Fechar
             btnClose.Click += delegate { this.Close(); };
@@ -131,16 +127,16 @@ namespace CarbonTracker.Views
             dgvTransportes.DataSource = eletrodomesticoList;
         }
 
-        public void SetComboBoxVeiculoBindingSource(BindingSource veiculoList)
+        public void SetComboBoxTipoVeiculoBindingSource(BindingSource tipoVeiculoList)
         {
-            cmbTipoVeiculo.DataSource = veiculoList;
+            cmbTipoVeiculo.DataSource = tipoVeiculoList;
             cmbTipoVeiculo.DisplayMember = "Text";
             cmbTipoVeiculo.ValueMember = "Value";
         }
 
-        public void SetComboBoxCombustivelBindingSource(BindingSource combustivelList)
+        public void SetComboBoxTipoCombustivelBindingSource(BindingSource tipoCombustivelList)
         {
-            cmbTipoCombustivel.DataSource = combustivelList;
+            cmbTipoCombustivel.DataSource = tipoCombustivelList;
             cmbTipoCombustivel.DisplayMember = "Text";
             cmbTipoCombustivel.ValueMember = "Value";
         }

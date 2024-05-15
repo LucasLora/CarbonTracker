@@ -51,6 +51,10 @@
             this.pnlTopEletrodomesticos = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblEletrodomesticos = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LitroPorHoraAgua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kwporhoraeletricidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpDetalhes.SuspendLayout();
             this.tbcEletrodomesticos.SuspendLayout();
             this.tbpListagem.SuspendLayout();
@@ -264,6 +268,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEletrodomesticos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEletrodomesticos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nome,
+            this.LitroPorHoraAgua,
+            this.kwporhoraeletricidade});
             this.dgvEletrodomesticos.Location = new System.Drawing.Point(8, 52);
             this.dgvEletrodomesticos.MultiSelect = false;
             this.dgvEletrodomesticos.Name = "dgvEletrodomesticos";
@@ -305,6 +314,38 @@
             this.lblEletrodomesticos.Size = new System.Drawing.Size(239, 31);
             this.lblEletrodomesticos.TabIndex = 0;
             this.lblEletrodomesticos.Text = "Eletrodomésticos";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Eletrodoméstico";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 90;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 200;
+            // 
+            // LitroPorHoraAgua
+            // 
+            this.LitroPorHoraAgua.DataPropertyName = "LitroPorHoraAgua";
+            this.LitroPorHoraAgua.HeaderText = "L/h Água";
+            this.LitroPorHoraAgua.Name = "LitroPorHoraAgua";
+            this.LitroPorHoraAgua.ReadOnly = true;
+            this.LitroPorHoraAgua.Width = 120;
+            // 
+            // kwporhoraeletricidade
+            // 
+            this.kwporhoraeletricidade.DataPropertyName = "KWPorHoraEletricidade";
+            this.kwporhoraeletricidade.HeaderText = "kW/h Eletricidade";
+            this.kwporhoraeletricidade.Name = "kwporhoraeletricidade";
+            this.kwporhoraeletricidade.ReadOnly = true;
+            this.kwporhoraeletricidade.Width = 120;
             // 
             // EletrodomesticoView
             // 
@@ -352,5 +393,9 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtKwPorHoraEletricidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LitroPorHoraAgua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kwporhoraeletricidade;
     }
 }

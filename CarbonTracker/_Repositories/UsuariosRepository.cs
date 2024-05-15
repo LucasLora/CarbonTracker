@@ -1,30 +1,30 @@
-﻿using CarbonTracker.Models;
-using Npgsql;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CarbonTracker.Models;
+using Npgsql;
 using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker._Repositories
 {
     public class UsuariosRepository : RepositorioBase, IUsuariosRepository
-    { 
-        
-        //Construtor
+    {
+
+        #region Construtor
+
         public UsuariosRepository(string stringConexao)
         {
             this.stringConexao = stringConexao;
         }
 
-        //Métodos
+        #endregion
+
+        #region Métodos
+
         public void Adicionar(UsuariosModel UsuariosModel)
         {
             using (var conn = new NpgsqlConnection(stringConexao))
             {
                 conn.Open();
-
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
@@ -34,7 +34,7 @@ namespace CarbonTracker._Repositories
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = UsuariosModel.Nome;
                     cmd.Parameters.AddWithValue("@senha", NpgsqlTypes.NpgsqlDbType.Varchar).Value = UsuariosModel.Senha;
                     cmd.Parameters.AddWithValue("@email", NpgsqlTypes.NpgsqlDbType.Varchar).Value = UsuariosModel.Email;
-                    cmd.Parameters.AddWithValue("@tipo", NpgsqlTypes.NpgsqlDbType.Smallint).Value = UsuariosModel.TipoUsuarios;
+                    cmd.Parameters.AddWithValue("@tipo", NpgsqlTypes.NpgsqlDbType.Smallint).Value = (short)UsuariosModel.TipoUsuario;
                     cmd.Parameters.AddWithValue("@datacriacao", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = UsuariosModel.DataCriacao;
 
                     cmd.ExecuteNonQuery();
@@ -52,14 +52,14 @@ namespace CarbonTracker._Repositories
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"UPDATE public.usuario
-	                                    SET nome=@nome, senha=@senha, email=@email, tipo=@tipo, datacriacao=@datacriacao
+	                                    SET nome=@nome, senha=@senha, email=@email, tipo=@tipo
 	                                    WHERE id=@id;";
 
                     cmd.Parameters.AddWithValue("@id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = UsuariosModel.Id;
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = UsuariosModel.Nome;
                     cmd.Parameters.AddWithValue("@senha", NpgsqlTypes.NpgsqlDbType.Smallint).Value = UsuariosModel.Senha;
                     cmd.Parameters.AddWithValue("@email", NpgsqlTypes.NpgsqlDbType.Smallint).Value = UsuariosModel.Email;
-                    cmd.Parameters.AddWithValue("@tipo", NpgsqlTypes.NpgsqlDbType.Double).Value = UsuariosModel.TipoUsuarios;
+                    cmd.Parameters.AddWithValue("@tipo", NpgsqlTypes.NpgsqlDbType.Double).Value = (short)UsuariosModel.TipoUsuario;
                     cmd.Parameters.AddWithValue("@datacriacao", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = UsuariosModel.DataCriacao;
 
                     cmd.ExecuteNonQuery();
@@ -93,7 +93,6 @@ namespace CarbonTracker._Repositories
             using (var conn = new NpgsqlConnection(stringConexao))
             {
                 conn.Open();
-
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
@@ -107,8 +106,8 @@ namespace CarbonTracker._Repositories
                             UsuariosModel.Id = (long)reader["id"];
                             UsuariosModel.Nome = reader["nome"].ToString();
                             UsuariosModel.Senha = reader["senha"].ToString();
-                            UsuariosModel.Email = reader["email"].ToString(); 
-                            UsuariosModel.TipoUsuarios = (TipoUsuario)(short)reader["tipo"];
+                            UsuariosModel.Email = reader["email"].ToString();
+                            UsuariosModel.TipoUsuario = (TipoUsuario)(short)reader["tipo"];
                             UsuariosModel.DataCriacao = (DateTime)reader["datacriacao"];
                             usuarioList.Add(UsuariosModel);
                         }
@@ -129,13 +128,11 @@ namespace CarbonTracker._Repositories
             using (var conn = new NpgsqlConnection(stringConexao))
             {
                 conn.Open();
-
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-
                     cmd.CommandText = @"SELECT * FROM usuario 
-                                        WHERE Id = @Id OR Nome LIKE '%' || @Name || '%'
+                                        WHERE Id=@Id OR Nome LIKE '%' || @Name || '%'
                                         ORDER BY id";
 
                     cmd.Parameters.AddWithValue("@Id", usuarioId);
@@ -150,7 +147,7 @@ namespace CarbonTracker._Repositories
                             UsuariosModel.Nome = reader["nome"].ToString();
                             UsuariosModel.Senha = reader["senha"].ToString();
                             UsuariosModel.Email = reader["email"].ToString();
-                            UsuariosModel.TipoUsuarios = (TipoUsuario)(short)reader["tipo"];
+                            UsuariosModel.TipoUsuario = (TipoUsuario)(short)reader["tipo"];
                             UsuariosModel.DataCriacao = (DateTime)reader["datacriacao"];
                             usuarioList.Add(UsuariosModel);
                         }
@@ -160,5 +157,8 @@ namespace CarbonTracker._Repositories
 
             return usuarioList;
         }
+
+        #endregion
+
     }
 }

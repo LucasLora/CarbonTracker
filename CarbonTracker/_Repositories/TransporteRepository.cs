@@ -1,6 +1,6 @@
-﻿using CarbonTracker.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using CarbonTracker.Models;
 using Npgsql;
 using static CarbonTracker.Models.Common.Enums;
 
@@ -127,7 +127,7 @@ namespace CarbonTracker._Repositories
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"SELECT * FROM transporte 
-                                        WHERE Id = @Id OR Nome LIKE '%' || @Name || '%'
+                                        WHERE Id=@Id OR Nome LIKE '%' || @Name || '%'
                                         ORDER BY id";
 
                     cmd.Parameters.AddWithValue("@Id", transporteId);

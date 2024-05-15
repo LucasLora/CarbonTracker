@@ -1,34 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker.Presenters.Common
 {
     public class ComboBoxHelper
     {
+
+        #region Classes Auxiliares
+
         public class ComboBoxItem
         {
+
+            #region Propriedades
+
             public string Text { get; set; }
             public short Value { get; set; }
+
+            #endregion
+
+            #region Construtor
 
             public ComboBoxItem(string text, short value)
             {
                 Text = text;
                 Value = value;
             }
+
+            #endregion
+
         }
 
-        public static List<ComboBoxItem> GetEnumInComboBoxItemList<TEnum>()
-        {
-            if (!typeof(TEnum).IsEnum)
-            {
-                throw new ArgumentException("TEnum deve ser um enumerador!");
-            }
+        #endregion
 
-            var values = Enum.GetValues(typeof(TEnum));
+        #region Métodos
+
+        public static List<ComboBoxItem> GetComboBoxItemListFromEnum<TEnum>()
+        {
+            Type enumType = typeof(TEnum);
+
+            if (!enumType.IsEnum)
+                throw new ArgumentException("TEnum deve ser um enumerador!");
+
+            var values = Enum.GetValues(enumType);
             var list = new List<ComboBoxItem>();
 
             foreach (TEnum value in values)
@@ -40,14 +54,8 @@ namespace CarbonTracker.Presenters.Common
             return list;
         }
 
-        private static string GetEnumDescription<TEnum>(TEnum value)
-        {
-            var fieldInfo = typeof(TEnum).GetField(value.ToString());
-            var descriptionAttribute = fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false)
-                                                .OfType<DescriptionAttribute>()
-                                                .FirstOrDefault();
-            return descriptionAttribute != null ? descriptionAttribute.Description : value.ToString();
-        }
+        #endregion
+
     }
 }
 

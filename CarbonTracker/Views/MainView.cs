@@ -11,9 +11,7 @@ namespace CarbonTracker.Views
         public MainView()
         {
             InitializeComponent();
-            btnEletrodomesticos.Click += delegate { ShowEletrodomesticoView?.Invoke(this, EventArgs.Empty); };
-            btnTransportes.Click += delegate { ShowTransporteView?.Invoke(this, EventArgs.Empty); };
-            btnUsuarios.Click += delegate { ShowUsuariosView?.Invoke(this, EventArgs.Empty); };
+            InicializaEventos();
         }
 
         #endregion
@@ -23,6 +21,18 @@ namespace CarbonTracker.Views
         public event EventHandler ShowEletrodomesticoView;
         public event EventHandler ShowTransporteView;
         public event EventHandler ShowUsuariosView;
+
+        #endregion
+
+        #region Métodos
+
+        private void InicializaEventos()
+        {
+            //Abas
+            btnEletrodomesticos.Click += delegate { ShowEletrodomesticoView?.Invoke(this, EventArgs.Empty); };
+            btnTransportes.Click += delegate { ShowTransporteView?.Invoke(this, EventArgs.Empty); };
+            btnUsuarios.Click += delegate { ShowUsuariosView?.Invoke(this, EventArgs.Empty); };
+        }
 
         #endregion
 

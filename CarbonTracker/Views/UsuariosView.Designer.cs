@@ -41,6 +41,7 @@
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurar = new System.Windows.Forms.Label();
             this.tbpDetalhes = new System.Windows.Forms.TabPage();
+            this.lblDataCriacao = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
@@ -53,8 +54,12 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
-            this.lblDataCriacao = new System.Windows.Forms.Label();
             this.txtDataCriacao = new System.Windows.Forms.TextBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoUsuarioDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCriacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTopUsuarios.SuspendLayout();
             this.tbcUsuarios.SuspendLayout();
             this.tbpListagem.SuspendLayout();
@@ -70,7 +75,7 @@
             this.lblUsuarios.Name = "lblUsuarios";
             this.lblUsuarios.Size = new System.Drawing.Size(130, 31);
             this.lblUsuarios.TabIndex = 0;
-            this.lblUsuarios.Text = "Usuarios";
+            this.lblUsuarios.Text = "Usuários";
             // 
             // pnlTopUsuarios
             // 
@@ -174,6 +179,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nome,
+            this.Email,
+            this.TipoUsuarioDescription,
+            this.DataCriacao});
             this.dgvUsuarios.Location = new System.Drawing.Point(7, 52);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
@@ -278,12 +289,12 @@
             // 
             // cmbTipoUsuario
             // 
+            this.cmbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoUsuario.FormattingEnabled = true;
             this.cmbTipoUsuario.Location = new System.Drawing.Point(8, 238);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
             this.cmbTipoUsuario.Size = new System.Drawing.Size(175, 21);
             this.cmbTipoUsuario.TabIndex = 11;
-            this.cmbTipoUsuario.Text = "0";
             // 
             // lblTipoUsuario
             // 
@@ -356,6 +367,44 @@
             this.txtDataCriacao.Size = new System.Drawing.Size(127, 20);
             this.txtDataCriacao.TabIndex = 20;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Usuário";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 80;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 170;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "E-mail";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 200;
+            // 
+            // TipoUsuarioDescription
+            // 
+            this.TipoUsuarioDescription.DataPropertyName = "TipoUsuarioDescription";
+            this.TipoUsuarioDescription.HeaderText = "Tipo Usuário";
+            this.TipoUsuarioDescription.Name = "TipoUsuarioDescription";
+            this.TipoUsuarioDescription.ReadOnly = true;
+            // 
+            // DataCriacao
+            // 
+            this.DataCriacao.DataPropertyName = "DataCriacao";
+            this.DataCriacao.HeaderText = "Data Criação";
+            this.DataCriacao.Name = "DataCriacao";
+            this.DataCriacao.ReadOnly = true;
+            // 
             // UsuariosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,5 +457,10 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtDataCriacao;
         private System.Windows.Forms.Label lblDataCriacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoUsuarioDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataCriacao;
     }
 }
