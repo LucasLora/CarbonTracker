@@ -28,7 +28,7 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"INSERT INTO public.usuario(id, nome, senha, email, tipo, datacriacao)
+                    cmd.CommandText = @"INSERT INTO usuario(id, nome, senha, email, tipo, datacriacao)
 	                                    VALUES (default, @nome, @senha, @email, @tipo, @datacriacao);";
 
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = UsuariosModel.Nome;
@@ -51,7 +51,7 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"UPDATE public.usuario
+                    cmd.CommandText = @"UPDATE usuario
 	                                    SET nome=@nome, senha=@senha, email=@email, tipo=@tipo
 	                                    WHERE id=@id;";
 

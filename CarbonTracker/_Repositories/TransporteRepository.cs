@@ -28,7 +28,7 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"INSERT INTO public.transporte(id, nome, tipoveiculo, tipocombustivel, kmporlitrocombustivel)
+                    cmd.CommandText = @"INSERT INTO transporte(id, nome, tipoveiculo, tipocombustivel, kmporlitrocombustivel)
 	                                    VALUES (default, @nome, @tipoveiculo, @tipocombustivel, @kmporlitrocombustivel);";
 
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = transporteModel.Nome;
@@ -49,7 +49,7 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"UPDATE public.transporte
+                    cmd.CommandText = @"UPDATE transporte
 	                                    SET nome=@nome, tipoveiculo=@tipoveiculo, tipocombustivel=@tipocombustivel, kmporlitrocombustivel=@kmporlitrocombustivel
 	                                    WHERE id=@id;";
 

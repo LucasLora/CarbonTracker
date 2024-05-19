@@ -99,7 +99,9 @@
   <ItemGroup>
     <Compile Include="Models\Common\Enums.cs" />
     <Compile Include="Models\EletrodomesticoModel.cs" />
+    <Compile Include="Models\GrupoUsuariosModel.cs" />
     <Compile Include="Models\IEletrodomesticoRepository.cs" />
+    <Compile Include="Models\IGrupoUsuariosRepository.cs" />
     <Compile Include="Models\ITransporteRepository.cs" />
     <Compile Include="Models\IUsuariosRepository.cs" />
     <Compile Include="Models\TransporteModel.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Presenters\Common\ComboBoxHelper.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\EletrodomesticoPresenter.cs" />
+    <Compile Include="Presenters\GrupoUsuariosPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\TransportePresenter.cs" />
     <Compile Include="Presenters\UsuariosPresenter.cs" />
@@ -118,7 +121,14 @@
     <Compile Include="Views\EletrodomesticoView.Designer.cs">
       <DependentUpon>EletrodomesticoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\GrupoUsuariosView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GrupoUsuariosView.Designer.cs">
+      <DependentUpon>GrupoUsuariosView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\IEletrodomesticoView.cs" />
+    <Compile Include="Views\IGrupoUsuariosView.cs" />
     <Compile Include="Views\IMainView.cs" />
     <Compile Include="Views\ITransporteView.cs" />
     <Compile Include="Views\IUsuariosView.cs" />
@@ -141,6 +151,7 @@
       <DependentUpon>UsuariosView.cs</DependentUpon>
     </Compile>
     <Compile Include="_Repositories\EletrodomesticoRepository.cs" />
+    <Compile Include="_Repositories\GrupoUsuariosRepository.cs" />
     <Compile Include="_Repositories\RepositorioBase.cs" />
     <Compile Include="_Repositories\TransporteRepository.cs" />
     <Compile Include="_Repositories\UsuariosRepository.cs" />
@@ -155,6 +166,9 @@
     </Compile>
     <EmbeddedResource Include="Views\EletrodomesticoView.resx">
       <DependentUpon>EletrodomesticoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GrupoUsuariosView.resx">
+      <DependentUpon>GrupoUsuariosView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>

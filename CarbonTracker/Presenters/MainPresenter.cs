@@ -31,14 +31,31 @@ namespace CarbonTracker.Presenters
 
         private void VincularEventos()
         {
+            this.mainView.ShowUsuariosView += ShowUsuariosView;
+            this.mainView.ShowGrupoUsuariosView += ShowGrupoUsuariosView;
             this.mainView.ShowEletrodomesticoView += ShowEletrodomesticoView;
             this.mainView.ShowTransporteView += ShowTransporteView;
-            this.mainView.ShowUsuariosView += ShowUsuariosView;
-        }
+            this.mainView.ShowRegistroGastosView += ShowRegistroGastosView;
+            this.mainView.ShowComparacoesView += ShowComparacoesView;
+    }
 
         #endregion
 
         #region Eventos
+
+        private void ShowUsuariosView(object sender, EventArgs e)
+        {
+            IUsuariosView view = UsuariosView.GetInstance((Form)mainView);
+            IUsuariosRepository repository = new UsuariosRepository(stringConexao);
+            new UsuariosPresenter(view, repository);
+        }      
+        
+        private void ShowGrupoUsuariosView(object sender, EventArgs e)
+        {
+            IGrupoUsuariosView view = GrupoUsuariosView.GetInstance((Form)mainView);
+            IGrupoUsuariosRepository repository = new GrupoUsuariosRepository(stringConexao);
+            new GrupoUsuariosPresenter(view, repository);
+        }
 
         private void ShowEletrodomesticoView(object sender, EventArgs e)
         {
@@ -54,11 +71,12 @@ namespace CarbonTracker.Presenters
             new TransportePresenter(view, repository);
         }
 
-        private void ShowUsuariosView(object sender, EventArgs e)
+        private void ShowRegistroGastosView(object sender, EventArgs e)
         {
-            IUsuariosView view = UsuariosView.GetInstance((Form)mainView);
-            IUsuariosRepository repository = new UsuariosRepository(stringConexao);
-            new UsuariosPresenter(view, repository);
+        }
+
+        private void ShowComparacoesView(object sender, EventArgs e)
+        {
         }
 
         #endregion

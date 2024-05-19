@@ -34,11 +34,19 @@
             this.lblTracker = new System.Windows.Forms.Label();
             this.lblCarbon = new System.Windows.Forms.Label();
             this.btnEletrodomesticos = new System.Windows.Forms.Button();
+            this.btnGrupoUsuarios = new System.Windows.Forms.Button();
+            this.btnRegistroGastos = new System.Windows.Forms.Button();
+            this.btnComparacoes = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.pnlProgramas.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProgramas
             // 
+            this.pnlProgramas.Controls.Add(this.btnLogOut);
+            this.pnlProgramas.Controls.Add(this.btnComparacoes);
+            this.pnlProgramas.Controls.Add(this.btnRegistroGastos);
+            this.pnlProgramas.Controls.Add(this.btnGrupoUsuarios);
             this.pnlProgramas.Controls.Add(this.btnUsuarios);
             this.pnlProgramas.Controls.Add(this.btnTransportes);
             this.pnlProgramas.Controls.Add(this.lblTracker);
@@ -52,20 +60,20 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 192);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 77);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(200, 61);
+            this.btnUsuarios.Size = new System.Drawing.Size(200, 55);
             this.btnUsuarios.TabIndex = 4;
-            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.Text = "Cadastro de Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
             // 
             // btnTransportes
             // 
-            this.btnTransportes.Location = new System.Drawing.Point(0, 134);
+            this.btnTransportes.Location = new System.Drawing.Point(0, 236);
             this.btnTransportes.Name = "btnTransportes";
-            this.btnTransportes.Size = new System.Drawing.Size(200, 61);
+            this.btnTransportes.Size = new System.Drawing.Size(200, 55);
             this.btnTransportes.TabIndex = 3;
-            this.btnTransportes.Text = "Transportes";
+            this.btnTransportes.Text = "Pré Cadastro de Transportes";
             this.btnTransportes.UseVisualStyleBackColor = true;
             // 
             // lblTracker
@@ -90,12 +98,48 @@
             // 
             // btnEletrodomesticos
             // 
-            this.btnEletrodomesticos.Location = new System.Drawing.Point(0, 75);
+            this.btnEletrodomesticos.Location = new System.Drawing.Point(0, 183);
             this.btnEletrodomesticos.Name = "btnEletrodomesticos";
-            this.btnEletrodomesticos.Size = new System.Drawing.Size(200, 61);
+            this.btnEletrodomesticos.Size = new System.Drawing.Size(200, 55);
             this.btnEletrodomesticos.TabIndex = 1;
-            this.btnEletrodomesticos.Text = "Eletrodomésticos";
+            this.btnEletrodomesticos.Text = "Pré Cadastro de Eletrodomésticos";
             this.btnEletrodomesticos.UseVisualStyleBackColor = true;
+            // 
+            // btnGrupoUsuarios
+            // 
+            this.btnGrupoUsuarios.Location = new System.Drawing.Point(0, 130);
+            this.btnGrupoUsuarios.Name = "btnGrupoUsuarios";
+            this.btnGrupoUsuarios.Size = new System.Drawing.Size(200, 55);
+            this.btnGrupoUsuarios.TabIndex = 5;
+            this.btnGrupoUsuarios.Text = "Cadastro de Grupo de Usuários";
+            this.btnGrupoUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistroGastos
+            // 
+            this.btnRegistroGastos.Location = new System.Drawing.Point(0, 289);
+            this.btnRegistroGastos.Name = "btnRegistroGastos";
+            this.btnRegistroGastos.Size = new System.Drawing.Size(200, 55);
+            this.btnRegistroGastos.TabIndex = 6;
+            this.btnRegistroGastos.Text = "Registro de Gastos";
+            this.btnRegistroGastos.UseVisualStyleBackColor = true;
+            // 
+            // btnComparacoes
+            // 
+            this.btnComparacoes.Location = new System.Drawing.Point(0, 342);
+            this.btnComparacoes.Name = "btnComparacoes";
+            this.btnComparacoes.Size = new System.Drawing.Size(200, 55);
+            this.btnComparacoes.TabIndex = 7;
+            this.btnComparacoes.Text = "Visualizar Comparações";
+            this.btnComparacoes.UseVisualStyleBackColor = true;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Location = new System.Drawing.Point(0, 395);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(200, 55);
+            this.btnLogOut.TabIndex = 8;
+            this.btnLogOut.Text = "Sair da Conta";
+            this.btnLogOut.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
@@ -121,5 +165,9 @@
         private System.Windows.Forms.Button btnEletrodomesticos;
         private System.Windows.Forms.Button btnTransportes;
         private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnGrupoUsuarios;
+        private System.Windows.Forms.Button btnComparacoes;
+        private System.Windows.Forms.Button btnRegistroGastos;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

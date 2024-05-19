@@ -18,9 +18,12 @@ namespace CarbonTracker.Views
 
         #region Eventos
 
+        public event EventHandler ShowUsuariosView;
+        public event EventHandler ShowGrupoUsuariosView;
         public event EventHandler ShowEletrodomesticoView;
         public event EventHandler ShowTransporteView;
-        public event EventHandler ShowUsuariosView;
+        public event EventHandler ShowRegistroGastosView;
+        public event EventHandler ShowComparacoesView;
 
         #endregion
 
@@ -29,9 +32,13 @@ namespace CarbonTracker.Views
         private void InicializaEventos()
         {
             //Abas
+            btnUsuarios.Click += delegate { ShowUsuariosView?.Invoke(this, EventArgs.Empty); };
+            btnGrupoUsuarios.Click += delegate { ShowGrupoUsuariosView?.Invoke(this, EventArgs.Empty); };
             btnEletrodomesticos.Click += delegate { ShowEletrodomesticoView?.Invoke(this, EventArgs.Empty); };
             btnTransportes.Click += delegate { ShowTransporteView?.Invoke(this, EventArgs.Empty); };
-            btnUsuarios.Click += delegate { ShowUsuariosView?.Invoke(this, EventArgs.Empty); };
+            btnRegistroGastos.Click += delegate { ShowRegistroGastosView?.Invoke(this, EventArgs.Empty); }; //Fazer o registro de gastos
+            btnComparacoes.Click += delegate { ShowComparacoesView?.Invoke(this, EventArgs.Empty); }; //Fazer as comparações/relatórios
+            btnLogOut.Click += delegate {this.Close(); }; //Por enquanto só close, até ter user
         }
 
         #endregion
