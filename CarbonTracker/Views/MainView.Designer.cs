@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.pnlProgramas = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnComparacoes = new System.Windows.Forms.Button();
+            this.btnRegistroGastos = new System.Windows.Forms.Button();
+            this.btnGrupoUsuarios = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnTransportes = new System.Windows.Forms.Button();
             this.lblTracker = new System.Windows.Forms.Label();
             this.lblCarbon = new System.Windows.Forms.Label();
             this.btnEletrodomesticos = new System.Windows.Forms.Button();
-            this.btnGrupoUsuarios = new System.Windows.Forms.Button();
-            this.btnRegistroGastos = new System.Windows.Forms.Button();
-            this.btnComparacoes = new System.Windows.Forms.Button();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.pnlProgramas.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProgramas
             // 
-            this.pnlProgramas.Controls.Add(this.btnLogOut);
+            this.pnlProgramas.Controls.Add(this.btnClose);
             this.pnlProgramas.Controls.Add(this.btnComparacoes);
             this.pnlProgramas.Controls.Add(this.btnRegistroGastos);
             this.pnlProgramas.Controls.Add(this.btnGrupoUsuarios);
@@ -57,6 +57,42 @@
             this.pnlProgramas.Name = "pnlProgramas";
             this.pnlProgramas.Size = new System.Drawing.Size(200, 450);
             this.pnlProgramas.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(0, 395);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(200, 55);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.Text = "Sair";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
+            // btnComparacoes
+            // 
+            this.btnComparacoes.Location = new System.Drawing.Point(0, 342);
+            this.btnComparacoes.Name = "btnComparacoes";
+            this.btnComparacoes.Size = new System.Drawing.Size(200, 55);
+            this.btnComparacoes.TabIndex = 7;
+            this.btnComparacoes.Text = "Visualizar Comparações";
+            this.btnComparacoes.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistroGastos
+            // 
+            this.btnRegistroGastos.Location = new System.Drawing.Point(0, 289);
+            this.btnRegistroGastos.Name = "btnRegistroGastos";
+            this.btnRegistroGastos.Size = new System.Drawing.Size(200, 55);
+            this.btnRegistroGastos.TabIndex = 6;
+            this.btnRegistroGastos.Text = "Registro de Gastos";
+            this.btnRegistroGastos.UseVisualStyleBackColor = true;
+            // 
+            // btnGrupoUsuarios
+            // 
+            this.btnGrupoUsuarios.Location = new System.Drawing.Point(0, 130);
+            this.btnGrupoUsuarios.Name = "btnGrupoUsuarios";
+            this.btnGrupoUsuarios.Size = new System.Drawing.Size(200, 55);
+            this.btnGrupoUsuarios.TabIndex = 5;
+            this.btnGrupoUsuarios.Text = "Cadastro de Grupo de Usuários";
+            this.btnGrupoUsuarios.UseVisualStyleBackColor = true;
             // 
             // btnUsuarios
             // 
@@ -105,42 +141,6 @@
             this.btnEletrodomesticos.Text = "Pré Cadastro de Eletrodomésticos";
             this.btnEletrodomesticos.UseVisualStyleBackColor = true;
             // 
-            // btnGrupoUsuarios
-            // 
-            this.btnGrupoUsuarios.Location = new System.Drawing.Point(0, 130);
-            this.btnGrupoUsuarios.Name = "btnGrupoUsuarios";
-            this.btnGrupoUsuarios.Size = new System.Drawing.Size(200, 55);
-            this.btnGrupoUsuarios.TabIndex = 5;
-            this.btnGrupoUsuarios.Text = "Cadastro de Grupo de Usuários";
-            this.btnGrupoUsuarios.UseVisualStyleBackColor = true;
-            // 
-            // btnRegistroGastos
-            // 
-            this.btnRegistroGastos.Location = new System.Drawing.Point(0, 289);
-            this.btnRegistroGastos.Name = "btnRegistroGastos";
-            this.btnRegistroGastos.Size = new System.Drawing.Size(200, 55);
-            this.btnRegistroGastos.TabIndex = 6;
-            this.btnRegistroGastos.Text = "Registro de Gastos";
-            this.btnRegistroGastos.UseVisualStyleBackColor = true;
-            // 
-            // btnComparacoes
-            // 
-            this.btnComparacoes.Location = new System.Drawing.Point(0, 342);
-            this.btnComparacoes.Name = "btnComparacoes";
-            this.btnComparacoes.Size = new System.Drawing.Size(200, 55);
-            this.btnComparacoes.TabIndex = 7;
-            this.btnComparacoes.Text = "Visualizar Comparações";
-            this.btnComparacoes.UseVisualStyleBackColor = true;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Location = new System.Drawing.Point(0, 395);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(200, 55);
-            this.btnLogOut.TabIndex = 8;
-            this.btnLogOut.Text = "Sair da Conta";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +150,7 @@
             this.IsMdiContainer = true;
             this.MinimumSize = new System.Drawing.Size(1016, 489);
             this.Name = "MainView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carbon Tracker";
             this.pnlProgramas.ResumeLayout(false);
             this.pnlProgramas.PerformLayout();
@@ -168,6 +169,6 @@
         private System.Windows.Forms.Button btnGrupoUsuarios;
         private System.Windows.Forms.Button btnComparacoes;
         private System.Windows.Forms.Button btnRegistroGastos;
-        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnClose;
     }
 }

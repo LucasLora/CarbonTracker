@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CarbonTracker.Models;
 using CarbonTracker.Presenters;
 using CarbonTracker.Views;
+using CarbonTracker.Services;
 using CarbonTracker._Repositories;
 using System.Configuration;
+using System.Linq;
 
 namespace CarbonTracker
 {
@@ -22,11 +21,32 @@ namespace CarbonTracker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            //Obtém a string de conexão do arquivo de configuração
             string stringConexao = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
-            IMainView view = new MainView();
-            new MainPresenter(view, stringConexao);
 
-            Application.Run((Form)view);
+            //Inicializa o serviço de autenticação
+            IUsuariosRepository usuariosRepository = new UsuariosRepository(stringConexao);
+            AutenticacaoService autenticacaoService = new AutenticacaoService(usuariosRepository);
+
+            //Cria o form de login
+            ILoginView loginForm = new LoginView();
+            LoginPresenter loginPresenter = new LoginPresenter(loginForm, autenticacaoService);
+            Application.Run((Form)loginForm);
+
+            // Verifica se o login foi bem-sucedido antes de continuar
+            if (loginForm.IsSuccessful)
+            {
+                if (loginPresenter.UsuarioLogado != null)
+                {
+                    IMainView view = new MainView();
+                    new MainPresenter(loginPresenter.UsuarioLogado, view, stringConexao);
+                    Application.Run((Form)view);
+                }
+                else
+                {
+                    MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

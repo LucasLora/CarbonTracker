@@ -11,6 +11,7 @@ namespace CarbonTracker.Presenters
 
         #region Campos
 
+        private readonly UsuariosModel usuarioLogado;
         private IMainView mainView;
         private readonly string stringConexao;
 
@@ -18,8 +19,9 @@ namespace CarbonTracker.Presenters
 
         #region Construtor
 
-        public MainPresenter(IMainView mainView, string stringConexao)
+        public MainPresenter(UsuariosModel usuarioLogado, IMainView mainView, string stringConexao)
         {
+            this.usuarioLogado = usuarioLogado;
             this.mainView = mainView;
             this.stringConexao = stringConexao;
             VincularEventos(); 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarbonTracker.Models;
+using System;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Views
@@ -38,7 +39,7 @@ namespace CarbonTracker.Views
             btnTransportes.Click += delegate { ShowTransporteView?.Invoke(this, EventArgs.Empty); };
             btnRegistroGastos.Click += delegate { ShowRegistroGastosView?.Invoke(this, EventArgs.Empty); }; //Fazer o registro de gastos
             btnComparacoes.Click += delegate { ShowComparacoesView?.Invoke(this, EventArgs.Empty); }; //Fazer as comparações/relatórios
-            btnLogOut.Click += delegate {this.Close(); }; //Por enquanto só close, até ter user
+            btnClose.Click += delegate {this.Close(); };
         }
 
         #endregion
