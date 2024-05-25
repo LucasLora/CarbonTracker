@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginView));
             this.btnEntrar = new System.Windows.Forms.Button();
             this.npgsqlCommandBuilder1 = new Npgsql.NpgsqlCommandBuilder();
             this.npgsqlCommandBuilder2 = new Npgsql.NpgsqlCommandBuilder();
@@ -123,6 +124,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnEntrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);

@@ -44,15 +44,28 @@ namespace CarbonTracker.Views
             btnEntrar.Click += delegate 
             {
                 Entrar?.Invoke(this, EventArgs.Empty);
-                if (IsSuccessful)
-                {
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show(Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                VerificaSeLogou();
             };
+            txtSenha.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    Entrar?.Invoke(this, EventArgs.Empty);
+                    VerificaSeLogou();
+                }
+            };  
+        }
+
+        private void VerificaSeLogou()
+        {
+            if (IsSuccessful)
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
