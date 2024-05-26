@@ -15,11 +15,9 @@ namespace CarbonTracker.Views
         #region Eventos
 
         event EventHandler ShowUsuariosView;
-        event EventHandler ShowGrupoUsuariosView;
-        event EventHandler ShowPreCadastrosGastosView;
+        event EventHandler ShowCadastrosGastosView;
         event EventHandler ShowRegistroGastosView;
         event EventHandler ShowComparacoesView;
-        event EventHandler ShowAlterarInformacoesView;
 
         #endregion
 

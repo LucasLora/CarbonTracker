@@ -53,9 +53,6 @@ namespace CarbonTracker.Views
 
         private void InicializaEventos()
         {
-            //Fechar
-            btnClose.Click += delegate { this.Close(); };
-
             //Procurar
             btnProcurar.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtProcurar.KeyDown += (s, e) =>
@@ -137,14 +134,14 @@ namespace CarbonTracker.Views
 
         private static CadastroUsuarioView instance;
 
-        public static CadastroUsuarioView GetInstance(Form parentContainer)
+        public static CadastroUsuarioView GetInstance()
         {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new CadastroUsuarioView();
-                instance.MdiParent = parentContainer;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
+                instance.TopLevel = false;
             }
             else
             {

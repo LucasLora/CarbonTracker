@@ -2,7 +2,7 @@
 
 namespace CarbonTracker.Views
 {
-    public interface IAlterarInformacoesUsuarioLogado
+    public interface IAlterarInformacoesUsuarioLogadoView
     {
 
         #region Propriedades

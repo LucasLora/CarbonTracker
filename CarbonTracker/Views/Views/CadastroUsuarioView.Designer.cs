@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUsuarios = new System.Windows.Forms.Label();
-            this.pnlTopUsuarios = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.tbcUsuarios = new System.Windows.Forms.TabControl();
             this.tbpListagem = new System.Windows.Forms.TabPage();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -60,61 +57,22 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.txtDataCriacao = new System.Windows.Forms.TextBox();
-            this.pnlTopUsuarios.SuspendLayout();
             this.tbcUsuarios.SuspendLayout();
             this.tbpListagem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.tbpDetalhes.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblUsuarios
-            // 
-            this.lblUsuarios.AutoSize = true;
-            this.lblUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarios.Location = new System.Drawing.Point(16, 26);
-            this.lblUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUsuarios.Name = "lblUsuarios";
-            this.lblUsuarios.Size = new System.Drawing.Size(366, 39);
-            this.lblUsuarios.TabIndex = 0;
-            this.lblUsuarios.Text = "Cadastro de Usuários";
-            // 
-            // pnlTopUsuarios
-            // 
-            this.pnlTopUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlTopUsuarios.BackColor = System.Drawing.Color.White;
-            this.pnlTopUsuarios.Controls.Add(this.btnClose);
-            this.pnlTopUsuarios.Controls.Add(this.lblUsuarios);
-            this.pnlTopUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.pnlTopUsuarios.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlTopUsuarios.Name = "pnlTopUsuarios";
-            this.pnlTopUsuarios.Size = new System.Drawing.Size(1067, 90);
-            this.pnlTopUsuarios.TabIndex = 1;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(1029, 4);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(33, 31);
-            this.btnClose.TabIndex = 10;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
             // tbcUsuarios
             // 
-            this.tbcUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbcUsuarios.Controls.Add(this.tbpListagem);
             this.tbcUsuarios.Controls.Add(this.tbpDetalhes);
-            this.tbcUsuarios.Location = new System.Drawing.Point(0, 90);
+            this.tbcUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcUsuarios.Location = new System.Drawing.Point(0, 0);
             this.tbcUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.tbcUsuarios.Name = "tbcUsuarios";
             this.tbcUsuarios.SelectedIndex = 0;
-            this.tbcUsuarios.Size = new System.Drawing.Size(1067, 464);
+            this.tbcUsuarios.Size = new System.Drawing.Size(1067, 554);
             this.tbcUsuarios.TabIndex = 2;
             // 
             // tbpListagem
@@ -130,7 +88,7 @@
             this.tbpListagem.Margin = new System.Windows.Forms.Padding(4);
             this.tbpListagem.Name = "tbpListagem";
             this.tbpListagem.Padding = new System.Windows.Forms.Padding(4);
-            this.tbpListagem.Size = new System.Drawing.Size(1059, 435);
+            this.tbpListagem.Size = new System.Drawing.Size(1059, 525);
             this.tbpListagem.TabIndex = 0;
             this.tbpListagem.Text = "Listagem";
             this.tbpListagem.UseVisualStyleBackColor = true;
@@ -202,7 +160,7 @@
             this.dgvUsuarios.RowHeadersVisible = false;
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(901, 362);
+            this.dgvUsuarios.Size = new System.Drawing.Size(901, 452);
             this.dgvUsuarios.TabIndex = 3;
             // 
             // Id
@@ -257,7 +215,7 @@
             this.txtProcurar.Location = new System.Drawing.Point(9, 32);
             this.txtProcurar.Margin = new System.Windows.Forms.Padding(4);
             this.txtProcurar.Name = "txtProcurar";
-            this.txtProcurar.Size = new System.Drawing.Size(760, 22);
+            this.txtProcurar.Size = new System.Drawing.Size(760, 20);
             this.txtProcurar.TabIndex = 2;
             // 
             // lblProcurar
@@ -336,7 +294,7 @@
             this.txtSenha.MaxLength = 20;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(315, 22);
+            this.txtSenha.Size = new System.Drawing.Size(315, 20);
             this.txtSenha.TabIndex = 10;
             // 
             // lblSenha
@@ -376,7 +334,7 @@
             this.txtEmail.Location = new System.Drawing.Point(8, 153);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(315, 22);
+            this.txtEmail.Size = new System.Drawing.Size(315, 20);
             this.txtEmail.TabIndex = 9;
             // 
             // lblEmail
@@ -395,7 +353,7 @@
             this.txtNome.Location = new System.Drawing.Point(8, 92);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(315, 22);
+            this.txtNome.Size = new System.Drawing.Size(315, 20);
             this.txtNome.TabIndex = 6;
             // 
             // lblNome
@@ -415,7 +373,7 @@
             this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(127, 22);
+            this.txtId.Size = new System.Drawing.Size(127, 20);
             this.txtId.TabIndex = 4;
             this.txtId.Text = "0";
             // 
@@ -436,21 +394,18 @@
             this.txtDataCriacao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataCriacao.Name = "txtDataCriacao";
             this.txtDataCriacao.ReadOnly = true;
-            this.txtDataCriacao.Size = new System.Drawing.Size(180, 22);
+            this.txtDataCriacao.Size = new System.Drawing.Size(180, 20);
             this.txtDataCriacao.TabIndex = 20;
             // 
-            // UsuariosView
+            // CadastroUsuarioView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tbcUsuarios);
-            this.Controls.Add(this.pnlTopUsuarios);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "UsuariosView";
+            this.Name = "CadastroUsuarioView";
             this.Text = "UsuariosView";
-            this.pnlTopUsuarios.ResumeLayout(false);
-            this.pnlTopUsuarios.PerformLayout();
             this.tbcUsuarios.ResumeLayout(false);
             this.tbpListagem.ResumeLayout(false);
             this.tbpListagem.PerformLayout();
@@ -462,10 +417,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblUsuarios;
-
-        private System.Windows.Forms.Panel pnlTopUsuarios;
 
         private System.Windows.Forms.TabControl tbcUsuarios;
         private System.Windows.Forms.TabPage tbpListagem;
@@ -487,7 +438,6 @@
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.ComboBox cmbTipoUsuario;
         private System.Windows.Forms.Label lblTipoUsuario;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtDataCriacao;

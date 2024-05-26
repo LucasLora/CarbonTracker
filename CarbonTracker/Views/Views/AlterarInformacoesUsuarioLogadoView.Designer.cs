@@ -1,6 +1,6 @@
 ﻿namespace CarbonTracker.Views
 {
-    partial class AlterarInformacoesUsuarioLogado
+    partial class AlterarInformacoesUsuarioLogadoView
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@
         {
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblUsuarios = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -66,17 +65,6 @@
             this.lblUsuarios.TabIndex = 0;
             this.lblUsuarios.Text = "Alteração das Informações de Usuário";
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(921, 513);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(133, 28);
-            this.btnCancelar.TabIndex = 27;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -95,7 +83,7 @@
             this.txtSenha.MaxLength = 20;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(316, 22);
+            this.txtSenha.Size = new System.Drawing.Size(316, 20);
             this.txtSenha.TabIndex = 24;
             // 
             // lblSenha
@@ -114,7 +102,7 @@
             this.txtEmail.Location = new System.Drawing.Point(13, 186);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(316, 22);
+            this.txtEmail.Size = new System.Drawing.Size(316, 20);
             this.txtEmail.TabIndex = 23;
             // 
             // lblEmail
@@ -133,7 +121,7 @@
             this.txtNome.Location = new System.Drawing.Point(13, 121);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(316, 22);
+            this.txtNome.Size = new System.Drawing.Size(316, 20);
             this.txtNome.TabIndex = 21;
             // 
             // lblNome
@@ -154,7 +142,7 @@
             this.txtRepetirSenha.MaxLength = 20;
             this.txtRepetirSenha.Name = "txtRepetirSenha";
             this.txtRepetirSenha.PasswordChar = '*';
-            this.txtRepetirSenha.Size = new System.Drawing.Size(316, 22);
+            this.txtRepetirSenha.Size = new System.Drawing.Size(316, 20);
             this.txtRepetirSenha.TabIndex = 28;
             // 
             // lblRepetirSenha
@@ -168,14 +156,13 @@
             this.lblRepetirSenha.TabIndex = 29;
             this.lblRepetirSenha.Text = "Repetir Senha:";
             // 
-            // AlterarInformacoesUsuarioLogado
+            // AlterarInformacoesUsuarioLogadoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.txtRepetirSenha);
             this.Controls.Add(this.lblRepetirSenha);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.lblSenha);
@@ -184,7 +171,7 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.pnlTop);
-            this.Name = "AlterarInformacoesUsuarioLogado";
+            this.Name = "AlterarInformacoesUsuarioLogadoView";
             this.Text = "AlterarInformacoesUsuarioLogado";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -196,7 +183,6 @@
         #endregion
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label lblUsuarios;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblSenha;

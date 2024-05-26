@@ -5,6 +5,7 @@ namespace CarbonTracker.Views
 {
     public partial class LoginView : Form, ILoginView
     {
+
         #region Construtor
 
         public LoginView()
@@ -19,7 +20,7 @@ namespace CarbonTracker.Views
 
         #region Propriedades
 
-        public string Usuario { get { return txtUsuario.Text; } set { txtUsuario.Text = value; } }
+        public string Usuario { get { return txtEmail.Text; } set { txtEmail.Text = value; } }
         public string Senha { get { return txtSenha.Text; } set { txtSenha.Text = value; } }
 
         public bool IsSuccessful { get; set; }

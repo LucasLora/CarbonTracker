@@ -11,14 +11,14 @@ namespace CarbonTracker.Presenters
         #region Campos
 
         private UsuarioModel usuarioLogado;
-        private IAlterarInformacoesUsuarioLogado view;
+        private IAlterarInformacoesUsuarioLogadoView view;
         private IUsuariosRepository repository;
 
         #endregion
 
         #region Construtor
 
-        public AlterarInformacoesUsuarioLogadoPresenter(UsuarioModel usuarioLogado, IAlterarInformacoesUsuarioLogado view, IUsuariosRepository repository)
+        public AlterarInformacoesUsuarioLogadoPresenter(UsuarioModel usuarioLogado, IAlterarInformacoesUsuarioLogadoView view, IUsuariosRepository repository)
         {
             this.usuarioLogado = usuarioLogado;
             this.view = view;

@@ -35,7 +35,7 @@ namespace CarbonTracker.Views
 
         private void InicializaEventos()
         {
-            btnEletrodomesticos.Click += delegate
+            btnEletrodomestico.Click += delegate
             {
                 ShowPreCadastroEletrodomesticoView?.Invoke(this, EventArgs.Empty);
                 RemoveTodosTabPages();

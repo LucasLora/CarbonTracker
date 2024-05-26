@@ -33,12 +33,10 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnComparacoes = new System.Windows.Forms.Button();
             this.btnRegistroGastos = new System.Windows.Forms.Button();
-            this.btnGrupoUsuarios = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnAlterarInformacoes = new System.Windows.Forms.Button();
             this.lblTracker = new System.Windows.Forms.Label();
             this.lblCarbon = new System.Windows.Forms.Label();
-            this.btnPreCadastrosGastos = new System.Windows.Forms.Button();
+            this.btnCadastrosGastos = new System.Windows.Forms.Button();
             this.pnlProgramas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,23 +45,23 @@
             this.pnlProgramas.Controls.Add(this.btnClose);
             this.pnlProgramas.Controls.Add(this.btnComparacoes);
             this.pnlProgramas.Controls.Add(this.btnRegistroGastos);
-            this.pnlProgramas.Controls.Add(this.btnGrupoUsuarios);
             this.pnlProgramas.Controls.Add(this.btnUsuarios);
-            this.pnlProgramas.Controls.Add(this.btnAlterarInformacoes);
             this.pnlProgramas.Controls.Add(this.lblTracker);
             this.pnlProgramas.Controls.Add(this.lblCarbon);
-            this.pnlProgramas.Controls.Add(this.btnPreCadastrosGastos);
+            this.pnlProgramas.Controls.Add(this.btnCadastrosGastos);
             this.pnlProgramas.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlProgramas.Location = new System.Drawing.Point(0, 0);
-            this.pnlProgramas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlProgramas.Margin = new System.Windows.Forms.Padding(4);
             this.pnlProgramas.Name = "pnlProgramas";
             this.pnlProgramas.Size = new System.Drawing.Size(267, 554);
             this.pnlProgramas.TabIndex = 0;
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Location = new System.Drawing.Point(0, 486);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(267, 68);
             this.btnClose.TabIndex = 8;
@@ -72,53 +70,39 @@
             // 
             // btnComparacoes
             // 
-            this.btnComparacoes.Location = new System.Drawing.Point(0, 356);
-            this.btnComparacoes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnComparacoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnComparacoes.Location = new System.Drawing.Point(0, 292);
+            this.btnComparacoes.Margin = new System.Windows.Forms.Padding(4);
             this.btnComparacoes.Name = "btnComparacoes";
             this.btnComparacoes.Size = new System.Drawing.Size(267, 68);
             this.btnComparacoes.TabIndex = 6;
-            this.btnComparacoes.Text = "Visualizar Comparações";
+            this.btnComparacoes.Text = "Comparações";
             this.btnComparacoes.UseVisualStyleBackColor = true;
             // 
             // btnRegistroGastos
             // 
-            this.btnRegistroGastos.Location = new System.Drawing.Point(0, 290);
-            this.btnRegistroGastos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistroGastos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistroGastos.Location = new System.Drawing.Point(0, 226);
+            this.btnRegistroGastos.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistroGastos.Name = "btnRegistroGastos";
             this.btnRegistroGastos.Size = new System.Drawing.Size(267, 68);
             this.btnRegistroGastos.TabIndex = 5;
             this.btnRegistroGastos.Text = "Registro de Gastos";
             this.btnRegistroGastos.UseVisualStyleBackColor = true;
             // 
-            // btnGrupoUsuarios
-            // 
-            this.btnGrupoUsuarios.Location = new System.Drawing.Point(0, 160);
-            this.btnGrupoUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnGrupoUsuarios.Name = "btnGrupoUsuarios";
-            this.btnGrupoUsuarios.Size = new System.Drawing.Size(267, 68);
-            this.btnGrupoUsuarios.TabIndex = 3;
-            this.btnGrupoUsuarios.Text = "Cadastro de Grupo de Usuários";
-            this.btnGrupoUsuarios.UseVisualStyleBackColor = true;
-            // 
             // btnUsuarios
             // 
+            this.btnUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUsuarios.Location = new System.Drawing.Point(0, 95);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(267, 68);
             this.btnUsuarios.TabIndex = 2;
-            this.btnUsuarios.Text = "Cadastro de Usuários";
+            this.btnUsuarios.Text = "Informações de Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
-            // 
-            // btnAlterarInformacoes
-            // 
-            this.btnAlterarInformacoes.Location = new System.Drawing.Point(0, 421);
-            this.btnAlterarInformacoes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAlterarInformacoes.Name = "btnAlterarInformacoes";
-            this.btnAlterarInformacoes.Size = new System.Drawing.Size(267, 68);
-            this.btnAlterarInformacoes.TabIndex = 7;
-            this.btnAlterarInformacoes.Text = "Alterar Informações de Usuário";
-            this.btnAlterarInformacoes.UseVisualStyleBackColor = true;
             // 
             // lblTracker
             // 
@@ -142,15 +126,17 @@
             this.lblCarbon.TabIndex = 0;
             this.lblCarbon.Text = "Carbon";
             // 
-            // btnPreCadastrosGastos
+            // btnCadastrosGastos
             // 
-            this.btnPreCadastrosGastos.Location = new System.Drawing.Point(0, 225);
-            this.btnPreCadastrosGastos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnPreCadastrosGastos.Name = "btnPreCadastrosGastos";
-            this.btnPreCadastrosGastos.Size = new System.Drawing.Size(267, 68);
-            this.btnPreCadastrosGastos.TabIndex = 4;
-            this.btnPreCadastrosGastos.Text = "Pré Cadastros de Gastos";
-            this.btnPreCadastrosGastos.UseVisualStyleBackColor = true;
+            this.btnCadastrosGastos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCadastrosGastos.Location = new System.Drawing.Point(0, 161);
+            this.btnCadastrosGastos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastrosGastos.Name = "btnCadastrosGastos";
+            this.btnCadastrosGastos.Size = new System.Drawing.Size(267, 68);
+            this.btnCadastrosGastos.TabIndex = 4;
+            this.btnCadastrosGastos.Text = "Cadastros de Gastos";
+            this.btnCadastrosGastos.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
@@ -160,7 +146,7 @@
             this.Controls.Add(this.pnlProgramas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1349, 591);
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -176,10 +162,8 @@
         private System.Windows.Forms.Panel pnlProgramas;
         private System.Windows.Forms.Label lblTracker;
         private System.Windows.Forms.Label lblCarbon;
-        private System.Windows.Forms.Button btnPreCadastrosGastos;
-        private System.Windows.Forms.Button btnAlterarInformacoes;
+        private System.Windows.Forms.Button btnCadastrosGastos;
         private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button btnGrupoUsuarios;
         private System.Windows.Forms.Button btnComparacoes;
         private System.Windows.Forms.Button btnRegistroGastos;
         private System.Windows.Forms.Button btnClose;

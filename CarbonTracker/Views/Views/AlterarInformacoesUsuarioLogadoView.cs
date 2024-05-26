@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace CarbonTracker.Views
 {
-    public partial class AlterarInformacoesUsuarioLogado : Form, IAlterarInformacoesUsuarioLogado
+    public partial class AlterarInformacoesUsuarioLogadoView : Form, IAlterarInformacoesUsuarioLogadoView
     {
 
         #region Construtor
 
-        public AlterarInformacoesUsuarioLogado()
+        public AlterarInformacoesUsuarioLogadoView()
         {
             InitializeComponent();
             InicializaEventos();
@@ -50,28 +50,22 @@ namespace CarbonTracker.Views
                     Application.Exit(); //Fecha toda a aplicação, foi pedido antes se queria realmente prosseguir
                 }
             };
-
-            //Cancelar
-            btnCancelar.Click += delegate
-            {
-                this.Close();
-            };
         }
 
         #endregion
 
         #region Singleton pattern (Open a single form instance)
 
-        private static AlterarInformacoesUsuarioLogado instance;
+        private static AlterarInformacoesUsuarioLogadoView instance;
 
-        public static AlterarInformacoesUsuarioLogado GetInstance(Form parentContainer)
+        public static AlterarInformacoesUsuarioLogadoView GetInstance()
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new AlterarInformacoesUsuarioLogado();
-                instance.MdiParent = parentContainer;
+                instance = new AlterarInformacoesUsuarioLogadoView();
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
+                instance.TopLevel = false;
             }
             else
             {

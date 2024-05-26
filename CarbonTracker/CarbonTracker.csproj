@@ -124,14 +124,16 @@
     <Compile Include="Presenters\RegistroGastosPresenter.cs" />
     <Compile Include="Presenters\CadastroTransportePresenter.cs" />
     <Compile Include="Presenters\CadastroUsuarioPresenter.cs" />
+    <Compile Include="Presenters\UsuarioPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AutenticacaoService.cs" />
-    <Compile Include="Views\Views\AlterarInformacoesUsuarioLogado.cs">
+    <Compile Include="Views\Interfaces\IUsuarioView.cs" />
+    <Compile Include="Views\Views\AlterarInformacoesUsuarioLogadoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Views\AlterarInformacoesUsuarioLogado.Designer.cs">
-      <DependentUpon>AlterarInformacoesUsuarioLogado.cs</DependentUpon>
+    <Compile Include="Views\Views\AlterarInformacoesUsuarioLogadoView.Designer.cs">
+      <DependentUpon>AlterarInformacoesUsuarioLogadoView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Views\CadastroEletrodomesticoView.cs">
       <SubType>Form</SubType>
@@ -145,7 +147,7 @@
     <Compile Include="Views\Views\CadastroGrupoUsuariosView.Designer.cs">
       <DependentUpon>CadastroGrupoUsuariosView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Interfaces\IAlterarInformacoesUsuarioLogado.cs" />
+    <Compile Include="Views\Interfaces\IAlterarInformacoesUsuarioLogadoView.cs" />
     <Compile Include="Views\Interfaces\ICadastroEletrodomesticoView.cs" />
     <Compile Include="Views\Interfaces\ICadastroGrupoUsuariosView.cs" />
     <Compile Include="Views\Interfaces\ILoginView.cs" />
@@ -196,6 +198,12 @@
     <Compile Include="Views\Views\CadastroUsuarioView.Designer.cs">
       <DependentUpon>CadastroUsuarioView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Views\UsuarioView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Views\UsuarioView.Designer.cs">
+      <DependentUpon>UsuarioView.cs</DependentUpon>
+    </Compile>
     <Compile Include="_Repositories\EletrodomesticoRepository.cs" />
     <Compile Include="_Repositories\GrupoUsuariosRepository.cs" />
     <Compile Include="_Repositories\RepositorioBase.cs" />
@@ -210,8 +218,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Views\AlterarInformacoesUsuarioLogado.resx">
-      <DependentUpon>AlterarInformacoesUsuarioLogado.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Views\AlterarInformacoesUsuarioLogadoView.resx">
+      <DependentUpon>AlterarInformacoesUsuarioLogadoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Views\CadastroEletrodomesticoView.resx">
       <DependentUpon>CadastroEletrodomesticoView.cs</DependentUpon>
@@ -239,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Views\CadastroUsuarioView.resx">
       <DependentUpon>CadastroUsuarioView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Views\UsuarioView.resx">
+      <DependentUpon>UsuarioView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

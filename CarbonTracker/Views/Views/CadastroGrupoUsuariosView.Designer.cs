@@ -49,14 +49,10 @@
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpListagem = new System.Windows.Forms.TabPage();
             this.tbcGrupoUsuarios = new System.Windows.Forms.TabControl();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.pnlTopGrupoUsuarios = new System.Windows.Forms.Panel();
-            this.lblGrupoUsuarios = new System.Windows.Forms.Label();
             this.tbpDetalhes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupoUsuarios)).BeginInit();
             this.tbpListagem.SuspendLayout();
             this.tbcGrupoUsuarios.SuspendLayout();
-            this.pnlTopGrupoUsuarios.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -86,7 +82,7 @@
             this.txtNome.Location = new System.Drawing.Point(8, 92);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(599, 22);
+            this.txtNome.Size = new System.Drawing.Size(599, 20);
             this.txtNome.TabIndex = 3;
             // 
             // lblNome
@@ -156,7 +152,7 @@
             this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(99, 22);
+            this.txtId.Size = new System.Drawing.Size(99, 20);
             this.txtId.TabIndex = 1;
             this.txtId.Text = "0";
             // 
@@ -167,7 +163,7 @@
             this.txtProcurar.Location = new System.Drawing.Point(9, 32);
             this.txtProcurar.Margin = new System.Windows.Forms.Padding(4);
             this.txtProcurar.Name = "txtProcurar";
-            this.txtProcurar.Size = new System.Drawing.Size(760, 22);
+            this.txtProcurar.Size = new System.Drawing.Size(760, 20);
             this.txtProcurar.TabIndex = 1;
             // 
             // lblProcurar
@@ -246,7 +242,7 @@
             this.dgvGrupoUsuarios.RowHeadersVisible = false;
             this.dgvGrupoUsuarios.RowHeadersWidth = 51;
             this.dgvGrupoUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrupoUsuarios.Size = new System.Drawing.Size(901, 362);
+            this.dgvGrupoUsuarios.Size = new System.Drawing.Size(901, 452);
             this.dgvGrupoUsuarios.TabIndex = 3;
             // 
             // Id
@@ -289,70 +285,31 @@
             this.tbpListagem.Margin = new System.Windows.Forms.Padding(4);
             this.tbpListagem.Name = "tbpListagem";
             this.tbpListagem.Padding = new System.Windows.Forms.Padding(4);
-            this.tbpListagem.Size = new System.Drawing.Size(1059, 435);
+            this.tbpListagem.Size = new System.Drawing.Size(1059, 525);
             this.tbpListagem.TabIndex = 0;
             this.tbpListagem.Text = "Listagem";
             this.tbpListagem.UseVisualStyleBackColor = true;
             // 
             // tbcGrupoUsuarios
             // 
-            this.tbcGrupoUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbcGrupoUsuarios.Controls.Add(this.tbpListagem);
             this.tbcGrupoUsuarios.Controls.Add(this.tbpDetalhes);
-            this.tbcGrupoUsuarios.Location = new System.Drawing.Point(0, 90);
+            this.tbcGrupoUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcGrupoUsuarios.Location = new System.Drawing.Point(0, 0);
             this.tbcGrupoUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.tbcGrupoUsuarios.Name = "tbcGrupoUsuarios";
             this.tbcGrupoUsuarios.SelectedIndex = 0;
-            this.tbcGrupoUsuarios.Size = new System.Drawing.Size(1067, 464);
+            this.tbcGrupoUsuarios.Size = new System.Drawing.Size(1067, 554);
             this.tbcGrupoUsuarios.TabIndex = 3;
             // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(1029, 4);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(33, 31);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // pnlTopGrupoUsuarios
-            // 
-            this.pnlTopGrupoUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlTopGrupoUsuarios.BackColor = System.Drawing.Color.White;
-            this.pnlTopGrupoUsuarios.Controls.Add(this.btnClose);
-            this.pnlTopGrupoUsuarios.Controls.Add(this.lblGrupoUsuarios);
-            this.pnlTopGrupoUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.pnlTopGrupoUsuarios.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlTopGrupoUsuarios.Name = "pnlTopGrupoUsuarios";
-            this.pnlTopGrupoUsuarios.Size = new System.Drawing.Size(1067, 90);
-            this.pnlTopGrupoUsuarios.TabIndex = 2;
-            // 
-            // lblGrupoUsuarios
-            // 
-            this.lblGrupoUsuarios.AutoSize = true;
-            this.lblGrupoUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrupoUsuarios.Location = new System.Drawing.Point(16, 26);
-            this.lblGrupoUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGrupoUsuarios.Name = "lblGrupoUsuarios";
-            this.lblGrupoUsuarios.Size = new System.Drawing.Size(525, 39);
-            this.lblGrupoUsuarios.TabIndex = 0;
-            this.lblGrupoUsuarios.Text = "Cadastro de Grupo de Usuários";
-            // 
-            // GrupoUsuariosView
+            // CadastroGrupoUsuariosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tbcGrupoUsuarios);
-            this.Controls.Add(this.pnlTopGrupoUsuarios);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "GrupoUsuariosView";
+            this.Name = "CadastroGrupoUsuariosView";
             this.Text = "GrupoUsuariosView";
             this.tbpDetalhes.ResumeLayout(false);
             this.tbpDetalhes.PerformLayout();
@@ -360,8 +317,6 @@
             this.tbpListagem.ResumeLayout(false);
             this.tbpListagem.PerformLayout();
             this.tbcGrupoUsuarios.ResumeLayout(false);
-            this.pnlTopGrupoUsuarios.ResumeLayout(false);
-            this.pnlTopGrupoUsuarios.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -383,9 +338,6 @@
         private System.Windows.Forms.DataGridView dgvGrupoUsuarios;
         private System.Windows.Forms.TabPage tbpListagem;
         private System.Windows.Forms.TabControl tbcGrupoUsuarios;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel pnlTopGrupoUsuarios;
-        private System.Windows.Forms.Label lblGrupoUsuarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;

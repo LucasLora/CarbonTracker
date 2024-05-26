@@ -3,6 +3,8 @@ using CarbonTracker.Views;
 using CarbonTracker.Models;
 using CarbonTracker._Repositories;
 using System.Windows.Forms;
+using CarbonTracker.Views.Interfaces;
+using CarbonTracker.Views.Views;
 
 namespace CarbonTracker.Presenters
 {
@@ -25,7 +27,7 @@ namespace CarbonTracker.Presenters
             this.mainView = mainView;
             this.stringConexao = stringConexao;
 
-            VincularEventos(); 
+            VincularEventos();
         }
 
         #endregion
@@ -35,11 +37,9 @@ namespace CarbonTracker.Presenters
         private void VincularEventos()
         {
             this.mainView.ShowUsuariosView += ShowUsuariosView;
-            this.mainView.ShowGrupoUsuariosView += ShowGrupoUsuariosView;
-            this.mainView.ShowPreCadastrosGastosView += ShowPreCadastrosGastosView;
+            this.mainView.ShowCadastrosGastosView += ShowCadastrosGastosView;
             this.mainView.ShowRegistroGastosView += ShowRegistroGastosView;
             this.mainView.ShowComparacoesView += ShowComparacoesView;
-            this.mainView.ShowAlterarInformacoesView += ShowAlterarInformacoesView;
         }
 
         #endregion
@@ -48,37 +48,11 @@ namespace CarbonTracker.Presenters
 
         private void ShowUsuariosView(object sender, EventArgs e)
         {
-            mainView.IsSuccessful = false;
-            if (VerificarSeEhAdministradorOuSupervisor())
-            {
-                mainView.IsSuccessful = true;
-                ICadastroUsuarioView view = CadastroUsuarioView.GetInstance((Form)mainView);
-                IUsuariosRepository repository = new UsuariosRepository(stringConexao);
-                new CadastroUsuarioPresenter(usuarioLogado, view, repository);
-            }
-            else 
-            {
-                mainView.Message = "O usuário logado não tem permissão para acessar os usuários!";
-            }
-        }      
-        
-        private void ShowGrupoUsuariosView(object sender, EventArgs e)
-        {
-            mainView.IsSuccessful = false;
-            if (VerificarSeEhAdministradorOuSupervisor())
-            {
-                mainView.IsSuccessful = true;
-                ICadastroGrupoUsuariosView view = CadastroGrupoUsuariosView.GetInstance((Form)mainView);
-                IGrupoUsuariosRepository repository = new GrupoUsuariosRepository(stringConexao);
-                new CadastroGrupoUsuariosPresenter(view, repository);
-            }
-            else
-            {
-                mainView.Message = "O usuário logado não tem permissão para acessar os grupos de usuários!";
-            }
+            IUsuarioView view = UsuarioView.GetInstance((Form)mainView);
+            new UsuarioPresenter(usuarioLogado, view, stringConexao);
         }
 
-        private void ShowPreCadastrosGastosView(object sender, EventArgs e)
+        private void ShowCadastrosGastosView(object sender, EventArgs e)
         {
             mainView.IsSuccessful = false;
             if (VerificarSeEhAdministradorOuSupervisor())
@@ -101,37 +75,14 @@ namespace CarbonTracker.Presenters
 
         private void ShowComparacoesView(object sender, EventArgs e)
         {
-            
-        }
 
-        private void ShowAlterarInformacoesView(object sender, EventArgs e)
-        {
-            using (var passwordForm = new SenhaInputView())
-            {
-                if (passwordForm.ShowDialog() == DialogResult.OK)
-                {
-                    string inputPassword = passwordForm.Password;
-
-                    //Verifica se a senha inserida corresponde à senha do usuário atual
-                    if (usuarioLogado.Senha == inputPassword)
-                    {
-                        IAlterarInformacoesUsuarioLogado view = AlterarInformacoesUsuarioLogado.GetInstance((Form)mainView);
-                        IUsuariosRepository repository = new UsuariosRepository(stringConexao);
-                        new AlterarInformacoesUsuarioLogadoPresenter(usuarioLogado, view, repository);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Senha incorreta!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }     
         }
 
         private bool VerificarSeEhAdministrador()
         {
             return usuarioLogado.TipoUsuario == Models.Common.Enums.TipoUsuario.Administrador;
-        }  
-        
+        }
+
         private bool VerificarSeEhAdministradorOuSupervisor()
         {
             return VerificarSeEhAdministrador() ||
