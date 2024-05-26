@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Carbon Tracker é um projeto desenvolvido como parte de uma disciplina universitária com o objetivo de ajudar as pessoas a se conscientizarem sobre seus gastos que impactam negativamente o meio ambiente. Ele calcula a pegada de carbono do usuário, permitindo comparações com os próprios dados do usuário ao longo do tempo e com outros membros de grupos dos quais ele faz parte. O projeto é totalmente local, o que significa que os dados não são compartilhados entre usuários de diferentes computadores e não estão armazenados em um servidor central.
+Carbon Tracker é um projeto desenvolvido para a faculdade com o intuito de ajudar as pessoas a se conscientizarem sobre os gastos que acabam prejudicando o meio ambiente, seria a pegada de carbono do usuário comparando com ele próprio e os demais integrantes de grupos que este faz parte. O projeto é totalmente local, não compartilhando dados entre usuários de diferentes computadores, ou seja, os dados não estão em um servidor ao qual o sistema acessa. O projeto foi construído com o pattern Model-View-Presenter com C# e Windows Forms. O banco de dados escolhido foi PostgreSQL, utilizando-se Npgsql para a conexão com o banco de dados.
 
 ## Funcionalidades
 
@@ -11,46 +11,42 @@ Carbon Tracker é um projeto desenvolvido como parte de uma disciplina universit
 - **Armazenamento Local**: Todos os dados são armazenados localmente, garantindo a privacidade dos dados.
 - **Interface de Usuário Amigável**: Desenvolvido com C# e Windows Forms para uma experiência de usuário intuitiva.
 
-## Arquitetura
-
-O projeto foi desenvolvido utilizando o padrão Model-View-Presenter (MVP), que separa claramente a lógica de apresentação, a interface do usuário e a lógica de negócios, facilitando a manutenção e expansão do código.
-
 ## Tecnologias Utilizadas
 
 - **Linguagem de Programação**: C#
 - **Framework**: Windows Forms
+- **Padrão de Arquitetura**: Model-View-Presenter (MVP)
 - **Banco de Dados**: PostgreSQL
-- **Conexão com o Banco de Dados**: Npgsql
-
+- **Bibliotecas de Conexão**: Npgsql
+  
 ## Instalação
 
-### Pré-requisitos
+## Pré-requisitos
 
-- **.NET Framework**: Certifique-se de ter o .NET Framework instalado em seu computador.
-- **PostgreSQL**: Instale e configure o PostgreSQL. Crie um banco de dados para o Carbon Tracker com o usuário administrador.
+- **.NET Framework**: Certifique-se de ter o .NET Framework instalado. Você pode baixá-lo [aqui](https://dotnet.microsoft.com/download/dotnet-framework).
+- **PostgreSQL**: Certifique-se de ter o PostgreSQL instalado e em execução em sua máquina. Você pode baixá-lo [aqui](https://www.postgresql.org/download/).
 
 ### Passos
 
-1. Clone este repositório para sua máquina local
-
-2. Navegue até o diretório do projeto
-
-3. Configure a string de conexão no arquivo `app.config`:
-    ```xml
-    <connectionStrings>
-        <add name="SqlConnectionString" connectionString="Host=localhost;Username=seuusuario;Password=suasenha;Database=carbontracker"/>
-    </connectionStrings>
+1. Clone este repositório para sua máquina local:
+    ```bash
+    git clone https://github.com/LucasLora/CarbonTracker.git
     ```
 
-4. Abra o projeto no Visual Studio.
+2. Navegue até o diretório do projeto:
+    ```bash
+    cd CarbonTracker
+    ```
 
-5. Restaure as dependências e compile o projeto.
+3. Abra o projeto no seu IDE preferido (por exemplo, Visual Studio).
 
-6. Execute o aplicativo a partir do Visual Studio.
+4. Configure a string de conexão para o banco de dados PostgreSQL no arquivo de configuração.
+
+5. Compile e execute o projeto a partir do seu IDE.
 
 ## Uso
 
-1. **Login**: Faça login com as credenciais de administrador e crie os demais usuários.
+1. **Login**: Faça login com as credenciais de administrador, que devem ser criadas no banco de dados, e crie os demais usuários.
 2. **Cadastro de Atividades**: Cadastre suas atividades diárias que geram emissões de carbono.
 3. **Visualização de Relatórios**: Acesse relatórios para visualizar e comparar sua pegada de carbono ao longo do tempo.
 4. **Grupos**: Crie ou participe de grupos para comparar suas emissões com outros usuários.
