@@ -35,11 +35,11 @@ namespace CarbonTracker.Presenters
         {
             this.mainView.ShowUsuariosView += ShowUsuariosView;
             this.mainView.ShowGrupoUsuariosView += ShowGrupoUsuariosView;
-            this.mainView.ShowEletrodomesticoView += ShowEletrodomesticoView;
-            this.mainView.ShowTransporteView += ShowTransporteView;
+            this.mainView.ShowPreCadastrosGastosView += ShowPreCadastrosGastosView;
             this.mainView.ShowRegistroGastosView += ShowRegistroGastosView;
             this.mainView.ShowComparacoesView += ShowComparacoesView;
-    }
+            this.mainView.ShowAlterarInformacoesView += ShowAlterarInformacoesView;
+        }
 
         #endregion
 
@@ -48,12 +48,12 @@ namespace CarbonTracker.Presenters
         private void ShowUsuariosView(object sender, EventArgs e)
         {
             mainView.IsSuccessful = false;
-            if (VerificarSeEhAdministrador())
+            if (VerificarSeEhAdministradorOuSupervisor())
             {
                 mainView.IsSuccessful = true;
                 IUsuariosView view = UsuariosView.GetInstance((Form)mainView);
                 IUsuariosRepository repository = new UsuariosRepository(stringConexao);
-                new UsuariosPresenter(view, repository);
+                new UsuariosPresenter(usuarioLogado, view, repository);
             }
             else 
             {
@@ -77,15 +77,14 @@ namespace CarbonTracker.Presenters
             }
         }
 
-        private void ShowEletrodomesticoView(object sender, EventArgs e)
+        private void ShowPreCadastrosGastosView(object sender, EventArgs e)
         {
             mainView.IsSuccessful = false;
             if (VerificarSeEhAdministradorOuSupervisor())
             {
                 mainView.IsSuccessful = true;
-                IEletrodomesticoView view = EletrodomesticoView.GetInstance((Form)mainView);
-                IEletrodomesticoRepository repository = new EletrodomesticoRepository(stringConexao);
-                new EletrodomesticoPresenter(view, repository);
+                IPreCadastroGastosView view = PreCadastroGastosView.GetInstance((Form)mainView);
+                new PreCadastroGastosPresenter(view, stringConexao);
             }
             else
             {
@@ -93,30 +92,20 @@ namespace CarbonTracker.Presenters
             }
         }
 
-        private void ShowTransporteView(object sender, EventArgs e)
-        {
-            mainView.IsSuccessful = false;
-            if (VerificarSeEhAdministradorOuSupervisor())
-            {
-                mainView.IsSuccessful = true;
-                ITransporteView view = TransporteView.GetInstance((Form)mainView);
-                ITransporteRepository repository = new TransporteRepository(stringConexao);
-                new TransportePresenter(view, repository);
-            }
-            else
-            {
-                mainView.Message = "O usuário logado não tem permissão para acessar os transportes!";
-            }
-        }
-
         private void ShowRegistroGastosView(object sender, EventArgs e)
         {
-            mainView.IsSuccessful = true;
+            IRegistroGastosView view = RegistroGastosView.GetInstance((Form)mainView);
+            new RegistroGastosPresenter(usuarioLogado, view, stringConexao);
         }
 
         private void ShowComparacoesView(object sender, EventArgs e)
         {
-            mainView.IsSuccessful = true;
+            
+        }
+
+        private void ShowAlterarInformacoesView(object sender, EventArgs e)
+        {
+
         }
 
         private bool VerificarSeEhAdministrador()

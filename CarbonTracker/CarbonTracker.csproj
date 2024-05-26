@@ -119,11 +119,19 @@
     <Compile Include="Presenters\GrupoUsuariosPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
+    <Compile Include="Presenters\PreCadastroGastosPresenter.cs" />
+    <Compile Include="Presenters\RegistroGastosPresenter.cs" />
     <Compile Include="Presenters\TransportePresenter.cs" />
     <Compile Include="Presenters\UsuariosPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AutenticacaoService.cs" />
+    <Compile Include="Views\AlterarInformacoesUsuarioLogado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AlterarInformacoesUsuarioLogado.Designer.cs">
+      <DependentUpon>AlterarInformacoesUsuarioLogado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\EletrodomesticoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,10 +144,13 @@
     <Compile Include="Views\GrupoUsuariosView.Designer.cs">
       <DependentUpon>GrupoUsuariosView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\IAlterarInformacoesUsuarioLogado.cs" />
     <Compile Include="Views\IEletrodomesticoView.cs" />
     <Compile Include="Views\IGrupoUsuariosView.cs" />
     <Compile Include="Views\ILoginView.cs" />
     <Compile Include="Views\IMainView.cs" />
+    <Compile Include="Views\IPreCadastroGastosView.cs" />
+    <Compile Include="Views\IRegistroGastosView.cs" />
     <Compile Include="Views\ITransporteView.cs" />
     <Compile Include="Views\IUsuariosView.cs" />
     <Compile Include="Views\LoginView.cs">
@@ -153,6 +164,18 @@
     </Compile>
     <Compile Include="Views\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PreCadastroGastosView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PreCadastroGastosView.Designer.cs">
+      <DependentUpon>PreCadastroGastosView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegistroGastosView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RegistroGastosView.Designer.cs">
+      <DependentUpon>RegistroGastosView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\TransporteView.cs">
       <SubType>Form</SubType>
@@ -191,6 +214,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PreCadastroGastosView.resx">
+      <DependentUpon>PreCadastroGastosView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RegistroGastosView.resx">
+      <DependentUpon>RegistroGastosView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TransporteView.resx">
       <DependentUpon>TransporteView.cs</DependentUpon>

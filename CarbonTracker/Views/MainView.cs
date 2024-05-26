@@ -28,8 +28,8 @@ namespace CarbonTracker.Views
 
         public event EventHandler ShowUsuariosView;
         public event EventHandler ShowGrupoUsuariosView;
-        public event EventHandler ShowEletrodomesticoView;
-        public event EventHandler ShowTransporteView;
+        public event EventHandler ShowPreCadastrosGastosView;
+        public event EventHandler ShowAlterarInformacoesView;
         public event EventHandler ShowRegistroGastosView;
         public event EventHandler ShowComparacoesView;
 
@@ -58,18 +58,18 @@ namespace CarbonTracker.Views
                 }
             };
 
-            btnEletrodomesticos.Click += delegate
+            btnPreCadastrosGastos.Click += delegate
             {
-                ShowEletrodomesticoView?.Invoke(this, EventArgs.Empty);
+                ShowPreCadastrosGastosView?.Invoke(this, EventArgs.Empty);
                 if (!IsSuccessful)
                 {
                     MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
                 }
             };
 
-            btnTransportes.Click += delegate
+            btnAlterarInformacoes.Click += delegate
             {
-                ShowTransporteView?.Invoke(this, EventArgs.Empty);
+                ShowAlterarInformacoesView?.Invoke(this, EventArgs.Empty);
                 if (!IsSuccessful)
                 {
                     MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
@@ -79,20 +79,12 @@ namespace CarbonTracker.Views
             btnRegistroGastos.Click += delegate
             {
                 ShowRegistroGastosView?.Invoke(this, EventArgs.Empty);
-                if (!IsSuccessful)
-                {
-                    MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
-                }
-            }; //Fazer o registro de gastos
+            };
 
             btnComparacoes.Click += delegate
             {
                 ShowComparacoesView?.Invoke(this, EventArgs.Empty);
-                if (!IsSuccessful)
-                {
-                    MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
-                }
-            }; //Fazer as comparações/relatórios
+            };
 
             btnClose.Click += delegate { this.Close(); };
         }

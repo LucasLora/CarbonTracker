@@ -3,6 +3,7 @@ using CarbonTracker.Presenters.Common;
 using CarbonTracker.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using static CarbonTracker.Models.Common.Enums;
 using static CarbonTracker.Presenters.Common.ComboBoxHelper;
@@ -14,6 +15,7 @@ namespace CarbonTracker.Presenters
 
         #region Campos
 
+        private UsuariosModel usuarioLogado;
         private IUsuariosView view;
         private IUsuariosRepository repository;
         private BindingSource usuariosBindingSource = new BindingSource();
@@ -24,8 +26,9 @@ namespace CarbonTracker.Presenters
 
         #region Construtor
 
-        public UsuariosPresenter(IUsuariosView view, IUsuariosRepository repository)
+        public UsuariosPresenter(UsuariosModel usuarioLogado, IUsuariosView view, IUsuariosRepository repository)
         {
+            this.usuarioLogado = usuarioLogado;
             this.view = view;
             this.repository = repository;
 
@@ -59,13 +62,36 @@ namespace CarbonTracker.Presenters
 
         private void CarregaTodaListaUsuarios()
         {
-            usuariosList = repository.RetornarTodos();
+            var usuariosList = repository.RetornarTodos();
+
+            if (usuarioLogado.TipoUsuario == TipoUsuario.Administrador)
+            {
+                usuariosList = usuariosList.Where(x => x.TipoUsuario != TipoUsuario.Administrador).ToList();
+            }
+            else if (usuarioLogado.TipoUsuario == TipoUsuario.Supervisor)
+            {
+                usuariosList = usuariosList.Where(x => x.TipoUsuario != TipoUsuario.Administrador &&
+                                                       x.TipoUsuario != TipoUsuario.Supervisor).ToList();
+            }
+
             usuariosBindingSource.DataSource = usuariosList;
         }
-
+    
         private void CarregaComboBindings()
         {
-            tipoUsuarioBindingSource.DataSource = GetComboBoxItemListFromEnum<TipoUsuario>();
+            var tipoUsuario = GetComboBoxItemListFromEnum<TipoUsuario>();
+
+            if (usuarioLogado.TipoUsuario == TipoUsuario.Administrador)
+            {
+                tipoUsuario = tipoUsuario.Where(x => !string.Equals(x.Text, "Administrador", StringComparison.CurrentCultureIgnoreCase)).ToList();
+            }
+            else if (usuarioLogado.TipoUsuario == TipoUsuario.Supervisor)
+            {
+                tipoUsuario = tipoUsuario.Where(x => !string.Equals(x.Text, "Administrador", StringComparison.CurrentCultureIgnoreCase) &&
+                                                     !string.Equals(x.Text, "Supervisor", StringComparison.CurrentCultureIgnoreCase)).ToList();
+            }
+
+            tipoUsuarioBindingSource.DataSource = tipoUsuario;
         }
 
         private void LimparCamposDaView()

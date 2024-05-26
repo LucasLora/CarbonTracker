@@ -34,6 +34,8 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.tbpDetalhes = new System.Windows.Forms.TabPage();
+            this.txtDescricao = new System.Windows.Forms.RichTextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurar = new System.Windows.Forms.Label();
@@ -42,16 +44,14 @@
             this.btnProcurar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.dgvGrupoUsuarios = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpListagem = new System.Windows.Forms.TabPage();
             this.tbcGrupoUsuarios = new System.Windows.Forms.TabControl();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlTopGrupoUsuarios = new System.Windows.Forms.Panel();
             this.lblGrupoUsuarios = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblDescricao = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.RichTextBox();
             this.tbpDetalhes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupoUsuarios)).BeginInit();
             this.tbpListagem.SuspendLayout();
@@ -61,7 +61,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Location = new System.Drawing.Point(689, 325);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
@@ -71,7 +71,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSalvar.Location = new System.Drawing.Point(3, 325);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 23);
@@ -123,6 +123,24 @@
             this.tbpDetalhes.TabIndex = 1;
             this.tbpDetalhes.Text = "Detalhes";
             this.tbpDetalhes.UseVisualStyleBackColor = true;
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(7, 128);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(779, 191);
+            this.txtDescricao.TabIndex = 14;
+            this.txtDescricao.Text = "";
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.Location = new System.Drawing.Point(3, 105);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(84, 20);
+            this.lblDescricao.TabIndex = 12;
+            this.lblDescricao.Text = "Descrição:";
             // 
             // txtId
             // 
@@ -215,6 +233,30 @@
             this.dgvGrupoUsuarios.Size = new System.Drawing.Size(673, 291);
             this.dgvGrupoUsuarios.TabIndex = 3;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Grupo";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 75;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 200;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 350;
+            // 
             // tbpListagem
             // 
             this.tbpListagem.Controls.Add(this.btnExcluir);
@@ -277,48 +319,6 @@
             this.lblGrupoUsuarios.Size = new System.Drawing.Size(218, 31);
             this.lblGrupoUsuarios.TabIndex = 0;
             this.lblGrupoUsuarios.Text = "Grupo Usuários";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Grupo";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 75;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 200;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 350;
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.Location = new System.Drawing.Point(3, 105);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(84, 20);
-            this.lblDescricao.TabIndex = 12;
-            this.lblDescricao.Text = "Descrição:";
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(7, 128);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(779, 191);
-            this.txtDescricao.TabIndex = 14;
-            this.txtDescricao.Text = "";
             // 
             // GrupoUsuariosView
             // 

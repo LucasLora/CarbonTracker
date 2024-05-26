@@ -52,14 +52,10 @@
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LitroPorHoraAgua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kwporhoraeletricidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlTopEletrodomesticos = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.lblEletrodomesticos = new System.Windows.Forms.Label();
             this.tbpDetalhes.SuspendLayout();
             this.tbcEletrodomesticos.SuspendLayout();
             this.tbpListagem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEletrodomesticos)).BeginInit();
-            this.pnlTopEletrodomesticos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLitroPorHoraAgua
@@ -182,7 +178,7 @@
             this.tbpDetalhes.Location = new System.Drawing.Point(4, 22);
             this.tbpDetalhes.Name = "tbpDetalhes";
             this.tbpDetalhes.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDetalhes.Size = new System.Drawing.Size(792, 351);
+            this.tbpDetalhes.Size = new System.Drawing.Size(792, 424);
             this.tbpDetalhes.TabIndex = 1;
             this.tbpDetalhes.Text = "Detalhes";
             this.tbpDetalhes.UseVisualStyleBackColor = true;
@@ -196,8 +192,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(689, 325);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(684, 395);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
             this.btnCancelar.TabIndex = 9;
@@ -206,8 +202,8 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.Location = new System.Drawing.Point(6, 322);
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSalvar.Location = new System.Drawing.Point(7, 395);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 23);
             this.btnSalvar.TabIndex = 8;
@@ -236,10 +232,10 @@
             this.tbcEletrodomesticos.Controls.Add(this.tbpListagem);
             this.tbcEletrodomesticos.Controls.Add(this.tbpDetalhes);
             this.tbcEletrodomesticos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbcEletrodomesticos.Location = new System.Drawing.Point(0, 73);
+            this.tbcEletrodomesticos.Location = new System.Drawing.Point(0, 0);
             this.tbcEletrodomesticos.Name = "tbcEletrodomesticos";
             this.tbcEletrodomesticos.SelectedIndex = 0;
-            this.tbcEletrodomesticos.Size = new System.Drawing.Size(800, 377);
+            this.tbcEletrodomesticos.Size = new System.Drawing.Size(800, 450);
             this.tbcEletrodomesticos.TabIndex = 1;
             // 
             // tbpListagem
@@ -254,7 +250,7 @@
             this.tbpListagem.Location = new System.Drawing.Point(4, 22);
             this.tbpListagem.Name = "tbpListagem";
             this.tbpListagem.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpListagem.Size = new System.Drawing.Size(792, 351);
+            this.tbpListagem.Size = new System.Drawing.Size(792, 424);
             this.tbpListagem.TabIndex = 0;
             this.tbpListagem.Text = "Listagem";
             this.tbpListagem.UseVisualStyleBackColor = true;
@@ -280,7 +276,7 @@
             this.dgvEletrodomesticos.RowHeadersVisible = false;
             this.dgvEletrodomesticos.RowHeadersWidth = 51;
             this.dgvEletrodomesticos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEletrodomesticos.Size = new System.Drawing.Size(673, 291);
+            this.dgvEletrodomesticos.Size = new System.Drawing.Size(673, 364);
             this.dgvEletrodomesticos.TabIndex = 3;
             // 
             // Id
@@ -297,7 +293,7 @@
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
-            this.Nome.Width = 200;
+            this.Nome.Width = 150;
             // 
             // LitroPorHoraAgua
             // 
@@ -315,45 +311,12 @@
             this.kwporhoraeletricidade.ReadOnly = true;
             this.kwporhoraeletricidade.Width = 120;
             // 
-            // pnlTopEletrodomesticos
-            // 
-            this.pnlTopEletrodomesticos.BackColor = System.Drawing.Color.White;
-            this.pnlTopEletrodomesticos.Controls.Add(this.btnClose);
-            this.pnlTopEletrodomesticos.Controls.Add(this.lblEletrodomesticos);
-            this.pnlTopEletrodomesticos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTopEletrodomesticos.Location = new System.Drawing.Point(0, 0);
-            this.pnlTopEletrodomesticos.Name = "pnlTopEletrodomesticos";
-            this.pnlTopEletrodomesticos.Size = new System.Drawing.Size(800, 73);
-            this.pnlTopEletrodomesticos.TabIndex = 0;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(772, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 25);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // lblEletrodomesticos
-            // 
-            this.lblEletrodomesticos.AutoSize = true;
-            this.lblEletrodomesticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEletrodomesticos.Location = new System.Drawing.Point(12, 19);
-            this.lblEletrodomesticos.Name = "lblEletrodomesticos";
-            this.lblEletrodomesticos.Size = new System.Drawing.Size(239, 31);
-            this.lblEletrodomesticos.TabIndex = 0;
-            this.lblEletrodomesticos.Text = "Eletrodomésticos";
-            // 
             // EletrodomesticoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tbcEletrodomesticos);
-            this.Controls.Add(this.pnlTopEletrodomesticos);
             this.Name = "EletrodomesticoView";
             this.Text = "EletrodomesticoView";
             this.tbpDetalhes.ResumeLayout(false);
@@ -362,8 +325,6 @@
             this.tbpListagem.ResumeLayout(false);
             this.tbpListagem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEletrodomesticos)).EndInit();
-            this.pnlTopEletrodomesticos.ResumeLayout(false);
-            this.pnlTopEletrodomesticos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -385,11 +346,8 @@
         private System.Windows.Forms.TextBox txtLitroPorHoraAgua;
         private System.Windows.Forms.TabControl tbcEletrodomesticos;
         private System.Windows.Forms.TabPage tbpListagem;
-        private System.Windows.Forms.Panel pnlTopEletrodomesticos;
-        private System.Windows.Forms.Label lblEletrodomesticos;
         private System.Windows.Forms.Label lblKwPorHoraEletricidade;
         private System.Windows.Forms.DataGridView dgvEletrodomesticos;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtKwPorHoraEletricidade;

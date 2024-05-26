@@ -56,9 +56,6 @@ namespace CarbonTracker.Views
 
         private void InicializaEventos()
         {
-            //Fechar
-            btnClose.Click += delegate { this.Close(); };
-
             //Procurar
             btnProcurar.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtProcurar.KeyDown += (s, e) =>
@@ -147,14 +144,14 @@ namespace CarbonTracker.Views
 
         private static TransporteView instance;
 
-        public static TransporteView GetInstance(Form parentContainer)
+        public static TransporteView GetInstance()
         {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new TransporteView();
-                instance.MdiParent = parentContainer;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
+                instance.TopLevel = false;
             }
             else
             {

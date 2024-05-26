@@ -38,6 +38,11 @@
             this.btnProcurar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoUsuarioDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCriacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurar = new System.Windows.Forms.Label();
             this.tbpDetalhes = new System.Windows.Forms.TabPage();
@@ -55,11 +60,6 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.txtDataCriacao = new System.Windows.Forms.TextBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoUsuarioDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataCriacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTopUsuarios.SuspendLayout();
             this.tbcUsuarios.SuspendLayout();
             this.tbpListagem.SuspendLayout();
@@ -195,6 +195,44 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(673, 291);
             this.dgvUsuarios.TabIndex = 3;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Usuário";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 80;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 170;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "E-mail";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 200;
+            // 
+            // TipoUsuarioDescription
+            // 
+            this.TipoUsuarioDescription.DataPropertyName = "TipoUsuarioDescription";
+            this.TipoUsuarioDescription.HeaderText = "Tipo Usuário";
+            this.TipoUsuarioDescription.Name = "TipoUsuarioDescription";
+            this.TipoUsuarioDescription.ReadOnly = true;
+            // 
+            // DataCriacao
+            // 
+            this.DataCriacao.DataPropertyName = "DataCriacao";
+            this.DataCriacao.HeaderText = "Data Criação";
+            this.DataCriacao.Name = "DataCriacao";
+            this.DataCriacao.ReadOnly = true;
+            // 
             // txtProcurar
             // 
             this.txtProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -250,7 +288,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Location = new System.Drawing.Point(689, 325);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
@@ -260,7 +298,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSalvar.Location = new System.Drawing.Point(3, 325);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 23);
@@ -366,44 +404,6 @@
             this.txtDataCriacao.ReadOnly = true;
             this.txtDataCriacao.Size = new System.Drawing.Size(127, 20);
             this.txtDataCriacao.TabIndex = 20;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Usuário";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 80;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 170;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "E-mail";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 200;
-            // 
-            // TipoUsuarioDescription
-            // 
-            this.TipoUsuarioDescription.DataPropertyName = "TipoUsuarioDescription";
-            this.TipoUsuarioDescription.HeaderText = "Tipo Usuário";
-            this.TipoUsuarioDescription.Name = "TipoUsuarioDescription";
-            this.TipoUsuarioDescription.ReadOnly = true;
-            // 
-            // DataCriacao
-            // 
-            this.DataCriacao.DataPropertyName = "DataCriacao";
-            this.DataCriacao.HeaderText = "Data Criação";
-            this.DataCriacao.Name = "DataCriacao";
-            this.DataCriacao.ReadOnly = true;
             // 
             // UsuariosView
             // 
