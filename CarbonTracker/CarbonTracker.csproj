@@ -105,14 +105,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Common\Enums.cs" />
+    <Compile Include="Models\Models\GastosBase.cs" />
     <Compile Include="Models\Models\EletrodomesticoModel.cs" />
+    <Compile Include="Models\Models\GastosEletrodomestico.cs" />
+    <Compile Include="Models\Models\GastosTransporte.cs" />
     <Compile Include="Models\Models\GrupoUsuariosModel.cs" />
+    <Compile Include="Models\Models\UsuarioXGrupoUsuarios.cs" />
     <Compile Include="Models\RepositoriesInterfaces\IEletrodomesticoRepository.cs" />
+    <Compile Include="Models\RepositoriesInterfaces\IGastosEletrodomesticoRepository.cs" />
+    <Compile Include="Models\RepositoriesInterfaces\IGastosTransporteRepository.cs" />
     <Compile Include="Models\RepositoriesInterfaces\IGrupoUsuariosRepository.cs" />
     <Compile Include="Models\RepositoriesInterfaces\ITransporteRepository.cs" />
     <Compile Include="Models\RepositoriesInterfaces\IUsuariosRepository.cs" />
     <Compile Include="Models\Models\TransporteModel.cs" />
     <Compile Include="Models\Models\UsuarioModel.cs" />
+    <Compile Include="Models\RepositoriesInterfaces\IUsuarioXGrupoUsuariosRepository.cs" />
     <Compile Include="Presenters\AlterarInformacoesUsuarioLogadoPresenter.cs" />
     <Compile Include="Presenters\Common\ComboBoxHelper.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
@@ -205,10 +212,13 @@
       <DependentUpon>UsuarioView.cs</DependentUpon>
     </Compile>
     <Compile Include="_Repositories\EletrodomesticoRepository.cs" />
+    <Compile Include="_Repositories\GastosEletrodomesticoRepository.cs" />
+    <Compile Include="_Repositories\GastosTransporteRepository.cs" />
     <Compile Include="_Repositories\GrupoUsuariosRepository.cs" />
     <Compile Include="_Repositories\RepositorioBase.cs" />
     <Compile Include="_Repositories\TransporteRepository.cs" />
     <Compile Include="_Repositories\UsuariosRepository.cs" />
+    <Compile Include="_Repositories\UsuarioXGrupoUsuariosRepository.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

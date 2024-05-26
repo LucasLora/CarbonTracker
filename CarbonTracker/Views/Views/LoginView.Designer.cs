@@ -111,16 +111,13 @@
             // 
             // lblCarbonTracker
             // 
-            this.lblCarbonTracker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCarbonTracker.AutoSize = true;
             this.lblCarbonTracker.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarbonTracker.Location = new System.Drawing.Point(22, 29);
-            this.lblCarbonTracker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCarbonTracker.Location = new System.Drawing.Point(22, 30);
             this.lblCarbonTracker.Name = "lblCarbonTracker";
             this.lblCarbonTracker.Size = new System.Drawing.Size(364, 54);
-            this.lblCarbonTracker.TabIndex = 0;
+            this.lblCarbonTracker.TabIndex = 8;
             this.lblCarbonTracker.Text = "Carbon Tracker";
-            this.lblCarbonTracker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginView
             // 
