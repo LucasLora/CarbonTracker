@@ -9,7 +9,7 @@ namespace CarbonTracker.Presenters
 
         #region Campos
 
-        private readonly UsuariosModel usuarioLogado;
+        private readonly UsuarioModel usuarioLogado;
         private IRegistroGastosView view;
         private readonly string stringConexao;
 
@@ -17,7 +17,7 @@ namespace CarbonTracker.Presenters
 
         #region Construtor
 
-        public RegistroGastosPresenter(UsuariosModel usuarioLogado, IRegistroGastosView mainView, string stringConexao)
+        public RegistroGastosPresenter(UsuarioModel usuarioLogado, IRegistroGastosView mainView, string stringConexao)
         {
             this.usuarioLogado = usuarioLogado;
             this.view = mainView;
@@ -44,16 +44,12 @@ namespace CarbonTracker.Presenters
 
         private void ShowGastosEletrodomesticoView(object sender, EventArgs e)
         {
-            //IGrupoUsuariosView view = GrupoUsuariosView.GetInstance((Form)mainView);
-            //IGrupoUsuariosRepository repository = new GrupoUsuariosRepository(stringConexao);
-            //new GrupoUsuariosPresenter(view, repository);
+
         }
 
         private void ShowGastosTransporteView(object sender, EventArgs e)
         {
-            //IGrupoUsuariosView view = GrupoUsuariosView.GetInstance((Form)mainView);
-            //IGrupoUsuariosRepository repository = new GrupoUsuariosRepository(stringConexao);
-            //new GrupoUsuariosPresenter(view, repository);
+
         }
 
         #endregion

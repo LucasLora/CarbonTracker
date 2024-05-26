@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Windows.Forms;
+using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker.Views
 {
-    public interface IGrupoUsuariosView
+    public interface ICadastroUsuarioView
     {
 
         #region Propriedades
 
-        string GrupoUsuariosId { get; set; }
-        string GrupoUsuariosNome { get; set; }
-        string GrupoUsuariosDescricao { get; set; }
+        string UsuarioId { get; set; }
+        string UsuarioNome { get; set; }
+        string UsuarioEmail { get; set; }
+        string UsuarioSenha { get; set; }
+        TipoUsuario UsuarioTipoUsuario { get; set; }
+        string UsuarioDataCriacao { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -32,7 +36,8 @@ namespace CarbonTracker.Views
 
         #region Métodos
 
-        void SetGrupoUsuariosListBindingSource(BindingSource grupoUsuariosList);
+        void SetUsuariosListBindingSource(BindingSource usuariosList);
+        void SetComboBoxTipoUsuarioBindingSource(BindingSource tipoUsuarioList);
         void Show();
 
         #endregion

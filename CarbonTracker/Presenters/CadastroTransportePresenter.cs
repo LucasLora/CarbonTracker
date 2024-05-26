@@ -9,12 +9,12 @@ using static CarbonTracker.Presenters.Common.ComboBoxHelper;
 
 namespace CarbonTracker.Presenters
 {
-    public class TransportePresenter
+    public class CadastroTransportePresenter
     {
 
         #region Campos
 
-        private ITransporteView view;
+        private ICadastroTransporteView view;
         private ITransporteRepository repository;
         private BindingSource transporteBindingSource = new BindingSource();
         private IEnumerable<TransporteModel> transporteList;
@@ -25,7 +25,7 @@ namespace CarbonTracker.Presenters
 
         #region Construtor
 
-        public TransportePresenter(ITransporteView view, ITransporteRepository repository)
+        public CadastroTransportePresenter(ICadastroTransporteView view, ITransporteRepository repository)
         {
             this.view = view;
             this.repository = repository;
@@ -87,9 +87,13 @@ namespace CarbonTracker.Presenters
         private void SearchTransporte(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(this.view.SearchValue))
-            { transporteList = repository.RetornarPorId(this.view.SearchValue); }
+            { 
+                transporteList = repository.RetornarPorId(this.view.SearchValue); 
+            }
             else
-            { transporteList = repository.RetornarTodos(); }
+            { 
+                transporteList = repository.RetornarTodos(); 
+            }
 
             transporteBindingSource.DataSource = transporteList;
         } 

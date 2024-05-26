@@ -1,6 +1,6 @@
 ﻿namespace CarbonTracker.Views
 {
-    partial class PreCadastroGastosView
+    partial class CadastroGastosView
     {
         /// <summary>
         /// Required designer variable.

@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace CarbonTracker.Presenters
 {
-    public class GrupoUsuariosPresenter
+    public class CadastroGrupoUsuariosPresenter
     {
 
         #region Campos
 
-        private IGrupoUsuariosView view;
+        private ICadastroGrupoUsuariosView view;
         private IGrupoUsuariosRepository repository;
         private BindingSource grupoUsuariosBindingSource = new BindingSource();
         private IEnumerable<GrupoUsuariosModel> grupoUsuariosList;
@@ -21,7 +21,7 @@ namespace CarbonTracker.Presenters
 
         #region Construtor
 
-        public GrupoUsuariosPresenter(IGrupoUsuariosView view, IGrupoUsuariosRepository repository)
+        public CadastroGrupoUsuariosPresenter(ICadastroGrupoUsuariosView view, IGrupoUsuariosRepository repository)
         {
             this.view = view;
             this.repository = repository;
@@ -72,9 +72,13 @@ namespace CarbonTracker.Presenters
         private void SearchGrupoUsuarios(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(this.view.SearchValue))
-            { grupoUsuariosList = repository.RetornarPorId(this.view.SearchValue); }
+            { 
+                grupoUsuariosList = repository.RetornarPorId(this.view.SearchValue);
+            }
             else
-            { grupoUsuariosList = repository.RetornarTodos(); }
+            {
+                grupoUsuariosList = repository.RetornarTodos();
+            }
 
             grupoUsuariosBindingSource.DataSource = grupoUsuariosList;
         }

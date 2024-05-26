@@ -3,11 +3,12 @@ using System.Windows.Forms;
 
 namespace CarbonTracker.Views
 {
-    public partial class GrupoUsuariosView : Form, IGrupoUsuariosView
+    public partial class CadastroGrupoUsuariosView : Form, ICadastroGrupoUsuariosView
     {
+
         #region Construtor
 
-        public GrupoUsuariosView()
+        public CadastroGrupoUsuariosView()
         {
             InitializeComponent();
             InicializaEventos();
@@ -119,13 +120,13 @@ namespace CarbonTracker.Views
 
         #region Singleton pattern (Open a single form instance)
 
-        private static GrupoUsuariosView instance;
+        private static CadastroGrupoUsuariosView instance;
 
-        public static GrupoUsuariosView GetInstance(Form parentContainer)
+        public static CadastroGrupoUsuariosView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new GrupoUsuariosView();
+                instance = new CadastroGrupoUsuariosView();
                 instance.MdiParent = parentContainer;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;

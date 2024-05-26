@@ -4,12 +4,12 @@ using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker.Views
 {
-    public partial class TransporteView : Form, ITransporteView
+    public partial class CadastroTransporteView : Form, ICadastroTransporteView
     {
 
         #region Construtor
 
-        public TransporteView()
+        public CadastroTransporteView()
         {
             InitializeComponent();
             InicializaEventos();
@@ -142,13 +142,13 @@ namespace CarbonTracker.Views
 
         #region Singleton pattern (Open a single form instance)
 
-        private static TransporteView instance;
+        private static CadastroTransporteView instance;
 
-        public static TransporteView GetInstance()
+        public static CadastroTransporteView GetInstance()
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new TransporteView();
+                instance = new CadastroTransporteView();
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
                 instance.TopLevel = false;

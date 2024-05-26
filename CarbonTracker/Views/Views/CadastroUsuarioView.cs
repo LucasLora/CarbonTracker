@@ -4,12 +4,12 @@ using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker.Views
 {
-    public partial class UsuariosView : Form, IUsuariosView
+    public partial class CadastroUsuarioView : Form, ICadastroUsuarioView
     {
 
         #region Construtor
 
-        public UsuariosView()
+        public CadastroUsuarioView()
         {
             InitializeComponent();
             InicializaEventos();
@@ -20,16 +20,16 @@ namespace CarbonTracker.Views
 
         #region Propriedades
 
-        public string UsuariosId { get { return txtId.Text; } set { txtId.Text = value; } }
-        public string UsuariosNome { get { return txtNome.Text; } set { txtNome.Text = value; } }
-        public TipoUsuario UsuariosTipoUsuario 
+        public string UsuarioId { get { return txtId.Text; } set { txtId.Text = value; } }
+        public string UsuarioNome { get { return txtNome.Text; } set { txtNome.Text = value; } }
+        public TipoUsuario UsuarioTipoUsuario 
         {
             get { return (TipoUsuario)(short)(cmbTipoUsuario.SelectedValue ?? 0); }
             set { cmbTipoUsuario.SelectedValue = ((short)value).ToString(); } 
         }
-        public string UsuariosEmail { get { return txtEmail.Text; } set { txtEmail.Text = value; } }
-        public string UsuariosSenha { get { return txtSenha.Text; } set { txtSenha.Text = value; } }
-        public string UsuariosDataCriacao { get { return txtDataCriacao.Text; } set { txtDataCriacao.Text = value; } }
+        public string UsuarioEmail { get { return txtEmail.Text; } set { txtEmail.Text = value; } }
+        public string UsuarioSenha { get { return txtSenha.Text; } set { txtSenha.Text = value; } }
+        public string UsuarioDataCriacao { get { return txtDataCriacao.Text; } set { txtDataCriacao.Text = value; } }
 
         public string SearchValue { get { return txtProcurar.Text; } set { txtProcurar.Text = value; } }
         public bool IsEdit { get; set; }
@@ -135,13 +135,13 @@ namespace CarbonTracker.Views
 
         #region Singleton pattern (Open a single form instance)
 
-        private static UsuariosView instance;
+        private static CadastroUsuarioView instance;
 
-        public static UsuariosView GetInstance(Form parentContainer)
+        public static CadastroUsuarioView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new UsuariosView();
+                instance = new CadastroUsuarioView();
                 instance.MdiParent = parentContainer;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;

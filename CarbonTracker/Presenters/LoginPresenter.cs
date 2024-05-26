@@ -17,7 +17,7 @@ namespace CarbonTracker.Presenters
 
         #region Propriedades
 
-        public UsuariosModel UsuarioLogado { get { return autenticacaoService.UsuarioAutenticado; } }
+        public UsuarioModel UsuarioLogado { get { return autenticacaoService.UsuarioAutenticado; } }
 
         #endregion
 
@@ -46,6 +46,7 @@ namespace CarbonTracker.Presenters
             if (isAuthenticated)
             {
                 view.IsSuccessful = true;
+                view.Message = "Usuário autenticado com sucesso.";
             }
             else
             {
@@ -57,5 +58,4 @@ namespace CarbonTracker.Presenters
         #endregion
 
     }
-
 }

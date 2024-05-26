@@ -22,5 +22,4 @@ namespace CarbonTracker.Views
         #endregion
 
     }
-
 }

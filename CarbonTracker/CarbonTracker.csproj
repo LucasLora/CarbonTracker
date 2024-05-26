@@ -105,96 +105,96 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Common\Enums.cs" />
-    <Compile Include="Models\EletrodomesticoModel.cs" />
-    <Compile Include="Models\GrupoUsuariosModel.cs" />
-    <Compile Include="Models\IEletrodomesticoRepository.cs" />
-    <Compile Include="Models\IGrupoUsuariosRepository.cs" />
-    <Compile Include="Models\ITransporteRepository.cs" />
-    <Compile Include="Models\IUsuariosRepository.cs" />
-    <Compile Include="Models\TransporteModel.cs" />
-    <Compile Include="Models\UsuariosModel.cs" />
+    <Compile Include="Models\Models\EletrodomesticoModel.cs" />
+    <Compile Include="Models\Models\GrupoUsuariosModel.cs" />
+    <Compile Include="Models\RepositoriesInterfaces\IEletrodomesticoRepository.cs" />
+    <Compile Include="Models\RepositoriesInterfaces\IGrupoUsuariosRepository.cs" />
+    <Compile Include="Models\RepositoriesInterfaces\ITransporteRepository.cs" />
+    <Compile Include="Models\RepositoriesInterfaces\IUsuariosRepository.cs" />
+    <Compile Include="Models\Models\TransporteModel.cs" />
+    <Compile Include="Models\Models\UsuarioModel.cs" />
     <Compile Include="Presenters\AlterarInformacoesUsuarioLogadoPresenter.cs" />
     <Compile Include="Presenters\Common\ComboBoxHelper.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
-    <Compile Include="Presenters\EletrodomesticoPresenter.cs" />
-    <Compile Include="Presenters\GrupoUsuariosPresenter.cs" />
+    <Compile Include="Presenters\CadastroEletrodomesticoPresenter.cs" />
+    <Compile Include="Presenters\CadastroGrupoUsuariosPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
-    <Compile Include="Presenters\PreCadastroGastosPresenter.cs" />
+    <Compile Include="Presenters\CadastroGastosPresenter.cs" />
     <Compile Include="Presenters\RegistroGastosPresenter.cs" />
-    <Compile Include="Presenters\TransportePresenter.cs" />
-    <Compile Include="Presenters\UsuariosPresenter.cs" />
+    <Compile Include="Presenters\CadastroTransportePresenter.cs" />
+    <Compile Include="Presenters\CadastroUsuarioPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AutenticacaoService.cs" />
-    <Compile Include="Views\AlterarInformacoesUsuarioLogado.cs">
+    <Compile Include="Views\Views\AlterarInformacoesUsuarioLogado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AlterarInformacoesUsuarioLogado.Designer.cs">
+    <Compile Include="Views\Views\AlterarInformacoesUsuarioLogado.Designer.cs">
       <DependentUpon>AlterarInformacoesUsuarioLogado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\EletrodomesticoView.cs">
+    <Compile Include="Views\Views\CadastroEletrodomesticoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\EletrodomesticoView.Designer.cs">
-      <DependentUpon>EletrodomesticoView.cs</DependentUpon>
+    <Compile Include="Views\Views\CadastroEletrodomesticoView.Designer.cs">
+      <DependentUpon>CadastroEletrodomesticoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\GrupoUsuariosView.cs">
+    <Compile Include="Views\Views\CadastroGrupoUsuariosView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\GrupoUsuariosView.Designer.cs">
-      <DependentUpon>GrupoUsuariosView.cs</DependentUpon>
+    <Compile Include="Views\Views\CadastroGrupoUsuariosView.Designer.cs">
+      <DependentUpon>CadastroGrupoUsuariosView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\IAlterarInformacoesUsuarioLogado.cs" />
-    <Compile Include="Views\IEletrodomesticoView.cs" />
-    <Compile Include="Views\IGrupoUsuariosView.cs" />
-    <Compile Include="Views\ILoginView.cs" />
-    <Compile Include="Views\IMainView.cs" />
-    <Compile Include="Views\IPreCadastroGastosView.cs" />
-    <Compile Include="Views\IRegistroGastosView.cs" />
-    <Compile Include="Views\ITransporteView.cs" />
-    <Compile Include="Views\IUsuariosView.cs" />
-    <Compile Include="Views\LoginView.cs">
+    <Compile Include="Views\Interfaces\IAlterarInformacoesUsuarioLogado.cs" />
+    <Compile Include="Views\Interfaces\ICadastroEletrodomesticoView.cs" />
+    <Compile Include="Views\Interfaces\ICadastroGrupoUsuariosView.cs" />
+    <Compile Include="Views\Interfaces\ILoginView.cs" />
+    <Compile Include="Views\Interfaces\IMainView.cs" />
+    <Compile Include="Views\Interfaces\ICadastroGastosView.cs" />
+    <Compile Include="Views\Interfaces\IRegistroGastosView.cs" />
+    <Compile Include="Views\Interfaces\ICadastroTransporteView.cs" />
+    <Compile Include="Views\Interfaces\ICadastroUsuarioView.cs" />
+    <Compile Include="Views\Views\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\LoginView.Designer.cs">
+    <Compile Include="Views\Views\LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainView.cs">
+    <Compile Include="Views\Views\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\MainView.Designer.cs">
+    <Compile Include="Views\Views\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\PreCadastroGastosView.cs">
+    <Compile Include="Views\Views\CadastroGastosView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\PreCadastroGastosView.Designer.cs">
-      <DependentUpon>PreCadastroGastosView.cs</DependentUpon>
+    <Compile Include="Views\Views\CadastroGastosView.Designer.cs">
+      <DependentUpon>CadastroGastosView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\RegistroGastosView.cs">
+    <Compile Include="Views\Views\RegistroGastosView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\RegistroGastosView.Designer.cs">
+    <Compile Include="Views\Views\RegistroGastosView.Designer.cs">
       <DependentUpon>RegistroGastosView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SenhaInputView.cs">
+    <Compile Include="Views\Views\SenhaInputView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\SenhaInputView.Designer.cs">
+    <Compile Include="Views\Views\SenhaInputView.Designer.cs">
       <DependentUpon>SenhaInputView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\TransporteView.cs">
+    <Compile Include="Views\Views\CadastroTransporteView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\TransporteView.Designer.cs">
-      <DependentUpon>TransporteView.cs</DependentUpon>
+    <Compile Include="Views\Views\CadastroTransporteView.Designer.cs">
+      <DependentUpon>CadastroTransporteView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UsuariosView.cs">
+    <Compile Include="Views\Views\CadastroUsuarioView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\UsuariosView.Designer.cs">
-      <DependentUpon>UsuariosView.cs</DependentUpon>
+    <Compile Include="Views\Views\CadastroUsuarioView.Designer.cs">
+      <DependentUpon>CadastroUsuarioView.cs</DependentUpon>
     </Compile>
     <Compile Include="_Repositories\EletrodomesticoRepository.cs" />
     <Compile Include="_Repositories\GrupoUsuariosRepository.cs" />
@@ -210,35 +210,35 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\AlterarInformacoesUsuarioLogado.resx">
+    <EmbeddedResource Include="Views\Views\AlterarInformacoesUsuarioLogado.resx">
       <DependentUpon>AlterarInformacoesUsuarioLogado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\EletrodomesticoView.resx">
-      <DependentUpon>EletrodomesticoView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Views\CadastroEletrodomesticoView.resx">
+      <DependentUpon>CadastroEletrodomesticoView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\GrupoUsuariosView.resx">
-      <DependentUpon>GrupoUsuariosView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Views\CadastroGrupoUsuariosView.resx">
+      <DependentUpon>CadastroGrupoUsuariosView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\LoginView.resx">
+    <EmbeddedResource Include="Views\Views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainView.resx">
+    <EmbeddedResource Include="Views\Views\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\PreCadastroGastosView.resx">
-      <DependentUpon>PreCadastroGastosView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Views\CadastroGastosView.resx">
+      <DependentUpon>CadastroGastosView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\RegistroGastosView.resx">
+    <EmbeddedResource Include="Views\Views\RegistroGastosView.resx">
       <DependentUpon>RegistroGastosView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SenhaInputView.resx">
+    <EmbeddedResource Include="Views\Views\SenhaInputView.resx">
       <DependentUpon>SenhaInputView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\TransporteView.resx">
-      <DependentUpon>TransporteView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Views\CadastroTransporteView.resx">
+      <DependentUpon>CadastroTransporteView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UsuariosView.resx">
-      <DependentUpon>UsuariosView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Views\CadastroUsuarioView.resx">
+      <DependentUpon>CadastroUsuarioView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

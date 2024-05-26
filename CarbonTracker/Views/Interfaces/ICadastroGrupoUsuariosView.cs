@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
-using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker.Views
 {
-    public interface ITransporteView
+    public interface ICadastroGrupoUsuariosView
     {
 
         #region Propriedades
 
-        string TransporteId { get; set; }
-        string TransporteNome { get; set; }
-        TipoVeiculo TransporteTipoVeiculo { get; set; }
-        TipoCombustivel TransporteTipoCombustivel { get; set; }
-        string TransporteKmPorLitroCombustivel { get; set; }
+        string GrupoUsuariosId { get; set; }
+        string GrupoUsuariosNome { get; set; }
+        string GrupoUsuariosDescricao { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -35,9 +32,7 @@ namespace CarbonTracker.Views
 
         #region Métodos
 
-        void SetTransporteListBindingSource(BindingSource transporteList);
-        void SetComboBoxTipoVeiculoBindingSource(BindingSource tipoVeiculoList);
-        void SetComboBoxTipoCombustivelBindingSource(BindingSource tipoCombustivelList);
+        void SetGrupoUsuariosListBindingSource(BindingSource grupoUsuariosList);
         void Show();
 
         #endregion

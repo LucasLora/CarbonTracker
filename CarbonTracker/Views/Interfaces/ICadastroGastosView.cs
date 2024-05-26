@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Views
 {
-    public interface IPreCadastroGastosView
+    public interface ICadastroGastosView
     {
+
         #region Propriedades
 
         TabPage TbpEletrodomestico { get; }

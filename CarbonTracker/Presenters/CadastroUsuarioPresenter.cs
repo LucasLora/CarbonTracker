@@ -10,23 +10,23 @@ using static CarbonTracker.Presenters.Common.ComboBoxHelper;
 
 namespace CarbonTracker.Presenters
 {
-    public class UsuariosPresenter
+    public class CadastroUsuarioPresenter
     {
 
         #region Campos
 
-        private UsuariosModel usuarioLogado;
-        private IUsuariosView view;
+        private UsuarioModel usuarioLogado;
+        private ICadastroUsuarioView view;
         private IUsuariosRepository repository;
         private BindingSource usuariosBindingSource = new BindingSource();
-        private IEnumerable<UsuariosModel> usuariosList;
+        private IEnumerable<UsuarioModel> usuariosList;
         private BindingSource tipoUsuarioBindingSource = new BindingSource();
 
         #endregion
 
         #region Construtor
 
-        public UsuariosPresenter(UsuariosModel usuarioLogado, IUsuariosView view, IUsuariosRepository repository)
+        public CadastroUsuarioPresenter(UsuarioModel usuarioLogado, ICadastroUsuarioView view, IUsuariosRepository repository)
         {
             this.usuarioLogado = usuarioLogado;
             this.view = view;
@@ -96,12 +96,12 @@ namespace CarbonTracker.Presenters
 
         private void LimparCamposDaView()
         {
-            view.UsuariosId = "0";
-            view.UsuariosNome = "";
-            view.UsuariosEmail = "";
-            view.UsuariosSenha = "";
-            view.UsuariosTipoUsuario = TipoUsuario.Usuario;
-            view.UsuariosDataCriacao = "";
+            view.UsuarioId = "0";
+            view.UsuarioNome = "";
+            view.UsuarioEmail = "";
+            view.UsuarioSenha = "";
+            view.UsuarioTipoUsuario = TipoUsuario.Usuario;
+            view.UsuarioDataCriacao = "";
         }
 
         #endregion
@@ -111,9 +111,13 @@ namespace CarbonTracker.Presenters
         private void SearchUsuarios(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(this.view.SearchValue))
-            { usuariosList = repository.RetornarPorId(this.view.SearchValue); }
+            { 
+                usuariosList = repository.RetornarPorId(this.view.SearchValue); 
+            }
             else
-            { usuariosList = repository.RetornarTodos(); }
+            {
+                usuariosList = repository.RetornarTodos(); 
+            }
 
             usuariosBindingSource.DataSource = usuariosList;
         }
@@ -125,13 +129,13 @@ namespace CarbonTracker.Presenters
 
         private void CarregaUsuariosSelecionadoParaAlterar(object sender, EventArgs e)
         {
-            var Usuarios = (UsuariosModel)usuariosBindingSource.Current;
-            view.UsuariosId = Usuarios.Id.ToString();
-            view.UsuariosNome = Usuarios.Nome;
-            view.UsuariosTipoUsuario = Usuarios.TipoUsuario;
-            view.UsuariosEmail = Usuarios.Email.ToString();
-            view.UsuariosSenha = Usuarios.Senha.ToString();
-            view.UsuariosDataCriacao = Usuarios.DataCriacao.ToString();
+            var Usuarios = (UsuarioModel)usuariosBindingSource.Current;
+            view.UsuarioId = Usuarios.Id.ToString();
+            view.UsuarioNome = Usuarios.Nome;
+            view.UsuarioTipoUsuario = Usuarios.TipoUsuario;
+            view.UsuarioEmail = Usuarios.Email.ToString();
+            view.UsuarioSenha = Usuarios.Senha.ToString();
+            view.UsuarioDataCriacao = Usuarios.DataCriacao.ToString();
             view.IsEdit = true;
         }
 
@@ -139,7 +143,7 @@ namespace CarbonTracker.Presenters
         {
             try
             {
-                var Usuarios = (UsuariosModel)usuariosBindingSource.Current;
+                var Usuarios = (UsuarioModel)usuariosBindingSource.Current;
                 repository.Excluir(Usuarios.Id);
                 view.IsSuccessful = true;
                 view.Message = "Usuário excluído com sucesso!";
@@ -154,12 +158,12 @@ namespace CarbonTracker.Presenters
 
         private void SalvarUsuarios(object sender, EventArgs e)
         {
-            var model = new UsuariosModel();
-            model.Id = Convert.ToInt64(view.UsuariosId);
-            model.Nome = view.UsuariosNome.ToString();
-            model.TipoUsuario = view.UsuariosTipoUsuario;
-            model.Email = view.UsuariosEmail.ToString();
-            model.Senha = view.UsuariosSenha.ToString();
+            var model = new UsuarioModel();
+            model.Id = Convert.ToInt64(view.UsuarioId);
+            model.Nome = view.UsuarioNome.ToString();
+            model.TipoUsuario = view.UsuarioTipoUsuario;
+            model.Email = view.UsuarioEmail.ToString();
+            model.Senha = view.UsuarioSenha.ToString();
             model.DataCriacao = DateTime.Now;
             try
             {

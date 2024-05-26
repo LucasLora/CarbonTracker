@@ -1,22 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Views
 {
-    public partial class PreCadastroGastosView : Form, IPreCadastroGastosView
+    public partial class CadastroGastosView : Form, ICadastroGastosView
     {
 
         #region Construtor
 
-        public PreCadastroGastosView()
+        public CadastroGastosView()
         {
             InitializeComponent();
             InicializaEventos();
@@ -72,13 +64,13 @@ namespace CarbonTracker.Views
 
         #region Singleton pattern (Open a single form instance)
 
-        private static PreCadastroGastosView instance;
+        private static CadastroGastosView instance;
 
-        public static PreCadastroGastosView GetInstance(Form parentContainer)
+        public static CadastroGastosView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new PreCadastroGastosView();
+                instance = new CadastroGastosView();
                 instance.MdiParent = parentContainer;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;

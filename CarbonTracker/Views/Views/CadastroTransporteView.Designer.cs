@@ -3,7 +3,7 @@ using System;
 
 namespace CarbonTracker.Views
 {
-    partial class TransporteView
+    partial class CadastroTransporteView
     {
         /// <summary>
         /// Required designer variable.

@@ -5,7 +5,7 @@ using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker.Models
 {
-    public class UsuariosModel : ICloneable
+    public class UsuarioModel : ICloneable
     {
 
         #region Propriedades
@@ -14,7 +14,7 @@ namespace CarbonTracker.Models
         public long Id { get; set; }    
 
         [Required(ErrorMessage = "Nome é obrigatório")]
-        [StringLength(255, MinimumLength = 5, ErrorMessage = "Nome deve estar entre 5 e 255 caracteres")]
+        [StringLength(255, MinimumLength = 3, ErrorMessage = "Nome deve estar entre 3 e 255 caracteres")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "E-Mail é obrigatório")]
@@ -38,7 +38,7 @@ namespace CarbonTracker.Models
 
         public object Clone()
         {
-            return new UsuariosModel
+            return new UsuarioModel
             {
                 Id = this.Id,
                 Nome = this.Nome,

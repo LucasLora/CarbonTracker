@@ -3,7 +3,6 @@ using CarbonTracker.Views;
 using CarbonTracker.Models;
 using CarbonTracker._Repositories;
 using System.Windows.Forms;
-using CarbonTracker.Services;
 
 namespace CarbonTracker.Presenters
 {
@@ -12,7 +11,7 @@ namespace CarbonTracker.Presenters
 
         #region Campos
 
-        private readonly UsuariosModel usuarioLogado;
+        private readonly UsuarioModel usuarioLogado;
         private IMainView mainView;
         private readonly string stringConexao;
 
@@ -20,11 +19,12 @@ namespace CarbonTracker.Presenters
 
         #region Construtor
 
-        public MainPresenter(UsuariosModel usuarioLogado, IMainView mainView, string stringConexao)
+        public MainPresenter(UsuarioModel usuarioLogado, IMainView mainView, string stringConexao)
         {
             this.usuarioLogado = usuarioLogado;
             this.mainView = mainView;
             this.stringConexao = stringConexao;
+
             VincularEventos(); 
         }
 
@@ -52,9 +52,9 @@ namespace CarbonTracker.Presenters
             if (VerificarSeEhAdministradorOuSupervisor())
             {
                 mainView.IsSuccessful = true;
-                IUsuariosView view = UsuariosView.GetInstance((Form)mainView);
+                ICadastroUsuarioView view = CadastroUsuarioView.GetInstance((Form)mainView);
                 IUsuariosRepository repository = new UsuariosRepository(stringConexao);
-                new UsuariosPresenter(usuarioLogado, view, repository);
+                new CadastroUsuarioPresenter(usuarioLogado, view, repository);
             }
             else 
             {
@@ -68,9 +68,9 @@ namespace CarbonTracker.Presenters
             if (VerificarSeEhAdministradorOuSupervisor())
             {
                 mainView.IsSuccessful = true;
-                IGrupoUsuariosView view = GrupoUsuariosView.GetInstance((Form)mainView);
+                ICadastroGrupoUsuariosView view = CadastroGrupoUsuariosView.GetInstance((Form)mainView);
                 IGrupoUsuariosRepository repository = new GrupoUsuariosRepository(stringConexao);
-                new GrupoUsuariosPresenter(view, repository);
+                new CadastroGrupoUsuariosPresenter(view, repository);
             }
             else
             {
@@ -84,8 +84,8 @@ namespace CarbonTracker.Presenters
             if (VerificarSeEhAdministradorOuSupervisor())
             {
                 mainView.IsSuccessful = true;
-                IPreCadastroGastosView view = PreCadastroGastosView.GetInstance((Form)mainView);
-                new PreCadastroGastosPresenter(view, stringConexao);
+                ICadastroGastosView view = CadastroGastosView.GetInstance((Form)mainView);
+                new CadastroGastosPresenter(view, stringConexao);
             }
             else
             {

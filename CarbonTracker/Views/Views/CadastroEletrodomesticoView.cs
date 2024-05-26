@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace CarbonTracker.Views
 {
-    public partial class EletrodomesticoView : Form, IEletrodomesticoView
+    public partial class CadastroEletrodomesticoView : Form, ICadastroEletrodomesticoView
     {
 
         #region Construtor
 
-        public EletrodomesticoView()
+        public CadastroEletrodomesticoView()
         {
             InitializeComponent();
             InicializaEventos();
@@ -118,13 +118,13 @@ namespace CarbonTracker.Views
 
         #region Singleton pattern (Open a single form instance)
 
-        private static EletrodomesticoView instance;
+        private static CadastroEletrodomesticoView instance;
 
-        public static EletrodomesticoView GetInstance()
+        public static CadastroEletrodomesticoView GetInstance()
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new EletrodomesticoView();
+                instance = new CadastroEletrodomesticoView();
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
                 instance.TopLevel = false;

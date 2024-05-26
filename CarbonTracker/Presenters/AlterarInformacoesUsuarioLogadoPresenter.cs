@@ -10,7 +10,7 @@ namespace CarbonTracker.Presenters
 
         #region Campos
 
-        private UsuariosModel usuarioLogado;
+        private UsuarioModel usuarioLogado;
         private IAlterarInformacoesUsuarioLogado view;
         private IUsuariosRepository repository;
 
@@ -18,7 +18,7 @@ namespace CarbonTracker.Presenters
 
         #region Construtor
 
-        public AlterarInformacoesUsuarioLogadoPresenter(UsuariosModel usuarioLogado, IAlterarInformacoesUsuarioLogado view, IUsuariosRepository repository)
+        public AlterarInformacoesUsuarioLogadoPresenter(UsuarioModel usuarioLogado, IAlterarInformacoesUsuarioLogado view, IUsuariosRepository repository)
         {
             this.usuarioLogado = usuarioLogado;
             this.view = view;
@@ -45,33 +45,31 @@ namespace CarbonTracker.Presenters
 
         private void CarregarInformacoesUsuarioLogado() 
         { 
-            this.view.UsuariosNome = usuarioLogado.Nome;
-            this.view.UsuariosEmail = usuarioLogado.Email;
-            this.view.UsuariosSenha = usuarioLogado.Senha;
+            this.view.UsuarioNome = usuarioLogado.Nome;
+            this.view.UsuarioEmail = usuarioLogado.Email;
+            this.view.UsuarioSenha = usuarioLogado.Senha;
         }
 
         private void SalvarInformacoes(object sender, EventArgs e)
         {
-            if (this.view.UsuariosSenha != this.view.UsuariosRepetirSenha)
-            {
-                view.IsSuccessful = false;
-                view.Message = "Senhas não conferem!";
-                return;
-            }
-
-            var model = (UsuariosModel)usuarioLogado.Clone();
-            model.Nome = view.UsuariosNome.ToString();
-            model.Email = view.UsuariosEmail.ToString();
-            model.Senha = view.UsuariosSenha.ToString();
-
             try
             {
+                if (this.view.UsuarioSenha != this.view.UsuarioRepetirSenha)
+                {
+                    throw new Exception("Senhas não conferem!");
+                }
+
+                var model = (UsuarioModel)usuarioLogado.Clone();
+                model.Nome = view.UsuarioNome.ToString();
+                model.Email = view.UsuarioEmail.ToString();
+                model.Senha = view.UsuarioSenha.ToString();
+
                 new ModelDataValidation().Validate(model);
                 
                 repository.Alterar(model);
 
-                view.Message = $"Informações alteradas com sucesso!{Environment.NewLine}A aplicação será finalizada!";
                 view.IsSuccessful = true;
+                view.Message = $"Informações alteradas com sucesso!{Environment.NewLine}A aplicação será finalizada!";
             }
             catch (Exception ex)
             {
@@ -81,7 +79,6 @@ namespace CarbonTracker.Presenters
         }
 
         #endregion
-
 
     }
 }

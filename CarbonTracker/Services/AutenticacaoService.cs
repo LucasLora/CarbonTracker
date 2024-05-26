@@ -9,11 +9,15 @@ namespace CarbonTracker.Services
         #region Campos
 
         private readonly IUsuariosRepository _usuariosRepository;
-        private UsuariosModel usuarioAutenticado = null;
+        private UsuarioModel usuarioAutenticado = null;
 
         #endregion
 
-        public UsuariosModel UsuarioAutenticado { get { return usuarioAutenticado; } }
+        #region Propriedades
+
+        public UsuarioModel UsuarioAutenticado { get { return usuarioAutenticado; } }
+
+        #endregion
 
         #region Construtor
 

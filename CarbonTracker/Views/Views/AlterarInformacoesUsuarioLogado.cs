@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Views
@@ -26,10 +18,10 @@ namespace CarbonTracker.Views
 
         #region Propriedades
 
-        public string UsuariosNome { get => this.txtNome.Text; set => this.txtNome.Text = value; }
-        public string UsuariosEmail { get => this.txtEmail.Text; set => this.txtEmail.Text = value; }
-        public string UsuariosSenha { get => this.txtSenha.Text; set => this.txtSenha.Text = value; }
-        public string UsuariosRepetirSenha { get => this.txtRepetirSenha.Text; }
+        public string UsuarioNome { get => this.txtNome.Text; set => this.txtNome.Text = value; }
+        public string UsuarioEmail { get => this.txtEmail.Text; set => this.txtEmail.Text = value; }
+        public string UsuarioSenha { get => this.txtSenha.Text; set => this.txtSenha.Text = value; }
+        public string UsuarioRepetirSenha { get => this.txtRepetirSenha.Text; }
 
         public bool IsSuccessful { get; set; }
         public string Message { get; set; }
@@ -55,7 +47,7 @@ namespace CarbonTracker.Views
 
                 if (IsSuccessful)
                 {
-                    Application.Exit(); //Fecha a aplicação, foi pedido antes se queria realmente prosseguir
+                    Application.Exit(); //Fecha toda a aplicação, foi pedido antes se queria realmente prosseguir
                 }
             };
 
@@ -93,7 +85,6 @@ namespace CarbonTracker.Views
         }
 
         #endregion
-
 
     }
 }

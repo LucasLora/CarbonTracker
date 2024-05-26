@@ -2,26 +2,23 @@
 using CarbonTracker.Models;
 using CarbonTracker.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Presenters
 {
-    public class PreCadastroGastosPresenter
+    public class CadastroGastosPresenter
     {
+
         #region Campos
 
-        private IPreCadastroGastosView view;
+        private ICadastroGastosView view;
         private readonly string stringConexao;
 
         #endregion
 
         #region Construtor
 
-        public PreCadastroGastosPresenter(IPreCadastroGastosView mainView, string stringConexao)
+        public CadastroGastosPresenter(ICadastroGastosView mainView, string stringConexao)
         {
             this.view = mainView;
             this.stringConexao = stringConexao;
@@ -47,9 +44,9 @@ namespace CarbonTracker.Presenters
 
         private void ShowPreCadastroEletrodomesticoView(object sender, EventArgs e)
         {
-            IEletrodomesticoView eletrodomesticoView = EletrodomesticoView.GetInstance();
+            ICadastroEletrodomesticoView eletrodomesticoView = CadastroEletrodomesticoView.GetInstance();
             IEletrodomesticoRepository repository = new EletrodomesticoRepository(stringConexao);
-            new EletrodomesticoPresenter(eletrodomesticoView, repository);
+            new CadastroEletrodomesticoPresenter(eletrodomesticoView, repository);
 
             //Vincula a view ao TabPage
             var eletrodomesticoControl = (Control)eletrodomesticoView;
@@ -60,9 +57,9 @@ namespace CarbonTracker.Presenters
 
         private void ShowPreCadastroTransporteView(object sender, EventArgs e)
         {
-            ITransporteView transporteView = TransporteView.GetInstance();
+            ICadastroTransporteView transporteView = CadastroTransporteView.GetInstance();
             ITransporteRepository repository = new TransporteRepository(stringConexao);
-            new TransportePresenter(transporteView, repository);
+            new CadastroTransportePresenter(transporteView, repository);
 
             //Vincula a view ao TabPage
             var transporteControl = (Control)transporteView;

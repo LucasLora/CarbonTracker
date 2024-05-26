@@ -20,7 +20,7 @@ namespace CarbonTracker._Repositories
 
         #region Métodos
 
-        public void Adicionar(UsuariosModel UsuariosModel)
+        public void Adicionar(UsuarioModel UsuariosModel)
         {
             using (var conn = new NpgsqlConnection(stringConexao))
             {
@@ -42,7 +42,7 @@ namespace CarbonTracker._Repositories
             }
         }
 
-        public void Alterar(UsuariosModel UsuariosModel)
+        public void Alterar(UsuarioModel UsuariosModel)
         {
             using (var conn = new NpgsqlConnection(stringConexao))
             {
@@ -86,9 +86,9 @@ namespace CarbonTracker._Repositories
             }
         }
 
-        public IEnumerable<UsuariosModel> RetornarTodos()
+        public IEnumerable<UsuarioModel> RetornarTodos()
         {
-            var usuarioList = new List<UsuariosModel>();
+            var usuarioList = new List<UsuarioModel>();
 
             using (var conn = new NpgsqlConnection(stringConexao))
             {
@@ -102,7 +102,7 @@ namespace CarbonTracker._Repositories
                     {
                         while (reader.Read())
                         {
-                            var UsuariosModel = new UsuariosModel();
+                            var UsuariosModel = new UsuarioModel();
                             UsuariosModel.Id = (long)reader["id"];
                             UsuariosModel.Nome = reader["nome"].ToString();
                             UsuariosModel.Senha = reader["senha"].ToString();
@@ -118,9 +118,9 @@ namespace CarbonTracker._Repositories
             return usuarioList;
         }
 
-        public IEnumerable<UsuariosModel> RetornarPorId(string valor)
+        public IEnumerable<UsuarioModel> RetornarPorId(string valor)
         {
-            var usuarioList = new List<UsuariosModel>();
+            var usuarioList = new List<UsuarioModel>();
 
             long usuarioId = long.TryParse(valor, out _) ? Convert.ToInt64(valor) : 0;
             string usuarioNome = valor;
@@ -142,7 +142,7 @@ namespace CarbonTracker._Repositories
                     {
                         while (reader.Read())
                         {
-                            var UsuariosModel = new UsuariosModel();
+                            var UsuariosModel = new UsuarioModel();
                             UsuariosModel.Id = (long)reader["id"];
                             UsuariosModel.Nome = reader["nome"].ToString();
                             UsuariosModel.Senha = reader["senha"].ToString();

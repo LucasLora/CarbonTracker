@@ -1,5 +1,4 @@
-﻿using CarbonTracker.Models;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Views

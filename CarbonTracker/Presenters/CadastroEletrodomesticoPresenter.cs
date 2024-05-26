@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace CarbonTracker.Presenters
 {
-    public class EletrodomesticoPresenter
+    public class CadastroEletrodomesticoPresenter
     {
 
         #region Campos
 
-        private IEletrodomesticoView view;
+        private ICadastroEletrodomesticoView view;
         private IEletrodomesticoRepository repository;
         private BindingSource eletrodomesticoBindingSource = new BindingSource();
         private IEnumerable<EletrodomesticoModel> eletrodomesticoList;
@@ -21,7 +21,7 @@ namespace CarbonTracker.Presenters
 
         #region Construtor
 
-        public EletrodomesticoPresenter(IEletrodomesticoView view, IEletrodomesticoRepository repository)
+        public CadastroEletrodomesticoPresenter(ICadastroEletrodomesticoView view, IEletrodomesticoRepository repository)
         {
             this.view = view;
             this.repository = repository;
@@ -73,9 +73,13 @@ namespace CarbonTracker.Presenters
         private void SearchEletrodomestico(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(this.view.SearchValue))
-            { eletrodomesticoList = repository.RetornarPorId(this.view.SearchValue); }
+            { 
+                eletrodomesticoList = repository.RetornarPorId(this.view.SearchValue); 
+            }
             else
-            { eletrodomesticoList = repository.RetornarTodos(); }
+            { 
+                eletrodomesticoList = repository.RetornarTodos();
+            }
 
             eletrodomesticoBindingSource.DataSource = eletrodomesticoList;
         }

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace CarbonTracker.Views
 {
-    public interface IEletrodomesticoView
+    public interface ICadastroEletrodomesticoView
     {
 
         #region Propriedades 
