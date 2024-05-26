@@ -3,6 +3,7 @@ using CarbonTracker.Views;
 using CarbonTracker.Models;
 using CarbonTracker._Repositories;
 using System.Windows.Forms;
+using CarbonTracker.Services;
 
 namespace CarbonTracker.Presenters
 {
@@ -105,7 +106,25 @@ namespace CarbonTracker.Presenters
 
         private void ShowAlterarInformacoesView(object sender, EventArgs e)
         {
+            using (var passwordForm = new SenhaInputView())
+            {
+                if (passwordForm.ShowDialog() == DialogResult.OK)
+                {
+                    string inputPassword = passwordForm.Password;
 
+                    //Verifica se a senha inserida corresponde à senha do usuário atual
+                    if (usuarioLogado.Senha == inputPassword)
+                    {
+                        IAlterarInformacoesUsuarioLogado view = AlterarInformacoesUsuarioLogado.GetInstance((Form)mainView);
+                        IUsuariosRepository repository = new UsuariosRepository(stringConexao);
+                        new AlterarInformacoesUsuarioLogadoPresenter(usuarioLogado, view, repository);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Senha incorreta!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }     
         }
 
         private bool VerificarSeEhAdministrador()

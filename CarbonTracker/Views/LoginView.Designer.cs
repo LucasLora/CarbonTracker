@@ -42,9 +42,10 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(12, 185);
+            this.btnEntrar.Location = new System.Drawing.Point(13, 219);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(75, 23);
+            this.btnEntrar.Size = new System.Drawing.Size(100, 28);
             this.btnEntrar.TabIndex = 5;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
@@ -61,62 +62,70 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(219, 185);
+            this.btnClose.Location = new System.Drawing.Point(295, 219);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(100, 28);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Sair";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(12, 113);
+            this.txtUsuario.Location = new System.Drawing.Point(13, 136);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(282, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(382, 22);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(12, 152);
+            this.txtSenha.Location = new System.Drawing.Point(13, 184);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(282, 20);
+            this.txtSenha.Size = new System.Drawing.Size(382, 22);
             this.txtSenha.TabIndex = 4;
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(9, 97);
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(10, 114);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(92, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(62, 20);
             this.lblUsuario.TabIndex = 1;
-            this.lblUsuario.Text = "E-mail do Usuário:";
+            this.lblUsuario.Text = "E-mail:";
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(9, 136);
+            this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.Location = new System.Drawing.Point(10, 162);
+            this.lblSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(41, 13);
+            this.lblSenha.Size = new System.Drawing.Size(61, 20);
             this.lblSenha.TabIndex = 3;
             this.lblSenha.Text = "Senha:";
             // 
             // lblCarbon
             // 
             this.lblCarbon.AutoSize = true;
-            this.lblCarbon.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarbon.Location = new System.Drawing.Point(39, 31);
+            this.lblCarbon.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarbon.Location = new System.Drawing.Point(22, 29);
+            this.lblCarbon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCarbon.Name = "lblCarbon";
-            this.lblCarbon.Size = new System.Drawing.Size(232, 33);
+            this.lblCarbon.Size = new System.Drawing.Size(364, 54);
             this.lblCarbon.TabIndex = 0;
             this.lblCarbon.Text = "Carbon Tracker";
             this.lblCarbon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(306, 221);
+            this.ClientSize = new System.Drawing.Size(408, 260);
             this.Controls.Add(this.lblCarbon);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
@@ -125,6 +134,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnEntrar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);

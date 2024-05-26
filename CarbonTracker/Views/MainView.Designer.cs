@@ -55,60 +55,67 @@
             this.pnlProgramas.Controls.Add(this.btnPreCadastrosGastos);
             this.pnlProgramas.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlProgramas.Location = new System.Drawing.Point(0, 0);
+            this.pnlProgramas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlProgramas.Name = "pnlProgramas";
-            this.pnlProgramas.Size = new System.Drawing.Size(200, 450);
+            this.pnlProgramas.Size = new System.Drawing.Size(267, 554);
             this.pnlProgramas.TabIndex = 0;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(0, 395);
+            this.btnClose.Location = new System.Drawing.Point(0, 486);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(200, 55);
+            this.btnClose.Size = new System.Drawing.Size(267, 68);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Sair";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
             // btnComparacoes
             // 
-            this.btnComparacoes.Location = new System.Drawing.Point(0, 289);
+            this.btnComparacoes.Location = new System.Drawing.Point(0, 356);
+            this.btnComparacoes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnComparacoes.Name = "btnComparacoes";
-            this.btnComparacoes.Size = new System.Drawing.Size(200, 55);
+            this.btnComparacoes.Size = new System.Drawing.Size(267, 68);
             this.btnComparacoes.TabIndex = 6;
             this.btnComparacoes.Text = "Visualizar Comparações";
             this.btnComparacoes.UseVisualStyleBackColor = true;
             // 
             // btnRegistroGastos
             // 
-            this.btnRegistroGastos.Location = new System.Drawing.Point(0, 236);
+            this.btnRegistroGastos.Location = new System.Drawing.Point(0, 290);
+            this.btnRegistroGastos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistroGastos.Name = "btnRegistroGastos";
-            this.btnRegistroGastos.Size = new System.Drawing.Size(200, 55);
+            this.btnRegistroGastos.Size = new System.Drawing.Size(267, 68);
             this.btnRegistroGastos.TabIndex = 5;
             this.btnRegistroGastos.Text = "Registro de Gastos";
             this.btnRegistroGastos.UseVisualStyleBackColor = true;
             // 
             // btnGrupoUsuarios
             // 
-            this.btnGrupoUsuarios.Location = new System.Drawing.Point(0, 130);
+            this.btnGrupoUsuarios.Location = new System.Drawing.Point(0, 160);
+            this.btnGrupoUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGrupoUsuarios.Name = "btnGrupoUsuarios";
-            this.btnGrupoUsuarios.Size = new System.Drawing.Size(200, 55);
+            this.btnGrupoUsuarios.Size = new System.Drawing.Size(267, 68);
             this.btnGrupoUsuarios.TabIndex = 3;
             this.btnGrupoUsuarios.Text = "Cadastro de Grupo de Usuários";
             this.btnGrupoUsuarios.UseVisualStyleBackColor = true;
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 77);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 95);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(200, 55);
+            this.btnUsuarios.Size = new System.Drawing.Size(267, 68);
             this.btnUsuarios.TabIndex = 2;
             this.btnUsuarios.Text = "Cadastro de Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
             // 
             // btnAlterarInformacoes
             // 
-            this.btnAlterarInformacoes.Location = new System.Drawing.Point(0, 342);
+            this.btnAlterarInformacoes.Location = new System.Drawing.Point(0, 421);
+            this.btnAlterarInformacoes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAlterarInformacoes.Name = "btnAlterarInformacoes";
-            this.btnAlterarInformacoes.Size = new System.Drawing.Size(200, 55);
+            this.btnAlterarInformacoes.Size = new System.Drawing.Size(267, 68);
             this.btnAlterarInformacoes.TabIndex = 7;
             this.btnAlterarInformacoes.Text = "Alterar Informações de Usuário";
             this.btnAlterarInformacoes.UseVisualStyleBackColor = true;
@@ -116,41 +123,45 @@
             // lblTracker
             // 
             this.lblTracker.AutoSize = true;
-            this.lblTracker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTracker.Location = new System.Drawing.Point(54, 40);
+            this.lblTracker.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTracker.Location = new System.Drawing.Point(52, 45);
+            this.lblTracker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTracker.Name = "lblTracker";
-            this.lblTracker.Size = new System.Drawing.Size(91, 26);
+            this.lblTracker.Size = new System.Drawing.Size(162, 46);
             this.lblTracker.TabIndex = 1;
             this.lblTracker.Text = "Tracker";
             // 
             // lblCarbon
             // 
             this.lblCarbon.AutoSize = true;
-            this.lblCarbon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarbon.Location = new System.Drawing.Point(56, 12);
+            this.lblCarbon.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarbon.Location = new System.Drawing.Point(55, 7);
+            this.lblCarbon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCarbon.Name = "lblCarbon";
-            this.lblCarbon.Size = new System.Drawing.Size(89, 26);
+            this.lblCarbon.Size = new System.Drawing.Size(157, 46);
             this.lblCarbon.TabIndex = 0;
             this.lblCarbon.Text = "Carbon";
             // 
             // btnPreCadastrosGastos
             // 
-            this.btnPreCadastrosGastos.Location = new System.Drawing.Point(0, 183);
+            this.btnPreCadastrosGastos.Location = new System.Drawing.Point(0, 225);
+            this.btnPreCadastrosGastos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPreCadastrosGastos.Name = "btnPreCadastrosGastos";
-            this.btnPreCadastrosGastos.Size = new System.Drawing.Size(200, 55);
+            this.btnPreCadastrosGastos.Size = new System.Drawing.Size(267, 68);
             this.btnPreCadastrosGastos.TabIndex = 4;
             this.btnPreCadastrosGastos.Text = "Pré Cadastros de Gastos";
             this.btnPreCadastrosGastos.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 450);
+            this.ClientSize = new System.Drawing.Size(1333, 554);
             this.Controls.Add(this.pnlProgramas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MinimumSize = new System.Drawing.Size(1016, 489);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1349, 591);
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carbon Tracker";

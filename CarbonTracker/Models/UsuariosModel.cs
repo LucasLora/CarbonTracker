@@ -5,7 +5,7 @@ using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker.Models
 {
-    public class UsuariosModel
+    public class UsuariosModel : ICloneable
     {
 
         #region Propriedades
@@ -31,6 +31,23 @@ namespace CarbonTracker.Models
 
         [DisplayName("Data Criação")]
         public DateTime DataCriacao { get; set; }
+
+        #endregion
+
+        #region Métodos
+
+        public object Clone()
+        {
+            return new UsuariosModel
+            {
+                Id = this.Id,
+                Nome = this.Nome,
+                Email = this.Email,
+                Senha = this.Senha,
+                TipoUsuario = this.TipoUsuario,
+                DataCriacao = this.DataCriacao
+            };
+        }
 
         #endregion
 

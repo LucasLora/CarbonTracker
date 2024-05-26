@@ -113,6 +113,7 @@
     <Compile Include="Models\IUsuariosRepository.cs" />
     <Compile Include="Models\TransporteModel.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
+    <Compile Include="Presenters\AlterarInformacoesUsuarioLogadoPresenter.cs" />
     <Compile Include="Presenters\Common\ComboBoxHelper.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\EletrodomesticoPresenter.cs" />
@@ -177,6 +178,12 @@
     <Compile Include="Views\RegistroGastosView.Designer.cs">
       <DependentUpon>RegistroGastosView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SenhaInputView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SenhaInputView.Designer.cs">
+      <DependentUpon>SenhaInputView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TransporteView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +210,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AlterarInformacoesUsuarioLogado.resx">
+      <DependentUpon>AlterarInformacoesUsuarioLogado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\EletrodomesticoView.resx">
       <DependentUpon>EletrodomesticoView.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\RegistroGastosView.resx">
       <DependentUpon>RegistroGastosView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SenhaInputView.resx">
+      <DependentUpon>SenhaInputView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TransporteView.resx">
       <DependentUpon>TransporteView.cs</DependentUpon>

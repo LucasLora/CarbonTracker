@@ -15,6 +15,7 @@ namespace CarbonTracker.Views
         string UsuariosNome { get; set; }
         string UsuariosEmail { get; set; }
         string UsuariosSenha { get; set; }
+        string UsuariosRepetirSenha { get; }
 
         bool IsSuccessful { get; set; }
         string Message { get; set; }
@@ -24,7 +25,6 @@ namespace CarbonTracker.Views
         #region Eventos
 
         event EventHandler SalvarEvent;
-        event EventHandler CancelarEvent;
 
         #endregion
 

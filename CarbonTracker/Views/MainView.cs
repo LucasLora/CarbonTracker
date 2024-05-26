@@ -39,7 +39,6 @@ namespace CarbonTracker.Views
 
         private void InicializaEventos()
         {
-            //Abas
             btnUsuarios.Click += delegate
             {
                 ShowUsuariosView?.Invoke(this, EventArgs.Empty);
@@ -69,11 +68,14 @@ namespace CarbonTracker.Views
 
             btnAlterarInformacoes.Click += delegate
             {
-                ShowAlterarInformacoesView?.Invoke(this, EventArgs.Empty);
-                if (!IsSuccessful)
+                if (MessageBox.Show($"Será necessário reiniciar após alterar as informações!{Environment.NewLine}Tem certeza que deseja prosseguir? ",
+                                     "Aviso",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
+                    ShowAlterarInformacoesView?.Invoke(this, EventArgs.Empty);
                 }
+                
             };
 
             btnRegistroGastos.Click += delegate
@@ -86,7 +88,16 @@ namespace CarbonTracker.Views
                 ShowComparacoesView?.Invoke(this, EventArgs.Empty);
             };
 
-            btnClose.Click += delegate { this.Close(); };
+            btnClose.Click += delegate 
+            {
+                if (MessageBox.Show("Você tem certeza que deseja sair?", 
+                                    "Confirmação", 
+                                    MessageBoxButtons.YesNo, 
+                                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            };
         }
 
         #endregion
