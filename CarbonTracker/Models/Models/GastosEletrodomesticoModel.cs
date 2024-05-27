@@ -1,13 +1,15 @@
 ﻿namespace CarbonTracker.Models.Models
 {
-    public class GastosEletrodomestico : GastosBase
+    public class GastosEletrodomesticoModel : GastosBaseModel
     {
 
         #region Propriedades
 
         public long IdEletrodomestico { get; set; }
-        public decimal TempoUso { get; set; }
+
+        public double TempoUso { get; set; }
 
         #endregion
+
     }
 }

@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>iconPlantCarbonTracker.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>CarbonTracker.Program</StartupObject>
@@ -105,12 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Common\Enums.cs" />
-    <Compile Include="Models\Models\GastosBase.cs" />
+    <Compile Include="Models\Models\GastosBaseModel.cs" />
     <Compile Include="Models\Models\EletrodomesticoModel.cs" />
-    <Compile Include="Models\Models\GastosEletrodomestico.cs" />
-    <Compile Include="Models\Models\GastosTransporte.cs" />
+    <Compile Include="Models\Models\GastosEletrodomesticoModel.cs" />
+    <Compile Include="Models\Models\GastosTransporteModel.cs" />
     <Compile Include="Models\Models\GrupoUsuariosModel.cs" />
-    <Compile Include="Models\Models\UsuarioXGrupoUsuarios.cs" />
+    <Compile Include="Models\Models\UsuarioXGrupoUsuariosModel.cs" />
     <Compile Include="Models\RepositoriesInterfaces\IEletrodomesticoRepository.cs" />
     <Compile Include="Models\RepositoriesInterfaces\IGastosEletrodomesticoRepository.cs" />
     <Compile Include="Models\RepositoriesInterfaces\IGastosTransporteRepository.cs" />
@@ -215,7 +214,7 @@
     <Compile Include="_Repositories\GastosEletrodomesticoRepository.cs" />
     <Compile Include="_Repositories\GastosTransporteRepository.cs" />
     <Compile Include="_Repositories\GrupoUsuariosRepository.cs" />
-    <Compile Include="_Repositories\RepositorioBase.cs" />
+    <Compile Include="_Repositories\BaseRepository.cs" />
     <Compile Include="_Repositories\TransporteRepository.cs" />
     <Compile Include="_Repositories\UsuariosRepository.cs" />
     <Compile Include="_Repositories\UsuarioXGrupoUsuariosRepository.cs" />
@@ -276,7 +275,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="carbonTrackerIcon.ico" />
+    <Content Include="iconTreeCarbonTracker.ico" />
+    <Content Include="iconLeafCarbonTracker.ico" />
+    <Content Include="iconPlantCarbonTracker.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

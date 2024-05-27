@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CarbonTracker._Repositories
 {
-    public class GastosTransporteRepository : RepositorioBase, IGastosTransporteRepository
+    public class GastosTransporteRepository : BaseRepository, IGastosTransporteRepository
     {
 
         #region Construtor
@@ -20,7 +20,7 @@ namespace CarbonTracker._Repositories
 
         #region Métodos
 
-        public void Adicionar(GastosTransporte gastosTransporte)
+        public void Adicionar(GastosTransporteModel gastosTransporte)
         {
             using (var conn = new NpgsqlConnection(stringConexao))
             {
@@ -32,9 +32,9 @@ namespace CarbonTracker._Repositories
 	                                    VALUES (@idusuario, @dia, @idtransporte, @kmrodados, @qtdepassageiros);";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosTransporte.IdUsuario;
-                    cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Date).Value = gastosTransporte.Dia;
+                    cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = gastosTransporte.Dia;
                     cmd.Parameters.AddWithValue("@idtransporte", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosTransporte.IdTransporte;
-                    cmd.Parameters.AddWithValue("@kmrodados", NpgsqlTypes.NpgsqlDbType.Numeric).Value = gastosTransporte.KmRodados;
+                    cmd.Parameters.AddWithValue("@kmrodados", NpgsqlTypes.NpgsqlDbType.Real).Value = gastosTransporte.KmRodados;
                     cmd.Parameters.AddWithValue("@qtdepassageiros", NpgsqlTypes.NpgsqlDbType.Integer).Value = gastosTransporte.QtdePassageiros;
 
                     cmd.ExecuteNonQuery();
@@ -55,16 +55,16 @@ namespace CarbonTracker._Repositories
                                         AND dia = @dia;";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
-                    cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Date).Value = dia;
+                    cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = dia;
 
                     cmd.ExecuteNonQuery();
                 }
             }
         }
 
-        public IEnumerable<GastosTransporte> RetornarPorUsuarioEDia(long idUsuario, DateTime dia)
+        public IEnumerable<GastosTransporteModel> RetornarPorUsuarioEDia(long idUsuario, DateTime dia)
         {
-            var gastosTransporteList = new List<GastosTransporte>();
+            var gastosTransporteList = new List<GastosTransporteModel>();
 
             using (var conn = new NpgsqlConnection(stringConexao))
             {
@@ -77,18 +77,18 @@ namespace CarbonTracker._Repositories
                                         AND dia = @dia;";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
-                    cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Date).Value = dia;
+                    cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = dia;
 
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            var gastosTransporte = new GastosTransporte();
+                            var gastosTransporte = new GastosTransporteModel();
                             gastosTransporte.Id = (long)reader["id"];
                             gastosTransporte.IdUsuario = (long)reader["idusuario"];
                             gastosTransporte.Dia = (DateTime)reader["dia"];
                             gastosTransporte.IdTransporte = (long)reader["idtransporte"];
-                            gastosTransporte.KmRodados = (decimal)reader["kmrodados"];
+                            gastosTransporte.KmRodados = (double)reader["kmrodados"];
                             gastosTransporte.QtdePassageiros = (int)reader["qtdepassageiros"];
                         }
                     }

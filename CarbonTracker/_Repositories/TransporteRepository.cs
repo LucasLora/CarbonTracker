@@ -6,7 +6,7 @@ using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker._Repositories
 {
-    public class TransporteRepository : RepositorioBase, ITransporteRepository
+    public class TransporteRepository : BaseRepository, ITransporteRepository
     {
 
         #region Construtor
@@ -28,13 +28,13 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"INSERT INTO transporte(id, nome, tipoveiculo, tipocombustivel, kmporlitrocombustivel)
-	                                    VALUES (default, @nome, @tipoveiculo, @tipocombustivel, @kmporlitrocombustivel);";
+                    cmd.CommandText = @"INSERT INTO transporte(nome, tipoveiculo, tipocombustivel, kmporlitrocombustivel)
+	                                    VALUES (@nome, @tipoveiculo, @tipocombustivel, @kmporlitrocombustivel);";
 
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = transporteModel.Nome;
                     cmd.Parameters.AddWithValue("@tipoveiculo", NpgsqlTypes.NpgsqlDbType.Smallint).Value = (short)transporteModel.TipoVeiculo;
                     cmd.Parameters.AddWithValue("@tipocombustivel", NpgsqlTypes.NpgsqlDbType.Smallint).Value = (short)transporteModel.TipoCombustivel;
-                    cmd.Parameters.AddWithValue("@kmporlitrocombustivel", NpgsqlTypes.NpgsqlDbType.Double).Value = transporteModel.KmPorLitroCombustivel;
+                    cmd.Parameters.AddWithValue("@kmporlitrocombustivel", NpgsqlTypes.NpgsqlDbType.Real).Value = transporteModel.KmPorLitroCombustivel;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -57,7 +57,7 @@ namespace CarbonTracker._Repositories
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = transporteModel.Nome;
                     cmd.Parameters.AddWithValue("@tipoveiculo", NpgsqlTypes.NpgsqlDbType.Smallint).Value = (short)transporteModel.TipoVeiculo;
                     cmd.Parameters.AddWithValue("@tipocombustivel", NpgsqlTypes.NpgsqlDbType.Smallint).Value = (short)transporteModel.TipoCombustivel;
-                    cmd.Parameters.AddWithValue("@kmporlitrocombustivel", NpgsqlTypes.NpgsqlDbType.Double).Value = transporteModel.KmPorLitroCombustivel;
+                    cmd.Parameters.AddWithValue("@kmporlitrocombustivel", NpgsqlTypes.NpgsqlDbType.Real).Value = transporteModel.KmPorLitroCombustivel;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -92,7 +92,8 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"SELECT * FROM transporte ORDER BY id";
+                    cmd.CommandText = @"SELECT * FROM transporte
+                                        ORDER BY id";
 
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -130,9 +131,9 @@ namespace CarbonTracker._Repositories
                                         WHERE Id=@Id OR Nome LIKE '%' || @Name || '%'
                                         ORDER BY id";
 
-                    cmd.Parameters.AddWithValue("@Id", transporteId);
-                    cmd.Parameters.AddWithValue("@Name", transporteNome);
-
+                    cmd.Parameters.AddWithValue("@Id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = transporteId;
+                    cmd.Parameters.AddWithValue("@Name", NpgsqlTypes.NpgsqlDbType.Varchar).Value = transporteNome;
+                    
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())

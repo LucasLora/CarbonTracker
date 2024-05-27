@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CarbonTracker._Repositories
 {
-    public class UsuarioXGrupoUsuariosRepository : RepositorioBase, IUsuarioXGrupoUsuariosRepository
+    public class UsuarioXGrupoUsuariosRepository : BaseRepository, IUsuarioXGrupoUsuariosRepository
     {
 
         #region Construtor
@@ -19,7 +19,7 @@ namespace CarbonTracker._Repositories
 
         #region Métodos
 
-        public void Adicionar(UsuarioXGrupoUsuarios usuarioXGrupoUsuarios)
+        public void Adicionar(UsuarioXGrupoUsuariosModel usuarioXGrupoUsuarios)
         {
             using (var conn = new NpgsqlConnection(stringConexao))
             {
@@ -27,7 +27,7 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"INSERT INTO usuariogrupo(idusuario, idgrupo)
+                    cmd.CommandText = @"INSERT INTO usuarioxgrupousuarios(idusuario, idgrupo)
 	                                    VALUES (@idusuario, @idgrupo);";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = usuarioXGrupoUsuarios.IdUsuario;
@@ -46,7 +46,7 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"DELETE FROM usuariogrupo
+                    cmd.CommandText = @"DELETE FROM usuarioxgrupousuarios
 	                                    WHERE idusuario = @idusuario;";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
@@ -56,9 +56,9 @@ namespace CarbonTracker._Repositories
             }
         }
 
-        public IEnumerable<UsuarioXGrupoUsuarios> RetornarPorUsuario(long idUsuario)
+        public IEnumerable<UsuarioXGrupoUsuariosModel> RetornarPorUsuario(long idUsuario)
         {
-            var usuarioXGrupoUsuariosList = new List<UsuarioXGrupoUsuarios>();
+            var usuarioXGrupoUsuariosList = new List<UsuarioXGrupoUsuariosModel>();
 
             using (var conn = new NpgsqlConnection(stringConexao))
             {
@@ -66,7 +66,7 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"SELECT * FROM usuariogrupo 
+                    cmd.CommandText = @"SELECT * FROM usuarioxgrupousuarios 
                                         WHERE idusuario = @idusuario;";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
@@ -75,10 +75,10 @@ namespace CarbonTracker._Repositories
                     {
                         while (reader.Read())
                         {
-                            var usuarioXGrupoUsuarios = new UsuarioXGrupoUsuarios();
-                            usuarioXGrupoUsuarios.IdUsuario = (long)reader["idusuario"];
-                            usuarioXGrupoUsuarios.IdGrupo = (long)reader["idgrupo"];
-                            usuarioXGrupoUsuariosList.Add(usuarioXGrupoUsuarios);
+                            var usuarioXGrupoUsuariosModel = new UsuarioXGrupoUsuariosModel();
+                            usuarioXGrupoUsuariosModel.IdUsuario = (long)reader["idusuario"];
+                            usuarioXGrupoUsuariosModel.IdGrupo = (long)reader["idgrupo"];
+                            usuarioXGrupoUsuariosList.Add(usuarioXGrupoUsuariosModel);
                         }
                     }
                 }

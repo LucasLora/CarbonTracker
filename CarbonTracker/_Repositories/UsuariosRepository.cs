@@ -6,7 +6,7 @@ using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker._Repositories
 {
-    public class UsuariosRepository : RepositorioBase, IUsuariosRepository
+    public class UsuariosRepository : BaseRepository, IUsuariosRepository
     {
 
         #region Construtor
@@ -28,8 +28,8 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"INSERT INTO usuario(id, nome, senha, email, tipo, datacriacao)
-	                                    VALUES (default, @nome, @senha, @email, @tipo, @datacriacao);";
+                    cmd.CommandText = @"INSERT INTO usuario(nome, senha, email, tipo, datacriacao)
+	                                    VALUES (@nome, @senha, @email, @tipo, @datacriacao);";
 
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = UsuariosModel.Nome;
                     cmd.Parameters.AddWithValue("@senha", NpgsqlTypes.NpgsqlDbType.Varchar).Value = UsuariosModel.Senha;
@@ -57,9 +57,9 @@ namespace CarbonTracker._Repositories
 
                     cmd.Parameters.AddWithValue("@id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = UsuariosModel.Id;
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = UsuariosModel.Nome;
-                    cmd.Parameters.AddWithValue("@senha", NpgsqlTypes.NpgsqlDbType.Smallint).Value = UsuariosModel.Senha;
-                    cmd.Parameters.AddWithValue("@email", NpgsqlTypes.NpgsqlDbType.Smallint).Value = UsuariosModel.Email;
-                    cmd.Parameters.AddWithValue("@tipo", NpgsqlTypes.NpgsqlDbType.Double).Value = (short)UsuariosModel.TipoUsuario;
+                    cmd.Parameters.AddWithValue("@senha", NpgsqlTypes.NpgsqlDbType.Varchar).Value = UsuariosModel.Senha;
+                    cmd.Parameters.AddWithValue("@email", NpgsqlTypes.NpgsqlDbType.Varchar).Value = UsuariosModel.Email;
+                    cmd.Parameters.AddWithValue("@tipo", NpgsqlTypes.NpgsqlDbType.Smallint).Value = (short)UsuariosModel.TipoUsuario;
                     cmd.Parameters.AddWithValue("@datacriacao", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = UsuariosModel.DataCriacao;
 
                     cmd.ExecuteNonQuery();
@@ -96,20 +96,21 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"SELECT * FROM usuario ORDER BY id";
+                    cmd.CommandText = @"SELECT * FROM usuario 
+                                        ORDER BY id";
 
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            var UsuariosModel = new UsuarioModel();
-                            UsuariosModel.Id = (long)reader["id"];
-                            UsuariosModel.Nome = reader["nome"].ToString();
-                            UsuariosModel.Senha = reader["senha"].ToString();
-                            UsuariosModel.Email = reader["email"].ToString();
-                            UsuariosModel.TipoUsuario = (TipoUsuario)(short)reader["tipo"];
-                            UsuariosModel.DataCriacao = (DateTime)reader["datacriacao"];
-                            usuarioList.Add(UsuariosModel);
+                            var usuariosModel = new UsuarioModel();
+                            usuariosModel.Id = (long)reader["id"];
+                            usuariosModel.Nome = reader["nome"].ToString();
+                            usuariosModel.Senha = reader["senha"].ToString();
+                            usuariosModel.Email = reader["email"].ToString();
+                            usuariosModel.TipoUsuario = (TipoUsuario)(short)reader["tipo"];
+                            usuariosModel.DataCriacao = (DateTime)reader["datacriacao"];
+                            usuarioList.Add(usuariosModel);
                         }
                     }
                 }
@@ -135,21 +136,21 @@ namespace CarbonTracker._Repositories
                                         WHERE Id=@Id OR Nome LIKE '%' || @Name || '%'
                                         ORDER BY id";
 
-                    cmd.Parameters.AddWithValue("@Id", usuarioId);
-                    cmd.Parameters.AddWithValue("@Name", usuarioNome);
+                    cmd.Parameters.AddWithValue("@Id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = usuarioId;
+                    cmd.Parameters.AddWithValue("@Name", NpgsqlTypes.NpgsqlDbType.Varchar).Value = usuarioNome;
 
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            var UsuariosModel = new UsuarioModel();
-                            UsuariosModel.Id = (long)reader["id"];
-                            UsuariosModel.Nome = reader["nome"].ToString();
-                            UsuariosModel.Senha = reader["senha"].ToString();
-                            UsuariosModel.Email = reader["email"].ToString();
-                            UsuariosModel.TipoUsuario = (TipoUsuario)(short)reader["tipo"];
-                            UsuariosModel.DataCriacao = (DateTime)reader["datacriacao"];
-                            usuarioList.Add(UsuariosModel);
+                            var usuariosModel = new UsuarioModel();
+                            usuariosModel.Id = (long)reader["id"];
+                            usuariosModel.Nome = reader["nome"].ToString();
+                            usuariosModel.Senha = reader["senha"].ToString();
+                            usuariosModel.Email = reader["email"].ToString();
+                            usuariosModel.TipoUsuario = (TipoUsuario)(short)reader["tipo"];
+                            usuariosModel.DataCriacao = (DateTime)reader["datacriacao"];
+                            usuarioList.Add(usuariosModel);
                         }
                     }
                 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CarbonTracker._Repositories
 {
-    public class GastosEletrodomesticoRepository : RepositorioBase, IGastosEletrodomesticoRepository
+    public class GastosEletrodomesticoRepository : BaseRepository, IGastosEletrodomesticoRepository
     {
 
         #region Construtor
@@ -20,7 +20,7 @@ namespace CarbonTracker._Repositories
 
         #region Métodos
 
-        public void Adicionar(GastosEletrodomestico gastosEletrodomestico)
+        public void Adicionar(GastosEletrodomesticoModel gastosEletrodomestico)
         {
             using (var conn = new NpgsqlConnection(stringConexao))
             {
@@ -32,9 +32,9 @@ namespace CarbonTracker._Repositories
 	                                    VALUES (@idusuario, @dia, @ideletrodomestico, @tempouso);";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosEletrodomestico.IdUsuario;
-                    cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Date).Value = gastosEletrodomestico.Dia;
+                    cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = gastosEletrodomestico.Dia;
                     cmd.Parameters.AddWithValue("@ideletrodomestico", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosEletrodomestico.IdEletrodomestico;
-                    cmd.Parameters.AddWithValue("@tempouso", NpgsqlTypes.NpgsqlDbType.Numeric).Value = gastosEletrodomestico.TempoUso;
+                    cmd.Parameters.AddWithValue("@tempouso", NpgsqlTypes.NpgsqlDbType.Real).Value = gastosEletrodomestico.TempoUso;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -54,16 +54,16 @@ namespace CarbonTracker._Repositories
                                         AND dia = @dia;";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
-                    cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Date).Value = dia;
+                    cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = dia;
 
                     cmd.ExecuteNonQuery();
                 }
             }
         }
 
-        public IEnumerable<GastosEletrodomestico> RetornarPorUsuarioEDia(long idUsuario, DateTime dia)
+        public IEnumerable<GastosEletrodomesticoModel> RetornarPorUsuarioEDia(long idUsuario, DateTime dia)
         {
-            var gastosEletrodomesticoList = new List<GastosEletrodomestico>();
+            var gastosEletrodomesticoList = new List<GastosEletrodomesticoModel>();
 
             using (var conn = new NpgsqlConnection(stringConexao))
             {
@@ -82,12 +82,12 @@ namespace CarbonTracker._Repositories
                     {
                         while (reader.Read())
                         {
-                            var gastosEletrodomestico = new GastosEletrodomestico();
+                            var gastosEletrodomestico = new GastosEletrodomesticoModel();
                             gastosEletrodomestico.Id = (long)reader["id"];
                             gastosEletrodomestico.IdUsuario = (long)reader["idusuario"];
                             gastosEletrodomestico.Dia = (DateTime)reader["dia"];
                             gastosEletrodomestico.IdEletrodomestico = (long)reader["ideletrodomestico"];
-                            gastosEletrodomestico.TempoUso = (decimal)reader["tempouso"];
+                            gastosEletrodomestico.TempoUso = (double)reader["tempouso"];
                         }
                     }
                 }

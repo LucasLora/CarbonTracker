@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
 using static CarbonTracker.Models.Common.Enums;
 
 namespace CarbonTracker.Models
@@ -10,7 +9,6 @@ namespace CarbonTracker.Models
 
         #region Propriedades
 
-        [DisplayName("Usuário")]
         public long Id { get; set; }    
 
         [Required(ErrorMessage = "Nome é obrigatório")]
@@ -18,18 +16,17 @@ namespace CarbonTracker.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "E-Mail é obrigatório")]
-        [DisplayName("E-mail")]
+        [StringLength(255, MinimumLength = 5, ErrorMessage = "Nome deve estar entre 5 e 255 caracteres")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Senha é obrigatório")]
+        [StringLength(255, MinimumLength = 3, ErrorMessage = "Nome deve estar entre 3 e 255 caracteres")]
         public string Senha { get; set; }
 
         public TipoUsuario TipoUsuario { get; set; }    
         
-        [DisplayName("Tipo Usuário")]
         public string TipoUsuarioDescription { get { return GetEnumDescription(TipoUsuario); } }
 
-        [DisplayName("Data Criação")]
         public DateTime DataCriacao { get; set; }
 
         #endregion

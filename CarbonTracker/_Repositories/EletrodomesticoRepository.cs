@@ -5,7 +5,7 @@ using Npgsql;
 
 namespace CarbonTracker._Repositories
 {
-    public class EletrodomesticoRepository : RepositorioBase, IEletrodomesticoRepository
+    public class EletrodomesticoRepository : BaseRepository, IEletrodomesticoRepository
     {
 
         #region Construtor
@@ -27,12 +27,12 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"INSERT INTO eletrodomestico(id, nome, litroporhoraagua, kwporhoraeletricidade)
-                                        VALUES (default, @nome, @litroporhoraagua, @kwporhoraeletricidade);";
+                    cmd.CommandText = @"INSERT INTO eletrodomestico(nome, litroporhoraagua, kwporhoraeletricidade)
+                                        VALUES (@nome, @litroporhoraagua, @kwporhoraeletricidade);";
 
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = eletrodomesticoModel.Nome;
-                    cmd.Parameters.AddWithValue("@litroporhoraagua", NpgsqlTypes.NpgsqlDbType.Double).Value = eletrodomesticoModel.LitroPorHoraAgua;
-                    cmd.Parameters.AddWithValue("@kwporhoraeletricidade", NpgsqlTypes.NpgsqlDbType.Double).Value = eletrodomesticoModel.KWPorHoraEletricidade;
+                    cmd.Parameters.AddWithValue("@litroporhoraagua", NpgsqlTypes.NpgsqlDbType.Real).Value = eletrodomesticoModel.LitroPorHoraAgua;
+                    cmd.Parameters.AddWithValue("@kwporhoraeletricidade", NpgsqlTypes.NpgsqlDbType.Real).Value = eletrodomesticoModel.KWPorHoraEletricidade;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -53,8 +53,8 @@ namespace CarbonTracker._Repositories
 
                     cmd.Parameters.AddWithValue("@id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = eletrodomesticoModel.Id;
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = eletrodomesticoModel.Nome;
-                    cmd.Parameters.AddWithValue("@litroporhoraagua", NpgsqlTypes.NpgsqlDbType.Double).Value = eletrodomesticoModel.LitroPorHoraAgua;
-                    cmd.Parameters.AddWithValue("@kwporhoraeletricidade", NpgsqlTypes.NpgsqlDbType.Double).Value = eletrodomesticoModel.KWPorHoraEletricidade;
+                    cmd.Parameters.AddWithValue("@litroporhoraagua", NpgsqlTypes.NpgsqlDbType.Real).Value = eletrodomesticoModel.LitroPorHoraAgua;
+                    cmd.Parameters.AddWithValue("@kwporhoraeletricidade", NpgsqlTypes.NpgsqlDbType.Real).Value = eletrodomesticoModel.KWPorHoraEletricidade;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -89,7 +89,8 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"SELECT * FROM eletrodomestico ORDER BY id";
+                    cmd.CommandText = @"SELECT * FROM eletrodomestico 
+                                        ORDER BY id";
 
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -126,8 +127,8 @@ namespace CarbonTracker._Repositories
                                         WHERE Id=@Id OR Nome LIKE '%' || @Name || '%'
                                         ORDER BY id";
 
-                    cmd.Parameters.AddWithValue("@Id", eletrodomesticoId);
-                    cmd.Parameters.AddWithValue("@Name", eletrodomesticoNome);
+                    cmd.Parameters.AddWithValue("@Id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = eletrodomesticoId;
+                    cmd.Parameters.AddWithValue("@Name", NpgsqlTypes.NpgsqlDbType.Varchar).Value = eletrodomesticoNome;
 
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -138,7 +139,6 @@ namespace CarbonTracker._Repositories
                             eletrodomesticoModel.Nome = reader["nome"].ToString();
                             eletrodomesticoModel.LitroPorHoraAgua = (double)reader["litroporhoraagua"];
                             eletrodomesticoModel.KWPorHoraEletricidade = (double)reader["kwporhoraeletricidade"];
-
                             eletrodomesticoList.Add(eletrodomesticoModel);
                         }
                     }

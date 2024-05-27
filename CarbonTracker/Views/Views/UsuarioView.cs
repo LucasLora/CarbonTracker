@@ -6,6 +6,7 @@ namespace CarbonTracker.Views.Views
 {
     public partial class UsuarioView : Form, IUsuarioView
     {
+
         #region Construtor
 
         public UsuarioView()
@@ -130,5 +131,6 @@ namespace CarbonTracker.Views.Views
         }
 
         #endregion
+
     }
 }

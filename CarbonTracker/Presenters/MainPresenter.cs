@@ -1,7 +1,6 @@
 ﻿using System;
 using CarbonTracker.Views;
 using CarbonTracker.Models;
-using CarbonTracker._Repositories;
 using System.Windows.Forms;
 using CarbonTracker.Views.Interfaces;
 using CarbonTracker.Views.Views;

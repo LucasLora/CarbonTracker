@@ -9,9 +9,9 @@ namespace CarbonTracker.Models.RepositoriesInterfaces
 
         #region Métodos
 
-        void Adicionar(GastosEletrodomestico gastosEletrodomestico);
+        void Adicionar(GastosEletrodomesticoModel gastosEletrodomestico);
         void ExcluirPorUsuarioEDia(long idUsuario, DateTime dia);
-        IEnumerable<GastosEletrodomestico> RetornarPorUsuarioEDia(long idUsuario, DateTime dia);
+        IEnumerable<GastosEletrodomesticoModel> RetornarPorUsuarioEDia(long idUsuario, DateTime dia);
 
         #endregion
 

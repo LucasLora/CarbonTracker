@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CarbonTracker._Repositories
 {
-    public class GrupoUsuariosRepository : RepositorioBase, IGrupoUsuariosRepository
+    public class GrupoUsuariosRepository : BaseRepository, IGrupoUsuariosRepository
     {
 
         #region Construtor
@@ -88,7 +88,8 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"SELECT * FROM grupousuario ORDER BY id";
+                    cmd.CommandText = @"SELECT * FROM grupousuario 
+                                        ORDER BY id";
 
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -124,8 +125,8 @@ namespace CarbonTracker._Repositories
                                         WHERE Id=@Id OR Nome LIKE '%' || @Name || '%'
                                         ORDER BY id";
 
-                    cmd.Parameters.AddWithValue("@Id", grupoUsuariosId);
-                    cmd.Parameters.AddWithValue("@Name", grupoUsuariosNome);
+                    cmd.Parameters.AddWithValue("@Id", NpgsqlDbType.Bigint).Value = grupoUsuariosId;
+                    cmd.Parameters.AddWithValue("@Name", NpgsqlDbType.Varchar).Value = grupoUsuariosNome;
 
                     using (var reader = cmd.ExecuteReader())
                     {

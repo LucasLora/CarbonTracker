@@ -1,6 +1,6 @@
 ﻿namespace CarbonTracker.Models.Models
 {
-    public class UsuarioXGrupoUsuarios
+    public class UsuarioXGrupoUsuariosModel
     {
 
         #region Properties

@@ -5,7 +5,13 @@ namespace CarbonTracker.Views
     public partial class SenhaInputView : Form
     {
 
+        #region Propriedades
+
         public string Password => txtSenha.Text;
+
+        #endregion
+
+        #region Construtor
 
         public SenhaInputView()
         {
@@ -18,6 +24,8 @@ namespace CarbonTracker.Views
             AcceptButton = btnOk;
             CancelButton = btnCancelar;
         }
+
+        #endregion
 
     }
 }
