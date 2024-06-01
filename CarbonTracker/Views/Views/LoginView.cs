@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CarbonTracker.Imagens.AjustaImagens;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Views
@@ -11,6 +13,7 @@ namespace CarbonTracker.Views
         public LoginView()
         {
             InitializeComponent();
+            CarregarERedimensionarImagemNoPanel();
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
             InicializaEventos();
@@ -35,6 +38,20 @@ namespace CarbonTracker.Views
         #endregion
 
         #region Métodos
+        private void CarregarERedimensionarImagemNoPanel()
+        {
+            // Carregar a imagem dos recursos embutidos
+            Image imagemOriginal = Properties.Resources.Carbon_Tracker_Reto; // Substitua pelo nome do recurso da sua imagem
+
+            // Redimensionar a imagem
+            var redmencionarImagem = new AjustaImagens();
+            Image imagemRedimensionada = redmencionarImagem.RedimensionarImagem(imagemOriginal, new Size(panelLogoLogin.Width, panelLogoLogin.Height));
+
+            // Definir a imagem redimensionada como plano de fundo do Panel
+            panelLogoLogin.BackgroundImage = imagemRedimensionada;
+            panelLogoLogin.BackgroundImageLayout = ImageLayout.Stretch; // Ajusta a imagem para preencher o Panel
+        }
+
 
         private void InicializaEventos()
         {

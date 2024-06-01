@@ -1,5 +1,7 @@
-﻿using CarbonTracker.Views.Interfaces;
+﻿using CarbonTracker.Imagens.AjustaImagens;
+using CarbonTracker.Views.Interfaces;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Views.Views
@@ -14,6 +16,7 @@ namespace CarbonTracker.Views.Views
             InitializeComponent();
             InicializaEventos();
             RemoveTodosTabPages();
+            CarregarERedimensionarImagemNoPanel();
         }
 
         #endregion
@@ -23,6 +26,7 @@ namespace CarbonTracker.Views.Views
         public TabPage TbpUsuario { get => tbpUsuario; }
         public TabPage TbpGrupoUsuarios { get => tbpGrupoUsuarios; }
         public TabPage TbpAlterarInformacoesUsuarioLogado { get => tbpAlterarInformacoes; }
+        public TabPage TbpEntrarGrupoUsuarios { get => tbpEntrarGrupo; }
 
 
         public bool IsSuccessful { get; set; }
@@ -35,10 +39,25 @@ namespace CarbonTracker.Views.Views
         public event EventHandler ShowUsuario;
         public event EventHandler ShowGrupoUsuarios;
         public event EventHandler ShowAlterarInformacoesUsuarioLogado;
+        public event EventHandler ShowEntrarGrupo;
 
         #endregion
 
         #region Métodos
+
+        private void CarregarERedimensionarImagemNoPanel()
+        {
+            // Carregar a imagem dos recursos embutidos
+            Image imagemOriginal = Properties.Resources.Informaoes_De_Usuarios; // Substitua pelo nome do recurso da sua imagem
+
+            // Redimensionar a imagem
+            var redmencionarImagem = new AjustaImagens();
+            Image imagemRedimensionada = redmencionarImagem.RedimensionarImagem(imagemOriginal, new Size(PanelUsuarios.Width, PanelUsuarios.Height));
+
+            // Definir a imagem redimensionada como plano de fundo do Panel
+            PanelUsuarios.BackgroundImage = imagemRedimensionada;
+            PanelUsuarios.BackgroundImageLayout = ImageLayout.Stretch; // Ajusta a imagem para preencher o Panel
+        }
 
         private void InicializaEventos()
         {
@@ -90,6 +109,22 @@ namespace CarbonTracker.Views.Views
                     {
                         MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
                     }
+                }
+            };
+
+
+            btnEntrarGrupo.Click += delegate
+            {
+                ShowEntrarGrupo?.Invoke(this, EventArgs.Empty);
+
+                if (IsSuccessful)
+                {
+                    RemoveTodosTabPages();
+                    tbcUsuario.TabPages.Add(tbpEntrarGrupo);
+                }
+                else
+                {
+                    MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
                 }
             };
 

@@ -30,30 +30,36 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.pnlProgramas = new System.Windows.Forms.Panel();
+            this.panelLogoMain = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnComparacoes = new System.Windows.Forms.Button();
             this.btnRegistroGastos = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
-            this.lblTracker = new System.Windows.Forms.Label();
-            this.lblCarbon = new System.Windows.Forms.Label();
             this.btnCadastrosGastos = new System.Windows.Forms.Button();
             this.pnlProgramas.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProgramas
             // 
+            this.pnlProgramas.Controls.Add(this.panelLogoMain);
             this.pnlProgramas.Controls.Add(this.btnClose);
             this.pnlProgramas.Controls.Add(this.btnComparacoes);
             this.pnlProgramas.Controls.Add(this.btnRegistroGastos);
             this.pnlProgramas.Controls.Add(this.btnUsuarios);
-            this.pnlProgramas.Controls.Add(this.lblTracker);
-            this.pnlProgramas.Controls.Add(this.lblCarbon);
             this.pnlProgramas.Controls.Add(this.btnCadastrosGastos);
             this.pnlProgramas.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlProgramas.Location = new System.Drawing.Point(0, 0);
             this.pnlProgramas.Name = "pnlProgramas";
             this.pnlProgramas.Size = new System.Drawing.Size(200, 450);
             this.pnlProgramas.TabIndex = 0;
+            // 
+            // panelLogoMain
+            // 
+            this.panelLogoMain.BackgroundImage = global::CarbonTracker.Properties.Resources.Carbon_TrackerLogo;
+            this.panelLogoMain.Location = new System.Drawing.Point(23, 3);
+            this.panelLogoMain.Name = "panelLogoMain";
+            this.panelLogoMain.Size = new System.Drawing.Size(151, 88);
+            this.panelLogoMain.TabIndex = 9;
             // 
             // btnClose
             // 
@@ -70,7 +76,7 @@
             // 
             this.btnComparacoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnComparacoes.Location = new System.Drawing.Point(0, 237);
+            this.btnComparacoes.Location = new System.Drawing.Point(0, 253);
             this.btnComparacoes.Name = "btnComparacoes";
             this.btnComparacoes.Size = new System.Drawing.Size(200, 55);
             this.btnComparacoes.TabIndex = 6;
@@ -81,7 +87,7 @@
             // 
             this.btnRegistroGastos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistroGastos.Location = new System.Drawing.Point(0, 184);
+            this.btnRegistroGastos.Location = new System.Drawing.Point(0, 200);
             this.btnRegistroGastos.Name = "btnRegistroGastos";
             this.btnRegistroGastos.Size = new System.Drawing.Size(200, 55);
             this.btnRegistroGastos.TabIndex = 5;
@@ -92,38 +98,18 @@
             // 
             this.btnUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 77);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 94);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(200, 55);
             this.btnUsuarios.TabIndex = 2;
             this.btnUsuarios.Text = "Informações de Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
             // 
-            // lblTracker
-            // 
-            this.lblTracker.AutoSize = true;
-            this.lblTracker.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTracker.Location = new System.Drawing.Point(39, 37);
-            this.lblTracker.Name = "lblTracker";
-            this.lblTracker.Size = new System.Drawing.Size(133, 37);
-            this.lblTracker.TabIndex = 1;
-            this.lblTracker.Text = "Tracker";
-            // 
-            // lblCarbon
-            // 
-            this.lblCarbon.AutoSize = true;
-            this.lblCarbon.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarbon.Location = new System.Drawing.Point(41, 6);
-            this.lblCarbon.Name = "lblCarbon";
-            this.lblCarbon.Size = new System.Drawing.Size(129, 37);
-            this.lblCarbon.TabIndex = 0;
-            this.lblCarbon.Text = "Carbon";
-            // 
             // btnCadastrosGastos
             // 
             this.btnCadastrosGastos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCadastrosGastos.Location = new System.Drawing.Point(0, 131);
+            this.btnCadastrosGastos.Location = new System.Drawing.Point(0, 147);
             this.btnCadastrosGastos.Name = "btnCadastrosGastos";
             this.btnCadastrosGastos.Size = new System.Drawing.Size(200, 55);
             this.btnCadastrosGastos.TabIndex = 4;
@@ -143,7 +129,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carbon Tracker";
             this.pnlProgramas.ResumeLayout(false);
-            this.pnlProgramas.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -151,12 +136,11 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlProgramas;
-        private System.Windows.Forms.Label lblTracker;
-        private System.Windows.Forms.Label lblCarbon;
         private System.Windows.Forms.Button btnCadastrosGastos;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnComparacoes;
         private System.Windows.Forms.Button btnRegistroGastos;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel panelLogoMain;
     }
 }

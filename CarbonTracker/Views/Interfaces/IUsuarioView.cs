@@ -11,6 +11,7 @@ namespace CarbonTracker.Views.Interfaces
         TabPage TbpUsuario { get; }
         TabPage TbpGrupoUsuarios { get; }
         TabPage TbpAlterarInformacoesUsuarioLogado { get; }
+        TabPage TbpEntrarGrupoUsuarios { get; }
 
 
         bool IsSuccessful { get; set; }
@@ -23,6 +24,7 @@ namespace CarbonTracker.Views.Interfaces
         event EventHandler ShowUsuario;
         event EventHandler ShowGrupoUsuarios;
         event EventHandler ShowAlterarInformacoesUsuarioLogado;
+        event EventHandler ShowEntrarGrupo;
 
         #endregion
 
