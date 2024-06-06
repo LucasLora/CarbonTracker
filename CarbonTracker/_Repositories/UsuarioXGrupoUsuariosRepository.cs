@@ -56,7 +56,7 @@ namespace CarbonTracker._Repositories
             }
         }
 
-        public IEnumerable<UsuarioXGrupoUsuariosModel> RetornarPorUsuario(long idUsuario)
+        public IEnumerable<UsuarioXGrupoUsuariosModel> RetornarTodosGruposComInformacoesDePresencaDoUsuario(long idUsuario)
         {
             var usuarioXGrupoUsuariosList = new List<UsuarioXGrupoUsuariosModel>();
 
@@ -66,8 +66,16 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"SELECT * FROM usuarioxgrupousuarios 
-                                        WHERE idusuario = @idusuario;";
+                    cmd.CommandText = @"SELECT
+                                            A.id AS IdGrupo,
+                                            A.nome AS NomeGrupoNRT,
+                                            A.descricao AS DescricaoGrupoNRT,
+                                            CAST(COALESCE(B.idgrupo, 0) AS SMALLINT) AS PresencaNRT
+                                        	
+                                        FROM grupousuario A
+                                        LEFT JOIN usuarioxgrupousuarios B 
+                                            ON B.idgrupo = A.id
+                                            AND B.idusuario = @idusuario;";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
 
@@ -76,8 +84,11 @@ namespace CarbonTracker._Repositories
                         while (reader.Read())
                         {
                             var usuarioXGrupoUsuariosModel = new UsuarioXGrupoUsuariosModel();
-                            usuarioXGrupoUsuariosModel.IdUsuario = (long)reader["idusuario"];
+                            usuarioXGrupoUsuariosModel.IdUsuario = idUsuario;
                             usuarioXGrupoUsuariosModel.IdGrupo = (long)reader["idgrupo"];
+                            usuarioXGrupoUsuariosModel.NomeGrupoNRT = reader["nomegruponrt"].ToString();
+                            usuarioXGrupoUsuariosModel.DescricaoGrupoNRT = reader["descricaogruponrt"].ToString();
+                            usuarioXGrupoUsuariosModel.PresenteNRT = (short)reader["presencanrt"] == 0 ? false : true;
                             usuarioXGrupoUsuariosList.Add(usuarioXGrupoUsuariosModel);
                         }
                     }

@@ -1,7 +1,10 @@
 ﻿using CarbonTracker._Repositories;
 using CarbonTracker.Models;
+using CarbonTracker.Models.Models;
+using CarbonTracker.Models.RepositoriesInterfaces;
 using CarbonTracker.Views;
 using CarbonTracker.Views.Interfaces;
+using CarbonTracker.Views.Views;
 using System;
 using System.Windows.Forms;
 
@@ -40,6 +43,7 @@ namespace CarbonTracker.Presenters
             this.view.ShowUsuario += ShowUsuario;
             this.view.ShowGrupoUsuarios += ShowGrupoUsuarios;
             this.view.ShowAlterarInformacoesUsuarioLogado += ShowAlterarInformacoesUsuarioLogado;
+            this.view.ShowEntrarGrupo += ShowEntrarGrupo;
         }
 
         #endregion
@@ -54,7 +58,7 @@ namespace CarbonTracker.Presenters
                 this.view.IsSuccessful = true;
                 ICadastroUsuarioView viewCadastroUsuario = CadastroUsuarioView.GetInstance();
                 IUsuariosRepository repository = new UsuariosRepository(stringConexao);
-                new CadastroUsuarioPresenter(usuarioLogado, viewCadastroUsuario, repository);              
+                new CadastroUsuarioPresenter(usuarioLogado, viewCadastroUsuario, repository);
 
                 //Vincula a view ao TabPage
                 var viewCadastroUsuarioControl = (Control)viewCadastroUsuario;
@@ -122,6 +126,21 @@ namespace CarbonTracker.Presenters
                     view.Message = "Operação cancelada!";
                 }
             }
+        }
+
+        private void ShowEntrarGrupo(object sender, EventArgs e)
+        {
+            this.view.IsSuccessful = true;
+            this.view.Message = "";
+            IEntrarGrupoView viewEntrarGrupoView = EntrarGrupoView.GetInstance();
+            IUsuarioXGrupoUsuariosRepository repository = new UsuarioXGrupoUsuariosRepository(stringConexao);
+            new EntrarGrupoPresenter(usuarioLogado, viewEntrarGrupoView, repository);
+
+            //Vincula a view ao TabPage
+            var viewEntrarGrupoViewControl = (Control)viewEntrarGrupoView;
+            viewEntrarGrupoViewControl.Dock = DockStyle.Fill;
+            view.TbpEntrarGrupoUsuarios.Controls.Clear();
+            view.TbpEntrarGrupoUsuarios.Controls.Add(viewEntrarGrupoViewControl);
         }
 
         private bool VerificarSeEhAdministrador()

@@ -126,6 +126,7 @@
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\CadastroEletrodomesticoPresenter.cs" />
     <Compile Include="Presenters\CadastroGrupoUsuariosPresenter.cs" />
+    <Compile Include="Presenters\EntrarGrupoPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\CadastroGastosPresenter.cs" />
@@ -141,6 +142,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\AutenticacaoService.cs" />
+    <Compile Include="Views\Interfaces\IEntrarGrupoView.cs" />
     <Compile Include="Views\Interfaces\IUsuarioView.cs" />
     <Compile Include="Views\Views\AlterarInformacoesUsuarioLogadoView.cs">
       <SubType>Form</SubType>
@@ -294,7 +296,6 @@
     <Content Include="Imagens\Informaoes-De-Usuarios.png" />
     <Content Include="Imagens\LogoCarbonTrackerNova.ico" />
     <Content Include="Imagens\Registro-De-Gastos.png" />
-    <None Include="Resources\Carbon-Tracker-reto.bmp" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

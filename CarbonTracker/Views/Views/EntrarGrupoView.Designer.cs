@@ -28,52 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbcGrupoUsuarios = new System.Windows.Forms.TabControl();
-            this.tbpListagemEntrarGrupo = new System.Windows.Forms.TabPage();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.dgvEntrarGrupos = new System.Windows.Forms.DataGridView();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurar = new System.Windows.Forms.Label();
+            this.btnRestaurar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.IdGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescricaoGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EntrarSairGrupo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tbcGrupoUsuarios.SuspendLayout();
-            this.tbpListagemEntrarGrupo.SuspendLayout();
+            this.NomeGrupoNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescricaoGrupoNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Presente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrarGrupos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tbcGrupoUsuarios
-            // 
-            this.tbcGrupoUsuarios.Controls.Add(this.tbpListagemEntrarGrupo);
-            this.tbcGrupoUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbcGrupoUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.tbcGrupoUsuarios.Name = "tbcGrupoUsuarios";
-            this.tbcGrupoUsuarios.SelectedIndex = 0;
-            this.tbcGrupoUsuarios.Size = new System.Drawing.Size(800, 450);
-            this.tbcGrupoUsuarios.TabIndex = 4;
-            // 
-            // tbpListagemEntrarGrupo
-            // 
-            this.tbpListagemEntrarGrupo.Controls.Add(this.btnProcurar);
-            this.tbpListagemEntrarGrupo.Controls.Add(this.dgvEntrarGrupos);
-            this.tbpListagemEntrarGrupo.Controls.Add(this.txtProcurar);
-            this.tbpListagemEntrarGrupo.Controls.Add(this.lblProcurar);
-            this.tbpListagemEntrarGrupo.Location = new System.Drawing.Point(4, 22);
-            this.tbpListagemEntrarGrupo.Name = "tbpListagemEntrarGrupo";
-            this.tbpListagemEntrarGrupo.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpListagemEntrarGrupo.Size = new System.Drawing.Size(792, 424);
-            this.tbpListagemEntrarGrupo.TabIndex = 0;
-            this.tbpListagemEntrarGrupo.Text = "Listagem de Grupos";
-            this.tbpListagemEntrarGrupo.UseVisualStyleBackColor = true;
             // 
             // btnProcurar
             // 
             this.btnProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProcurar.Location = new System.Drawing.Point(583, 24);
+            this.btnProcurar.Location = new System.Drawing.Point(693, 24);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(100, 23);
-            this.btnProcurar.TabIndex = 2;
+            this.btnProcurar.TabIndex = 6;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
             // 
@@ -88,18 +62,17 @@
             this.dgvEntrarGrupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEntrarGrupos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdGrupo,
-            this.NomeGrupo,
-            this.DescricaoGrupo,
-            this.EntrarSairGrupo});
+            this.NomeGrupoNRT,
+            this.DescricaoGrupoNRT,
+            this.Presente});
             this.dgvEntrarGrupos.Location = new System.Drawing.Point(7, 52);
             this.dgvEntrarGrupos.MultiSelect = false;
             this.dgvEntrarGrupos.Name = "dgvEntrarGrupos";
-            this.dgvEntrarGrupos.ReadOnly = true;
             this.dgvEntrarGrupos.RowHeadersVisible = false;
             this.dgvEntrarGrupos.RowHeadersWidth = 51;
             this.dgvEntrarGrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEntrarGrupos.Size = new System.Drawing.Size(777, 367);
-            this.dgvEntrarGrupos.TabIndex = 3;
+            this.dgvEntrarGrupos.Size = new System.Drawing.Size(786, 363);
+            this.dgvEntrarGrupos.TabIndex = 7;
             // 
             // txtProcurar
             // 
@@ -107,8 +80,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProcurar.Location = new System.Drawing.Point(7, 26);
             this.txtProcurar.Name = "txtProcurar";
-            this.txtProcurar.Size = new System.Drawing.Size(571, 20);
-            this.txtProcurar.TabIndex = 1;
+            this.txtProcurar.Size = new System.Drawing.Size(680, 20);
+            this.txtProcurar.TabIndex = 5;
             // 
             // lblProcurar
             // 
@@ -117,8 +90,28 @@
             this.lblProcurar.Location = new System.Drawing.Point(3, 3);
             this.lblProcurar.Name = "lblProcurar";
             this.lblProcurar.Size = new System.Drawing.Size(73, 20);
-            this.lblProcurar.TabIndex = 0;
+            this.lblProcurar.TabIndex = 4;
             this.lblProcurar.Text = "Procurar:";
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestaurar.Location = new System.Drawing.Point(693, 421);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(100, 23);
+            this.btnRestaurar.TabIndex = 21;
+            this.btnRestaurar.Text = "Restaurar";
+            this.btnRestaurar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSalvar.Location = new System.Drawing.Point(7, 421);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(100, 23);
+            this.btnSalvar.TabIndex = 20;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // IdGrupo
             // 
@@ -129,57 +122,61 @@
             this.IdGrupo.ReadOnly = true;
             this.IdGrupo.Width = 75;
             // 
-            // NomeGrupo
+            // NomeGrupoNRT
             // 
-            this.NomeGrupo.DataPropertyName = "NomeGrupo";
-            this.NomeGrupo.HeaderText = "Nome";
-            this.NomeGrupo.MinimumWidth = 6;
-            this.NomeGrupo.Name = "NomeGrupo";
-            this.NomeGrupo.ReadOnly = true;
-            this.NomeGrupo.Width = 200;
+            this.NomeGrupoNRT.DataPropertyName = "NomeGrupoNRT";
+            this.NomeGrupoNRT.HeaderText = "Nome";
+            this.NomeGrupoNRT.MinimumWidth = 6;
+            this.NomeGrupoNRT.Name = "NomeGrupoNRT";
+            this.NomeGrupoNRT.ReadOnly = true;
+            this.NomeGrupoNRT.Width = 200;
             // 
-            // DescricaoGrupo
+            // DescricaoGrupoNRT
             // 
-            this.DescricaoGrupo.DataPropertyName = "DescricaoGrupo";
-            this.DescricaoGrupo.HeaderText = "Descrição";
-            this.DescricaoGrupo.MinimumWidth = 6;
-            this.DescricaoGrupo.Name = "DescricaoGrupo";
-            this.DescricaoGrupo.ReadOnly = true;
-            this.DescricaoGrupo.Width = 350;
+            this.DescricaoGrupoNRT.DataPropertyName = "DescricaoGrupoNRT";
+            this.DescricaoGrupoNRT.HeaderText = "Descrição";
+            this.DescricaoGrupoNRT.MinimumWidth = 6;
+            this.DescricaoGrupoNRT.Name = "DescricaoGrupoNRT";
+            this.DescricaoGrupoNRT.ReadOnly = true;
+            this.DescricaoGrupoNRT.Width = 350;
             // 
-            // EntrarSairGrupo
+            // Presente
             // 
-            this.EntrarSairGrupo.HeaderText = "Entrar/Sair";
-            this.EntrarSairGrupo.Name = "EntrarSairGrupo";
-            this.EntrarSairGrupo.ReadOnly = true;
+            this.Presente.DataPropertyName = "Presente";
+            this.Presente.HeaderText = "Presente?";
+            this.Presente.Name = "Presente";
             // 
             // EntrarGrupoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tbcGrupoUsuarios);
+            this.Controls.Add(this.btnRestaurar);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnProcurar);
+            this.Controls.Add(this.dgvEntrarGrupos);
+            this.Controls.Add(this.txtProcurar);
+            this.Controls.Add(this.lblProcurar);
             this.Name = "EntrarGrupoView";
             this.Text = "EntrarGrupoView";
-            this.tbcGrupoUsuarios.ResumeLayout(false);
-            this.tbpListagemEntrarGrupo.ResumeLayout(false);
-            this.tbpListagemEntrarGrupo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrarGrupos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tbcGrupoUsuarios;
-        private System.Windows.Forms.TabPage tbpListagemEntrarGrupo;
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.DataGridView dgvEntrarGrupos;
         private System.Windows.Forms.TextBox txtProcurar;
         private System.Windows.Forms.Label lblProcurar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdGrupo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeGrupo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescricaoGrupo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn EntrarSairGrupo;
+        private System.Windows.Forms.Button btnRestaurar;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdGrupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeGrupoNRT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescricaoGrupoNRT;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Presente;
     }
 }

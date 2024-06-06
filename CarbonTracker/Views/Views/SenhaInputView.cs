@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using CarbonTracker.Imagens.AjustaImagens;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace CarbonTracker.Views
 {
@@ -18,11 +20,26 @@ namespace CarbonTracker.Views
             InitializeComponent();
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
+            CarregarERedimensionarImagemNoPanel();
             txtSenha.PasswordChar = '*';
             btnOk.DialogResult = DialogResult.OK;
             btnCancelar.DialogResult = DialogResult.Cancel;
             AcceptButton = btnOk;
             CancelButton = btnCancelar;
+        }
+
+        #endregion
+
+        #region Métodos
+
+        private void CarregarERedimensionarImagemNoPanel()
+        {
+            var redmencionarImagem = new AjustaImagens();
+            Image imagemRedimensionada = redmencionarImagem.RedimensionarImagem(Properties.Resources.Carbon_Tracker_Reto, 
+                                                                                new Size(pnlImagem.Width, pnlImagem.Height));
+
+            pnlImagem.BackgroundImage = imagemRedimensionada;
+            pnlImagem.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         #endregion

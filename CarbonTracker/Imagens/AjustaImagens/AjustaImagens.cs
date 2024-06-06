@@ -23,5 +23,6 @@ namespace CarbonTracker.Imagens.AjustaImagens
             }
             return novaImagem;
         }
+
     }
 }

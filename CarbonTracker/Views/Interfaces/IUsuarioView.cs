@@ -13,7 +13,6 @@ namespace CarbonTracker.Views.Interfaces
         TabPage TbpAlterarInformacoesUsuarioLogado { get; }
         TabPage TbpEntrarGrupoUsuarios { get; }
 
-
         bool IsSuccessful { get; set; }
         string Message { get; set; }
 

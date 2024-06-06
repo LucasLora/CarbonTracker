@@ -112,7 +112,6 @@ namespace CarbonTracker.Views.Views
                 }
             };
 
-
             btnEntrarGrupo.Click += delegate
             {
                 ShowEntrarGrupo?.Invoke(this, EventArgs.Empty);

@@ -10,7 +10,7 @@ namespace CarbonTracker.Models.RepositoriesInterfaces
 
         void Adicionar(UsuarioXGrupoUsuariosModel usuarioXGrupoUsuarios);
         void ExcluirPorUsuario(long idUsuario);
-        IEnumerable<UsuarioXGrupoUsuariosModel> RetornarPorUsuario(long idUsuario);
+        IEnumerable<UsuarioXGrupoUsuariosModel> RetornarTodosGruposComInformacoesDePresencaDoUsuario(long idUsuario);
 
         #endregion
 

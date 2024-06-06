@@ -33,11 +33,12 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblSenha = new System.Windows.Forms.Label();
+            this.pnlImagem = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(9, 21);
+            this.txtSenha.Location = new System.Drawing.Point(10, 99);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -47,10 +48,10 @@
             // btnOk
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(9, 44);
+            this.btnOk.Location = new System.Drawing.Point(10, 127);
             this.btnOk.Margin = new System.Windows.Forms.Padding(2);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(56, 19);
+            this.btnOk.Size = new System.Drawing.Size(75, 19);
             this.btnOk.TabIndex = 1;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -58,10 +59,10 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(175, 44);
+            this.btnCancelar.Location = new System.Drawing.Point(159, 127);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(56, 19);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 19);
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -69,18 +70,26 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(7, 6);
+            this.lblSenha.Location = new System.Drawing.Point(7, 84);
             this.lblSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(41, 13);
             this.lblSenha.TabIndex = 3;
             this.lblSenha.Text = "Senha:";
             // 
+            // pnlImagem
+            // 
+            this.pnlImagem.Location = new System.Drawing.Point(2, 2);
+            this.pnlImagem.Name = "pnlImagem";
+            this.pnlImagem.Size = new System.Drawing.Size(239, 76);
+            this.pnlImagem.TabIndex = 4;
+            // 
             // SenhaInputView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 72);
+            this.ClientSize = new System.Drawing.Size(243, 155);
+            this.Controls.Add(this.pnlImagem);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnOk);
@@ -101,5 +110,6 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblSenha;
+        private System.Windows.Forms.Panel pnlImagem;
     }
 }

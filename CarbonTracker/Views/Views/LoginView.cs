@@ -38,6 +38,7 @@ namespace CarbonTracker.Views
         #endregion
 
         #region Métodos
+
         private void CarregarERedimensionarImagemNoPanel()
         {
             // Carregar a imagem dos recursos embutidos
@@ -51,7 +52,6 @@ namespace CarbonTracker.Views
             panelLogoLogin.BackgroundImage = imagemRedimensionada;
             panelLogoLogin.BackgroundImageLayout = ImageLayout.Stretch; // Ajusta a imagem para preencher o Panel
         }
-
 
         private void InicializaEventos()
         {
