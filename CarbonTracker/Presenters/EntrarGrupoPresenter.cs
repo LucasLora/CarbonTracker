@@ -72,9 +72,22 @@ namespace CarbonTracker.Presenters
 
         private void SearchGrupoUsuarios(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(this.view.SearchValue))
+            var valorPesquisa = this.view.SearchValue;
+
+            if (!string.IsNullOrWhiteSpace(valorPesquisa))
             {
-                grupoUsuariosBindingSource.DataSource = usuarioXGrupoUsuariosList.Where(x => x.NomeGrupoNRT.ToLower().Contains(this.view.SearchValue.ToLower()));
+                valorPesquisa = valorPesquisa.ToLower();
+
+                var lst = usuarioXGrupoUsuariosList.Where(x => x.IdGrupo.ToString() == valorPesquisa ||
+                                                          x.NomeGrupoNRT.ToLower().Contains(valorPesquisa) ||
+                                                          x.DescricaoGrupoNRT.ToLower().Contains(valorPesquisa));
+
+                if (lst.Count() == 0) //Se não encontrar nada, retorna a lista completa
+                {
+                    lst = usuarioXGrupoUsuariosList;
+                }
+
+                grupoUsuariosBindingSource.DataSource = lst;
             }
             else
             {
@@ -97,6 +110,7 @@ namespace CarbonTracker.Presenters
                 });
 
                 view.IsSuccessful = true;
+                view.Message = "Grupos de usuários salvos com sucesso!";
                 CarregaTodaListaDeGruposUsuariosDoUsuario();
             }
             catch (Exception ex)

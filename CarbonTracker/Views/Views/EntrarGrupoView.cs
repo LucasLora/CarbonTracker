@@ -28,7 +28,7 @@ namespace CarbonTracker.Views.Views
 
         #region Propriedades
 
-        public string SearchValue { get; set; }
+        public string SearchValue { get { return this.txtProcurar.Text; } set { this.txtProcurar.Text = value; } }
         public bool IsSuccessful { get; set; }
         public string Message { get; set; }
 
@@ -55,14 +55,14 @@ namespace CarbonTracker.Views.Views
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
-        
+
             //Salvar
             btnSalvar.Click += delegate
             {
                 SalvarEvent?.Invoke(this, EventArgs.Empty);
                 if (IsSuccessful)
                 {
-                    
+
                 }
                 MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
             };
@@ -70,7 +70,7 @@ namespace CarbonTracker.Views.Views
             //Restaurar
             btnRestaurar.Click += delegate
             {
-                RestaurarEvent?.Invoke(this, EventArgs.Empty);              
+                RestaurarEvent?.Invoke(this, EventArgs.Empty);
             };
         }
 

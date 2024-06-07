@@ -37,7 +37,7 @@
             this.IdGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeGrupoNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescricaoGrupoNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Presente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.PresenteNRT = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrarGrupos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             this.IdGrupo,
             this.NomeGrupoNRT,
             this.DescricaoGrupoNRT,
-            this.Presente});
+            this.PresenteNRT});
             this.dgvEntrarGrupos.Location = new System.Drawing.Point(7, 52);
             this.dgvEntrarGrupos.MultiSelect = false;
             this.dgvEntrarGrupos.Name = "dgvEntrarGrupos";
@@ -120,7 +120,7 @@
             this.IdGrupo.MinimumWidth = 6;
             this.IdGrupo.Name = "IdGrupo";
             this.IdGrupo.ReadOnly = true;
-            this.IdGrupo.Width = 75;
+            this.IdGrupo.Width = 60;
             // 
             // NomeGrupoNRT
             // 
@@ -129,7 +129,7 @@
             this.NomeGrupoNRT.MinimumWidth = 6;
             this.NomeGrupoNRT.Name = "NomeGrupoNRT";
             this.NomeGrupoNRT.ReadOnly = true;
-            this.NomeGrupoNRT.Width = 200;
+            this.NomeGrupoNRT.Width = 150;
             // 
             // DescricaoGrupoNRT
             // 
@@ -140,11 +140,12 @@
             this.DescricaoGrupoNRT.ReadOnly = true;
             this.DescricaoGrupoNRT.Width = 350;
             // 
-            // Presente
+            // PresenteNRT
             // 
-            this.Presente.DataPropertyName = "Presente";
-            this.Presente.HeaderText = "Presente?";
-            this.Presente.Name = "Presente";
+            this.PresenteNRT.DataPropertyName = "PresenteNRT";
+            this.PresenteNRT.HeaderText = "Presente?";
+            this.PresenteNRT.Name = "PresenteNRT";
+            this.PresenteNRT.Width = 75;
             // 
             // EntrarGrupoView
             // 
@@ -177,6 +178,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeGrupoNRT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescricaoGrupoNRT;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Presente;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn PresenteNRT;
     }
 }
