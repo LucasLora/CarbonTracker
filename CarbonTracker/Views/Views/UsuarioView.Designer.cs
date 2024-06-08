@@ -38,7 +38,7 @@
             this.tbpAlterarInformacoes = new System.Windows.Forms.TabPage();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.PanelUsuarios = new System.Windows.Forms.Panel();
+            this.panelUsuarios = new System.Windows.Forms.Panel();
             this.btnEntrarGrupo = new System.Windows.Forms.Button();
             this.tbpEntrarGrupo = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
@@ -149,7 +149,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.White;
-            this.pnlTop.Controls.Add(this.PanelUsuarios);
+            this.pnlTop.Controls.Add(this.panelUsuarios);
             this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -159,11 +159,11 @@
             // 
             // PanelUsuarios
             // 
-            this.PanelUsuarios.BackgroundImage = global::CarbonTracker.Properties.Resources.Informaoes_De_Usuarios;
-            this.PanelUsuarios.Location = new System.Drawing.Point(0, -7);
-            this.PanelUsuarios.Name = "PanelUsuarios";
-            this.PanelUsuarios.Size = new System.Drawing.Size(458, 89);
-            this.PanelUsuarios.TabIndex = 2;
+            this.panelUsuarios.BackgroundImage = global::CarbonTracker.Properties.Resources.Informaoes_De_Usuarios;
+            this.panelUsuarios.Location = new System.Drawing.Point(0, -7);
+            this.panelUsuarios.Name = "PanelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(458, 89);
+            this.panelUsuarios.TabIndex = 2;
             // 
             // btnEntrarGrupo
             // 
@@ -214,7 +214,7 @@
         private System.Windows.Forms.TabPage tbpAlterarInformacoes;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Panel PanelUsuarios;
+        private System.Windows.Forms.Panel panelUsuarios;
         private System.Windows.Forms.Button btnEntrarGrupo;
         private System.Windows.Forms.TabPage tbpEntrarGrupo;
     }

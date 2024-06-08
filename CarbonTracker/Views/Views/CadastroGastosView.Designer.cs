@@ -36,7 +36,7 @@
             this.tbcRegistroGastos = new System.Windows.Forms.TabControl();
             this.tbpEletrodomestico = new System.Windows.Forms.TabPage();
             this.tbpTransporte = new System.Windows.Forms.TabPage();
-            this.PanelCadastroDeGastos = new System.Windows.Forms.Panel();
+            this.panelCadastroDeGastos = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tbcRegistroGastos.SuspendLayout();
@@ -56,7 +56,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.White;
-            this.pnlTop.Controls.Add(this.PanelCadastroDeGastos);
+            this.pnlTop.Controls.Add(this.panelCadastroDeGastos);
             this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -129,11 +129,11 @@
             // 
             // PanelCadastroDeGastos
             // 
-            this.PanelCadastroDeGastos.BackgroundImage = global::CarbonTracker.Properties.Resources.Cadastro_de_Gastos;
-            this.PanelCadastroDeGastos.Location = new System.Drawing.Point(0, 0);
-            this.PanelCadastroDeGastos.Name = "PanelCadastroDeGastos";
-            this.PanelCadastroDeGastos.Size = new System.Drawing.Size(384, 73);
-            this.PanelCadastroDeGastos.TabIndex = 2;
+            this.panelCadastroDeGastos.BackgroundImage = global::CarbonTracker.Properties.Resources.Cadastro_de_Gastos;
+            this.panelCadastroDeGastos.Location = new System.Drawing.Point(0, 0);
+            this.panelCadastroDeGastos.Name = "PanelCadastroDeGastos";
+            this.panelCadastroDeGastos.Size = new System.Drawing.Size(384, 73);
+            this.panelCadastroDeGastos.TabIndex = 2;
             // 
             // CadastroGastosView
             // 
@@ -161,6 +161,6 @@
         private System.Windows.Forms.TabControl tbcRegistroGastos;
         private System.Windows.Forms.TabPage tbpEletrodomestico;
         private System.Windows.Forms.TabPage tbpTransporte;
-        private System.Windows.Forms.Panel PanelCadastroDeGastos;
+        private System.Windows.Forms.Panel panelCadastroDeGastos;
     }
 }

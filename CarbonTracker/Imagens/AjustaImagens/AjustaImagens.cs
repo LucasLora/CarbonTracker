@@ -10,7 +10,6 @@ namespace CarbonTracker.Imagens.AjustaImagens
 {
     public class AjustaImagens
     {
-
         public Image RedimensionarImagem(Image imagem, Size novoTamanho)
         {
             Bitmap novaImagem = new Bitmap(novoTamanho.Width, novoTamanho.Height);

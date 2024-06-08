@@ -38,16 +38,13 @@ namespace CarbonTracker.Views
 
         private void CarregarERedimensionarImagemNoPanel()
         {
-            // Carregar a imagem dos recursos embutidos
-            Image imagemOriginal = Properties.Resources.Registro_De_Gastos; // Substitua pelo nome do recurso da sua imagem
+            Image imagemOriginal = Properties.Resources.Registro_De_Gastos;
 
-            // Redimensionar a imagem
             var redmencionarImagem = new AjustaImagens();
             Image imagemRedimensionada = redmencionarImagem.RedimensionarImagem(imagemOriginal, new Size(panelRegistroGastos.Width, panelRegistroGastos.Height));
 
-            // Definir a imagem redimensionada como plano de fundo do Panel
             panelRegistroGastos.BackgroundImage = imagemRedimensionada;
-            panelRegistroGastos.BackgroundImageLayout = ImageLayout.Stretch; // Ajusta a imagem para preencher o Panel
+            panelRegistroGastos.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void InicializaEventos()

@@ -35,8 +35,7 @@ namespace CarbonTracker.Views
         private void CarregarERedimensionarImagemNoPanel()
         {
             var redmencionarImagem = new AjustaImagens();
-            Image imagemRedimensionada = redmencionarImagem.RedimensionarImagem(Properties.Resources.Carbon_Tracker_Reto, 
-                                                                                new Size(pnlImagem.Width, pnlImagem.Height));
+            Image imagemRedimensionada = redmencionarImagem.RedimensionarImagem(Properties.Resources.Carbon_Tracker_Reto, new Size(pnlImagem.Width, pnlImagem.Height));
 
             pnlImagem.BackgroundImage = imagemRedimensionada;
             pnlImagem.BackgroundImageLayout = ImageLayout.Stretch;
