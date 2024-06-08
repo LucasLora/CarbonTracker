@@ -41,6 +41,26 @@ namespace CarbonTracker._Repositories
             }
         }
 
+        public void Alterar(GastosEletrodomesticoModel gastosEletrodomestico)
+        {
+            using (var conn = new NpgsqlConnection(stringConexao))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"UPDATE gastoseletrodomestico
+                                        SET tempouso = @tempouso
+                                        WHERE id = @id;";
+
+                    cmd.Parameters.AddWithValue("@id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosEletrodomestico.Id;
+                    cmd.Parameters.AddWithValue("@tempouso", NpgsqlTypes.NpgsqlDbType.Real).Value = gastosEletrodomestico.TempoUso;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void ExcluirPorUsuarioEDia(long idUsuario, DateTime dia)
         {
             using (var conn = new NpgsqlConnection(stringConexao))
@@ -71,9 +91,19 @@ namespace CarbonTracker._Repositories
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"SELECT * gastoseletrodomestico
-	                                    WHERE idusuario = @idusuario
-                                        AND dia = @dia;";
+                    cmd.CommandText = @"SELECT 
+                                        	A.id AS IdEletrodomestico,
+                                        	A.nome AS NomeNRT,
+                                        	A.litroporhoraagua AS LitroPorHoraAguaNRT,
+                                        	A.kwporhoraeletricidade AS KwPorHoraEletricidadeNRT,	
+ 	                                        CAST(COALESCE(B.id, 0) AS BIGINT) AS Id,
+                                         	CAST(COALESCE(B.tempouso, 0) AS NUMERIC) AS TempoUso
+                                         
+                                        FROM eletrodomestico A
+                                        LEFT JOIN gastoseletrodomestico B
+                                        	ON B.ideletrodomestico = A.id
+                                        	AND B.dia = @dia
+                                        	AND B.idusuario = @idusuario;";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
                     cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Date).Value = dia;
@@ -81,13 +111,16 @@ namespace CarbonTracker._Repositories
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
-                        {
+                        {   
                             var gastosEletrodomestico = new GastosEletrodomesticoModel();
-                            gastosEletrodomestico.Id = (long)reader["id"];
-                            gastosEletrodomestico.IdUsuario = (long)reader["idusuario"];
-                            gastosEletrodomestico.Dia = (DateTime)reader["dia"];
-                            gastosEletrodomestico.IdEletrodomestico = (long)reader["ideletrodomestico"];
-                            gastosEletrodomestico.TempoUso = (double)reader["tempouso"];
+                            gastosEletrodomestico.Id = (long)reader["Id"];
+                            gastosEletrodomestico.IdUsuario = idUsuario;
+                            gastosEletrodomestico.Dia = dia;
+                            gastosEletrodomestico.IdEletrodomestico = (long)reader["IdEletrodomestico"];
+                            gastosEletrodomestico.TempoUso = (double)reader["TempoUso"];
+                            gastosEletrodomestico.NomeNRT = (string)reader["NomeNRT"];
+                            gastosEletrodomestico.LitroPorHoraAguaNRT = (double)reader["LitroPorHoraAguaNRT"];
+                            gastosEletrodomestico.KWPorHoraEletricidadeNRT = (double)reader["KwPorHoraEletricidadeNRT"];
                         }
                     }
                 }

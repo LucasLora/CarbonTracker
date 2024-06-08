@@ -172,7 +172,6 @@
         private System.Windows.Forms.DataGridView dgvEntrarGrupos;
         private System.Windows.Forms.TextBox txtProcurar;
         private System.Windows.Forms.Label lblProcurar;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn EntrarSairGrupo;
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdGrupo;
