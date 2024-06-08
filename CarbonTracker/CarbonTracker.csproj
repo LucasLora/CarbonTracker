@@ -130,9 +130,11 @@
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\CadastroGastosPresenter.cs" />
+    <Compile Include="Presenters\RegistroGastosEletrodomesticoPresenter.cs" />
     <Compile Include="Presenters\RegistroGastosPresenter.cs" />
     <Compile Include="Presenters\CadastroTransportePresenter.cs" />
     <Compile Include="Presenters\CadastroUsuarioPresenter.cs" />
+    <Compile Include="Presenters\RegistroGastosTransportePresenter.cs" />
     <Compile Include="Presenters\UsuarioPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -142,7 +144,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\AutenticacaoService.cs" />
+    <Compile Include="Views\Interfaces\IRegistroGastosTransporteView.cs" />
     <Compile Include="Views\Interfaces\IEntrarGrupoView.cs" />
+    <Compile Include="Views\Interfaces\IRegistroGastosEletrodomesticoView.cs" />
     <Compile Include="Views\Interfaces\IUsuarioView.cs" />
     <Compile Include="Views\Views\AlterarInformacoesUsuarioLogadoView.cs">
       <SubType>Form</SubType>
@@ -176,6 +180,18 @@
     </Compile>
     <Compile Include="Views\Views\EntrarGrupoView.Designer.cs">
       <DependentUpon>EntrarGrupoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Views\RegistroGastosEletrodomesticoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Views\RegistroGastosEletrodomesticoView.Designer.cs">
+      <DependentUpon>RegistroGastosEletrodomesticoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Views\RegistroGastosTransporteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Views\RegistroGastosTransporteView.Designer.cs">
+      <DependentUpon>RegistroGastosTransporteView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Views\LoginView.cs">
       <SubType>Form</SubType>
