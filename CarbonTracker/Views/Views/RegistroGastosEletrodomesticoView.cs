@@ -29,8 +29,8 @@ namespace CarbonTracker.Views.Views
 
         #region Eventos
 
-        public event EventHandler RegistrarDia;
-        public event EventHandler TrocarDia;
+        public event EventHandler RegistrarDiaEvent;
+        public event EventHandler TrocarDiaEvent;
         public event EventHandler SearchEvent;
         public event EventHandler SalvarEvent;
         public event EventHandler RestaurarEvent;
@@ -44,7 +44,11 @@ namespace CarbonTracker.Views.Views
             //Registrar
             btnRegistrar.Click += delegate
             {
-                RegistrarDia?.Invoke(this, EventArgs.Empty);
+                RegistrarDiaEvent?.Invoke(this, EventArgs.Empty);
+                if (!this.IsSuccessful)
+                {
+                    MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
+                }
             };
 
             //Trocar Dia
@@ -55,7 +59,7 @@ namespace CarbonTracker.Views.Views
                                       MessageBoxButtons.YesNo,
                                       MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    TrocarDia?.Invoke(this, EventArgs.Empty);
+                    TrocarDiaEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
 
@@ -73,10 +77,6 @@ namespace CarbonTracker.Views.Views
             btnSalvar.Click += delegate
             {
                 SalvarEvent?.Invoke(this, EventArgs.Empty);
-                if (IsSuccessful)
-                {
-
-                }
                 MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
             };
 

@@ -17,8 +17,8 @@ namespace CarbonTracker.Views.Interfaces
 
         #region Eventos
 
-        event EventHandler RegistrarDia;
-        event EventHandler TrocarDia;
+        event EventHandler RegistrarDiaEvent;
+        event EventHandler TrocarDiaEvent;
         event EventHandler SearchEvent;
         event EventHandler SalvarEvent;
         event EventHandler RestaurarEvent;

@@ -39,6 +39,13 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblDia = new System.Windows.Forms.Label();
             this.dtpDia = new System.Windows.Forms.DateTimePicker();
+            this.IdTransporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoVeiculoDescriptionNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoCombustivelDesctiptionNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KmPorLitroCombustivelNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KmRodados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QtdePassageiros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             this.pnlDia.SuspendLayout();
             this.SuspendLayout();
@@ -55,12 +62,26 @@
             // 
             // dgvRegistros
             // 
+            this.dgvRegistros.AllowUserToAddRows = false;
+            this.dgvRegistros.AllowUserToDeleteRows = false;
+            this.dgvRegistros.AllowUserToOrderColumns = true;
+            this.dgvRegistros.AllowUserToResizeRows = false;
             this.dgvRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdTransporte,
+            this.NomeNRT,
+            this.TipoVeiculoDescriptionNRT,
+            this.TipoCombustivelDesctiptionNRT,
+            this.KmPorLitroCombustivelNRT,
+            this.KmRodados,
+            this.QtdePassageiros});
             this.dgvRegistros.Location = new System.Drawing.Point(7, 106);
             this.dgvRegistros.Name = "dgvRegistros";
+            this.dgvRegistros.RowHeadersVisible = false;
+            this.dgvRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvRegistros.Size = new System.Drawing.Size(786, 309);
             this.dgvRegistros.TabIndex = 10;
             // 
@@ -93,12 +114,12 @@
             this.lblPesquisar.TabIndex = 8;
             this.lblPesquisar.Text = "Pesquisar:";
             // 
-            // txtProcurar
+            // txtPesquisar
             // 
             this.txtPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPesquisar.Location = new System.Drawing.Point(7, 80);
-            this.txtPesquisar.Name = "txtProcurar";
+            this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(705, 20);
             this.txtPesquisar.TabIndex = 7;
             // 
@@ -151,6 +172,60 @@
             this.dtpDia.Size = new System.Drawing.Size(95, 20);
             this.dtpDia.TabIndex = 0;
             // 
+            // IdTransporte
+            // 
+            this.IdTransporte.DataPropertyName = "IdTransporte";
+            this.IdTransporte.HeaderText = "Transporte";
+            this.IdTransporte.Name = "IdTransporte";
+            this.IdTransporte.ReadOnly = true;
+            this.IdTransporte.Width = 75;
+            // 
+            // NomeNRT
+            // 
+            this.NomeNRT.DataPropertyName = "NomeNRT";
+            this.NomeNRT.HeaderText = "Nome";
+            this.NomeNRT.Name = "NomeNRT";
+            this.NomeNRT.ReadOnly = true;
+            this.NomeNRT.Width = 150;
+            // 
+            // TipoVeiculoDescriptionNRT
+            // 
+            this.TipoVeiculoDescriptionNRT.DataPropertyName = "TipoVeiculoDescriptionNRT";
+            this.TipoVeiculoDescriptionNRT.HeaderText = "Tipo Veículo";
+            this.TipoVeiculoDescriptionNRT.Name = "TipoVeiculoDescriptionNRT";
+            this.TipoVeiculoDescriptionNRT.ReadOnly = true;
+            this.TipoVeiculoDescriptionNRT.Width = 95;
+            // 
+            // TipoCombustivelDesctiptionNRT
+            // 
+            this.TipoCombustivelDesctiptionNRT.DataPropertyName = "TipoCombustivelDesctiptionNRT";
+            this.TipoCombustivelDesctiptionNRT.HeaderText = "Tipo Combustível";
+            this.TipoCombustivelDesctiptionNRT.Name = "TipoCombustivelDesctiptionNRT";
+            this.TipoCombustivelDesctiptionNRT.ReadOnly = true;
+            this.TipoCombustivelDesctiptionNRT.Width = 115;
+            // 
+            // KmPorLitroCombustivelNRT
+            // 
+            this.KmPorLitroCombustivelNRT.DataPropertyName = "KmPorLitroCombustivelNRT";
+            this.KmPorLitroCombustivelNRT.HeaderText = "Km/L Combustível";
+            this.KmPorLitroCombustivelNRT.Name = "KmPorLitroCombustivelNRT";
+            this.KmPorLitroCombustivelNRT.ReadOnly = true;
+            this.KmPorLitroCombustivelNRT.Width = 120;
+            // 
+            // KmRodados
+            // 
+            this.KmRodados.DataPropertyName = "KmRodados";
+            this.KmRodados.HeaderText = "Km Rodados";
+            this.KmRodados.Name = "KmRodados";
+            this.KmRodados.Width = 75;
+            // 
+            // QtdePassageiros
+            // 
+            this.QtdePassageiros.DataPropertyName = "QtdePassageiros";
+            this.QtdePassageiros.HeaderText = "Quantidade Passageiros";
+            this.QtdePassageiros.Name = "QtdePassageiros";
+            this.QtdePassageiros.Width = 75;
+            // 
             // RegistroGastosTransporteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,5 +261,12 @@
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblDia;
         private System.Windows.Forms.DateTimePicker dtpDia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdTransporte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeNRT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoVeiculoDescriptionNRT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoCombustivelDesctiptionNRT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KmPorLitroCombustivelNRT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KmRodados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QtdePassageiros;
     }
 }

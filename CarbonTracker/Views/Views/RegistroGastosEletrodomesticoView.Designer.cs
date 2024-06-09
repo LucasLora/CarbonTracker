@@ -36,9 +36,14 @@
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.dgvRegistros = new System.Windows.Forms.DataGridView();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.dgvRegistros = new System.Windows.Forms.DataGridView();
+            this.IdEletrodomestico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LitroPorHoraAguaNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KWPorHoraEletricidadeNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TempoUso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlDia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             this.SuspendLayout();
@@ -92,12 +97,12 @@
             this.dtpDia.Size = new System.Drawing.Size(95, 20);
             this.dtpDia.TabIndex = 0;
             // 
-            // txtProcurar
+            // txtPesquisar
             // 
             this.txtPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPesquisar.Location = new System.Drawing.Point(7, 80);
-            this.txtPesquisar.Name = "txtProcurar";
+            this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(705, 20);
             this.txtPesquisar.TabIndex = 1;
             // 
@@ -120,17 +125,6 @@
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
-            // dgvRegistros
-            // 
-            this.dgvRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistros.Location = new System.Drawing.Point(7, 106);
-            this.dgvRegistros.Name = "dgvRegistros";
-            this.dgvRegistros.Size = new System.Drawing.Size(786, 309);
-            this.dgvRegistros.TabIndex = 4;
-            // 
             // btnRestaurar
             // 
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -151,13 +145,74 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
+            // dgvRegistros
+            // 
+            this.dgvRegistros.AllowUserToAddRows = false;
+            this.dgvRegistros.AllowUserToDeleteRows = false;
+            this.dgvRegistros.AllowUserToOrderColumns = true;
+            this.dgvRegistros.AllowUserToResizeRows = false;
+            this.dgvRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdEletrodomestico,
+            this.NomeNRT,
+            this.LitroPorHoraAguaNRT,
+            this.KWPorHoraEletricidadeNRT,
+            this.TempoUso});
+            this.dgvRegistros.Location = new System.Drawing.Point(7, 106);
+            this.dgvRegistros.Name = "dgvRegistros";
+            this.dgvRegistros.RowHeadersVisible = false;
+            this.dgvRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvRegistros.Size = new System.Drawing.Size(786, 309);
+            this.dgvRegistros.TabIndex = 11;
+            // 
+            // IdEletrodomestico
+            // 
+            this.IdEletrodomestico.DataPropertyName = "IdEletrodomestico";
+            this.IdEletrodomestico.HeaderText = "Eletrodoméstico";
+            this.IdEletrodomestico.Name = "IdEletrodomestico";
+            this.IdEletrodomestico.ReadOnly = true;
+            this.IdEletrodomestico.Width = 90;
+            // 
+            // NomeNRT
+            // 
+            this.NomeNRT.DataPropertyName = "NomeNRT";
+            this.NomeNRT.HeaderText = "Nome";
+            this.NomeNRT.Name = "NomeNRT";
+            this.NomeNRT.ReadOnly = true;
+            this.NomeNRT.Width = 150;
+            // 
+            // LitroPorHoraAguaNRT
+            // 
+            this.LitroPorHoraAguaNRT.DataPropertyName = "LitroPorHoraAguaNRT";
+            this.LitroPorHoraAguaNRT.HeaderText = "L/h Água";
+            this.LitroPorHoraAguaNRT.Name = "LitroPorHoraAguaNRT";
+            this.LitroPorHoraAguaNRT.ReadOnly = true;
+            this.LitroPorHoraAguaNRT.Width = 120;
+            // 
+            // KWPorHoraEletricidadeNRT
+            // 
+            this.KWPorHoraEletricidadeNRT.DataPropertyName = "KWPorHoraEletricidadeNRT";
+            this.KWPorHoraEletricidadeNRT.HeaderText = "kW/h Eletricidade";
+            this.KWPorHoraEletricidadeNRT.Name = "KWPorHoraEletricidadeNRT";
+            this.KWPorHoraEletricidadeNRT.ReadOnly = true;
+            this.KWPorHoraEletricidadeNRT.Width = 120;
+            // 
+            // TempoUso
+            // 
+            this.TempoUso.DataPropertyName = "TempoUso";
+            this.TempoUso.HeaderText = "Tempo de Uso (em mins)";
+            this.TempoUso.Name = "TempoUso";
+            // 
             // RegistroGastosEletrodomesticoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnRestaurar);
             this.Controls.Add(this.dgvRegistros);
+            this.Controls.Add(this.btnRestaurar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.lblPesquisar);
@@ -183,8 +238,13 @@
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.DataGridView dgvRegistros;
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.DataGridView dgvRegistros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEletrodomestico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeNRT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LitroPorHoraAguaNRT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KWPorHoraEletricidadeNRT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TempoUso;
     }
 }
