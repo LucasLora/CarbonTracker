@@ -45,7 +45,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(10, 417);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 23);
-            this.btnSalvar.TabIndex = 26;
+            this.btnSalvar.TabIndex = 8;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -56,7 +56,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(238, 20);
-            this.txtSenha.TabIndex = 24;
+            this.txtSenha.TabIndex = 5;
             // 
             // lblSenha
             // 
@@ -65,7 +65,7 @@
             this.lblSenha.Location = new System.Drawing.Point(6, 113);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(60, 20);
-            this.lblSenha.TabIndex = 25;
+            this.lblSenha.TabIndex = 4;
             this.lblSenha.Text = "Senha:";
             // 
             // txtEmail
@@ -73,7 +73,7 @@
             this.txtEmail.Location = new System.Drawing.Point(10, 82);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(238, 20);
-            this.txtEmail.TabIndex = 23;
+            this.txtEmail.TabIndex = 3;
             // 
             // lblEmail
             // 
@@ -82,7 +82,7 @@
             this.lblEmail.Location = new System.Drawing.Point(6, 60);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(57, 20);
-            this.lblEmail.TabIndex = 22;
+            this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "E-mail:";
             // 
             // txtNome
@@ -90,7 +90,7 @@
             this.txtNome.Location = new System.Drawing.Point(10, 29);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(238, 20);
-            this.txtNome.TabIndex = 21;
+            this.txtNome.TabIndex = 1;
             // 
             // lblNome
             // 
@@ -99,7 +99,7 @@
             this.lblNome.Location = new System.Drawing.Point(6, 7);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(55, 20);
-            this.lblNome.TabIndex = 20;
+            this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
             // txtRepetirSenha
@@ -109,7 +109,7 @@
             this.txtRepetirSenha.Name = "txtRepetirSenha";
             this.txtRepetirSenha.PasswordChar = '*';
             this.txtRepetirSenha.Size = new System.Drawing.Size(238, 20);
-            this.txtRepetirSenha.TabIndex = 28;
+            this.txtRepetirSenha.TabIndex = 7;
             // 
             // lblRepetirSenha
             // 
@@ -118,7 +118,7 @@
             this.lblRepetirSenha.Location = new System.Drawing.Point(6, 166);
             this.lblRepetirSenha.Name = "lblRepetirSenha";
             this.lblRepetirSenha.Size = new System.Drawing.Size(116, 20);
-            this.lblRepetirSenha.TabIndex = 29;
+            this.lblRepetirSenha.TabIndex = 6;
             this.lblRepetirSenha.Text = "Repetir Senha:";
             // 
             // AlterarInformacoesUsuarioLogadoView
@@ -135,7 +135,7 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AlterarInformacoesUsuarioLogadoView";
             this.Text = "AlterarInformacoesUsuarioLogado";
             this.ResumeLayout(false);

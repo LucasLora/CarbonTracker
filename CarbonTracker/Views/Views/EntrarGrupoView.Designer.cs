@@ -30,14 +30,14 @@
         {
             this.btnProcurar = new System.Windows.Forms.Button();
             this.dgvEntrarGrupos = new System.Windows.Forms.DataGridView();
-            this.txtProcurar = new System.Windows.Forms.TextBox();
-            this.lblProcurar = new System.Windows.Forms.Label();
-            this.btnRestaurar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.IdGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeGrupoNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescricaoGrupoNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PresenteNRT = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.txtProcurar = new System.Windows.Forms.TextBox();
+            this.lblProcurar = new System.Windows.Forms.Label();
+            this.btnRestaurar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrarGrupos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             this.btnProcurar.Location = new System.Drawing.Point(693, 24);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(100, 23);
-            this.btnProcurar.TabIndex = 6;
+            this.btnProcurar.TabIndex = 2;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
             // 
@@ -72,46 +72,7 @@
             this.dgvEntrarGrupos.RowHeadersWidth = 51;
             this.dgvEntrarGrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEntrarGrupos.Size = new System.Drawing.Size(786, 363);
-            this.dgvEntrarGrupos.TabIndex = 7;
-            // 
-            // txtProcurar
-            // 
-            this.txtProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProcurar.Location = new System.Drawing.Point(7, 26);
-            this.txtProcurar.Name = "txtProcurar";
-            this.txtProcurar.Size = new System.Drawing.Size(680, 20);
-            this.txtProcurar.TabIndex = 5;
-            // 
-            // lblProcurar
-            // 
-            this.lblProcurar.AutoSize = true;
-            this.lblProcurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProcurar.Location = new System.Drawing.Point(3, 3);
-            this.lblProcurar.Name = "lblProcurar";
-            this.lblProcurar.Size = new System.Drawing.Size(73, 20);
-            this.lblProcurar.TabIndex = 4;
-            this.lblProcurar.Text = "Procurar:";
-            // 
-            // btnRestaurar
-            // 
-            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurar.Location = new System.Drawing.Point(693, 421);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(100, 23);
-            this.btnRestaurar.TabIndex = 21;
-            this.btnRestaurar.Text = "Restaurar";
-            this.btnRestaurar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSalvar.Location = new System.Drawing.Point(7, 421);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(100, 23);
-            this.btnSalvar.TabIndex = 20;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.dgvEntrarGrupos.TabIndex = 3;
             // 
             // IdGrupo
             // 
@@ -146,6 +107,45 @@
             this.PresenteNRT.HeaderText = "Presente?";
             this.PresenteNRT.Name = "PresenteNRT";
             this.PresenteNRT.Width = 75;
+            // 
+            // txtProcurar
+            // 
+            this.txtProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProcurar.Location = new System.Drawing.Point(7, 26);
+            this.txtProcurar.Name = "txtProcurar";
+            this.txtProcurar.Size = new System.Drawing.Size(680, 20);
+            this.txtProcurar.TabIndex = 1;
+            // 
+            // lblProcurar
+            // 
+            this.lblProcurar.AutoSize = true;
+            this.lblProcurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProcurar.Location = new System.Drawing.Point(3, 3);
+            this.lblProcurar.Name = "lblProcurar";
+            this.lblProcurar.Size = new System.Drawing.Size(73, 20);
+            this.lblProcurar.TabIndex = 0;
+            this.lblProcurar.Text = "Procurar:";
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestaurar.Location = new System.Drawing.Point(693, 421);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(100, 23);
+            this.btnRestaurar.TabIndex = 5;
+            this.btnRestaurar.Text = "Restaurar";
+            this.btnRestaurar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSalvar.Location = new System.Drawing.Point(7, 421);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(100, 23);
+            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // EntrarGrupoView
             // 

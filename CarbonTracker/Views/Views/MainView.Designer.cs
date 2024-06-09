@@ -59,7 +59,7 @@
             this.panelLogoMain.Location = new System.Drawing.Point(23, 3);
             this.panelLogoMain.Name = "panelLogoMain";
             this.panelLogoMain.Size = new System.Drawing.Size(151, 88);
-            this.panelLogoMain.TabIndex = 9;
+            this.panelLogoMain.TabIndex = 0;
             // 
             // btnClose
             // 
@@ -68,7 +68,7 @@
             this.btnClose.Location = new System.Drawing.Point(0, 395);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(200, 55);
-            this.btnClose.TabIndex = 8;
+            this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Sair";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
@@ -79,7 +79,7 @@
             this.btnComparacoes.Location = new System.Drawing.Point(0, 253);
             this.btnComparacoes.Name = "btnComparacoes";
             this.btnComparacoes.Size = new System.Drawing.Size(200, 55);
-            this.btnComparacoes.TabIndex = 6;
+            this.btnComparacoes.TabIndex = 4;
             this.btnComparacoes.Text = "Comparações";
             this.btnComparacoes.UseVisualStyleBackColor = true;
             // 
@@ -90,7 +90,7 @@
             this.btnRegistroGastos.Location = new System.Drawing.Point(0, 200);
             this.btnRegistroGastos.Name = "btnRegistroGastos";
             this.btnRegistroGastos.Size = new System.Drawing.Size(200, 55);
-            this.btnRegistroGastos.TabIndex = 5;
+            this.btnRegistroGastos.TabIndex = 3;
             this.btnRegistroGastos.Text = "Registro de Gastos";
             this.btnRegistroGastos.UseVisualStyleBackColor = true;
             // 
@@ -101,7 +101,7 @@
             this.btnUsuarios.Location = new System.Drawing.Point(0, 94);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(200, 55);
-            this.btnUsuarios.TabIndex = 2;
+            this.btnUsuarios.TabIndex = 1;
             this.btnUsuarios.Text = "Informações de Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
             // 
@@ -112,7 +112,7 @@
             this.btnCadastrosGastos.Location = new System.Drawing.Point(0, 147);
             this.btnCadastrosGastos.Name = "btnCadastrosGastos";
             this.btnCadastrosGastos.Size = new System.Drawing.Size(200, 55);
-            this.btnCadastrosGastos.TabIndex = 4;
+            this.btnCadastrosGastos.TabIndex = 2;
             this.btnCadastrosGastos.Text = "Cadastros de Gastos";
             this.btnCadastrosGastos.UseVisualStyleBackColor = true;
             // 

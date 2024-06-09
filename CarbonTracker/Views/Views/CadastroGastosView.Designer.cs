@@ -30,13 +30,13 @@
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.panelCadastroDeGastos = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEletrodomestico = new System.Windows.Forms.Button();
             this.btnTransporte = new System.Windows.Forms.Button();
             this.tbcRegistroGastos = new System.Windows.Forms.TabControl();
             this.tbpEletrodomestico = new System.Windows.Forms.TabPage();
             this.tbpTransporte = new System.Windows.Forms.TabPage();
-            this.panelCadastroDeGastos = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tbcRegistroGastos.SuspendLayout();
@@ -62,7 +62,15 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(800, 73);
-            this.pnlTop.TabIndex = 10;
+            this.pnlTop.TabIndex = 0;
+            // 
+            // panelCadastroDeGastos
+            // 
+            this.panelCadastroDeGastos.BackgroundImage = global::CarbonTracker.Properties.Resources.Cadastro_de_Gastos;
+            this.panelCadastroDeGastos.Location = new System.Drawing.Point(0, 0);
+            this.panelCadastroDeGastos.Name = "panelCadastroDeGastos";
+            this.panelCadastroDeGastos.Size = new System.Drawing.Size(384, 73);
+            this.panelCadastroDeGastos.TabIndex = 0;
             // 
             // panel1
             // 
@@ -72,7 +80,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 73);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 377);
-            this.panel1.TabIndex = 13;
+            this.panel1.TabIndex = 1;
             // 
             // btnEletrodomestico
             // 
@@ -81,7 +89,7 @@
             this.btnEletrodomestico.Location = new System.Drawing.Point(0, 2);
             this.btnEletrodomestico.Name = "btnEletrodomestico";
             this.btnEletrodomestico.Size = new System.Drawing.Size(120, 55);
-            this.btnEletrodomestico.TabIndex = 5;
+            this.btnEletrodomestico.TabIndex = 0;
             this.btnEletrodomestico.Text = "Eletrodomésticos";
             this.btnEletrodomestico.UseVisualStyleBackColor = true;
             // 
@@ -92,7 +100,7 @@
             this.btnTransporte.Location = new System.Drawing.Point(0, 55);
             this.btnTransporte.Name = "btnTransporte";
             this.btnTransporte.Size = new System.Drawing.Size(120, 55);
-            this.btnTransporte.TabIndex = 6;
+            this.btnTransporte.TabIndex = 1;
             this.btnTransporte.Text = "Transportes";
             this.btnTransporte.UseVisualStyleBackColor = true;
             // 
@@ -105,13 +113,13 @@
             this.tbcRegistroGastos.Name = "tbcRegistroGastos";
             this.tbcRegistroGastos.SelectedIndex = 0;
             this.tbcRegistroGastos.Size = new System.Drawing.Size(680, 377);
-            this.tbcRegistroGastos.TabIndex = 14;
+            this.tbcRegistroGastos.TabIndex = 2;
             // 
             // tbpEletrodomestico
             // 
             this.tbpEletrodomestico.Location = new System.Drawing.Point(4, 22);
             this.tbpEletrodomestico.Name = "tbpEletrodomestico";
-            this.tbpEletrodomestico.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpEletrodomestico.Padding = new System.Windows.Forms.Padding(3);
             this.tbpEletrodomestico.Size = new System.Drawing.Size(672, 351);
             this.tbpEletrodomestico.TabIndex = 0;
             this.tbpEletrodomestico.Text = "Eletrodoméstico";
@@ -121,19 +129,11 @@
             // 
             this.tbpTransporte.Location = new System.Drawing.Point(4, 22);
             this.tbpTransporte.Name = "tbpTransporte";
-            this.tbpTransporte.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpTransporte.Padding = new System.Windows.Forms.Padding(3);
             this.tbpTransporte.Size = new System.Drawing.Size(672, 351);
             this.tbpTransporte.TabIndex = 1;
             this.tbpTransporte.Text = "Transporte";
             this.tbpTransporte.UseVisualStyleBackColor = true;
-            // 
-            // PanelCadastroDeGastos
-            // 
-            this.panelCadastroDeGastos.BackgroundImage = global::CarbonTracker.Properties.Resources.Cadastro_de_Gastos;
-            this.panelCadastroDeGastos.Location = new System.Drawing.Point(0, 0);
-            this.panelCadastroDeGastos.Name = "PanelCadastroDeGastos";
-            this.panelCadastroDeGastos.Size = new System.Drawing.Size(384, 73);
-            this.panelCadastroDeGastos.TabIndex = 2;
             // 
             // CadastroGastosView
             // 

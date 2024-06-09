@@ -70,11 +70,10 @@ namespace CarbonTracker.Views
             this.tbcTransportes.Controls.Add(this.tbpDetalhes);
             this.tbcTransportes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbcTransportes.Location = new System.Drawing.Point(0, 0);
-            this.tbcTransportes.Margin = new System.Windows.Forms.Padding(4);
             this.tbcTransportes.Name = "tbcTransportes";
             this.tbcTransportes.SelectedIndex = 0;
-            this.tbcTransportes.Size = new System.Drawing.Size(1067, 554);
-            this.tbcTransportes.TabIndex = 1;
+            this.tbcTransportes.Size = new System.Drawing.Size(800, 450);
+            this.tbcTransportes.TabIndex = 0;
             // 
             // tbpListagem
             // 
@@ -85,11 +84,10 @@ namespace CarbonTracker.Views
             this.tbpListagem.Controls.Add(this.dgvTransportes);
             this.tbpListagem.Controls.Add(this.txtProcurar);
             this.tbpListagem.Controls.Add(this.lblProcurar);
-            this.tbpListagem.Location = new System.Drawing.Point(4, 25);
-            this.tbpListagem.Margin = new System.Windows.Forms.Padding(4);
+            this.tbpListagem.Location = new System.Drawing.Point(4, 22);
             this.tbpListagem.Name = "tbpListagem";
-            this.tbpListagem.Padding = new System.Windows.Forms.Padding(4);
-            this.tbpListagem.Size = new System.Drawing.Size(1059, 525);
+            this.tbpListagem.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpListagem.Size = new System.Drawing.Size(792, 424);
             this.tbpListagem.TabIndex = 0;
             this.tbpListagem.Text = "Listagem";
             this.tbpListagem.UseVisualStyleBackColor = true;
@@ -97,10 +95,9 @@ namespace CarbonTracker.Views
             // btnExcluir
             // 
             this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcluir.Location = new System.Drawing.Point(918, 133);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcluir.Location = new System.Drawing.Point(688, 108);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(133, 28);
+            this.btnExcluir.Size = new System.Drawing.Size(100, 23);
             this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -108,10 +105,9 @@ namespace CarbonTracker.Views
             // btnAlterar
             // 
             this.btnAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterar.Location = new System.Drawing.Point(918, 98);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAlterar.Location = new System.Drawing.Point(688, 80);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(133, 28);
+            this.btnAlterar.Size = new System.Drawing.Size(100, 23);
             this.btnAlterar.TabIndex = 5;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -119,10 +115,9 @@ namespace CarbonTracker.Views
             // btnProcurar
             // 
             this.btnProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProcurar.Location = new System.Drawing.Point(777, 27);
-            this.btnProcurar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProcurar.Location = new System.Drawing.Point(583, 22);
             this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(133, 28);
+            this.btnProcurar.Size = new System.Drawing.Size(100, 23);
             this.btnProcurar.TabIndex = 2;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
@@ -130,10 +125,9 @@ namespace CarbonTracker.Views
             // btnAdicionar
             // 
             this.btnAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdicionar.Location = new System.Drawing.Point(918, 63);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdicionar.Location = new System.Drawing.Point(688, 51);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(133, 28);
+            this.btnAdicionar.Size = new System.Drawing.Size(100, 23);
             this.btnAdicionar.TabIndex = 4;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
@@ -153,15 +147,14 @@ namespace CarbonTracker.Views
             this.TipoVeiculoDescription,
             this.TipoCombustivelDescription,
             this.KmPorLitroCombustivel});
-            this.dgvTransportes.Location = new System.Drawing.Point(8, 63);
-            this.dgvTransportes.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvTransportes.Location = new System.Drawing.Point(6, 51);
             this.dgvTransportes.MultiSelect = false;
             this.dgvTransportes.Name = "dgvTransportes";
             this.dgvTransportes.ReadOnly = true;
             this.dgvTransportes.RowHeadersVisible = false;
             this.dgvTransportes.RowHeadersWidth = 51;
             this.dgvTransportes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransportes.Size = new System.Drawing.Size(902, 454);
+            this.dgvTransportes.Size = new System.Drawing.Size(676, 369);
             this.dgvTransportes.TabIndex = 3;
             // 
             // Id
@@ -213,20 +206,18 @@ namespace CarbonTracker.Views
             // 
             this.txtProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProcurar.Location = new System.Drawing.Point(8, 30);
-            this.txtProcurar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtProcurar.Location = new System.Drawing.Point(6, 24);
             this.txtProcurar.Name = "txtProcurar";
-            this.txtProcurar.Size = new System.Drawing.Size(761, 22);
+            this.txtProcurar.Size = new System.Drawing.Size(572, 20);
             this.txtProcurar.TabIndex = 1;
             // 
             // lblProcurar
             // 
             this.lblProcurar.AutoSize = true;
             this.lblProcurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProcurar.Location = new System.Drawing.Point(3, 3);
-            this.lblProcurar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProcurar.Location = new System.Drawing.Point(2, 2);
             this.lblProcurar.Name = "lblProcurar";
-            this.lblProcurar.Size = new System.Drawing.Size(92, 25);
+            this.lblProcurar.Size = new System.Drawing.Size(73, 20);
             this.lblProcurar.TabIndex = 0;
             this.lblProcurar.Text = "Procurar:";
             // 
@@ -244,11 +235,10 @@ namespace CarbonTracker.Views
             this.tbpDetalhes.Controls.Add(this.lblNome);
             this.tbpDetalhes.Controls.Add(this.txtId);
             this.tbpDetalhes.Controls.Add(this.lblId);
-            this.tbpDetalhes.Location = new System.Drawing.Point(4, 25);
-            this.tbpDetalhes.Margin = new System.Windows.Forms.Padding(4);
+            this.tbpDetalhes.Location = new System.Drawing.Point(4, 22);
             this.tbpDetalhes.Name = "tbpDetalhes";
-            this.tbpDetalhes.Padding = new System.Windows.Forms.Padding(4);
-            this.tbpDetalhes.Size = new System.Drawing.Size(1059, 525);
+            this.tbpDetalhes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpDetalhes.Size = new System.Drawing.Size(792, 424);
             this.tbpDetalhes.TabIndex = 1;
             this.tbpDetalhes.Text = "Detalhes";
             this.tbpDetalhes.UseVisualStyleBackColor = true;
@@ -257,29 +247,26 @@ namespace CarbonTracker.Views
             // 
             this.cmbTipoCombustivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCombustivel.FormattingEnabled = true;
-            this.cmbTipoCombustivel.Location = new System.Drawing.Point(8, 215);
-            this.cmbTipoCombustivel.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTipoCombustivel.Location = new System.Drawing.Point(6, 175);
             this.cmbTipoCombustivel.Name = "cmbTipoCombustivel";
-            this.cmbTipoCombustivel.Size = new System.Drawing.Size(219, 24);
+            this.cmbTipoCombustivel.Size = new System.Drawing.Size(165, 21);
             this.cmbTipoCombustivel.TabIndex = 7;
             // 
             // cmbTipoVeiculo
             // 
             this.cmbTipoVeiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoVeiculo.FormattingEnabled = true;
-            this.cmbTipoVeiculo.Location = new System.Drawing.Point(8, 152);
-            this.cmbTipoVeiculo.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTipoVeiculo.Location = new System.Drawing.Point(6, 124);
             this.cmbTipoVeiculo.Name = "cmbTipoVeiculo";
-            this.cmbTipoVeiculo.Size = new System.Drawing.Size(219, 24);
+            this.cmbTipoVeiculo.Size = new System.Drawing.Size(165, 21);
             this.cmbTipoVeiculo.TabIndex = 5;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(918, 489);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(688, 397);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(133, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 23);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -287,30 +274,27 @@ namespace CarbonTracker.Views
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSalvar.Location = new System.Drawing.Point(8, 489);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalvar.Location = new System.Drawing.Point(6, 397);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(133, 28);
+            this.btnSalvar.Size = new System.Drawing.Size(100, 23);
             this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // txtKmPorLitroCombustivel
             // 
-            this.txtKmPorLitroCombustivel.Location = new System.Drawing.Point(10, 278);
-            this.txtKmPorLitroCombustivel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKmPorLitroCombustivel.Location = new System.Drawing.Point(8, 226);
             this.txtKmPorLitroCombustivel.Name = "txtKmPorLitroCombustivel";
-            this.txtKmPorLitroCombustivel.Size = new System.Drawing.Size(99, 22);
+            this.txtKmPorLitroCombustivel.Size = new System.Drawing.Size(75, 20);
             this.txtKmPorLitroCombustivel.TabIndex = 9;
             // 
             // lblKmPorLitroCombustivel
             // 
             this.lblKmPorLitroCombustivel.AutoSize = true;
             this.lblKmPorLitroCombustivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKmPorLitroCombustivel.Location = new System.Drawing.Point(3, 251);
-            this.lblKmPorLitroCombustivel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKmPorLitroCombustivel.Location = new System.Drawing.Point(2, 204);
             this.lblKmPorLitroCombustivel.Name = "lblKmPorLitroCombustivel";
-            this.lblKmPorLitroCombustivel.Size = new System.Drawing.Size(65, 25);
+            this.lblKmPorLitroCombustivel.Size = new System.Drawing.Size(49, 20);
             this.lblKmPorLitroCombustivel.TabIndex = 8;
             this.lblKmPorLitroCombustivel.Text = "Km/L:";
             // 
@@ -318,10 +302,9 @@ namespace CarbonTracker.Views
             // 
             this.lblTipoCombustivel.AutoSize = true;
             this.lblTipoCombustivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoCombustivel.Location = new System.Drawing.Point(3, 188);
-            this.lblTipoCombustivel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoCombustivel.Location = new System.Drawing.Point(2, 153);
             this.lblTipoCombustivel.Name = "lblTipoCombustivel";
-            this.lblTipoCombustivel.Size = new System.Drawing.Size(170, 25);
+            this.lblTipoCombustivel.Size = new System.Drawing.Size(133, 20);
             this.lblTipoCombustivel.TabIndex = 6;
             this.lblTipoCombustivel.Text = "Tipo Combustível:";
             // 
@@ -329,39 +312,35 @@ namespace CarbonTracker.Views
             // 
             this.lblTipoVeiculo.AutoSize = true;
             this.lblTipoVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoVeiculo.Location = new System.Drawing.Point(3, 125);
-            this.lblTipoVeiculo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoVeiculo.Location = new System.Drawing.Point(2, 102);
             this.lblTipoVeiculo.Name = "lblTipoVeiculo";
-            this.lblTipoVeiculo.Size = new System.Drawing.Size(127, 25);
+            this.lblTipoVeiculo.Size = new System.Drawing.Size(99, 20);
             this.lblTipoVeiculo.TabIndex = 4;
             this.lblTipoVeiculo.Text = "Tipo Veículo:";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(8, 91);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNome.Location = new System.Drawing.Point(6, 74);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(400, 22);
+            this.txtNome.Size = new System.Drawing.Size(301, 20);
             this.txtNome.TabIndex = 3;
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(3, 64);
-            this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNome.Location = new System.Drawing.Point(2, 52);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(70, 25);
+            this.lblNome.Size = new System.Drawing.Size(55, 20);
             this.lblNome.TabIndex = 2;
             this.lblNome.Text = "Nome:";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(8, 30);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtId.Location = new System.Drawing.Point(6, 24);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(99, 22);
+            this.txtId.Size = new System.Drawing.Size(75, 20);
             this.txtId.TabIndex = 1;
             this.txtId.Text = "0";
             // 
@@ -369,21 +348,19 @@ namespace CarbonTracker.Views
             // 
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.Location = new System.Drawing.Point(3, 3);
-            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblId.Location = new System.Drawing.Point(2, 2);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(34, 25);
+            this.lblId.Size = new System.Drawing.Size(27, 20);
             this.lblId.TabIndex = 0;
             this.lblId.Text = "Id:";
             // 
-            // TransporteView
+            // CadastroTransporteView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tbcTransportes);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "TransporteView";
+            this.Name = "CadastroTransporteView";
             this.Text = "TransporteView";
             this.tbcTransportes.ResumeLayout(false);
             this.tbpListagem.ResumeLayout(false);

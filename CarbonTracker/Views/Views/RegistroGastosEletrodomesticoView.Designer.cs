@@ -85,7 +85,7 @@
             this.lblDia.Location = new System.Drawing.Point(4, 10);
             this.lblDia.Name = "lblDia";
             this.lblDia.Size = new System.Drawing.Size(26, 13);
-            this.lblDia.TabIndex = 1;
+            this.lblDia.TabIndex = 0;
             this.lblDia.Text = "Dia:";
             // 
             // dtpDia
@@ -95,7 +95,7 @@
             this.dtpDia.Location = new System.Drawing.Point(7, 26);
             this.dtpDia.Name = "dtpDia";
             this.dtpDia.Size = new System.Drawing.Size(95, 20);
-            this.dtpDia.TabIndex = 0;
+            this.dtpDia.TabIndex = 1;
             // 
             // txtPesquisar
             // 
@@ -104,7 +104,7 @@
             this.txtPesquisar.Location = new System.Drawing.Point(7, 80);
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(705, 20);
-            this.txtPesquisar.TabIndex = 1;
+            this.txtPesquisar.TabIndex = 2;
             // 
             // lblPesquisar
             // 
@@ -112,7 +112,7 @@
             this.lblPesquisar.Location = new System.Drawing.Point(4, 64);
             this.lblPesquisar.Name = "lblPesquisar";
             this.lblPesquisar.Size = new System.Drawing.Size(56, 13);
-            this.lblPesquisar.TabIndex = 2;
+            this.lblPesquisar.TabIndex = 1;
             this.lblPesquisar.Text = "Pesquisar:";
             // 
             // btnPesquisar
@@ -131,7 +131,7 @@
             this.btnRestaurar.Location = new System.Drawing.Point(718, 421);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(75, 23);
-            this.btnRestaurar.TabIndex = 5;
+            this.btnRestaurar.TabIndex = 6;
             this.btnRestaurar.Text = "Restaurar";
             this.btnRestaurar.UseVisualStyleBackColor = true;
             // 
@@ -141,7 +141,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(7, 421);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -166,7 +166,7 @@
             this.dgvRegistros.RowHeadersVisible = false;
             this.dgvRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvRegistros.Size = new System.Drawing.Size(786, 309);
-            this.dgvRegistros.TabIndex = 11;
+            this.dgvRegistros.TabIndex = 4;
             // 
             // IdEletrodomestico
             // 

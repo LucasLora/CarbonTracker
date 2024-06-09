@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEntrarGrupo = new System.Windows.Forms.Button();
             this.btnAlterarInformacoesUsuarioLogado = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnGrupoUsuarios = new System.Windows.Forms.Button();
@@ -36,11 +37,10 @@
             this.tbpUsuario = new System.Windows.Forms.TabPage();
             this.tbpGrupoUsuarios = new System.Windows.Forms.TabPage();
             this.tbpAlterarInformacoes = new System.Windows.Forms.TabPage();
+            this.tbpEntrarGrupo = new System.Windows.Forms.TabPage();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.panelUsuarios = new System.Windows.Forms.Panel();
-            this.btnEntrarGrupo = new System.Windows.Forms.Button();
-            this.tbpEntrarGrupo = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             this.tbcUsuario.SuspendLayout();
             this.pnlTop.SuspendLayout();
@@ -56,7 +56,18 @@
             this.panel1.Location = new System.Drawing.Point(0, 73);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 377);
-            this.panel1.TabIndex = 9;
+            this.panel1.TabIndex = 1;
+            // 
+            // btnEntrarGrupo
+            // 
+            this.btnEntrarGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEntrarGrupo.Location = new System.Drawing.Point(0, 161);
+            this.btnEntrarGrupo.Name = "btnEntrarGrupo";
+            this.btnEntrarGrupo.Size = new System.Drawing.Size(120, 55);
+            this.btnEntrarGrupo.TabIndex = 3;
+            this.btnEntrarGrupo.Text = "Entrar em um Grupo";
+            this.btnEntrarGrupo.UseVisualStyleBackColor = true;
             // 
             // btnAlterarInformacoesUsuarioLogado
             // 
@@ -65,7 +76,7 @@
             this.btnAlterarInformacoesUsuarioLogado.Location = new System.Drawing.Point(0, 109);
             this.btnAlterarInformacoesUsuarioLogado.Name = "btnAlterarInformacoesUsuarioLogado";
             this.btnAlterarInformacoesUsuarioLogado.Size = new System.Drawing.Size(120, 55);
-            this.btnAlterarInformacoesUsuarioLogado.TabIndex = 7;
+            this.btnAlterarInformacoesUsuarioLogado.TabIndex = 2;
             this.btnAlterarInformacoesUsuarioLogado.Text = "Alterar Minhas Informações";
             this.btnAlterarInformacoesUsuarioLogado.UseVisualStyleBackColor = true;
             // 
@@ -76,7 +87,7 @@
             this.btnUsuario.Location = new System.Drawing.Point(0, 2);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(120, 55);
-            this.btnUsuario.TabIndex = 5;
+            this.btnUsuario.TabIndex = 0;
             this.btnUsuario.Text = "Usuários";
             this.btnUsuario.UseVisualStyleBackColor = true;
             // 
@@ -87,7 +98,7 @@
             this.btnGrupoUsuarios.Location = new System.Drawing.Point(0, 55);
             this.btnGrupoUsuarios.Name = "btnGrupoUsuarios";
             this.btnGrupoUsuarios.Size = new System.Drawing.Size(120, 55);
-            this.btnGrupoUsuarios.TabIndex = 6;
+            this.btnGrupoUsuarios.TabIndex = 1;
             this.btnGrupoUsuarios.Text = "Grupo de Usuários";
             this.btnGrupoUsuarios.UseVisualStyleBackColor = true;
             // 
@@ -102,13 +113,13 @@
             this.tbcUsuario.Name = "tbcUsuario";
             this.tbcUsuario.SelectedIndex = 0;
             this.tbcUsuario.Size = new System.Drawing.Size(680, 377);
-            this.tbcUsuario.TabIndex = 10;
+            this.tbcUsuario.TabIndex = 2;
             // 
             // tbpUsuario
             // 
             this.tbpUsuario.Location = new System.Drawing.Point(4, 22);
             this.tbpUsuario.Name = "tbpUsuario";
-            this.tbpUsuario.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpUsuario.Padding = new System.Windows.Forms.Padding(3);
             this.tbpUsuario.Size = new System.Drawing.Size(672, 351);
             this.tbpUsuario.TabIndex = 0;
             this.tbpUsuario.Text = "Usuários";
@@ -118,7 +129,7 @@
             // 
             this.tbpGrupoUsuarios.Location = new System.Drawing.Point(4, 22);
             this.tbpGrupoUsuarios.Name = "tbpGrupoUsuarios";
-            this.tbpGrupoUsuarios.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpGrupoUsuarios.Padding = new System.Windows.Forms.Padding(3);
             this.tbpGrupoUsuarios.Size = new System.Drawing.Size(672, 351);
             this.tbpGrupoUsuarios.TabIndex = 1;
             this.tbpGrupoUsuarios.Text = "Grupo de Usuários";
@@ -127,13 +138,22 @@
             // tbpAlterarInformacoes
             // 
             this.tbpAlterarInformacoes.Location = new System.Drawing.Point(4, 22);
-            this.tbpAlterarInformacoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpAlterarInformacoes.Margin = new System.Windows.Forms.Padding(2);
             this.tbpAlterarInformacoes.Name = "tbpAlterarInformacoes";
-            this.tbpAlterarInformacoes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpAlterarInformacoes.Padding = new System.Windows.Forms.Padding(2);
             this.tbpAlterarInformacoes.Size = new System.Drawing.Size(672, 351);
             this.tbpAlterarInformacoes.TabIndex = 2;
             this.tbpAlterarInformacoes.Text = "Alterar MInhas Informações";
             this.tbpAlterarInformacoes.UseVisualStyleBackColor = true;
+            // 
+            // tbpEntrarGrupo
+            // 
+            this.tbpEntrarGrupo.Location = new System.Drawing.Point(4, 22);
+            this.tbpEntrarGrupo.Name = "tbpEntrarGrupo";
+            this.tbpEntrarGrupo.Size = new System.Drawing.Size(672, 351);
+            this.tbpEntrarGrupo.TabIndex = 3;
+            this.tbpEntrarGrupo.Text = "Entrar no Grupo";
+            this.tbpEntrarGrupo.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
@@ -155,35 +175,15 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(800, 73);
-            this.pnlTop.TabIndex = 3;
+            this.pnlTop.TabIndex = 0;
             // 
-            // PanelUsuarios
+            // panelUsuarios
             // 
             this.panelUsuarios.BackgroundImage = global::CarbonTracker.Properties.Resources.Informaoes_De_Usuarios;
             this.panelUsuarios.Location = new System.Drawing.Point(0, -7);
-            this.panelUsuarios.Name = "PanelUsuarios";
+            this.panelUsuarios.Name = "panelUsuarios";
             this.panelUsuarios.Size = new System.Drawing.Size(458, 89);
-            this.panelUsuarios.TabIndex = 2;
-            // 
-            // btnEntrarGrupo
-            // 
-            this.btnEntrarGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEntrarGrupo.Location = new System.Drawing.Point(0, 161);
-            this.btnEntrarGrupo.Name = "btnEntrarGrupo";
-            this.btnEntrarGrupo.Size = new System.Drawing.Size(120, 55);
-            this.btnEntrarGrupo.TabIndex = 8;
-            this.btnEntrarGrupo.Text = "Entrar em um Grupo";
-            this.btnEntrarGrupo.UseVisualStyleBackColor = true;
-            // 
-            // tbpEntrarGrupo
-            // 
-            this.tbpEntrarGrupo.Location = new System.Drawing.Point(4, 22);
-            this.tbpEntrarGrupo.Name = "tbpEntrarGrupo";
-            this.tbpEntrarGrupo.Size = new System.Drawing.Size(672, 351);
-            this.tbpEntrarGrupo.TabIndex = 3;
-            this.tbpEntrarGrupo.Text = "Entrar no Grupo";
-            this.tbpEntrarGrupo.UseVisualStyleBackColor = true;
+            this.panelUsuarios.TabIndex = 0;
             // 
             // UsuarioView
             // 
@@ -193,7 +193,7 @@
             this.Controls.Add(this.tbcUsuario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlTop);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UsuarioView";
             this.Text = "UsuarioView";
             this.panel1.ResumeLayout(false);

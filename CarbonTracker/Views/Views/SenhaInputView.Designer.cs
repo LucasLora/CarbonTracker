@@ -43,7 +43,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(223, 20);
-            this.txtSenha.TabIndex = 0;
+            this.txtSenha.TabIndex = 2;
             // 
             // btnOk
             // 
@@ -52,7 +52,7 @@
             this.btnOk.Margin = new System.Windows.Forms.Padding(2);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 19);
-            this.btnOk.TabIndex = 1;
+            this.btnOk.TabIndex = 3;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
             // 
@@ -63,7 +63,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 19);
-            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -74,7 +74,7 @@
             this.lblSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(41, 13);
-            this.lblSenha.TabIndex = 3;
+            this.lblSenha.TabIndex = 1;
             this.lblSenha.Text = "Senha:";
             // 
             // pnlImagem
@@ -82,7 +82,7 @@
             this.pnlImagem.Location = new System.Drawing.Point(2, 2);
             this.pnlImagem.Name = "pnlImagem";
             this.pnlImagem.Size = new System.Drawing.Size(239, 76);
-            this.pnlImagem.TabIndex = 4;
+            this.pnlImagem.TabIndex = 0;
             // 
             // SenhaInputView
             // 

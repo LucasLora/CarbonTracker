@@ -109,7 +109,7 @@
             this.panelLogoLogin.Location = new System.Drawing.Point(12, 12);
             this.panelLogoLogin.Name = "panelLogoLogin";
             this.panelLogoLogin.Size = new System.Drawing.Size(321, 104);
-            this.panelLogoLogin.TabIndex = 7;
+            this.panelLogoLogin.TabIndex = 0;
             // 
             // LoginView
             // 
