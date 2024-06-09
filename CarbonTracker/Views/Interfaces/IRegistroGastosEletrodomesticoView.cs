@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Views.Interfaces
@@ -31,7 +27,7 @@ namespace CarbonTracker.Views.Interfaces
 
         #region Métodos
 
-        void BloquearData(bool bloquear);
+        void BloquearDiaEDesbloquearRegistro(bool bloquear);
         void SetGastosEletrodomesticoListBindingSource(BindingSource gastosEletrodomesticoList);
         void Show();
 

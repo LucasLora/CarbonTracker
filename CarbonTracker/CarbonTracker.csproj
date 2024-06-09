@@ -275,6 +275,12 @@
     <EmbeddedResource Include="Views\Views\CadastroGastosView.resx">
       <DependentUpon>CadastroGastosView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Views\RegistroGastosEletrodomesticoView.resx">
+      <DependentUpon>RegistroGastosEletrodomesticoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Views\RegistroGastosTransporteView.resx">
+      <DependentUpon>RegistroGastosTransporteView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Views\RegistroGastosView.resx">
       <DependentUpon>RegistroGastosView.cs</DependentUpon>
     </EmbeddedResource>
