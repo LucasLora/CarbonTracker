@@ -34,7 +34,7 @@ namespace CarbonTracker._Repositories
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosEletrodomestico.IdUsuario;
                     cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = gastosEletrodomestico.Dia;
                     cmd.Parameters.AddWithValue("@ideletrodomestico", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosEletrodomestico.IdEletrodomestico;
-                    cmd.Parameters.AddWithValue("@tempouso", NpgsqlTypes.NpgsqlDbType.Real).Value = gastosEletrodomestico.TempoUso;
+                    cmd.Parameters.AddWithValue("@tempouso", NpgsqlTypes.NpgsqlDbType.Double).Value = gastosEletrodomestico.TempoUso;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -54,7 +54,7 @@ namespace CarbonTracker._Repositories
                                         WHERE id = @id;";
 
                     cmd.Parameters.AddWithValue("@id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosEletrodomestico.Id;
-                    cmd.Parameters.AddWithValue("@tempouso", NpgsqlTypes.NpgsqlDbType.Real).Value = gastosEletrodomestico.TempoUso;
+                    cmd.Parameters.AddWithValue("@tempouso", NpgsqlTypes.NpgsqlDbType.Double).Value = gastosEletrodomestico.TempoUso;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -97,7 +97,7 @@ namespace CarbonTracker._Repositories
                                         	A.litroporhoraagua AS LitroPorHoraAguaNRT,
                                         	A.kwporhoraeletricidade AS KwPorHoraEletricidadeNRT,	
  	                                        CAST(COALESCE(B.id, 0) AS BIGINT) AS Id,
-                                         	CAST(COALESCE(B.tempouso, 0) AS NUMERIC) AS TempoUso
+                                         	CAST(COALESCE(B.tempouso, 0) AS DOUBLE PRECISION) AS TempoUso
                                          
                                         FROM eletrodomestico A
                                         LEFT JOIN gastoseletrodomestico B
@@ -121,6 +121,7 @@ namespace CarbonTracker._Repositories
                             gastosEletrodomestico.NomeNRT = (string)reader["NomeNRT"];
                             gastosEletrodomestico.LitroPorHoraAguaNRT = (double)reader["LitroPorHoraAguaNRT"];
                             gastosEletrodomestico.KWPorHoraEletricidadeNRT = (double)reader["KwPorHoraEletricidadeNRT"];
+                            gastosEletrodomesticoList.Add(gastosEletrodomestico);
                         }
                     }
                 }

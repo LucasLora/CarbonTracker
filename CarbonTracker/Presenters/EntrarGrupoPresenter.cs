@@ -79,8 +79,7 @@ namespace CarbonTracker.Presenters
                 valorPesquisa = valorPesquisa.ToLower();
 
                 var lst = usuarioXGrupoUsuariosList.Where(x => x.IdGrupo.ToString() == valorPesquisa ||
-                                                          x.NomeGrupoNRT.ToLower().Contains(valorPesquisa) ||
-                                                          x.DescricaoGrupoNRT.ToLower().Contains(valorPesquisa));
+                                                          x.NomeGrupoNRT.ToLower().Contains(valorPesquisa));
 
                 if (lst.Count() == 0) //Se não encontrar nada, retorna a lista completa
                 {

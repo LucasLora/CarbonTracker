@@ -182,7 +182,7 @@
             this.NomeNRT.HeaderText = "Nome";
             this.NomeNRT.Name = "NomeNRT";
             this.NomeNRT.ReadOnly = true;
-            this.NomeNRT.Width = 150;
+            this.NomeNRT.Width = 200;
             // 
             // LitroPorHoraAguaNRT
             // 
@@ -203,8 +203,9 @@
             // TempoUso
             // 
             this.TempoUso.DataPropertyName = "TempoUso";
-            this.TempoUso.HeaderText = "Tempo de Uso (em mins)";
+            this.TempoUso.HeaderText = "Tempo de Uso (em minutos)";
             this.TempoUso.Name = "TempoUso";
+            this.TempoUso.Width = 120;
             // 
             // RegistroGastosEletrodomesticoView
             // 

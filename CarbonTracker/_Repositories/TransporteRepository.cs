@@ -34,7 +34,7 @@ namespace CarbonTracker._Repositories
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = transporteModel.Nome;
                     cmd.Parameters.AddWithValue("@tipoveiculo", NpgsqlTypes.NpgsqlDbType.Smallint).Value = (short)transporteModel.TipoVeiculo;
                     cmd.Parameters.AddWithValue("@tipocombustivel", NpgsqlTypes.NpgsqlDbType.Smallint).Value = (short)transporteModel.TipoCombustivel;
-                    cmd.Parameters.AddWithValue("@kmporlitrocombustivel", NpgsqlTypes.NpgsqlDbType.Real).Value = transporteModel.KmPorLitroCombustivel;
+                    cmd.Parameters.AddWithValue("@kmporlitrocombustivel", NpgsqlTypes.NpgsqlDbType.Double).Value = transporteModel.KmPorLitroCombustivel;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -57,7 +57,7 @@ namespace CarbonTracker._Repositories
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = transporteModel.Nome;
                     cmd.Parameters.AddWithValue("@tipoveiculo", NpgsqlTypes.NpgsqlDbType.Smallint).Value = (short)transporteModel.TipoVeiculo;
                     cmd.Parameters.AddWithValue("@tipocombustivel", NpgsqlTypes.NpgsqlDbType.Smallint).Value = (short)transporteModel.TipoCombustivel;
-                    cmd.Parameters.AddWithValue("@kmporlitrocombustivel", NpgsqlTypes.NpgsqlDbType.Real).Value = transporteModel.KmPorLitroCombustivel;
+                    cmd.Parameters.AddWithValue("@kmporlitrocombustivel", NpgsqlTypes.NpgsqlDbType.Double).Value = transporteModel.KmPorLitroCombustivel;
 
                     cmd.ExecuteNonQuery();
                 }

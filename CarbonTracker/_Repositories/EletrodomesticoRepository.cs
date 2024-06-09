@@ -31,8 +31,8 @@ namespace CarbonTracker._Repositories
                                         VALUES (@nome, @litroporhoraagua, @kwporhoraeletricidade);";
 
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = eletrodomesticoModel.Nome;
-                    cmd.Parameters.AddWithValue("@litroporhoraagua", NpgsqlTypes.NpgsqlDbType.Real).Value = eletrodomesticoModel.LitroPorHoraAgua;
-                    cmd.Parameters.AddWithValue("@kwporhoraeletricidade", NpgsqlTypes.NpgsqlDbType.Real).Value = eletrodomesticoModel.KWPorHoraEletricidade;
+                    cmd.Parameters.AddWithValue("@litroporhoraagua", NpgsqlTypes.NpgsqlDbType.Double).Value = eletrodomesticoModel.LitroPorHoraAgua;
+                    cmd.Parameters.AddWithValue("@kwporhoraeletricidade", NpgsqlTypes.NpgsqlDbType.Double).Value = eletrodomesticoModel.KWPorHoraEletricidade;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -53,8 +53,8 @@ namespace CarbonTracker._Repositories
 
                     cmd.Parameters.AddWithValue("@id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = eletrodomesticoModel.Id;
                     cmd.Parameters.AddWithValue("@nome", NpgsqlTypes.NpgsqlDbType.Varchar).Value = eletrodomesticoModel.Nome;
-                    cmd.Parameters.AddWithValue("@litroporhoraagua", NpgsqlTypes.NpgsqlDbType.Real).Value = eletrodomesticoModel.LitroPorHoraAgua;
-                    cmd.Parameters.AddWithValue("@kwporhoraeletricidade", NpgsqlTypes.NpgsqlDbType.Real).Value = eletrodomesticoModel.KWPorHoraEletricidade;
+                    cmd.Parameters.AddWithValue("@litroporhoraagua", NpgsqlTypes.NpgsqlDbType.Double).Value = eletrodomesticoModel.LitroPorHoraAgua;
+                    cmd.Parameters.AddWithValue("@kwporhoraeletricidade", NpgsqlTypes.NpgsqlDbType.Double).Value = eletrodomesticoModel.KWPorHoraEletricidade;
 
                     cmd.ExecuteNonQuery();
                 }

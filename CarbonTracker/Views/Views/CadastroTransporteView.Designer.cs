@@ -38,11 +38,6 @@ namespace CarbonTracker.Views
             this.btnProcurar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.dgvTransportes = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoVeiculoDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoCombustivelDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KmPorLitroCombustivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurar = new System.Windows.Forms.Label();
             this.tbpDetalhes = new System.Windows.Forms.TabPage();
@@ -58,6 +53,11 @@ namespace CarbonTracker.Views
             this.lblNome = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoVeiculoDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoCombustivelDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KmPorLitroCombustivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbcTransportes.SuspendLayout();
             this.tbpListagem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransportes)).BeginInit();
@@ -86,7 +86,7 @@ namespace CarbonTracker.Views
             this.tbpListagem.Controls.Add(this.lblProcurar);
             this.tbpListagem.Location = new System.Drawing.Point(4, 22);
             this.tbpListagem.Name = "tbpListagem";
-            this.tbpListagem.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpListagem.Padding = new System.Windows.Forms.Padding(3);
             this.tbpListagem.Size = new System.Drawing.Size(792, 424);
             this.tbpListagem.TabIndex = 0;
             this.tbpListagem.Text = "Listagem";
@@ -157,51 +157,6 @@ namespace CarbonTracker.Views
             this.dgvTransportes.Size = new System.Drawing.Size(676, 369);
             this.dgvTransportes.TabIndex = 3;
             // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Transporte";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 75;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.MinimumWidth = 6;
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 150;
-            // 
-            // TipoVeiculoDescription
-            // 
-            this.TipoVeiculoDescription.DataPropertyName = "TipoVeiculoDescription";
-            this.TipoVeiculoDescription.HeaderText = "Tipo Veículo";
-            this.TipoVeiculoDescription.MinimumWidth = 6;
-            this.TipoVeiculoDescription.Name = "TipoVeiculoDescription";
-            this.TipoVeiculoDescription.ReadOnly = true;
-            this.TipoVeiculoDescription.Width = 95;
-            // 
-            // TipoCombustivelDescription
-            // 
-            this.TipoCombustivelDescription.DataPropertyName = "TipoCombustivelDescription";
-            this.TipoCombustivelDescription.HeaderText = "Tipo Combustível";
-            this.TipoCombustivelDescription.MinimumWidth = 6;
-            this.TipoCombustivelDescription.Name = "TipoCombustivelDescription";
-            this.TipoCombustivelDescription.ReadOnly = true;
-            this.TipoCombustivelDescription.Width = 115;
-            // 
-            // KmPorLitroCombustivel
-            // 
-            this.KmPorLitroCombustivel.DataPropertyName = "KmPorLitroCombustivel";
-            this.KmPorLitroCombustivel.HeaderText = "Km/L Combustível";
-            this.KmPorLitroCombustivel.MinimumWidth = 6;
-            this.KmPorLitroCombustivel.Name = "KmPorLitroCombustivel";
-            this.KmPorLitroCombustivel.ReadOnly = true;
-            this.KmPorLitroCombustivel.Width = 120;
-            // 
             // txtProcurar
             // 
             this.txtProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -237,7 +192,7 @@ namespace CarbonTracker.Views
             this.tbpDetalhes.Controls.Add(this.lblId);
             this.tbpDetalhes.Location = new System.Drawing.Point(4, 22);
             this.tbpDetalhes.Name = "tbpDetalhes";
-            this.tbpDetalhes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpDetalhes.Padding = new System.Windows.Forms.Padding(3);
             this.tbpDetalhes.Size = new System.Drawing.Size(792, 424);
             this.tbpDetalhes.TabIndex = 1;
             this.tbpDetalhes.Text = "Detalhes";
@@ -353,6 +308,51 @@ namespace CarbonTracker.Views
             this.lblId.Size = new System.Drawing.Size(27, 20);
             this.lblId.TabIndex = 0;
             this.lblId.Text = "Id:";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Transporte";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 75;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MinimumWidth = 6;
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 300;
+            // 
+            // TipoVeiculoDescription
+            // 
+            this.TipoVeiculoDescription.DataPropertyName = "TipoVeiculoDescription";
+            this.TipoVeiculoDescription.HeaderText = "Tipo Veículo";
+            this.TipoVeiculoDescription.MinimumWidth = 6;
+            this.TipoVeiculoDescription.Name = "TipoVeiculoDescription";
+            this.TipoVeiculoDescription.ReadOnly = true;
+            this.TipoVeiculoDescription.Width = 95;
+            // 
+            // TipoCombustivelDescription
+            // 
+            this.TipoCombustivelDescription.DataPropertyName = "TipoCombustivelDescription";
+            this.TipoCombustivelDescription.HeaderText = "Tipo Combustível";
+            this.TipoCombustivelDescription.MinimumWidth = 6;
+            this.TipoCombustivelDescription.Name = "TipoCombustivelDescription";
+            this.TipoCombustivelDescription.ReadOnly = true;
+            this.TipoCombustivelDescription.Width = 115;
+            // 
+            // KmPorLitroCombustivel
+            // 
+            this.KmPorLitroCombustivel.DataPropertyName = "KmPorLitroCombustivel";
+            this.KmPorLitroCombustivel.HeaderText = "Km/L Combustível";
+            this.KmPorLitroCombustivel.MinimumWidth = 6;
+            this.KmPorLitroCombustivel.Name = "KmPorLitroCombustivel";
+            this.KmPorLitroCombustivel.ReadOnly = true;
+            this.KmPorLitroCombustivel.Width = 120;
             // 
             // CadastroTransporteView
             // 

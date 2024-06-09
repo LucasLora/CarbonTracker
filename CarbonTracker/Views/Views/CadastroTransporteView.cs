@@ -24,13 +24,39 @@ namespace CarbonTracker.Views
         public string TransporteNome { get { return txtNome.Text; } set { txtNome.Text = value; } }
         public TipoVeiculo TransporteTipoVeiculo
         {
-            get { return (TipoVeiculo)(short)(cmbTipoVeiculo?.SelectedValue ?? 0); }
-            set { cmbTipoVeiculo.SelectedValue = ((short)value).ToString(); }
+            get 
+            { 
+                if (cmbTipoVeiculo.SelectedValue == null)
+                {
+                    return TipoVeiculo.Carro;
+                }
+                else
+                {
+                    return (TipoVeiculo)(short)cmbTipoVeiculo.SelectedValue; 
+                }
+            }
+            set 
+            { 
+                cmbTipoVeiculo.SelectedValue = ((short)value).ToString(); 
+            }
         }
         public TipoCombustivel TransporteTipoCombustivel
         {
-            get { return (TipoCombustivel)(short)(cmbTipoCombustivel?.SelectedValue ?? 0); }
-            set { cmbTipoVeiculo.SelectedValue = ((short)value).ToString(); }
+            get 
+            { 
+                if (cmbTipoCombustivel.SelectedValue == null)
+                { 
+                    return TipoCombustivel.NaoAplica; 
+                }
+                else
+                {
+                    return (TipoCombustivel)(short)cmbTipoCombustivel.SelectedValue; 
+                }
+            }
+            set 
+            {
+                cmbTipoCombustivel.SelectedValue = ((short)value).ToString(); 
+            }
         }
         public string TransporteKmPorLitroCombustivel { get { return txtKmPorLitroCombustivel.Text; } set { txtKmPorLitroCombustivel.Text = value; } }
 

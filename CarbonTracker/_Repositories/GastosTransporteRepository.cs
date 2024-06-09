@@ -35,7 +35,7 @@ namespace CarbonTracker._Repositories
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosTransporte.IdUsuario;
                     cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = gastosTransporte.Dia;
                     cmd.Parameters.AddWithValue("@idtransporte", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosTransporte.IdTransporte;
-                    cmd.Parameters.AddWithValue("@kmrodados", NpgsqlTypes.NpgsqlDbType.Real).Value = gastosTransporte.KmRodados;
+                    cmd.Parameters.AddWithValue("@kmrodados", NpgsqlTypes.NpgsqlDbType.Double).Value = gastosTransporte.KmRodados;
                     cmd.Parameters.AddWithValue("@qtdepassageiros", NpgsqlTypes.NpgsqlDbType.Integer).Value = gastosTransporte.QtdePassageiros;
 
                     cmd.ExecuteNonQuery();
@@ -56,7 +56,7 @@ namespace CarbonTracker._Repositories
                                         WHERE id = @id;";
 
                     cmd.Parameters.AddWithValue("@id", NpgsqlTypes.NpgsqlDbType.Bigint).Value = gastosTransporte.Id;
-                    cmd.Parameters.AddWithValue("@kmrodados", NpgsqlTypes.NpgsqlDbType.Real).Value = gastosTransporte.KmRodados;
+                    cmd.Parameters.AddWithValue("@kmrodados", NpgsqlTypes.NpgsqlDbType.Double).Value = gastosTransporte.KmRodados;
                     cmd.Parameters.AddWithValue("@qtdepassageiros", NpgsqlTypes.NpgsqlDbType.Integer).Value = gastosTransporte.QtdePassageiros;
 
                     cmd.ExecuteNonQuery();
@@ -99,9 +99,9 @@ namespace CarbonTracker._Repositories
                                         	A.nome AS NomeNRT,
                                         	A.tipoveiculo AS TipoVeiculoNRT,
                                         	A.tipocombustivel AS TipoCombustivelNRT,
-                                        	A.kmporlitrocombustivel AS KmPorLitroCombustivel,
+                                        	A.kmporlitrocombustivel AS KmPorLitroCombustivelNRT,
                                         	CAST(COALESCE(B.id, 0) AS BIGINT) AS Id,
-                                        	CAST(COALESCE(B.kmrodados, 0) AS NUMERIC) AS KmRodados,
+                                        	CAST(COALESCE(B.kmrodados, 0) AS DOUBLE PRECISION) AS KmRodados,
                                         	CAST(COALESCE(B.qtdepassageiros, 0) AS INTEGER) AS QtdePassageiros
                                         
                                         FROM transporte A
@@ -128,7 +128,7 @@ namespace CarbonTracker._Repositories
                             gastosTransporte.TipoVeiculoNRT = (TipoVeiculo)reader["TipoVeiculoNRT"];
                             gastosTransporte.TipoCombustivelNRT = (TipoCombustivel)reader["TipoCombustivelNRT"];
                             gastosTransporte.KmPorLitroCombustivelNRT = (double)reader["KmPorLitroCombustivelNRT"];
-
+                            gastosTransporteList.Add(gastosTransporte);
                         }
                     }
                 }

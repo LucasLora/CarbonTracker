@@ -62,7 +62,7 @@
             // 
             this.btnEntrarGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEntrarGrupo.Location = new System.Drawing.Point(0, 161);
+            this.btnEntrarGrupo.Location = new System.Drawing.Point(0, 159);
             this.btnEntrarGrupo.Name = "btnEntrarGrupo";
             this.btnEntrarGrupo.Size = new System.Drawing.Size(120, 55);
             this.btnEntrarGrupo.TabIndex = 3;
@@ -73,7 +73,7 @@
             // 
             this.btnAlterarInformacoesUsuarioLogado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarInformacoesUsuarioLogado.Location = new System.Drawing.Point(0, 109);
+            this.btnAlterarInformacoesUsuarioLogado.Location = new System.Drawing.Point(0, 107);
             this.btnAlterarInformacoesUsuarioLogado.Name = "btnAlterarInformacoesUsuarioLogado";
             this.btnAlterarInformacoesUsuarioLogado.Size = new System.Drawing.Size(120, 55);
             this.btnAlterarInformacoesUsuarioLogado.TabIndex = 2;
