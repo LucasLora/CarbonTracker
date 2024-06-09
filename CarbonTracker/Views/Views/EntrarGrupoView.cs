@@ -60,10 +60,6 @@ namespace CarbonTracker.Views.Views
             btnSalvar.Click += delegate
             {
                 SalvarEvent?.Invoke(this, EventArgs.Empty);
-                if (IsSuccessful)
-                {
-
-                }
                 MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
             };
 
@@ -107,7 +103,6 @@ namespace CarbonTracker.Views.Views
         }
 
         #endregion
-
 
     }
 }
