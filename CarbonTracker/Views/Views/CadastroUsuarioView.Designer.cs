@@ -85,7 +85,7 @@
             this.tbpListagem.Controls.Add(this.lblProcurar);
             this.tbpListagem.Location = new System.Drawing.Point(4, 22);
             this.tbpListagem.Name = "tbpListagem";
-            this.tbpListagem.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpListagem.Padding = new System.Windows.Forms.Padding(3);
             this.tbpListagem.Size = new System.Drawing.Size(792, 424);
             this.tbpListagem.TabIndex = 0;
             this.tbpListagem.Text = "Listagem";
@@ -238,7 +238,7 @@
             this.tbpDetalhes.Controls.Add(this.txtDataCriacao);
             this.tbpDetalhes.Location = new System.Drawing.Point(4, 22);
             this.tbpDetalhes.Name = "tbpDetalhes";
-            this.tbpDetalhes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpDetalhes.Padding = new System.Windows.Forms.Padding(3);
             this.tbpDetalhes.Size = new System.Drawing.Size(792, 424);
             this.tbpDetalhes.TabIndex = 1;
             this.tbpDetalhes.Text = "Detalhes";
@@ -257,7 +257,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(688, 324);
+            this.btnCancelar.Location = new System.Drawing.Point(686, 395);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
             this.btnCancelar.TabIndex = 13;
@@ -267,7 +267,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSalvar.Location = new System.Drawing.Point(6, 324);
+            this.btnSalvar.Location = new System.Drawing.Point(6, 395);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 23);
             this.btnSalvar.TabIndex = 12;

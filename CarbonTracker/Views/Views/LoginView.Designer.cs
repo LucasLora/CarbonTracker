@@ -29,25 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginView));
-            this.btnEntrar = new System.Windows.Forms.Button();
             this.npgsqlCommandBuilder1 = new Npgsql.NpgsqlCommandBuilder();
             this.npgsqlCommandBuilder2 = new Npgsql.NpgsqlCommandBuilder();
-            this.btnClose = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.panelLogoLogin = new System.Windows.Forms.Panel();
+            this.btnEntrar = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnEntrar
-            // 
-            this.btnEntrar.Location = new System.Drawing.Point(12, 204);
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(108, 23);
-            this.btnEntrar.TabIndex = 5;
-            this.btnEntrar.Text = "Entrar";
-            this.btnEntrar.UseVisualStyleBackColor = true;
             // 
             // npgsqlCommandBuilder1
             // 
@@ -58,15 +49,6 @@
             // 
             this.npgsqlCommandBuilder2.QuotePrefix = "\"";
             this.npgsqlCommandBuilder2.QuoteSuffix = "\"";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(223, 204);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(108, 23);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "Sair";
-            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // txtEmail
             // 
@@ -111,6 +93,24 @@
             this.panelLogoLogin.Size = new System.Drawing.Size(321, 104);
             this.panelLogoLogin.TabIndex = 0;
             // 
+            // btnEntrar
+            // 
+            this.btnEntrar.Location = new System.Drawing.Point(12, 204);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(108, 23);
+            this.btnEntrar.TabIndex = 5;
+            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.UseVisualStyleBackColor = true;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(223, 204);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(108, 23);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.Text = "Sair";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,15 +132,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnEntrar;
         private Npgsql.NpgsqlCommandBuilder npgsqlCommandBuilder1;
         private Npgsql.NpgsqlCommandBuilder npgsqlCommandBuilder2;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Panel panelLogoLogin;
+        private System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -42,7 +42,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSalvar.Location = new System.Drawing.Point(10, 417);
+            this.btnSalvar.Location = new System.Drawing.Point(10, 415);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 23);
             this.btnSalvar.TabIndex = 8;

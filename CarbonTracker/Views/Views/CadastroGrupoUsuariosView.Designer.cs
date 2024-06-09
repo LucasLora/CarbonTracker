@@ -58,7 +58,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(688, 324);
+            this.btnCancelar.Location = new System.Drawing.Point(686, 395);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
             this.btnCancelar.TabIndex = 7;
@@ -68,7 +68,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSalvar.Location = new System.Drawing.Point(6, 324);
+            this.btnSalvar.Location = new System.Drawing.Point(6, 395);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 23);
             this.btnSalvar.TabIndex = 6;
@@ -114,7 +114,7 @@
             this.tbpDetalhes.Controls.Add(this.lblId);
             this.tbpDetalhes.Location = new System.Drawing.Point(4, 22);
             this.tbpDetalhes.Name = "tbpDetalhes";
-            this.tbpDetalhes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpDetalhes.Padding = new System.Windows.Forms.Padding(3);
             this.tbpDetalhes.Size = new System.Drawing.Size(792, 424);
             this.tbpDetalhes.TabIndex = 1;
             this.tbpDetalhes.Text = "Detalhes";
@@ -122,9 +122,11 @@
             // 
             // txtDescricao
             // 
+            this.txtDescricao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescricao.Location = new System.Drawing.Point(6, 127);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(783, 192);
+            this.txtDescricao.Size = new System.Drawing.Size(780, 193);
             this.txtDescricao.TabIndex = 5;
             this.txtDescricao.Text = "";
             // 
@@ -267,7 +269,7 @@
             this.tbpListagem.Controls.Add(this.lblProcurar);
             this.tbpListagem.Location = new System.Drawing.Point(4, 22);
             this.tbpListagem.Name = "tbpListagem";
-            this.tbpListagem.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpListagem.Padding = new System.Windows.Forms.Padding(3);
             this.tbpListagem.Size = new System.Drawing.Size(792, 424);
             this.tbpListagem.TabIndex = 0;
             this.tbpListagem.Text = "Listagem";

@@ -13,6 +13,7 @@ namespace CarbonTracker.Views
         public MainView()
         {
             InitializeComponent();
+            this.MinimumSize = this.Size;
             InicializaEventos();
             CarregarERedimensionarImagemNoPanel();
         }

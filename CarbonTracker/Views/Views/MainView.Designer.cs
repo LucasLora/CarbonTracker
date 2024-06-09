@@ -50,7 +50,7 @@
             this.pnlProgramas.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlProgramas.Location = new System.Drawing.Point(0, 0);
             this.pnlProgramas.Name = "pnlProgramas";
-            this.pnlProgramas.Size = new System.Drawing.Size(200, 450);
+            this.pnlProgramas.Size = new System.Drawing.Size(200, 681);
             this.pnlProgramas.TabIndex = 0;
             // 
             // panelLogoMain
@@ -65,7 +65,7 @@
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(0, 395);
+            this.btnClose.Location = new System.Drawing.Point(0, 626);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(200, 55);
             this.btnClose.TabIndex = 5;
@@ -120,11 +120,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 450);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.pnlProgramas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MinimumSize = new System.Drawing.Size(1016, 487);
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carbon Tracker";
