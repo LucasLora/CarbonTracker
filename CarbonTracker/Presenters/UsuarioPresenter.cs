@@ -1,6 +1,5 @@
 ﻿using CarbonTracker._Repositories;
 using CarbonTracker.Models;
-using CarbonTracker.Models.Models;
 using CarbonTracker.Models.RepositoriesInterfaces;
 using CarbonTracker.Views;
 using CarbonTracker.Views.Interfaces;

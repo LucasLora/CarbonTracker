@@ -5,11 +5,8 @@ using CarbonTracker.Views.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlTypes;
-using System.Security.Cryptography;
 
 namespace CarbonTracker.Presenters
 {

@@ -1,6 +1,4 @@
-﻿using Npgsql.Replication.PgOutput;
-
-namespace CarbonTracker.Models.Models
+﻿namespace CarbonTracker.Models.Models
 {
     public class UsuarioXGrupoUsuariosModel
     {

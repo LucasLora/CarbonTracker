@@ -1,14 +1,10 @@
 ﻿using CarbonTracker.Models;
 using CarbonTracker.Models.Models;
 using CarbonTracker.Models.RepositoriesInterfaces;
-using CarbonTracker.Presenters.Common;
-using CarbonTracker.Views;
 using CarbonTracker.Views.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarbonTracker.Presenters

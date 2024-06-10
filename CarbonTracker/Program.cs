@@ -6,7 +6,6 @@ using CarbonTracker.Views;
 using CarbonTracker.Services;
 using CarbonTracker._Repositories;
 using System.Configuration;
-using System.Linq;
 
 namespace CarbonTracker
 {
