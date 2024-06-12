@@ -22,6 +22,8 @@ namespace CarbonTracker
 
             //Obtém a string de conexão do arquivo de configuração
             string stringConexao = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
+            string usuarioPadrao = ConfigurationManager.AppSettings["UsuarioPadrao"];
+            string senhaPadrao = ConfigurationManager.AppSettings["SenhaPadrao"];
 
             //Inicializa o serviço de autenticação
             IUsuariosRepository usuariosRepository = new UsuariosRepository(stringConexao);
@@ -29,7 +31,7 @@ namespace CarbonTracker
 
             //Cria o form de login
             ILoginView loginForm = new LoginView();
-            LoginPresenter loginPresenter = new LoginPresenter(loginForm, autenticacaoService);
+            LoginPresenter loginPresenter = new LoginPresenter(loginForm, autenticacaoService, usuarioPadrao, senhaPadrao);
             Application.Run((Form)loginForm);
 
             // Verifica se o login foi bem-sucedido antes de continuar

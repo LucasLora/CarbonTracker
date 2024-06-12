@@ -23,11 +23,12 @@ namespace CarbonTracker.Presenters
 
         #region Construtor
 
-        public LoginPresenter(ILoginView view, AutenticacaoService autenticacaoService)
+        public LoginPresenter(ILoginView view, AutenticacaoService autenticacaoService, string usuarioPadrao = null, string senhaPadrao = null)
         {
             this.view = view;
             this.autenticacaoService = autenticacaoService;
 
+            ValoresPadrao(usuarioPadrao, senhaPadrao);
             VincularEventos();
         }
 
@@ -38,6 +39,12 @@ namespace CarbonTracker.Presenters
         private void VincularEventos()
         {
             this.view.Entrar += Entrar;
+        }
+
+        private void ValoresPadrao(string usuario, string senha)
+        {
+            view.Usuario = usuario ?? "";
+            view.Senha = senha ?? "";
         }
 
         private void Entrar(object sender, EventArgs e)
