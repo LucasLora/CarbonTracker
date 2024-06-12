@@ -168,6 +168,12 @@ namespace CarbonTracker.Presenters
             try
             {
                 new ModelDataValidation().Validate(model);
+
+                if (repository.RetornarTodos().Any(x => x.Email == model.Email && x.Id != model.Id))
+                {
+                    throw new Exception("Já existe um usuário com este e-mail!");
+                }
+                
                 if (view.IsEdit) //Alteracao
                 {
                     repository.Alterar(model);
