@@ -161,12 +161,13 @@
             this.LitroPorHoraAguaNRT,
             this.KWPorHoraEletricidadeNRT,
             this.TempoUso});
-            this.dgvRegistros.Location = new System.Drawing.Point(7, 106);
+            this.dgvRegistros.Location = new System.Drawing.Point(8, 106);
             this.dgvRegistros.Name = "dgvRegistros";
             this.dgvRegistros.RowHeadersVisible = false;
             this.dgvRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvRegistros.Size = new System.Drawing.Size(786, 309);
             this.dgvRegistros.TabIndex = 4;
+            this.dgvRegistros.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvRegistros_CellValidating);
             // 
             // IdEletrodomestico
             // 

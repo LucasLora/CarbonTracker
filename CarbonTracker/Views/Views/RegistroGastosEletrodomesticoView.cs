@@ -107,6 +107,18 @@ namespace CarbonTracker.Views.Views
             this.btnRestaurar.Enabled = bloquear;
         }
 
+        private void dgvRegistros_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == this.dgvRegistros.Columns["TempoUso"].Index)
+            {
+                if (!double.TryParse(e.FormattedValue.ToString(), out double valor))
+                {
+                    e.Cancel = true;
+                    MessageBox.Show($"Valor inválido!{Environment.NewLine}Valor digitado deve ser numérico!", "Carbon Tracker", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         #endregion
 
         #region Singleton pattern (Open a single form instance)

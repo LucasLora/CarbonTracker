@@ -30,6 +30,13 @@
         {
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.dgvRegistros = new System.Windows.Forms.DataGridView();
+            this.IdTransporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoVeiculoDescriptionNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoCombustivelDescriptionNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KmPorLitroCombustivelNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KmRodados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QtdePassageiros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.lblPesquisar = new System.Windows.Forms.Label();
@@ -39,13 +46,6 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblDia = new System.Windows.Forms.Label();
             this.dtpDia = new System.Windows.Forms.DateTimePicker();
-            this.IdTransporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoVeiculoDescriptionNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoCombustivelDescriptionNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KmPorLitroCombustivelNRT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KmRodados = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QtdePassageiros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             this.pnlDia.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,59 @@
             this.dgvRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvRegistros.Size = new System.Drawing.Size(786, 309);
             this.dgvRegistros.TabIndex = 4;
+            this.dgvRegistros.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvRegistros_CellValidating);
+            // 
+            // IdTransporte
+            // 
+            this.IdTransporte.DataPropertyName = "IdTransporte";
+            this.IdTransporte.HeaderText = "Transporte";
+            this.IdTransporte.Name = "IdTransporte";
+            this.IdTransporte.ReadOnly = true;
+            this.IdTransporte.Width = 75;
+            // 
+            // NomeNRT
+            // 
+            this.NomeNRT.DataPropertyName = "NomeNRT";
+            this.NomeNRT.HeaderText = "Nome";
+            this.NomeNRT.Name = "NomeNRT";
+            this.NomeNRT.ReadOnly = true;
+            this.NomeNRT.Width = 200;
+            // 
+            // TipoVeiculoDescriptionNRT
+            // 
+            this.TipoVeiculoDescriptionNRT.DataPropertyName = "TipoVeiculoDescriptionNRT";
+            this.TipoVeiculoDescriptionNRT.HeaderText = "Tipo Veículo";
+            this.TipoVeiculoDescriptionNRT.Name = "TipoVeiculoDescriptionNRT";
+            this.TipoVeiculoDescriptionNRT.ReadOnly = true;
+            this.TipoVeiculoDescriptionNRT.Width = 95;
+            // 
+            // TipoCombustivelDescriptionNRT
+            // 
+            this.TipoCombustivelDescriptionNRT.DataPropertyName = "TipoCombustivelDescriptionNRT";
+            this.TipoCombustivelDescriptionNRT.HeaderText = "Tipo Combustível";
+            this.TipoCombustivelDescriptionNRT.Name = "TipoCombustivelDescriptionNRT";
+            this.TipoCombustivelDescriptionNRT.ReadOnly = true;
+            this.TipoCombustivelDescriptionNRT.Width = 115;
+            // 
+            // KmPorLitroCombustivelNRT
+            // 
+            this.KmPorLitroCombustivelNRT.DataPropertyName = "KmPorLitroCombustivelNRT";
+            this.KmPorLitroCombustivelNRT.HeaderText = "Km/L Combustível";
+            this.KmPorLitroCombustivelNRT.Name = "KmPorLitroCombustivelNRT";
+            this.KmPorLitroCombustivelNRT.ReadOnly = true;
+            this.KmPorLitroCombustivelNRT.Width = 120;
+            // 
+            // KmRodados
+            // 
+            this.KmRodados.DataPropertyName = "KmRodados";
+            this.KmRodados.HeaderText = "Km Rodados";
+            this.KmRodados.Name = "KmRodados";
+            // 
+            // QtdePassageiros
+            // 
+            this.QtdePassageiros.DataPropertyName = "QtdePassageiros";
+            this.QtdePassageiros.HeaderText = "Quantidade Passageiros";
+            this.QtdePassageiros.Name = "QtdePassageiros";
             // 
             // btnSalvar
             // 
@@ -171,58 +224,6 @@
             this.dtpDia.Name = "dtpDia";
             this.dtpDia.Size = new System.Drawing.Size(95, 20);
             this.dtpDia.TabIndex = 1;
-            // 
-            // IdTransporte
-            // 
-            this.IdTransporte.DataPropertyName = "IdTransporte";
-            this.IdTransporte.HeaderText = "Transporte";
-            this.IdTransporte.Name = "IdTransporte";
-            this.IdTransporte.ReadOnly = true;
-            this.IdTransporte.Width = 75;
-            // 
-            // NomeNRT
-            // 
-            this.NomeNRT.DataPropertyName = "NomeNRT";
-            this.NomeNRT.HeaderText = "Nome";
-            this.NomeNRT.Name = "NomeNRT";
-            this.NomeNRT.ReadOnly = true;
-            this.NomeNRT.Width = 200;
-            // 
-            // TipoVeiculoDescriptionNRT
-            // 
-            this.TipoVeiculoDescriptionNRT.DataPropertyName = "TipoVeiculoDescriptionNRT";
-            this.TipoVeiculoDescriptionNRT.HeaderText = "Tipo Veículo";
-            this.TipoVeiculoDescriptionNRT.Name = "TipoVeiculoDescriptionNRT";
-            this.TipoVeiculoDescriptionNRT.ReadOnly = true;
-            this.TipoVeiculoDescriptionNRT.Width = 95;
-            // 
-            // TipoCombustivelDescriptionNRT
-            // 
-            this.TipoCombustivelDescriptionNRT.DataPropertyName = "TipoCombustivelDescriptionNRT";
-            this.TipoCombustivelDescriptionNRT.HeaderText = "Tipo Combustível";
-            this.TipoCombustivelDescriptionNRT.Name = "TipoCombustivelDescriptionNRT";
-            this.TipoCombustivelDescriptionNRT.ReadOnly = true;
-            this.TipoCombustivelDescriptionNRT.Width = 115;
-            // 
-            // KmPorLitroCombustivelNRT
-            // 
-            this.KmPorLitroCombustivelNRT.DataPropertyName = "KmPorLitroCombustivelNRT";
-            this.KmPorLitroCombustivelNRT.HeaderText = "Km/L Combustível";
-            this.KmPorLitroCombustivelNRT.Name = "KmPorLitroCombustivelNRT";
-            this.KmPorLitroCombustivelNRT.ReadOnly = true;
-            this.KmPorLitroCombustivelNRT.Width = 120;
-            // 
-            // KmRodados
-            // 
-            this.KmRodados.DataPropertyName = "KmRodados";
-            this.KmRodados.HeaderText = "Km Rodados";
-            this.KmRodados.Name = "KmRodados";
-            // 
-            // QtdePassageiros
-            // 
-            this.QtdePassageiros.DataPropertyName = "QtdePassageiros";
-            this.QtdePassageiros.HeaderText = "Quantidade Passageiros";
-            this.QtdePassageiros.Name = "QtdePassageiros";
             // 
             // RegistroGastosTransporteView
             // 

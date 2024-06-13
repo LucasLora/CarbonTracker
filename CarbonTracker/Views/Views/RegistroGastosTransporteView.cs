@@ -45,7 +45,7 @@ namespace CarbonTracker.Views.Views
             btnRegistrar.Click += delegate
             {
                 RegistrarDiaEvent?.Invoke(this, EventArgs.Empty);
-                if (!this.IsSuccessful) 
+                if (!this.IsSuccessful)
                 {
                     MessageBox.Show(Message, "Carbon Tracker", MessageBoxButtons.OK);
                 }
@@ -105,6 +105,26 @@ namespace CarbonTracker.Views.Views
             this.dgvRegistros.Enabled = bloquear;
             this.btnSalvar.Enabled = bloquear;
             this.btnRestaurar.Enabled = bloquear;
+        }
+
+        private void dgvRegistros_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == this.dgvRegistros.Columns["KmRodados"].Index)
+            {
+                if (!double.TryParse(e.FormattedValue.ToString(), out double valor))
+                {
+                    e.Cancel = true;
+                    MessageBox.Show($"Valor inválido!{Environment.NewLine}Valor digitado deve ser numérico!", "Carbon Tracker", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (e.ColumnIndex == this.dgvRegistros.Columns["QtdePassageiros"].Index)
+            {
+                if (!int.TryParse(e.FormattedValue.ToString(), out int valor))
+                {
+                    e.Cancel = true;
+                    MessageBox.Show($"Valor inválido!{Environment.NewLine}Valor digitado deve ser um inteiro!", "Carbon Tracker", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         #endregion
