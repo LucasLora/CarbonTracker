@@ -13,26 +13,24 @@ namespace CarbonTracker.Models.Common
             [Description("Não Aplica")]
             NaoAplica = 0,
 
-            [Description("Etanol")]
-            Etanol = 1,
-
-            [Description("Diesel")]
-            Diesel = 2,
+            [Description("Elétrico")]
+            Eletrico = 1,
 
             [Description("Gasolina")]
-            Gasolina = 3,
+            Gasolina = 2,
 
-            [Description("GNV")]
-            GNV = 4,
+            [Description("Diesel")]
+            Diesel = 3,
+
+            [Description("Etanol")]
+            Etanol = 4,
 
             [Description("Flex")]
             Flex = 5,
 
-            [Description("Álcool")]
-            Alcool = 6,
+            [Description("GNV")]
+            GNV = 6,
 
-            [Description("Elétrico")]
-            Eletrico = 7,
         }
 
         public enum TipoVeiculo : short

@@ -144,6 +144,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\AutenticacaoService.cs" />
+    <Compile Include="Services\CarbonTrackerService.cs" />
     <Compile Include="Views\Interfaces\IRegistroGastosTransporteView.cs" />
     <Compile Include="Views\Interfaces\IEntrarGrupoView.cs" />
     <Compile Include="Views\Interfaces\IRegistroGastosEletrodomesticoView.cs" />

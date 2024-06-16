@@ -22,6 +22,7 @@ namespace CarbonTracker.Models
 
         public string TipoCombustivelDescription { get { return GetEnumDescription(TipoCombustivel); } }
 
+        [Range(0.01, 100, ErrorMessage = "Km/L deve estar entre 0.01 e 100")]
         public double KmPorLitroCombustivel { get; set; }
 
         #endregion
