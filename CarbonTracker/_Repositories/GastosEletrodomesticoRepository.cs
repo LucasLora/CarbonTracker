@@ -81,7 +81,7 @@ namespace CarbonTracker._Repositories
             }
         }
 
-        public IEnumerable<GastosEletrodomesticoModel> RetornarPorUsuarioEDia(long idUsuario, DateTime dia)
+        public IEnumerable<GastosEletrodomesticoModel> RetornarPorUsuarioEDiaParaCadastro(long idUsuario, DateTime dia)
         {
             var gastosEletrodomesticoList = new List<GastosEletrodomesticoModel>();
 
@@ -118,6 +118,59 @@ namespace CarbonTracker._Repositories
                             gastosEletrodomestico.Dia = dia;
                             gastosEletrodomestico.IdEletrodomestico = (long)reader["IdEletrodomestico"];
                             gastosEletrodomestico.TempoUso = (double)reader["TempoUso"];
+                            gastosEletrodomestico.NomeNRT = (string)reader["NomeNRT"];
+                            gastosEletrodomestico.LitroPorHoraAguaNRT = (double)reader["LitroPorHoraAguaNRT"];
+                            gastosEletrodomestico.KWPorHoraEletricidadeNRT = (double)reader["KwPorHoraEletricidadeNRT"];
+                            gastosEletrodomesticoList.Add(gastosEletrodomestico);
+                        }
+                    }
+                }
+            }
+
+            return gastosEletrodomesticoList;
+        }
+
+        public IEnumerable<GastosEletrodomesticoModel> RetornaPorUsuarioEIntervaloDatasParaCalculo(long idUsuario, DateTime dataInicio, DateTime dataFim)
+        {
+            var gastosEletrodomesticoList = new List<GastosEletrodomesticoModel>();
+
+            using (var conn = new NpgsqlConnection(stringConexao))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = $@"SELECT 
+                                        	A.id,
+                                        	A.idusuario,
+                                        	A.dia,
+                                        	A.ideletrodomestico,
+                                        	A.tempouso,
+                                        	B.Nome AS NomeNRT,
+                                        	B.litroporhoraagua AS LitroPorHoraAguaNRT,
+                                        	B.kwporhoraeletricidade AS KwPorHoraEletricidadeNRT
+                                        
+                                        FROM gastoseletrodomestico A
+                                        INNER JOIN eletrodomestico B
+                                        	ON B.id = A.ideletrodomestico 								
+                                        
+                                        WHERE A.idusuario = @idusuario
+                                        AND B.dia BETWEEN @dataInicio AND @dataFim;";
+
+                    cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
+                    cmd.Parameters.AddWithValue("@dataInicio", NpgsqlTypes.NpgsqlDbType.Date).Value = dataInicio;
+                    cmd.Parameters.AddWithValue("@dataFim", NpgsqlTypes.NpgsqlDbType.Date).Value = dataFim;
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var gastosEletrodomestico = new GastosEletrodomesticoModel();
+                            gastosEletrodomestico.Id = (long)reader["id"];
+                            gastosEletrodomestico.IdUsuario = (long)reader["idusuario"];
+                            gastosEletrodomestico.Dia = (DateTime)reader["dia"];
+                            gastosEletrodomestico.IdEletrodomestico = (long)reader["ideletrodomestico"];
+                            gastosEletrodomestico.TempoUso = (double)reader["tempouso"];
                             gastosEletrodomestico.NomeNRT = (string)reader["NomeNRT"];
                             gastosEletrodomestico.LitroPorHoraAguaNRT = (double)reader["LitroPorHoraAguaNRT"];
                             gastosEletrodomestico.KWPorHoraEletricidadeNRT = (double)reader["KwPorHoraEletricidadeNRT"];

@@ -76,7 +76,7 @@ namespace CarbonTracker.Presenters
 
         private void CarregaTodaListaDeRegistrosEletrodomestico(long usuarioId, DateTime dia)
         {
-            gastosEletrodomesticoList = repository.RetornarPorUsuarioEDia(usuarioId, dia);
+            gastosEletrodomesticoList = repository.RetornarPorUsuarioEDiaParaCadastro(usuarioId, dia);
             gastosEletrodomesticoBindingSource.DataSource = gastosEletrodomesticoList;
         }
 

@@ -76,7 +76,7 @@ namespace CarbonTracker.Presenters
 
         private void CarregaTodaListaDeRegistrosTransporte(long usuarioId, DateTime dia)
         {
-            gastosTransporteList = repository.RetornarPorUsuarioEDia(usuarioId, dia);
+            gastosTransporteList = repository.RetornarPorUsuarioEDiaParaCadastro(usuarioId, dia);
             gastosTransporteBindingSource.DataSource = gastosTransporteList;
         }
 

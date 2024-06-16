@@ -84,7 +84,7 @@ namespace CarbonTracker._Repositories
             }
         }
 
-        public IEnumerable<GastosTransporteModel> RetornarPorUsuarioEDia(long idUsuario, DateTime dia)
+        public IEnumerable<GastosTransporteModel> RetornarPorUsuarioEDiaParaCadastro(long idUsuario, DateTime dia)
         {
             var gastosTransporteList = new List<GastosTransporteModel>();
 
@@ -95,20 +95,20 @@ namespace CarbonTracker._Repositories
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"SELECT
-                                        	A.id AS IdTransporte,
-                                        	A.nome AS NomeNRT,
-                                        	A.tipoveiculo AS TipoVeiculoNRT,
-                                        	A.tipocombustivel AS TipoCombustivelNRT,
-                                        	A.kmporlitrocombustivel AS KmPorLitroCombustivelNRT,
-                                        	CAST(COALESCE(B.id, 0) AS BIGINT) AS Id,
-                                        	CAST(COALESCE(B.kmrodados, 0) AS DOUBLE PRECISION) AS KmRodados,
-                                        	CAST(COALESCE(B.qtdepassageiros, 0) AS INTEGER) AS QtdePassageiros
+                                            A.id AS IdTransporte,
+                                            A.nome AS NomeNRT,
+                                            A.tipoveiculo AS TipoVeiculoNRT,
+                                            A.tipocombustivel AS TipoCombustivelNRT,
+                                            A.kmporlitrocombustivel AS KmPorLitroCombustivelNRT,
+                                            CAST(COALESCE(B.id, 0) AS BIGINT) AS Id,
+                                            CAST(COALESCE(B.kmrodados, 0) AS DOUBLE PRECISION) AS KmRodados,
+                                            CAST(COALESCE(B.qtdepassageiros, 0) AS INTEGER) AS QtdePassageiros
                                         
                                         FROM transporte A
                                         LEFT JOIN gastostransporte B
-                                        	ON B.idtransporte = A.id
-                                        	AND B.dia = @dia
-                                        	AND B.idusuario = @idusuario;";
+                                            ON B.idtransporte = A.id
+                                            AND B.dia = @dia
+                                            AND B.idusuario = @idusuario;";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
                     cmd.Parameters.AddWithValue("@dia", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = dia;
@@ -118,9 +118,66 @@ namespace CarbonTracker._Repositories
                         while (reader.Read())
                         {
                             var gastosTransporte = new GastosTransporteModel();
-                            gastosTransporte.Id = (long)reader["id"];
+                            gastosTransporte.Id = (long)reader["Id"];
                             gastosTransporte.IdUsuario = idUsuario;
                             gastosTransporte.Dia = dia;
+                            gastosTransporte.IdTransporte = (long)reader["IdTransporte"];
+                            gastosTransporte.KmRodados = (double)reader["KmRodados"];
+                            gastosTransporte.QtdePassageiros = (int)reader["QtdePassageiros"];
+                            gastosTransporte.NomeNRT = (string)reader["NomeNRT"];
+                            gastosTransporte.TipoVeiculoNRT = (TipoVeiculo)reader["TipoVeiculoNRT"];
+                            gastosTransporte.TipoCombustivelNRT = (TipoCombustivel)reader["TipoCombustivelNRT"];
+                            gastosTransporte.KmPorLitroCombustivelNRT = (double)reader["KmPorLitroCombustivelNRT"];
+                            gastosTransporteList.Add(gastosTransporte);
+                        }
+                    }
+                }
+            }
+
+            return gastosTransporteList;
+        }
+
+        public IEnumerable<GastosTransporteModel> RetornaPorUsuarioEIntervaloDatasParaCalculo(long idUsuario, DateTime dataInicio, DateTime dataFim)
+        {
+            var gastosTransporteList = new List<GastosTransporteModel>();
+
+            using (var conn = new NpgsqlConnection(stringConexao))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = $@"SELECT
+                                            A.id,
+                                            A.idusuario,
+                                            A.dia,
+								        	A.idtransporte,
+								        	A.kmrodados,
+								        	A.qtdepassageiros,
+                                            B.nome AS NomeNRT,
+                                            B.tipoveiculo AS TipoVeiculoNRT,
+                                            B.tipocombustivel AS TipoCombustivelNRT,
+                                            B.kmporlitrocombustivel AS KmPorLitroCombustivelNRT
+                                        
+                                        FROM gastostransporte A
+                                        INNER JOIN transporte B
+                                            ON B.id = A.idtransporte
+								        	
+								        WHERE A.idusuario = @idusuario
+                                        AND A.dia BETWEEN @dataInicio AND @dataFim;";
+
+                    cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
+                    cmd.Parameters.AddWithValue("@dataInicio", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = dataInicio;
+                    cmd.Parameters.AddWithValue("@dataFim", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = dataFim;
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var gastosTransporte = new GastosTransporteModel();
+                            gastosTransporte.Id = (long)reader["id"];
+                            gastosTransporte.IdUsuario = (long)reader["idusuario"];
+                            gastosTransporte.Dia = (DateTime)reader["dia"];
                             gastosTransporte.IdTransporte = (long)reader["idtransporte"];
                             gastosTransporte.KmRodados = (double)reader["kmrodados"];
                             gastosTransporte.QtdePassageiros = (int)reader["qtdepassageiros"];
