@@ -126,6 +126,7 @@
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\CadastroEletrodomesticoPresenter.cs" />
     <Compile Include="Presenters\CadastroGrupoUsuariosPresenter.cs" />
+    <Compile Include="Presenters\ComparacoesPresenter.cs" />
     <Compile Include="Presenters\EntrarGrupoPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
@@ -145,6 +146,7 @@
     </Compile>
     <Compile Include="Services\AutenticacaoService.cs" />
     <Compile Include="Services\CarbonTrackerService.cs" />
+    <Compile Include="Views\Interfaces\IComparacoesView.cs" />
     <Compile Include="Views\Interfaces\IRegistroGastosTransporteView.cs" />
     <Compile Include="Views\Interfaces\IEntrarGrupoView.cs" />
     <Compile Include="Views\Interfaces\IRegistroGastosEletrodomesticoView.cs" />
@@ -176,6 +178,12 @@
     <Compile Include="Views\Interfaces\IRegistroGastosView.cs" />
     <Compile Include="Views\Interfaces\ICadastroTransporteView.cs" />
     <Compile Include="Views\Interfaces\ICadastroUsuarioView.cs" />
+    <Compile Include="Views\Views\ComparacoesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Views\ComparacoesView.Designer.cs">
+      <DependentUpon>ComparacoesView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Views\EntrarGrupoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Views\CadastroGrupoUsuariosView.resx">
       <DependentUpon>CadastroGrupoUsuariosView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Views\ComparacoesView.resx">
+      <DependentUpon>ComparacoesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Views\EntrarGrupoView.resx">
       <DependentUpon>EntrarGrupoView.cs</DependentUpon>

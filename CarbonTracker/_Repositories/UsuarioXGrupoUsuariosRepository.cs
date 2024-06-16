@@ -98,6 +98,80 @@ namespace CarbonTracker._Repositories
             return usuarioXGrupoUsuariosList;
         }
 
+        public IEnumerable<UsuarioXGrupoUsuariosModel> RetornarTodosGruposQueOUsuarioEhParticipante(long idUsuario)
+        {
+            var usuarioXGrupoUsuariosList = new List<UsuarioXGrupoUsuariosModel>();
+
+            using (var conn = new NpgsqlConnection(stringConexao))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"SELECT 
+                                        	A.idusuario,
+                                        	A.idgrupo,
+                                        	B.nome AS NomeGrupoNRT,
+                                        	B.Descricao AS DescricaoGrupoNRT
+                                        
+                                        FROM usuarioxgrupousuarios A
+                                        INNER JOIN grupousuario B 
+                                        	ON B.id = A.idgrupo
+                                        
+                                        WHERE A.idusuario = @idusuario;";
+
+                    cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var usuarioXGrupoUsuariosModel = new UsuarioXGrupoUsuariosModel();
+                            usuarioXGrupoUsuariosModel.IdUsuario = (long)reader["idusuario"];
+                            usuarioXGrupoUsuariosModel.IdGrupo = (long)reader["idgrupo"];
+                            usuarioXGrupoUsuariosModel.NomeGrupoNRT = reader["NomeGrupoNRT"].ToString();
+                            usuarioXGrupoUsuariosModel.DescricaoGrupoNRT = reader["DescricaoGrupoNRT"].ToString();
+                            usuarioXGrupoUsuariosList.Add(usuarioXGrupoUsuariosModel);
+                        }
+                    }
+                }
+            }
+
+            return usuarioXGrupoUsuariosList;
+        }  
+        
+        public IEnumerable<long> RetornarTodosIdsUsuariosPorGrupo(long idGrupo)
+        {
+            var ids = new List<long>();
+
+            using (var conn = new NpgsqlConnection(stringConexao))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"SELECT 
+                                        	A.idusuario
+                                        	
+                                        FROM usuarioxgrupousuarios A
+                                        
+                                        WHERE idgrupo = @idgrupo;";
+
+                    cmd.Parameters.AddWithValue("@idgrupo", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idGrupo;
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ids.Add((long)reader["idusuario"]);
+                        }
+                    }
+                }
+            }
+
+            return ids;
+        }
+
         #endregion
 
     }

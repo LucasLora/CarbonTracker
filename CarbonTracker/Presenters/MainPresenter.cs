@@ -4,6 +4,9 @@ using CarbonTracker.Models;
 using System.Windows.Forms;
 using CarbonTracker.Views.Interfaces;
 using CarbonTracker.Views.Views;
+using CarbonTracker._Repositories;
+using CarbonTracker.Models.RepositoriesInterfaces;
+using CarbonTracker.Services;
 
 namespace CarbonTracker.Presenters
 {
@@ -74,7 +77,17 @@ namespace CarbonTracker.Presenters
 
         private void ShowComparacoesView(object sender, EventArgs e)
         {
-
+            CarbonTrackerService carbonTrackerService = new CarbonTrackerService();
+            IComparacoesView view = ComparacoesView.GetInstance((Form)mainView);
+            IGastosEletrodomesticoRepository gastosEletrodomesticoRepository = new GastosEletrodomesticoRepository(stringConexao);
+            IGastosTransporteRepository gastosTransporteRepository = new GastosTransporteRepository(stringConexao);
+            IUsuarioXGrupoUsuariosRepository usuarioXGrupoUsuariosRepository = new UsuarioXGrupoUsuariosRepository(stringConexao);
+            new ComparacoesPresenter(usuarioLogado: usuarioLogado,
+                                     carbonTrackerService: carbonTrackerService,
+                                     view: view,
+                                     gastosEletrodomesticoRepository: gastosEletrodomesticoRepository,
+                                     gastosTransporteRepository: gastosTransporteRepository,
+                                     usuarioXGrupoUsuariosRepository: usuarioXGrupoUsuariosRepository);
         }
 
         private bool VerificarSeEhAdministrador()

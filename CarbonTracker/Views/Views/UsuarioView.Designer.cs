@@ -182,7 +182,7 @@
             this.panelUsuarios.BackgroundImage = global::CarbonTracker.Properties.Resources.Informaoes_De_Usuarios;
             this.panelUsuarios.Location = new System.Drawing.Point(0, -7);
             this.panelUsuarios.Name = "panelUsuarios";
-            this.panelUsuarios.Size = new System.Drawing.Size(458, 89);
+            this.panelUsuarios.Size = new System.Drawing.Size(516, 89);
             this.panelUsuarios.TabIndex = 0;
             // 
             // UsuarioView

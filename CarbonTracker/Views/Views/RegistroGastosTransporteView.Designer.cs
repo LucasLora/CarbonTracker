@@ -81,6 +81,7 @@
             this.dgvRegistros.Location = new System.Drawing.Point(7, 106);
             this.dgvRegistros.Name = "dgvRegistros";
             this.dgvRegistros.RowHeadersVisible = false;
+            this.dgvRegistros.RowHeadersWidth = 51;
             this.dgvRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvRegistros.Size = new System.Drawing.Size(786, 309);
             this.dgvRegistros.TabIndex = 4;
@@ -90,6 +91,7 @@
             // 
             this.IdTransporte.DataPropertyName = "IdTransporte";
             this.IdTransporte.HeaderText = "Transporte";
+            this.IdTransporte.MinimumWidth = 6;
             this.IdTransporte.Name = "IdTransporte";
             this.IdTransporte.ReadOnly = true;
             this.IdTransporte.Width = 75;
@@ -98,6 +100,7 @@
             // 
             this.NomeNRT.DataPropertyName = "NomeNRT";
             this.NomeNRT.HeaderText = "Nome";
+            this.NomeNRT.MinimumWidth = 6;
             this.NomeNRT.Name = "NomeNRT";
             this.NomeNRT.ReadOnly = true;
             this.NomeNRT.Width = 200;
@@ -106,6 +109,7 @@
             // 
             this.TipoVeiculoDescriptionNRT.DataPropertyName = "TipoVeiculoDescriptionNRT";
             this.TipoVeiculoDescriptionNRT.HeaderText = "Tipo Veículo";
+            this.TipoVeiculoDescriptionNRT.MinimumWidth = 6;
             this.TipoVeiculoDescriptionNRT.Name = "TipoVeiculoDescriptionNRT";
             this.TipoVeiculoDescriptionNRT.ReadOnly = true;
             this.TipoVeiculoDescriptionNRT.Width = 95;
@@ -114,6 +118,7 @@
             // 
             this.TipoCombustivelDescriptionNRT.DataPropertyName = "TipoCombustivelDescriptionNRT";
             this.TipoCombustivelDescriptionNRT.HeaderText = "Tipo Combustível";
+            this.TipoCombustivelDescriptionNRT.MinimumWidth = 6;
             this.TipoCombustivelDescriptionNRT.Name = "TipoCombustivelDescriptionNRT";
             this.TipoCombustivelDescriptionNRT.ReadOnly = true;
             this.TipoCombustivelDescriptionNRT.Width = 115;
@@ -122,6 +127,7 @@
             // 
             this.KmPorLitroCombustivelNRT.DataPropertyName = "KmPorLitroCombustivelNRT";
             this.KmPorLitroCombustivelNRT.HeaderText = "Km/L Combustível";
+            this.KmPorLitroCombustivelNRT.MinimumWidth = 6;
             this.KmPorLitroCombustivelNRT.Name = "KmPorLitroCombustivelNRT";
             this.KmPorLitroCombustivelNRT.ReadOnly = true;
             this.KmPorLitroCombustivelNRT.Width = 120;
@@ -130,13 +136,17 @@
             // 
             this.KmRodados.DataPropertyName = "KmRodados";
             this.KmRodados.HeaderText = "Km Rodados";
+            this.KmRodados.MinimumWidth = 6;
             this.KmRodados.Name = "KmRodados";
+            this.KmRodados.Width = 125;
             // 
             // QtdePassageiros
             // 
             this.QtdePassageiros.DataPropertyName = "QtdePassageiros";
             this.QtdePassageiros.HeaderText = "Quantidade Passageiros";
+            this.QtdePassageiros.MinimumWidth = 6;
             this.QtdePassageiros.Name = "QtdePassageiros";
+            this.QtdePassageiros.Width = 125;
             // 
             // btnSalvar
             // 
@@ -163,7 +173,7 @@
             this.lblPesquisar.AutoSize = true;
             this.lblPesquisar.Location = new System.Drawing.Point(4, 64);
             this.lblPesquisar.Name = "lblPesquisar";
-            this.lblPesquisar.Size = new System.Drawing.Size(56, 13);
+            this.lblPesquisar.Size = new System.Drawing.Size(65, 15);
             this.lblPesquisar.TabIndex = 1;
             this.lblPesquisar.Text = "Pesquisar:";
             // 
@@ -212,7 +222,7 @@
             this.lblDia.AutoSize = true;
             this.lblDia.Location = new System.Drawing.Point(4, 10);
             this.lblDia.Name = "lblDia";
-            this.lblDia.Size = new System.Drawing.Size(26, 13);
+            this.lblDia.Size = new System.Drawing.Size(29, 15);
             this.lblDia.TabIndex = 0;
             this.lblDia.Text = "Dia:";
             // 
