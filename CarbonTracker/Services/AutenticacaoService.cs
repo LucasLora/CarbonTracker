@@ -1,4 +1,5 @@
 ﻿using CarbonTracker.Models;
+using System.Configuration;
 using System.Linq;
 
 namespace CarbonTracker.Services
@@ -8,7 +9,7 @@ namespace CarbonTracker.Services
 
         #region Campos
 
-        private readonly IUsuariosRepository _usuariosRepository;
+        private readonly IUsuariosRepository usuariosRepository;
         private UsuarioModel usuarioAutenticado = null;
 
         #endregion
@@ -23,7 +24,7 @@ namespace CarbonTracker.Services
 
         public AutenticacaoService(IUsuariosRepository usuariosRepository)
         {
-            _usuariosRepository = usuariosRepository;
+            this.usuariosRepository = usuariosRepository;
         }
 
         #endregion
@@ -32,13 +33,35 @@ namespace CarbonTracker.Services
 
         public bool Autenticar(string username, string password)
         {
-            var user = _usuariosRepository.RetornarTodos().FirstOrDefault(x => x.Email == username);
+            if (!ExisteUsuarioAdministrador()) //Deve existir um usuário administrador no sistema
+            {
+                CriaUsuarioAdministrador(); //Se não existir, cria um usuário administrador
+            }
+
+            var user = usuariosRepository.RetornarTodos().FirstOrDefault(x => x.Email == username);
             if (user != null && user.Senha == password)
             {
                 usuarioAutenticado = user;
                 return true;
             }
             return false;
+        }
+
+        public bool ExisteUsuarioAdministrador()
+        {
+            return usuariosRepository.RetornarTodos().ToList().Any(x => x.TipoUsuario == Models.Common.Enums.TipoUsuario.Administrador);
+        }
+
+        public void CriaUsuarioAdministrador()
+        {
+            usuariosRepository.Adicionar(new UsuarioModel
+            {
+                Nome = "Administrador",
+                Email = "Administrador",
+                Senha = "Admin123",
+                TipoUsuario = Models.Common.Enums.TipoUsuario.Administrador,
+                DataCriacao = System.DateTime.Now
+            });
         }
 
         #endregion
