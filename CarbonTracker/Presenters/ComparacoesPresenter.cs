@@ -26,7 +26,7 @@ namespace CarbonTracker.Presenters
         private IGastosTransporteRepository gastosTransporteRepository;
         private IUsuarioXGrupoUsuariosRepository usuarioXGrupoUsuariosRepository;
 
-        private BindingSource posicaoGruposUsuarios;
+        private BindingSource posicaoGruposUsuarios = new BindingSource();
 
         #endregion
 
@@ -94,7 +94,7 @@ namespace CarbonTracker.Presenters
             var pontuacaoUsuario = carbonTrackerService.CalcularPegadaCarbonoTotal(registrosTransporte: gastosTransporte, registrosEletrodomesticos: gastosEletrodomesticos);
 
             //Vincular a pontuação ao txtPontuacao
-            view.Pontuacao = pontuacaoUsuario.ToString();
+            view.Pontuacao = pontuacaoUsuario.ToString("f2");
 
             //Lista para armazenar a posição do usuário em cada grupo
             var listaPosicaoGruposUsuarios = new List<PosicaoGruposUsuarios>();
@@ -156,10 +156,13 @@ namespace CarbonTracker.Presenters
             //Ordenar as pontuações de forma decrescente
             pontuacoesUsuariosGrupo = pontuacoesUsuariosGrupo.OrderByDescending(p => p).ToList();
 
-            // Calcular a posição do usuário logado
+            //Tirar membros que não ao menos um gasto registrado
+            pontuacoesUsuariosGrupo = pontuacoesUsuariosGrupo.Where(p => p > 0).ToList();
+
+            //Calcular a posição do usuário logado
             var posicaoUsuario = pontuacoesUsuariosGrupo
                 .Where(p => p <= pontuacaoUsuario)
-                .Count() + 1;
+                .Count();
 
             return posicaoUsuario;
         }

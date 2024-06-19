@@ -155,7 +155,7 @@ namespace CarbonTracker._Repositories
                                         	ON B.id = A.ideletrodomestico 								
                                         
                                         WHERE A.idusuario = @idusuario
-                                        AND B.dia BETWEEN @dataInicio AND @dataFim;";
+                                        AND A.dia BETWEEN @dataInicio AND @dataFim;";
 
                     cmd.Parameters.AddWithValue("@idusuario", NpgsqlTypes.NpgsqlDbType.Bigint).Value = idUsuario;
                     cmd.Parameters.AddWithValue("@dataInicio", NpgsqlTypes.NpgsqlDbType.Date).Value = dataInicio;
