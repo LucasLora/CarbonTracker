@@ -1,5 +1,4 @@
 ﻿using CarbonTracker.Models;
-using System.Configuration;
 using System.Linq;
 
 namespace CarbonTracker.Services
